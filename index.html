@@ -38,8 +38,11 @@
 				</div>
 
 				<div class="controls">
-					<button onclick="rewind10()" title="Rewind 10 seconds">
+					<button onclick="rewindBack()" title="Go to start of current line">
 						<span class="material-icons">replay_10</span>
+					</button>
+					<button onclick="rewindForward()" title="Go to start of next line">
+						<span class="material-icons">forward_10</span>
 					</button>
 					<button id="pauseBtn" onclick="togglePause()" title="Pause/Play">
 						<span class="material-icons">pause</span>
@@ -88,10 +91,11 @@
 			let totalDuration = 0;
 			let isPaused = false;
 			let isDualMode = false;
-			let player = null;
-			let syncInterval = null;
-			let vocabData = {};
-			let currentVideoId = null;
+		let player = null;
+		let syncInterval = null;
+		let vocabData = {};
+		let currentVideoId = null;
+		let lastRewindTime = 0;
 
 			const statusEl = document.getElementById("status");
 			const pauseBtn = document.getElementById("pauseBtn");
@@ -253,8 +257,33 @@
 				updateDisplay();
 			}
 
-			function rewind10() {
-				currentTime = Math.max(0, currentTime - 10);
+			function rewindBack() {
+				const now = Date.now();
+				const isDoubleTap = now - lastRewindTime < 500;
+				lastRewindTime = now;
+
+				if (isDoubleTap && activeIndex > 0) {
+					currentTime = transcriptData[activeIndex - 1].time;
+				} else if (activeIndex >= 0) {
+					currentTime = transcriptData[activeIndex].time;
+				} else {
+					currentTime = Math.max(0, currentTime - 10);
+				}
+				activeIndex = -1;
+
+				if (player) {
+					player.seekTo(currentTime, true);
+				}
+
+				updateDisplay();
+			}
+
+			function rewindForward() {
+				if (activeIndex >= 0 && activeIndex < transcriptData.length - 1) {
+					currentTime = transcriptData[activeIndex + 1].time;
+				} else {
+					currentTime = currentTime + 10;
+				}
 				activeIndex = -1;
 
 				if (player) {
@@ -438,10 +467,16 @@
 					togglePause();
 				}
 
-				// Left arrow = rewind 10s
+				// Left arrow = go to start of current line
 				if (e.code === "ArrowLeft") {
 					e.preventDefault();
-					rewind10();
+					rewindBack();
+				}
+
+				// Right arrow = go to start of next line
+				if (e.code === "ArrowRight") {
+					e.preventDefault();
+					rewindForward();
 				}
 
 				// S key = sync video to transcript
