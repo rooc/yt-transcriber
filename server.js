@@ -230,12 +230,17 @@ const server = http.createServer((req, res) => {
             const isTranslation = f.includes('translation') || f.includes('translate');
             
             // Extract title from frontmatter
-            const titleMatch = content.match(/title:\s*["'](.+?)["']/);
-            const fullTitle = titleMatch ? titleMatch[1] : null;
+            const titleMatch = content.match(/^title:\s*(.+)$/m);
+            let fullTitle = titleMatch ? titleMatch[1].trim() : null;
+            // Strip surrounding quotes if present
+            if (fullTitle && /^["']/.test(fullTitle) && /["']$/.test(fullTitle)) {
+                fullTitle = fullTitle.slice(1, -1);
+            }
             // Short title (3 words) for sidebar tags
             let shortTitle = fullTitle;
             if (fullTitle) {
-                const words = fullTitle.split(/\s+/);
+                let displayTitle = fullTitle.replace(/^["\u201C\u2018\u201D\u2019]+/, '');
+                const words = displayTitle.split(/\s+/);
                 shortTitle = words.slice(0, 3).join(' ');
             }
             
