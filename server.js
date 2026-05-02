@@ -3,7 +3,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8000;
+const PORT = 7070;
 const TRANSCRIPTS_DIR = path.join(__dirname, 'transcripts');
 
 // Ensure transcripts directory exists
@@ -280,7 +280,8 @@ const server = http.createServer((req, res) => {
                 '.html': 'text/html',
                 '.js': 'application/javascript',
                 '.css': 'text/css',
-                '.json': 'application/json'
+                '.json': 'application/json',
+                '.svg': 'image/svg+xml',
             };
             res.writeHead(200, { 'Content-Type': contentTypes[ext] || 'text/plain' });
             res.end(content);

@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>YouTube Video with Transcript</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -90,6 +91,7 @@
 			let player = null;
 			let syncInterval = null;
 			let vocabData = {};
+			let currentVideoId = null;
 
 			const statusEl = document.getElementById("status");
 			const pauseBtn = document.getElementById("pauseBtn");
@@ -186,24 +188,7 @@
 			function syncFromVideo() {
 				if (!player || !player.getCurrentTime) return;
 
-				const state = player.getPlayerState();
-				const isPlaying = state === YT.PlayerState.PLAYING;
-				const isPausedState = state === YT.PlayerState.PAUSED;
-
 				currentTime = player.getCurrentTime();
-
-				if (isPlaying && isPaused) {
-					isPaused = false;
-					const icon = pauseBtn.querySelector(".material-icons");
-					if (icon) icon.textContent = "pause";
-					pauseBtn.classList.remove("active");
-				} else if (isPausedState && !isPaused) {
-					isPaused = true;
-					const icon = pauseBtn.querySelector(".material-icons");
-					if (icon) icon.textContent = "play_arrow";
-					pauseBtn.classList.add("active");
-				}
-
 				updateDisplay();
 			}
 
@@ -294,7 +279,7 @@
 								const icon = t.hasTranslation
 									? '<span class="material-icons icon-sm">translate</span>'
 									: '<span class="material-icons icon-sm warning" title="No translation">error_outline</span>';
-								return `<span class="transcript-tag" onclick="loadByVideoId('${t.videoId}')" title="${title}">${title} (${t.lines} lines) ${icon}</span>`;
+								return `<span class="transcript-tag" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${title}">${title} ${icon}</span>`;
 							})
 							.join("");
 					}
@@ -372,6 +357,12 @@
 			}
 
 			function loadByVideoId(videoId) {
+				currentVideoId = videoId;
+				document.querySelectorAll(".transcript-tag").forEach((tag) => {
+					tag.classList.remove("active");
+				});
+				const activeTag = document.getElementById(`tag-${videoId}`);
+				if (activeTag) activeTag.classList.add("active");
 				loadVideo(videoId);
 			}
 
@@ -379,6 +370,12 @@
 				if (!videoId) return;
 
 				if (syncInterval) clearInterval(syncInterval);
+				isPaused = false;
+				activeIndex = -1;
+
+				const icon = pauseBtn.querySelector(".material-icons");
+				if (icon) icon.textContent = "pause";
+				pauseBtn.classList.remove("active");
 
 				// Update header title with full title
 				const titleEl = document.getElementById("videoTitle");
@@ -397,6 +394,7 @@
 					fetchVocab(videoId),
 				]).then(() => {
 					if (player) {
+						player.addEventListener("onStateChange", onPlayerStateChange);
 						player.loadVideoById(videoId);
 					} else {
 						player = new YT.Player("player", {
@@ -409,11 +407,26 @@
 								onReady: () => {
 									startSync();
 								},
+								onStateChange: onPlayerStateChange,
 							},
 						});
 					}
 					startSync();
 				});
+			}
+
+			function onPlayerStateChange(e) {
+				if (e.data === YT.PlayerState.PLAYING) {
+					isPaused = false;
+					const icon = pauseBtn.querySelector(".material-icons");
+					if (icon) icon.textContent = "pause";
+					pauseBtn.classList.remove("active");
+				} else if (e.data === YT.PlayerState.PAUSED) {
+					isPaused = true;
+					const icon = pauseBtn.querySelector(".material-icons");
+					if (icon) icon.textContent = "play_arrow";
+					pauseBtn.classList.add("active");
+				}
 			}
 
 			window.onload = loadAvailableTranscripts;

@@ -15,6 +15,11 @@
 	--text-error: oklch(65.39% 0.1926 25.14);
 	--text-warning: oklch(86.22% 0.1681 88.31);
 	--border: oklch(30.98% 0.0308 276.67);
+	--border-light: oklch(40% 0.035 275);
+	--vocab-underline: oklch(70% 0.08 276);
+	--tooltip-bg: oklch(20% 0.04 275);
+	--tooltip-text: oklch(95% 0.12 220);
+	--tooltip-shadow: oklch(0% 0 0 / 0.3);
 
 	/* Border Radius */
 	--radius-xs: 0.25rem;
@@ -50,7 +55,7 @@ body {
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 26rem 1fr;
-	gap: 2.5rem;
+	gap: 2rem;
 }
 
 .sidebar {
@@ -124,9 +129,9 @@ button:disabled {
 	align-items: center;
 	gap: 0.25rem;
 	padding: 0.25rem 0.625rem;
-	margin: 0.25rem;
+	margin: 0.125rem;
 	background: var(--bg-elevated);
-	border: 1px solid oklch(40% 0.035 275);
+	border: 1px solid var(--border-light);
 	border-radius: var(--radius-xs);
 	cursor: pointer;
 	font-size: 0.85rem;
@@ -140,10 +145,24 @@ button:disabled {
 	background: var(--bg-hover);
 }
 
+.transcript-tag.active {
+	background: var(--bg-hover-alt);
+	border-color: var(--brand);
+}
+
 .video-wrapper {
 	position: relative;
 	padding-bottom: 56.25%;
 	height: 0;
+	--s: 75px; /* control the size*/
+	--c1: var(--bg-primary);
+	--c2: var(--bg-elevated);
+
+	--_g: #0000 90deg, var(--c1) 0;
+	background:
+		conic-gradient(from 116.56deg at calc(100% / 3) 0, var(--_g)),
+		conic-gradient(from -63.44deg at calc(200% / 3) 100%, var(--_g)) var(--c2);
+	background-size: var(--s) var(--s);
 }
 
 .video-wrapper iframe {
@@ -171,7 +190,7 @@ button:disabled {
 
 .transcript-line {
 	font-size: 1.75rem;
-	line-height: 1.5;
+	line-height: 1.4;
 	padding: 0.5rem 1.5rem;
 	width: 100%;
 	position: relative;
@@ -198,7 +217,7 @@ button:disabled {
 }
 
 .transcript-dual .translated {
-	color: oklch(95% 0.12 220);
+	color: var(--tooltip-text);
 	font-size: 1.4rem;
 	background-color: var(--bg-trans);
 	padding: 1rem;
@@ -280,7 +299,7 @@ button:disabled {
 }
 
 .vocab-word {
-	border-bottom: 1px dotted oklch(70% 0.08 276);
+	border-bottom: 1px dotted var(--vocab-underline);
 	position: relative;
 }
 
@@ -290,8 +309,8 @@ button:disabled {
 	bottom: calc(100% + 0.35rem);
 	left: 50%;
 	transform: translateX(-50%);
-	background: oklch(20% 0.04 275);
-	color: oklch(95% 0.12 220);
+	background: var(--tooltip-bg);
+	color: var(--tooltip-text);
 	padding: 0.5rem 0.75rem;
 	border-radius: var(--radius-md);
 	font-size: 1.5rem;
@@ -300,5 +319,5 @@ button:disabled {
 	pointer-events: none;
 	z-index: 100;
 	border: 1px solid var(--border);
-	box-shadow: 0 2px 8px oklch(0% 0 0 / 0.3);
+	box-shadow: 0 2px 8px var(--tooltip-shadow);
 }

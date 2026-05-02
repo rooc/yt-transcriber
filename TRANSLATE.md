@@ -82,5 +82,16 @@ For each file in `/transcripts/` that does NOT contain `_translation` in its nam
 - If YES: skip it
 - Create ONE translation per missing transcript. Do NOT repeat.
 
-### Step 3: Report
-List what was cleaned and what translations were created.
+### Step 3: Create vocabulary file
+For each cleaned transcript (non-translation):
+- Extract `VIDEO_ID` from `source:` URL
+- Check if `VIDEO_ID_vocab.json` exists
+- If NOT: read the cleaned original transcript and create a vocabulary JSON file
+- If YES: skip it
+- The vocab file is a JSON object mapping Spanish words (B1 level and above) to their English translation
+- Include: uncommon words, technical terms, idiomatic expressions, verbs beyond basic conjugation
+- Exclude: basic words (el, la, de, en, es, son, muy, etc.), common verbs (ser, estar, tener, hacer in basic forms)
+- Sort keys alphabetically in the JSON output
+
+### Step 4: Report
+List what was cleaned, what translations were created, and what vocabulary files were generated.
