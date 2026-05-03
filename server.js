@@ -23,11 +23,8 @@ if (!fs.existsSync(VOCAB_DIR)) {
 
 // === CLI COMMANDS ===
 if (process.argv.includes('translate')) {
-    (async () => {
-        await runTranslate();
-        process.exit(0);
-    })();
-    return;
+    runTranslate();
+    process.exit(0);
 }
 
 if (process.argv.includes('lint')) {

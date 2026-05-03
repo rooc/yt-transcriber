@@ -1,1181 +1,311 @@
 {
-  "aceptar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "acera": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "acercan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "adorable": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "agree": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "aguantar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "alcanzamos": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "algún": {
-    "en": "[translation needed]"
-  },
-  "alimento": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "alimentos": {
-    "en": "[translation needed]"
-  },
-  "altas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "altura": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "anda": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "andan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "andar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "animal": {
-    "en": "[translation needed]"
-  },
-  "animales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "apariencias": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "aprendido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "aquí": {
-    "en": "[translation needed]"
-  },
-  "asco": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "asegurarme": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "asegurarse": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "autos": {
-    "en": "[translation needed]"
-  },
-  "años": {
-    "en": "[translation needed]"
-  },
-  "bajas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "basándonos": {
-    "en": "[translation needed]"
-  },
-  "bebé": {
-    "en": "[translation needed]"
-  },
-  "bici": {
-    "en": "[translation needed]"
-  },
-  "bienvenidos": {
-    "en": "[translation needed]"
-  },
-  "brought": {
-    "en": "[translation needed]"
-  },
-  "básicamente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "cachorro": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "caer": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "caminan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "camino": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "caos": {
-    "en": "[translation needed]"
-  },
-  "carmen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "carretera": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "causa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "causan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "chaos": {
-    "en": "[translation needed]"
-  },
-  "checked": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "ciega": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ciegas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "civilizaciones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "coches": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "color": {
-    "en": "[translation needed]"
-  },
-  "colores": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "comida": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "comido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "comportamiento": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "condición": {
-    "en": "[translation needed]"
-  },
-  "corren": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "correr": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "corretean": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "correteando": {
-    "en": "[translation needed]",
-    "grammar": "gerund"
-  },
-  "corretear": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "creer": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "creo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "cualquier": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "cucarachas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "cuerpo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "cute": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "daltónicas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "daltónico": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "datitos": {
-    "en": "[translation needed]"
-  },
-  "datos": {
-    "en": "[translation needed]"
-  },
-  "daño": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "decirte": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "demuestra": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "demás": {
-    "en": "[translation needed]"
-  },
-  "deportistas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "desarrollado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "descanse": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "despectiva": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "detectan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "dice": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "dices": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "divas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "drogas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "echarían": {
-    "en": "[translation needed]",
-    "grammar": "cond."
-  },
-  "edificio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "ejemplo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "emociona": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "empezamos": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "encuentran": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "enfermedades": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "enfrente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "english": {
-    "en": "[translation needed]"
-  },
-  "episodio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "equivocado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "escuches": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "esparcido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "españa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "español": {
-    "en": "[translation needed]"
-  },
-  "esperar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "espero": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "estado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "estilo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "estoy": {
-    "en": "[translation needed]"
-  },
-  "estudian": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "están": {
-    "en": "[translation needed]"
-  },
-  "estás": {
-    "en": "[translation needed]"
-  },
-  "etcétera": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "evitar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "experimento": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "experimentos": {
-    "en": "[translation needed]"
-  },
-  "explicar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "fact": {
-    "en": "[translation needed]"
-  },
-  "fahenheit": {
-    "en": "[translation needed]"
-  },
-  "famosa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "fannia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "feas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "frase": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "frases": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "gastar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "gastarlo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "general": {
-    "en": "[translation needed]"
-  },
-  "gente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "gracia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "gusta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "gustan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "gustaría": {
-    "en": "[translation needed]",
-    "grammar": "cond."
-  },
-  "habido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "hablando": {
-    "en": "[translation needed]",
-    "grammar": "gerund"
-  },
-  "hace": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hacemos": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hacen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hacerlo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "hacerse": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "haces": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hagas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "have": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hayas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hecho": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "higiene": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "homenaje": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "horizontalmente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "huelen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "humanos": {
-    "en": "[translation needed]"
-  },
-  "hábito": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "hámster": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "ignorar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "inglés": {
-    "en": "[translation needed]"
-  },
-  "inmediata": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "instead": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "insultar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "insulto": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "inteligentes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "intento": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "investigar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "irrelevante": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "justifica": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "juzgar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "laboratorio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "laboratorios": {
-    "en": "[translation needed]"
-  },
-  "last": {
-    "en": "[translation needed]"
-  },
-  "leer": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "lesionarse": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "llamaba": {
-    "en": "[translation needed]",
-    "grammar": "impf."
-  },
-  "llamado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "llegan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "longas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "manera": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "mari": {
-    "en": "[translation needed]"
-  },
-  "maric": {
-    "en": "[translation needed]"
-  },
-  "matar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "medicamentos": {
-    "en": "[translation needed]"
-  },
-  "medio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "menciono": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "mente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "miedo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "minutos": {
-    "en": "[translation needed]"
-  },
-  "monkey": {
-    "en": "[translation needed]"
-  },
-  "mono": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "monos": {
-    "en": "[translation needed]"
-  },
-  "morenos": {
-    "en": "[translation needed]"
-  },
-  "muerdan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "muerden": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "muere": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "muerte": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "mundo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "nadan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "negativa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "normal": {
-    "en": "[translation needed]"
-  },
-  "nuevos": {
-    "en": "[translation needed]"
-  },
-  "número": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "obviamente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "oler": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "olfato": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "olvidado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "opinión": {
-    "en": "[translation needed]"
-  },
-  "paciencia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "palabra": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "palabras": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "parecen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "patrones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "peatones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "pensaba": {
-    "en": "[translation needed]",
-    "grammar": "impf."
-  },
-  "pensado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "pequeña": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "permite": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "perro": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "persona": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "pesar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "piensa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "pienso": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "pitbull": {
-    "en": "[translation needed]"
-  },
-  "popular": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "poquito": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "pregunta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "preguntado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "probablemente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "probar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "problema": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "producido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "producto": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "propagado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "proviene": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "prueban": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "próxima": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "psicológicos": {
-    "en": "[translation needed]"
-  },
-  "puedes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "puedo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "punto": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "quemarnos": {
-    "en": "[translation needed]"
-  },
-  "queremos": {
-    "en": "[translation needed]",
-    "grammar": "fut."
-  },
-  "quiere": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "quieres": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "rango": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "rata": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ratas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ratones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ratón": {
-    "en": "[translation needed]"
-  },
-  "razón": {
-    "en": "[translation needed]"
-  },
-  "really": {
-    "en": "[translation needed]"
-  },
-  "rechazas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "recompensa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "reconocer": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "regardless": {
-    "en": "[translation needed]"
-  },
-  "relacionado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "rendir": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "repulsión": {
-    "en": "[translation needed]"
-  },
-  "responder": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "resumir": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "roedores": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "rápida": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "sabes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "sabía": {
-    "en": "[translation needed]",
-    "grammar": "impf."
-  },
-  "saltan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "saltar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "second": {
-    "en": "[translation needed]"
-  },
-  "segunda": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "segura": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "seguramente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "seguro": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "sentido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "sentimos": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "será": {
-    "en": "[translation needed]",
-    "grammar": "fut."
-  },
-  "significa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "silvestre": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "similar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "sobrevivido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "sociedad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "soportar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "stay": {
-    "en": "[translation needed]"
-  },
-  "subjuntivo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "superhéroe": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "superhéroes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "superior": {
-    "en": "[translation needed]"
-  },
-  "superiores": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "supongo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "surprise": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "taata": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "tacaña": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "tacaño": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "taponada": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "temperaturas": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "tenga": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "teoría": {
-    "en": "[translation needed]",
-    "grammar": "cond."
-  },
-  "tercero": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "ternura": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "testear": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "they": {
-    "en": "[translation needed]"
-  },
-  "time": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "tirarían": {
-    "en": "[translation needed]",
-    "grammar": "cond."
-  },
-  "traído": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "triateletas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "triatleta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "triatletas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "triatlón": {
-    "en": "[translation needed]"
-  },
-  "ultravioleta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "usada": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "usadas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "usan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "verbo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "verdad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "verticalmente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "vida": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "viruses": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "viste": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "visto": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "vives": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "what": {
-    "en": "[translation needed]"
-  },
-  "wide": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "with": {
-    "en": "[translation needed]"
-  },
-  "world": {
-    "en": "[translation needed]"
-  },
-  "élite": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  }
+  "aceptar": "[translation needed]",
+  "acera": "[translation needed]",
+  "acercan": "[translation needed]",
+  "adorable": "[translation needed]",
+  "agree": "[translation needed]",
+  "aguantar": "[translation needed]",
+  "alcanzamos": "[translation needed]",
+  "algún": "[translation needed]",
+  "alimento": "[translation needed]",
+  "alimentos": "[translation needed]",
+  "altas": "[translation needed]",
+  "altura": "[translation needed]",
+  "anda": "[translation needed]",
+  "andan": "[translation needed]",
+  "andar": "[translation needed]",
+  "animal": "[translation needed]",
+  "animales": "[translation needed]",
+  "apariencias": "[translation needed]",
+  "aprendido": "[translation needed]",
+  "aquí": "[translation needed]",
+  "asco": "[translation needed]",
+  "asegurarme": "[translation needed]",
+  "asegurarse": "[translation needed]",
+  "autos": "[translation needed]",
+  "años": "[translation needed]",
+  "bajas": "[translation needed]",
+  "basándonos": "[translation needed]",
+  "bebé": "[translation needed]",
+  "bici": "[translation needed]",
+  "bienvenidos": "[translation needed]",
+  "brought": "[translation needed]",
+  "básicamente": "[translation needed]",
+  "cachorro": "[translation needed]",
+  "caer": "[translation needed]",
+  "caminan": "[translation needed]",
+  "camino": "[translation needed]",
+  "caos": "[translation needed]",
+  "carmen": "[translation needed]",
+  "carretera": "[translation needed]",
+  "causa": "[translation needed]",
+  "causan": "[translation needed]",
+  "chaos": "[translation needed]",
+  "checked": "[translation needed]",
+  "ciega": "[translation needed]",
+  "ciegas": "[translation needed]",
+  "civilizaciones": "[translation needed]",
+  "coches": "[translation needed]",
+  "color": "[translation needed]",
+  "colores": "[translation needed]",
+  "comida": "[translation needed]",
+  "comido": "[translation needed]",
+  "comportamiento": "[translation needed]",
+  "condición": "[translation needed]",
+  "corren": "[translation needed]",
+  "correr": "[translation needed]",
+  "corretean": "[translation needed]",
+  "correteando": "[translation needed]",
+  "corretear": "[translation needed]",
+  "creer": "[translation needed]",
+  "creo": "[translation needed]",
+  "cualquier": "[translation needed]",
+  "cucarachas": "[translation needed]",
+  "cuerpo": "[translation needed]",
+  "cute": "[translation needed]",
+  "daltónicas": "[translation needed]",
+  "daltónico": "[translation needed]",
+  "datitos": "[translation needed]",
+  "datos": "[translation needed]",
+  "daño": "[translation needed]",
+  "decirte": "[translation needed]",
+  "demuestra": "[translation needed]",
+  "demás": "[translation needed]",
+  "deportistas": "[translation needed]",
+  "desarrollado": "[translation needed]",
+  "descanse": "[translation needed]",
+  "despectiva": "[translation needed]",
+  "detectan": "[translation needed]",
+  "dice": "[translation needed]",
+  "dices": "[translation needed]",
+  "divas": "[translation needed]",
+  "drogas": "[translation needed]",
+  "echarían": "[translation needed]",
+  "edificio": "[translation needed]",
+  "ejemplo": "[translation needed]",
+  "emociona": "[translation needed]",
+  "empezamos": "[translation needed]",
+  "encuentran": "[translation needed]",
+  "enfermedades": "[translation needed]",
+  "enfrente": "[translation needed]",
+  "english": "[translation needed]",
+  "episodio": "[translation needed]",
+  "equivocado": "[translation needed]",
+  "escuches": "[translation needed]",
+  "esparcido": "[translation needed]",
+  "españa": "[translation needed]",
+  "español": "[translation needed]",
+  "esperar": "[translation needed]",
+  "espero": "[translation needed]",
+  "estado": "[translation needed]",
+  "estilo": "[translation needed]",
+  "estoy": "[translation needed]",
+  "estudian": "[translation needed]",
+  "están": "[translation needed]",
+  "estás": "[translation needed]",
+  "etcétera": "[translation needed]",
+  "evitar": "[translation needed]",
+  "experimento": "[translation needed]",
+  "experimentos": "[translation needed]",
+  "explicar": "[translation needed]",
+  "fact": "[translation needed]",
+  "fahenheit": "[translation needed]",
+  "famosa": "[translation needed]",
+  "fannia": "[translation needed]",
+  "feas": "[translation needed]",
+  "frase": "[translation needed]",
+  "frases": "[translation needed]",
+  "gastar": "[translation needed]",
+  "gastarlo": "[translation needed]",
+  "general": "[translation needed]",
+  "gente": "[translation needed]",
+  "gracia": "[translation needed]",
+  "gusta": "[translation needed]",
+  "gustan": "[translation needed]",
+  "gustaría": "[translation needed]",
+  "habido": "[translation needed]",
+  "hablando": "[translation needed]",
+  "hace": "[translation needed]",
+  "hacemos": "[translation needed]",
+  "hacen": "[translation needed]",
+  "hacerlo": "[translation needed]",
+  "hacerse": "[translation needed]",
+  "haces": "[translation needed]",
+  "hagas": "[translation needed]",
+  "have": "[translation needed]",
+  "hayas": "[translation needed]",
+  "hecho": "[translation needed]",
+  "higiene": "[translation needed]",
+  "homenaje": "[translation needed]",
+  "horizontalmente": "[translation needed]",
+  "huelen": "[translation needed]",
+  "humanos": "[translation needed]",
+  "hábito": "[translation needed]",
+  "hámster": "[translation needed]",
+  "ignorar": "[translation needed]",
+  "inglés": "[translation needed]",
+  "inmediata": "[translation needed]",
+  "instead": "[translation needed]",
+  "insultar": "[translation needed]",
+  "insulto": "[translation needed]",
+  "inteligentes": "[translation needed]",
+  "intento": "[translation needed]",
+  "investigar": "[translation needed]",
+  "irrelevante": "[translation needed]",
+  "justifica": "[translation needed]",
+  "juzgar": "[translation needed]",
+  "laboratorio": "[translation needed]",
+  "laboratorios": "[translation needed]",
+  "last": "[translation needed]",
+  "leer": "[translation needed]",
+  "lesionarse": "[translation needed]",
+  "llamaba": "[translation needed]",
+  "llamado": "[translation needed]",
+  "llegan": "[translation needed]",
+  "longas": "[translation needed]",
+  "manera": "[translation needed]",
+  "mari": "[translation needed]",
+  "maric": "[translation needed]",
+  "matar": "[translation needed]",
+  "medicamentos": "[translation needed]",
+  "medio": "[translation needed]",
+  "menciono": "[translation needed]",
+  "mente": "[translation needed]",
+  "miedo": "[translation needed]",
+  "minutos": "[translation needed]",
+  "monkey": "[translation needed]",
+  "mono": "[translation needed]",
+  "monos": "[translation needed]",
+  "morenos": "[translation needed]",
+  "muerdan": "[translation needed]",
+  "muerden": "[translation needed]",
+  "muere": "[translation needed]",
+  "muerte": "[translation needed]",
+  "mundo": "[translation needed]",
+  "nadan": "[translation needed]",
+  "negativa": "[translation needed]",
+  "normal": "[translation needed]",
+  "nuevos": "[translation needed]",
+  "número": "[translation needed]",
+  "obviamente": "[translation needed]",
+  "oler": "[translation needed]",
+  "olfato": "[translation needed]",
+  "olvidado": "[translation needed]",
+  "opinión": "[translation needed]",
+  "paciencia": "[translation needed]",
+  "palabra": "[translation needed]",
+  "palabras": "[translation needed]",
+  "parecen": "[translation needed]",
+  "patrones": "[translation needed]",
+  "peatones": "[translation needed]",
+  "pensaba": "[translation needed]",
+  "pensado": "[translation needed]",
+  "pequeña": "[translation needed]",
+  "permite": "[translation needed]",
+  "perro": "[translation needed]",
+  "persona": "[translation needed]",
+  "pesar": "[translation needed]",
+  "piensa": "[translation needed]",
+  "pienso": "[translation needed]",
+  "pitbull": "[translation needed]",
+  "popular": "[translation needed]",
+  "poquito": "[translation needed]",
+  "pregunta": "[translation needed]",
+  "preguntado": "[translation needed]",
+  "probablemente": "[translation needed]",
+  "probar": "[translation needed]",
+  "problema": "[translation needed]",
+  "producido": "[translation needed]",
+  "producto": "[translation needed]",
+  "propagado": "[translation needed]",
+  "proviene": "[translation needed]",
+  "prueban": "[translation needed]",
+  "próxima": "[translation needed]",
+  "psicológicos": "[translation needed]",
+  "puedes": "[translation needed]",
+  "puedo": "[translation needed]",
+  "punto": "[translation needed]",
+  "quemarnos": "[translation needed]",
+  "queremos": "[translation needed]",
+  "quiere": "[translation needed]",
+  "quieres": "[translation needed]",
+  "rango": "[translation needed]",
+  "rata": "[translation needed]",
+  "ratas": "[translation needed]",
+  "ratones": "[translation needed]",
+  "ratón": "[translation needed]",
+  "razón": "[translation needed]",
+  "really": "[translation needed]",
+  "rechazas": "[translation needed]",
+  "recompensa": "[translation needed]",
+  "reconocer": "[translation needed]",
+  "regardless": "[translation needed]",
+  "relacionado": "[translation needed]",
+  "rendir": "[translation needed]",
+  "repulsión": "[translation needed]",
+  "responder": "[translation needed]",
+  "resumir": "[translation needed]",
+  "roedores": "[translation needed]",
+  "rápida": "[translation needed]",
+  "sabes": "[translation needed]",
+  "sabía": "[translation needed]",
+  "saltan": "[translation needed]",
+  "saltar": "[translation needed]",
+  "second": "[translation needed]",
+  "segunda": "[translation needed]",
+  "segura": "[translation needed]",
+  "seguramente": "[translation needed]",
+  "seguro": "[translation needed]",
+  "sentido": "[translation needed]",
+  "sentimos": "[translation needed]",
+  "será": "[translation needed]",
+  "significa": "[translation needed]",
+  "silvestre": "[translation needed]",
+  "similar": "[translation needed]",
+  "sobrevivido": "[translation needed]",
+  "sociedad": "[translation needed]",
+  "soportar": "[translation needed]",
+  "stay": "[translation needed]",
+  "subjuntivo": "[translation needed]",
+  "superhéroe": "[translation needed]",
+  "superhéroes": "[translation needed]",
+  "superior": "[translation needed]",
+  "superiores": "[translation needed]",
+  "supongo": "[translation needed]",
+  "surprise": "[translation needed]",
+  "taata": "[translation needed]",
+  "tacaña": "[translation needed]",
+  "tacaño": "[translation needed]",
+  "taponada": "[translation needed]",
+  "temperaturas": "[translation needed]",
+  "tenga": "[translation needed]",
+  "teoría": "[translation needed]",
+  "tercero": "[translation needed]",
+  "ternura": "[translation needed]",
+  "testear": "[translation needed]",
+  "they": "[translation needed]",
+  "time": "[translation needed]",
+  "tirarían": "[translation needed]",
+  "traído": "[translation needed]",
+  "triateletas": "[translation needed]",
+  "triatleta": "[translation needed]",
+  "triatletas": "[translation needed]",
+  "triatlón": "[translation needed]",
+  "ultravioleta": "[translation needed]",
+  "usada": "[translation needed]",
+  "usadas": "[translation needed]",
+  "usan": "[translation needed]",
+  "verbo": "[translation needed]",
+  "verdad": "[translation needed]",
+  "verticalmente": "[translation needed]",
+  "vida": "[translation needed]",
+  "viruses": "[translation needed]",
+  "viste": "[translation needed]",
+  "visto": "[translation needed]",
+  "vives": "[translation needed]",
+  "what": "[translation needed]",
+  "wide": "[translation needed]",
+  "with": "[translation needed]",
+  "world": "[translation needed]",
+  "élite": "[translation needed]"
 }

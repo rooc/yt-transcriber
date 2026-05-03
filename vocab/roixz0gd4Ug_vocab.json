@@ -1,948 +1,252 @@
 {
-  "acostumbrados": {
-    "en": "[translation needed]"
-  },
-  "actuar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "además": {
-    "en": "[translation needed]"
-  },
-  "agencias": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "allá": {
-    "en": "[translation needed]"
-  },
-  "amenaza": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "américa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "angels": {
-    "en": "[translation needed]"
-  },
-  "apenas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "aprendido": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "aquí": {
-    "en": "[translation needed]"
-  },
-  "argumentan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "arizona": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "asia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "astucia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "autoridades": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "azteca": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "años": {
-    "en": "[translation needed]"
-  },
-  "barrio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "barrios": {
-    "en": "[translation needed]"
-  },
-  "bondi": {
-    "en": "[translation needed]"
-  },
-  "border": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "brothers": {
-    "en": "[translation needed]"
-  },
-  "calles": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "cambio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "cantidades": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "capacidad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "capo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "capone": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "cartel": {
-    "en": "[translation needed]"
-  },
-  "carteles": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "centroamérica": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "chapo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "ciudadanos": {
-    "en": "[translation needed]"
-  },
-  "colombia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "combatir": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "comparar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "complicado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "condiciones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "conexiones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "consideraciones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "considerados": {
-    "en": "[translation needed]"
-  },
-  "construyeron": {
-    "en": "[translation needed]"
-  },
-  "consumo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "controlan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "controle": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "conviene": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "corporaciones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "corromper": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "corte": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "creció": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "cree": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "creen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "crime": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "crimen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "criminal": {
-    "en": "[translation needed]"
-  },
-  "criminales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "cruzar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "culpable": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "células": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "declaró": {
-    "en": "[translation needed]"
-  },
-  "deja": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "desafíar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "descuidaron": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "desmantelar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "despojarían": {
-    "en": "[translation needed]",
-    "grammar": "cond."
-  },
-  "destino": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "detenerse": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "dieran": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "difíciles": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "distribución": {
-    "en": "[translation needed]"
-  },
-  "distribuir": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "dominaron": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "dominio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "donald": {
-    "en": "[translation needed]"
-  },
-  "droga": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "drogas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "dudley": {
-    "en": "[translation needed]"
-  },
-  "duras": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "décadas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "económicas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "educación": {
-    "en": "[translation needed]"
-  },
-  "embargo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "encargarse": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "enormes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "escena": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "esencial": {
-    "en": "[translation needed]"
-  },
-  "esquinas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "esquivel": {
-    "en": "[translation needed]"
-  },
-  "estado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "estados": {
-    "en": "[translation needed]"
-  },
-  "estadounidense": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "estadounidenses": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "estructura": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "estupefacientes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "evitar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "existe": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "existen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "expertos": {
-    "en": "[translation needed]"
-  },
-  "explicamos": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "factor": {
-    "en": "[translation needed]"
-  },
-  "federal": {
-    "en": "[translation needed]"
-  },
-  "figuras": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "final": {
-    "en": "[translation needed]"
-  },
-  "fiscal": {
-    "en": "[translation needed]"
-  },
-  "flexibilidad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "forma": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "fragmentado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "frontera": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "fuera": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "fuerzas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "funcionando": {
-    "en": "[translation needed]",
-    "grammar": "gerund"
-  },
-  "funcionar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "funcionarios": {
-    "en": "[translation needed]"
-  },
-  "funcione": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "fácilmente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ganancias": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "general": {
-    "en": "[translation needed]"
-  },
-  "gigantesco": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "gobierno": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "gotti": {
-    "en": "[translation needed]"
-  },
-  "gringos": {
-    "en": "[translation needed]"
-  },
-  "grupo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "grupos": {
-    "en": "[translation needed]"
-  },
-  "gubernamentales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "habla": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hace": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "hecho": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "hells": {
-    "en": "[translation needed]"
-  },
-  "histórica": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "históricos": {
-    "en": "[translation needed]"
-  },
-  "ilegales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ilícitas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "imperios": {
-    "en": "[translation needed]"
-  },
-  "independientes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "inicial": {
-    "en": "[translation needed]"
-  },
-  "insight": {
-    "en": "[translation needed]"
-  },
-  "inundar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "invadir": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "ismael": {
-    "en": "[translation needed]"
-  },
-  "jefe": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "jefes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "john": {
-    "en": "[translation needed]"
-  },
-  "juegan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "kings": {
-    "en": "[translation needed]"
-  },
-  "latin": {
-    "en": "[translation needed]"
-  },
-  "latina": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "latinoamericanos": {
-    "en": "[translation needed]"
-  },
-  "lavado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "lealtad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "lejos": {
-    "en": "[translation needed]"
-  },
-  "locales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "líderes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "mafia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "manejar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "mayoreo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "mayores": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "mejores": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "mencionar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "mercados": {
-    "en": "[translation needed]"
-  },
-  "meses": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "mexican": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "miembros": {
-    "en": "[translation needed]"
-  },
-  "militares": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "millones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "monopolio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "mundo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "mérito": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "méxico": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "mínimas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "narcotráfico": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "narcóticos": {
-    "en": "[translation needed]"
-  },
-  "narrativa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "necesita": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "notoriedad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "nueva": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ocurre": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ocurrió": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "ofrezca": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "operan": {
-    "en": "[translation needed]",
-    "grammar": "impf. subj."
-  },
-  "operar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "orden": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "organizaciones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "organizado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "pandillas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "parar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "partes": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "participado": {
-    "en": "[translation needed]",
-    "grammar": "past part."
-  },
-  "pasa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "peligrosidad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "policiales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "políticas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "político": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "pregunta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "preguntamos": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "presencia": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "presionar": {
-    "en": "[translation needed]",
-    "grammar": "inf."
-  },
-  "principales": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "problema": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "procedente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "proveedor": {
-    "en": "[translation needed]"
-  },
-  "proveedores": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "pública": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "quedaron": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "quieren": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "realmente": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "reconoció": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "reglas": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "relevante": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "repiten": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "reporte": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "resaltó": {
-    "en": "[translation needed]"
-  },
-  "responsables": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "riesgo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "salud": {
-    "en": "[translation needed]"
-  },
-  "sanciones": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "segundo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "siendo": {
-    "en": "[translation needed]",
-    "grammar": "gerund"
-  },
-  "siglo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "significó": {
-    "en": "[translation needed]"
-  },
-  "siguen": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "similares": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "simples": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "sinaloa": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "sistema": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "steven": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "suma": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "sustancias": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "tendría": {
-    "en": "[translation needed]",
-    "grammar": "cond."
-  },
-  "territorio": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "titulares": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "trabajan": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "traficó": {
-    "en": "[translation needed]"
-  },
-  "transporte": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "trump": {
-    "en": "[translation needed]"
-  },
-  "tuvo": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "unidos": {
-    "en": "[translation needed]"
-  },
-  "vende": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "venderla": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "venta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "ventaja": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "victoria": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "video": {
-    "en": "[translation needed]",
-    "grammar": "pres."
-  },
-  "visibilidad": {
-    "en": "[translation needed]",
-    "grammar": "imper."
-  },
-  "visibles": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "volvamos": {
-    "en": "[translation needed]",
-    "grammar": "pret."
-  },
-  "vuelta": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "york": {
-    "en": "[translation needed]"
-  },
-  "zambada": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  },
-  "élites": {
-    "en": "[translation needed]",
-    "grammar": "pres. subj."
-  }
+  "acostumbrados": "[translation needed]",
+  "actuar": "[translation needed]",
+  "además": "[translation needed]",
+  "agencias": "[translation needed]",
+  "allá": "[translation needed]",
+  "amenaza": "[translation needed]",
+  "américa": "[translation needed]",
+  "angels": "[translation needed]",
+  "apenas": "[translation needed]",
+  "aprendido": "[translation needed]",
+  "aquí": "[translation needed]",
+  "argumentan": "[translation needed]",
+  "arizona": "[translation needed]",
+  "asia": "[translation needed]",
+  "astucia": "[translation needed]",
+  "autoridades": "[translation needed]",
+  "azteca": "[translation needed]",
+  "años": "[translation needed]",
+  "barrio": "[translation needed]",
+  "barrios": "[translation needed]",
+  "bondi": "[translation needed]",
+  "border": "[translation needed]",
+  "brothers": "[translation needed]",
+  "calles": "[translation needed]",
+  "cambio": "[translation needed]",
+  "cantidades": "[translation needed]",
+  "capacidad": "[translation needed]",
+  "capo": "[translation needed]",
+  "capone": "[translation needed]",
+  "cartel": "[translation needed]",
+  "carteles": "[translation needed]",
+  "centroamérica": "[translation needed]",
+  "chapo": "[translation needed]",
+  "ciudadanos": "[translation needed]",
+  "colombia": "[translation needed]",
+  "combatir": "[translation needed]",
+  "comparar": "[translation needed]",
+  "complicado": "[translation needed]",
+  "condiciones": "[translation needed]",
+  "conexiones": "[translation needed]",
+  "consideraciones": "[translation needed]",
+  "considerados": "[translation needed]",
+  "construyeron": "[translation needed]",
+  "consumo": "[translation needed]",
+  "controlan": "[translation needed]",
+  "controle": "[translation needed]",
+  "conviene": "[translation needed]",
+  "corporaciones": "[translation needed]",
+  "corromper": "[translation needed]",
+  "corte": "[translation needed]",
+  "creció": "[translation needed]",
+  "cree": "[translation needed]",
+  "creen": "[translation needed]",
+  "crime": "[translation needed]",
+  "crimen": "[translation needed]",
+  "criminal": "[translation needed]",
+  "criminales": "[translation needed]",
+  "cruzar": "[translation needed]",
+  "culpable": "[translation needed]",
+  "células": "[translation needed]",
+  "declaró": "[translation needed]",
+  "deja": "[translation needed]",
+  "desafíar": "[translation needed]",
+  "descuidaron": "[translation needed]",
+  "desmantelar": "[translation needed]",
+  "despojarían": "[translation needed]",
+  "destino": "[translation needed]",
+  "detenerse": "[translation needed]",
+  "dieran": "[translation needed]",
+  "difíciles": "[translation needed]",
+  "distribución": "[translation needed]",
+  "distribuir": "[translation needed]",
+  "dominaron": "[translation needed]",
+  "dominio": "[translation needed]",
+  "donald": "[translation needed]",
+  "droga": "[translation needed]",
+  "drogas": "[translation needed]",
+  "dudley": "[translation needed]",
+  "duras": "[translation needed]",
+  "décadas": "[translation needed]",
+  "económicas": "[translation needed]",
+  "educación": "[translation needed]",
+  "embargo": "[translation needed]",
+  "encargarse": "[translation needed]",
+  "enormes": "[translation needed]",
+  "escena": "[translation needed]",
+  "esencial": "[translation needed]",
+  "esquinas": "[translation needed]",
+  "esquivel": "[translation needed]",
+  "estado": "[translation needed]",
+  "estados": "[translation needed]",
+  "estadounidense": "[translation needed]",
+  "estadounidenses": "[translation needed]",
+  "estructura": "[translation needed]",
+  "estupefacientes": "[translation needed]",
+  "evitar": "[translation needed]",
+  "existe": "[translation needed]",
+  "existen": "[translation needed]",
+  "expertos": "[translation needed]",
+  "explicamos": "[translation needed]",
+  "factor": "[translation needed]",
+  "federal": "[translation needed]",
+  "figuras": "[translation needed]",
+  "final": "[translation needed]",
+  "fiscal": "[translation needed]",
+  "flexibilidad": "[translation needed]",
+  "forma": "[translation needed]",
+  "fragmentado": "[translation needed]",
+  "frontera": "[translation needed]",
+  "fuera": "[translation needed]",
+  "fuerzas": "[translation needed]",
+  "funcionando": "[translation needed]",
+  "funcionar": "[translation needed]",
+  "funcionarios": "[translation needed]",
+  "funcione": "[translation needed]",
+  "fácilmente": "[translation needed]",
+  "ganancias": "[translation needed]",
+  "general": "[translation needed]",
+  "gigantesco": "[translation needed]",
+  "gobierno": "[translation needed]",
+  "gotti": "[translation needed]",
+  "gringos": "[translation needed]",
+  "grupo": "[translation needed]",
+  "grupos": "[translation needed]",
+  "gubernamentales": "[translation needed]",
+  "habla": "[translation needed]",
+  "hace": "[translation needed]",
+  "hecho": "[translation needed]",
+  "hells": "[translation needed]",
+  "histórica": "[translation needed]",
+  "históricos": "[translation needed]",
+  "ilegales": "[translation needed]",
+  "ilícitas": "[translation needed]",
+  "imperios": "[translation needed]",
+  "independientes": "[translation needed]",
+  "inicial": "[translation needed]",
+  "insight": "[translation needed]",
+  "inundar": "[translation needed]",
+  "invadir": "[translation needed]",
+  "ismael": "[translation needed]",
+  "jefe": "[translation needed]",
+  "jefes": "[translation needed]",
+  "john": "[translation needed]",
+  "juegan": "[translation needed]",
+  "kings": "[translation needed]",
+  "latin": "[translation needed]",
+  "latina": "[translation needed]",
+  "latinoamericanos": "[translation needed]",
+  "lavado": "[translation needed]",
+  "lealtad": "[translation needed]",
+  "lejos": "[translation needed]",
+  "locales": "[translation needed]",
+  "líderes": "[translation needed]",
+  "mafia": "[translation needed]",
+  "manejar": "[translation needed]",
+  "mayoreo": "[translation needed]",
+  "mayores": "[translation needed]",
+  "mejores": "[translation needed]",
+  "mencionar": "[translation needed]",
+  "mercados": "[translation needed]",
+  "meses": "[translation needed]",
+  "mexican": "[translation needed]",
+  "miembros": "[translation needed]",
+  "militares": "[translation needed]",
+  "millones": "[translation needed]",
+  "monopolio": "[translation needed]",
+  "mundo": "[translation needed]",
+  "mérito": "[translation needed]",
+  "méxico": "[translation needed]",
+  "mínimas": "[translation needed]",
+  "narcotráfico": "[translation needed]",
+  "narcóticos": "[translation needed]",
+  "narrativa": "[translation needed]",
+  "necesita": "[translation needed]",
+  "notoriedad": "[translation needed]",
+  "nueva": "[translation needed]",
+  "ocurre": "[translation needed]",
+  "ocurrió": "[translation needed]",
+  "ofrezca": "[translation needed]",
+  "operan": "[translation needed]",
+  "operar": "[translation needed]",
+  "orden": "[translation needed]",
+  "organizaciones": "[translation needed]",
+  "organizado": "[translation needed]",
+  "pandillas": "[translation needed]",
+  "parar": "[translation needed]",
+  "partes": "[translation needed]",
+  "participado": "[translation needed]",
+  "pasa": "[translation needed]",
+  "peligrosidad": "[translation needed]",
+  "policiales": "[translation needed]",
+  "políticas": "[translation needed]",
+  "político": "[translation needed]",
+  "pregunta": "[translation needed]",
+  "preguntamos": "[translation needed]",
+  "presencia": "[translation needed]",
+  "presionar": "[translation needed]",
+  "principales": "[translation needed]",
+  "problema": "[translation needed]",
+  "procedente": "[translation needed]",
+  "proveedor": "[translation needed]",
+  "proveedores": "[translation needed]",
+  "pública": "[translation needed]",
+  "quedaron": "[translation needed]",
+  "quieren": "[translation needed]",
+  "realmente": "[translation needed]",
+  "reconoció": "[translation needed]",
+  "reglas": "[translation needed]",
+  "relevante": "[translation needed]",
+  "repiten": "[translation needed]",
+  "reporte": "[translation needed]",
+  "resaltó": "[translation needed]",
+  "responsables": "[translation needed]",
+  "riesgo": "[translation needed]",
+  "salud": "[translation needed]",
+  "sanciones": "[translation needed]",
+  "segundo": "[translation needed]",
+  "siendo": "[translation needed]",
+  "siglo": "[translation needed]",
+  "significó": "[translation needed]",
+  "siguen": "[translation needed]",
+  "similares": "[translation needed]",
+  "simples": "[translation needed]",
+  "sinaloa": "[translation needed]",
+  "sistema": "[translation needed]",
+  "steven": "[translation needed]",
+  "suma": "[translation needed]",
+  "sustancias": "[translation needed]",
+  "tendría": "[translation needed]",
+  "territorio": "[translation needed]",
+  "titulares": "[translation needed]",
+  "trabajan": "[translation needed]",
+  "traficó": "[translation needed]",
+  "transporte": "[translation needed]",
+  "trump": "[translation needed]",
+  "tuvo": "[translation needed]",
+  "unidos": "[translation needed]",
+  "vende": "[translation needed]",
+  "venderla": "[translation needed]",
+  "venta": "[translation needed]",
+  "ventaja": "[translation needed]",
+  "victoria": "[translation needed]",
+  "video": "[translation needed]",
+  "visibilidad": "[translation needed]",
+  "visibles": "[translation needed]",
+  "volvamos": "[translation needed]",
+  "vuelta": "[translation needed]",
+  "york": "[translation needed]",
+  "zambada": "[translation needed]",
+  "élites": "[translation needed]"
 }
