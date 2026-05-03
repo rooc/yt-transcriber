@@ -1,5 +1,8 @@
 # AI Translation Instructions for YouTube Videos
 
+> **Note:** This guide is for AI assistants creating high-quality sentence translations.
+> For automated vocabulary generation, use `node server.js translate` instead.
+
 ## Task
 Create an English translation file for a YouTube video transcript.
 
@@ -62,7 +65,7 @@ source: "https://www.youtube.com/watch?v=6OvgRqD3ICY"
 
 ---
 
-## "translate" Command
+## "translate" Command (AI)
 When the user gives the command `translate`:
 
 ### Step 1: Clean original transcripts
@@ -78,20 +81,30 @@ For each file in `/transcripts/` that does NOT contain `_translation` in its nam
 - List all cleaned transcript files
 - For each, extract `VIDEO_ID` from `source:` URL in frontmatter
 - Check if `VIDEO_ID_translation.md` exists
-- If NOT: read the cleaned original and create translation
+- If NOT: read the cleaned original and create high-quality sentence translation
 - If YES: skip it
 - Create ONE translation per missing transcript. Do NOT repeat.
 
-### Step 3: Create vocabulary file
-For each cleaned transcript (non-translation):
+### Step 3: Create vocabulary file (or update existing)
 - Extract `VIDEO_ID` from `source:` URL
 - Check if `VIDEO_ID_vocab.json` exists
-- If NOT: read the cleaned original transcript and create a vocabulary JSON file
-- If YES: skip it
-- The vocab file is a JSON object mapping Spanish words (B1 level and above) to their English translation
-- Include: uncommon words, technical terms, idiomatic expressions, verbs beyond basic conjugation
-- Exclude: basic words (el, la, de, en, es, son, muy, etc.), common verbs (ser, estar, tener, hacer in basic forms)
-- Sort keys alphabetically in the JSON output
+- If NOT: create vocabulary JSON with `[translation needed]` placeholders
+- If YES: add any new words found in transcript that aren't already in the file
+- The vocab file maps Spanish words to English translations
+- For words already translated, preserve existing translations
+- For new words, use `[translation needed]` as placeholder
+- Sort keys alphabetically
 
 ### Step 4: Report
-List what was cleaned, what translations were created, and what vocabulary files were generated.
+List what was cleaned, what translations were created, and what vocabulary files were updated.
+
+---
+
+## Difference from `node server.js translate`
+
+| | This AI command | `node server.js translate` |
+|---|---|---|
+| **What it does** | Creates high-quality sentence translations | Generates rough word translations for vocabulary |
+| **Output** | `VIDEO_ID_translation.md` (full sentences) | `VIDEO_ID_vocab.json` (word lookup) |
+| **Quality** | Fluent, contextual, natural English | Literal, machine-translated (via translate-shell) |
+| **When to use** | When you want proper sentence translations | When you want quick vocab word lookup |

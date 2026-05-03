@@ -6,14 +6,38 @@
  *
  * Performs three steps for every original transcript:
  *   1. Clean markdown (strip headings, section dividers, blank lines)
- *   2. Create missing `_translation.md` placeholder files
- *   3. Create missing `_vocab.json` files (B1+ Spanish words only)
+ *   2. Create missing `_translation.md` placeholder files (if missing)
+ *   3. Create/update `_vocab.json` files with rough machine translations
+ *
+ * NOTE: This command does NOT create high-quality sentence translations.
+ * For that, see AI_TRANSLATION_GUIDE.md.
  */
 const path = require('path');
 const fs = require('fs');
+const { execSync } = require('child_process');
 const { TRANSCRIPTS_DIR, VOCAB_DIR } = require('../config');
 const { findTranscriptFiles, readTranscript, writeTranscript, writeVocab } = require('../store');
 const { loadExcludedWords } = require('../exclusions');
+
+/**
+ * Batch translate words using translate-shell.
+ *
+ * @param {string[]} words
+ * @returns {string[]}
+ */
+function batchTranslate(words) {
+    try {
+        const output = execSync('trans -b :en -no-auto', {
+            input: words.join('\n'),
+            encoding: 'utf-8',
+            timeout: 120000,
+        });
+        return output.trim().split('\n');
+    } catch (e) {
+        console.error('     Translation error:', e.message);
+        return words.map(() => '[translation needed]');
+    }
+}
 
 /**
  * Execute the translate pipeline and print a report to stdout.
@@ -27,6 +51,8 @@ function runTranslate() {
     const translationsCreated = [];
     /** @type {string[]} */
     const vocabCreated = [];
+    /** @type {string[]} */
+    const vocabUpdated = [];
 
     const transcriptFiles = findTranscriptFiles();
 
@@ -94,7 +120,7 @@ function runTranslate() {
         // --- Step 2: Create missing translation placeholder ---
         const translationPath = path.join(TRANSCRIPTS_DIR, `${videoId}_translation.md`);
         if (!fs.existsSync(translationPath)) {
-            console.log(`  📝 ${filename}: Creating translation file...`);
+            console.log(`  📝 ${filename}: Creating translation placeholder...`);
             const titleMatch = content.match(/^title:\s*"([^"]+)"/m);
             const originalTitle = titleMatch ? titleMatch[1] : filename;
 
@@ -126,37 +152,77 @@ source: "${sourceMatch[1]}"
             translationsCreated.push(`${videoId}_translation.md`);
         }
 
-        // --- Step 3: Create missing vocabulary file ---
+        // --- Step 3: Create/update vocabulary file with translations ---
         const vocabPath = path.join(VOCAB_DIR, `${videoId}_vocab.json`);
-        if (!fs.existsSync(vocabPath)) {
-            console.log(`  📚 ${filename}: Creating vocabulary file...`);
+        const excludedWords = loadExcludedWords();
 
-            const excludedWords = loadExcludedWords();
-            console.log(`     Total excluded: ${excludedWords.size} words`);
+        /** @type {Object.<string, string>} */
+        let vocab = {};
+        let isNewFile = false;
 
-            /** @type {Object.<string, string>} */
-            const vocab = {};
-            const transcriptLines = content.match(/\*\*\d{1,2}:\d{2}[^·]*·\s*(.+)/g) || [];
+        if (fs.existsSync(vocabPath)) {
+            vocab = JSON.parse(fs.readFileSync(vocabPath, 'utf-8'));
+        } else {
+            isNewFile = true;
+        }
 
-            transcriptLines.forEach(line => {
-                const text = line.replace(/^\*\*[^·]+·\s*/, '');
-                const words = text.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
-                words.forEach(word => {
-                    // Skip short words and anything in the exclusion list
-                    if (word.length > 3 && !excludedWords.has(word)) {
-                        vocab[word] = '[translation needed]';
+        // Extract words from transcript
+        const transcriptLines = content.match(/\*\*\d{1,2}:\d{2}[^·]*·\s*(.+)/g) || [];
+        const newWords = [];
+
+        transcriptLines.forEach(line => {
+            const text = line.replace(/^\*\*[^·]+·\s*/, '');
+            const words = text.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
+            words.forEach(word => {
+                if (word.length > 3 && !excludedWords.has(word) && !vocab[word]) {
+                    vocab[word] = '[translation needed]';
+                    newWords.push(word);
+                }
+            });
+        });
+
+        // Find all untranslated words (both new and existing)
+        const untranslated = Object.keys(vocab).filter(w => vocab[w] === '[translation needed]');
+
+        if (untranslated.length > 0) {
+            console.log(`  📚 ${filename}: translating ${untranslated.length} words...`);
+
+            // Batch in groups of 50
+            const batchSize = 50;
+            let translatedCount = 0;
+
+            for (let i = 0; i < untranslated.length; i += batchSize) {
+                const batch = untranslated.slice(i, i + batchSize);
+                const translations = batchTranslate(batch);
+
+                batch.forEach((word, idx) => {
+                    const t = translations[idx]?.trim().toLowerCase() || '[translation needed]';
+                    // Skip if translation is same as original (translate-shell failed)
+                    if (t && t !== word && t !== '') {
+                        vocab[word] = t;
+                        translatedCount++;
                     }
                 });
-            });
 
-            // Alphabetical order
-            const sortedVocab = {};
-            Object.keys(vocab).sort().forEach(key => {
-                sortedVocab[key] = vocab[key];
-            });
+                process.stdout.write(`\r     Progress: ${Math.min(i + batchSize, untranslated.length)}/${untranslated.length}`);
+            }
 
-            writeVocab(videoId, sortedVocab);
+            console.log('');
+            console.log(`     Done: ${translatedCount}/${untranslated.length} translated`);
+        }
+
+        // Sort and save
+        const sortedVocab = {};
+        Object.keys(vocab).sort().forEach(key => {
+            sortedVocab[key] = vocab[key];
+        });
+
+        writeVocab(videoId, sortedVocab);
+
+        if (isNewFile) {
             vocabCreated.push(`${videoId}_vocab.json`);
+        } else if (newWords.length > 0 || untranslated.length > 0) {
+            vocabUpdated.push(`${videoId}_vocab.json`);
         }
     });
 
@@ -176,7 +242,7 @@ source: "${sourceMatch[1]}"
         console.log(`📝 Created ${translationsCreated.length} translation placeholder(s):`);
         translationsCreated.forEach(f => console.log(`   - ${f}`));
     } else {
-        console.log('✅ All translations exist');
+        console.log('✅ All translation placeholders exist');
     }
 
     console.log('');
@@ -184,8 +250,15 @@ source: "${sourceMatch[1]}"
     if (vocabCreated.length > 0) {
         console.log(`📚 Created ${vocabCreated.length} vocabulary file(s):`);
         vocabCreated.forEach(f => console.log(`   - ${f}`));
-    } else {
-        console.log('✅ All vocabulary files exist');
+    }
+
+    if (vocabUpdated.length > 0) {
+        console.log(`🔄 Updated ${vocabUpdated.length} vocabulary file(s):`);
+        vocabUpdated.forEach(f => console.log(`   - ${f}`));
+    }
+
+    if (vocabCreated.length === 0 && vocabUpdated.length === 0) {
+        console.log('✅ All vocabulary files up to date');
     }
 
     console.log('\n=== TRANSLATE COMPLETE ===\n');
