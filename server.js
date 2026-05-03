@@ -53,8 +53,13 @@ async function runLint() {
     const files = fs.readdirSync(TRANSCRIPTS_DIR);
     const transcriptFiles = files.filter(f => {
         const ext = path.extname(f).toLowerCase();
-        return (ext === '.md' || ext === '.txt') && !f.includes('_translation');
+        return (ext === '.md' || ext === '.txt') && !f.includes('_translation') && !f.includes('_vocab');
     });
+    
+    // Get all related files
+    const allFiles = files.filter(f => f.endsWith('.md') || f.endsWith('.json'));
+    const vocabFiles = allFiles.filter(f => f.includes('_vocab.json'));
+    const translationFiles = allFiles.filter(f => f.includes('_translation.md'));
     
     // Load exclusion lists
     let excludedWords = new Set();
@@ -84,13 +89,48 @@ async function runLint() {
     
     console.log(`Total exclusion list: ${excludedWords.size} words\n`);
     
-    // Check each transcript
+    // Data collection for reporting
     const checkedVideos = [];
     const cleanedVocabFiles = [];
+    const incompleteFrontmatter = [];
+    const orphanedFiles = [];
+    const emptyTranslations = [];
     
+    // Check for orphaned files (vocab or translation without original transcript)
+    const transcriptBaseNames = transcriptFiles.map(f => f.replace(/\.md$/, '').replace(/\.txt$/, ''));
+    
+    for (const vocabFile of vocabFiles) {
+        const baseName = vocabFile.replace('_vocab.json', '');
+        if (!transcriptBaseNames.includes(baseName)) {
+            orphanedFiles.push({ type: 'vocabulary', filename: vocabFile });
+        }
+    }
+    
+    for (const transFile of translationFiles) {
+        const baseName = transFile.replace('_translation.md', '');
+        if (!transcriptBaseNames.includes(baseName)) {
+            orphanedFiles.push({ type: 'translation', filename: transFile });
+        }
+    }
+    
+    // Check each transcript
     for (const filename of transcriptFiles) {
         const filepath = path.join(TRANSCRIPTS_DIR, filename);
         const content = fs.readFileSync(filepath, 'utf-8');
+        
+        // Check frontmatter completeness
+        const frontmatterMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
+        if (!frontmatterMatch) {
+            incompleteFrontmatter.push({ filename, missing: ['entire frontmatter'] });
+        } else {
+            const frontmatter = frontmatterMatch[1];
+            const missing = [];
+            if (!frontmatter.match(/^title:\s*/m)) missing.push('title');
+            if (!frontmatter.match(/^source:\s*/m)) missing.push('source');
+            if (missing.length > 0) {
+                incompleteFrontmatter.push({ filename, missing });
+            }
+        }
         
         // Extract video ID
         const sourceMatch = content.match(/source:\s*"([^"]+)"/);
@@ -146,11 +186,27 @@ async function runLint() {
                 console.log(`   ⚠️  Error processing vocab: ${e.message}`);
             }
         }
+        
+        // Check for empty translations
+        const translationPath = path.join(TRANSCRIPTS_DIR, `${videoId}_translation.md`);
+        if (fs.existsSync(translationPath)) {
+            try {
+                const transContent = fs.readFileSync(translationPath, 'utf-8');
+                // Check if translation has actual content beyond placeholders
+                const hasContent = transContent.match(/\*\*\d{1,2}:\d{2}\*\*\s*[·•]\s*(?!\[?TRANSLATION NEEDED\]?|<!--).*\w+/);
+                if (!hasContent) {
+                    emptyTranslations.push({ filename: `${videoId}_translation.md`, videoId });
+                }
+            } catch (e) {
+                console.log(`   ⚠️  Error checking translation: ${e.message}`);
+            }
+        }
     }
     
     // Report
     console.log('\n=== LINT REPORT ===\n');
     
+    // Video availability
     const unavailableVideos = checkedVideos.filter(v => v.status === 'UNAVAILABLE');
     if (unavailableVideos.length > 0) {
         console.log(`❌ ${unavailableVideos.length} video(s) not available on YouTube:`);
@@ -161,6 +217,37 @@ async function runLint() {
     
     console.log('');
     
+    // Frontmatter issues
+    if (incompleteFrontmatter.length > 0) {
+        console.log(`⚠️  ${incompleteFrontmatter.length} transcript(s) with incomplete frontmatter:`);
+        incompleteFrontmatter.forEach(item => console.log(`   - ${item.filename}: missing ${item.missing.join(', ')}`));
+    } else {
+        console.log('✅ All transcripts have complete frontmatter');
+    }
+    
+    console.log('');
+    
+    // Orphaned files
+    if (orphanedFiles.length > 0) {
+        console.log(`🗑️  ${orphanedFiles.length} orphaned file(s) found:`);
+        orphanedFiles.forEach(item => console.log(`   - ${item.filename} (${item.type})`));
+    } else {
+        console.log('✅ No orphaned files');
+    }
+    
+    console.log('');
+    
+    // Empty translations
+    if (emptyTranslations.length > 0) {
+        console.log(`📝 ${emptyTranslations.length} translation(s) need content:`);
+        emptyTranslations.forEach(item => console.log(`   - ${item.filename}`));
+    } else {
+        console.log('✅ All translations have content');
+    }
+    
+    console.log('');
+    
+    // Vocabulary cleanup
     if (cleanedVocabFiles.length > 0) {
         console.log(`🧹 Cleaned ${cleanedVocabFiles.length} vocabulary file(s):`);
         cleanedVocabFiles.forEach(v => console.log(`   - ${v.filename}: removed ${v.removed}/${v.original} words`));

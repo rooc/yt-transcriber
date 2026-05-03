@@ -44,6 +44,16 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 
 For translation, create `VIDEO_ID_translation.md` with English text.
 
-## Lint
+## Commands
 
-Run `translate` command to auto-generate missing translations and vocabulary.
+### Translate
+Run `node server.js translate` to auto-generate missing translations and vocabulary files.
+
+### Lint
+Run `node server.js lint` to check and clean up transcripts:
+
+- **Video availability** - Checks if videos still exist on YouTube
+- **Frontmatter validation** - Ensures title and source fields are present
+- **Orphaned files** - Finds vocab/translation files without matching transcripts
+- **Empty translations** - Identifies translation files that need actual content
+- **Vocabulary cleanup** - Removes A1-A2 level words from vocab files
