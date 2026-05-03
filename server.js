@@ -23,30 +23,6 @@ if (process.argv.includes('lint')) {
     process.exit(0);
 }
 
-async function checkVideoAvailability(videoId) {
-    return new Promise((resolve) => {
-        const options = {
-            hostname: 'www.youtube.com',
-            path: `/watch?v=${videoId}`,
-            method: 'HEAD',
-            timeout: 5000
-        };
-        
-        const req = https.request(options, (res) => {
-            // 200 = available, 404 = not found, 302/301 = redirect (usually available)
-            resolve(res.statusCode === 200 || res.statusCode === 301 || res.statusCode === 302);
-        });
-        
-        req.on('error', () => resolve(false));
-        req.on('timeout', () => {
-            req.destroy();
-            resolve(false);
-        });
-        
-        req.end();
-    });
-}
-
 async function runLint() {
     console.log('\n=== LINT: Checking transcripts ===\n');
     
@@ -90,7 +66,6 @@ async function runLint() {
     console.log(`Total exclusion list: ${excludedWords.size} words\n`);
     
     // Data collection for reporting
-    const checkedVideos = [];
     const cleanedVocabFiles = [];
     const incompleteFrontmatter = [];
     const orphanedFiles = [];
@@ -146,18 +121,7 @@ async function runLint() {
         }
         
         const videoId = videoIdMatch[1];
-        
-        // Check video availability
-        process.stdout.write(`Checking ${filename}... `);
-        const isAvailable = await checkVideoAvailability(videoId);
-        
-        if (!isAvailable) {
-            console.log('❌ VIDEO NOT AVAILABLE');
-            checkedVideos.push({ filename, videoId, status: 'UNAVAILABLE' });
-        } else {
-            console.log('✅ Available');
-            checkedVideos.push({ filename, videoId, status: 'available' });
-        }
+        console.log(`Processing ${filename}...`);
         
         // Check vocabulary file
         const vocabPath = path.join(TRANSCRIPTS_DIR, `${videoId}_vocab.json`);
@@ -205,17 +169,6 @@ async function runLint() {
     
     // Report
     console.log('\n=== LINT REPORT ===\n');
-    
-    // Video availability
-    const unavailableVideos = checkedVideos.filter(v => v.status === 'UNAVAILABLE');
-    if (unavailableVideos.length > 0) {
-        console.log(`❌ ${unavailableVideos.length} video(s) not available on YouTube:`);
-        unavailableVideos.forEach(v => console.log(`   - ${v.filename} (${v.videoId})`));
-    } else {
-        console.log('✅ All videos are available on YouTube');
-    }
-    
-    console.log('');
     
     // Frontmatter issues
     if (incompleteFrontmatter.length > 0) {
