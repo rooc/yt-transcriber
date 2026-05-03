@@ -25,6 +25,8 @@ Open http://localhost:7070
 | `←` | Rewind 10s |
 | `S` | Sync video to transcript |
 | `D` | Toggle dual translation |
+| `F` | Toggle fullscreen mode |
+| `L` | Mark video as learned |
 
 ## Adding Transcripts
 

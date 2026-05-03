@@ -58,6 +58,71 @@ body {
 	gap: 2rem;
 }
 
+/* Fullscreen mode */
+body.fullscreen {
+	padding: 0;
+}
+
+body.fullscreen .header-sidebar,
+body.fullscreen .header-main,
+body.fullscreen .sidebar {
+	display: none;
+}
+
+body.fullscreen .container {
+	max-width: 100vw;
+	grid-template-columns: 1fr;
+	gap: 0;
+	height: 100vh;
+}
+
+body.fullscreen .main {
+	height: 100vh;
+	justify-content: center;
+}
+
+body.fullscreen .video-wrapper {
+	flex: 1;
+	padding-bottom: 0;
+	min-height: 50vh;
+}
+
+body.fullscreen .transcript-container {
+	min-height: 20vh;
+}
+
+/* Floating controls for fullscreen */
+.fullscreen-controls {
+	position: fixed;
+	top: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	background: var(--bg-surface);
+	padding: 0.75rem 1rem;
+	border-radius: var(--radius-md);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+	z-index: 1000;
+	gap: 0.5rem;
+}
+
+body.fullscreen .fullscreen-controls {
+	display: flex;
+}
+
+.fullscreen-controls button {
+	background: var(--bg-hover);
+	padding: 0.5rem 0.75rem;
+}
+
+.fullscreen-controls button:hover {
+	background: var(--bg-hover-alt);
+}
+
+.fullscreen-controls button.active {
+	background: var(--brand);
+}
+
 .sidebar {
 	display: flex;
 	flex-direction: column;
@@ -257,6 +322,7 @@ button:disabled {
 	display: flex;
 	gap: 0.625rem;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .controls button {
@@ -321,3 +387,51 @@ button:disabled {
 	border: 1px solid var(--border);
 	box-shadow: 0 2px 8px var(--tooltip-shadow);
 }
+
+/* Learned transcripts panel */
+.transcript-tag.learned {
+	opacity: 0.6;
+	background: var(--bg-trans);
+	border-color: var(--border);
+}
+
+.transcript-tag.learned:hover {
+	opacity: 0.8;
+}
+
+.collapsible-header {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	user-select: none;
+}
+
+.collapsible-header:hover {
+	color: var(--text-primary);
+}
+
+.collapsible-content {
+	overflow: hidden;
+	transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+	max-height: 2000px;
+	opacity: 1;
+}
+
+.collapsible-content.collapsed {
+	max-height: 0;
+	opacity: 0;
+}
+
+#learnedTranscripts h3 {
+	margin-bottom: 0;
+}
+
+#learnedTranscripts .collapsible-content:not(.collapsed) {
+	margin-top: 0.625rem;
+}
+
+button.active {
+	background: var(--text-accent);
+}
+

@@ -37,28 +37,42 @@
 					<div id="transcriptTags"></div>
 				</div>
 
+				<div class="panel" id="learnedTranscripts">
+					<h3 class="collapsible-header" onclick="toggleLearnedPanel()">
+						<span class="material-icons" id="learnedToggleIcon">expand_more</span>
+						Learned transcripts
+					</h3>
+					<div id="learnedTags" class="collapsible-content collapsed"></div>
+				</div>
+
 				<div class="controls">
-					<button onclick="rewindBack()" title="Go to start of current line">
+					<button onclick="rewindBack()" title="Go to start of current line (←)">
 						<span class="material-icons">replay_10</span>
 					</button>
-					<button onclick="rewindForward()" title="Go to start of next line">
+					<button onclick="rewindForward()" title="Go to start of next line (→)">
 						<span class="material-icons">forward_10</span>
 					</button>
-					<button id="pauseBtn" onclick="togglePause()" title="Pause/Play">
+					<button id="pauseBtn" onclick="togglePause()" title="Pause/Play (Space)">
 						<span class="material-icons">pause</span>
 					</button>
-					<button onclick="syncVideo()" title="Sync video to transcript">
+					<button onclick="syncVideo()" title="Sync video to transcript (S)">
 						<span class="material-icons">sync</span>
 					</button>
 					<button
 						id="dualBtn"
 						onclick="toggleDual()"
-						title="Toggle dual translation"
+						title="Toggle dual translation (D)"
 					>
 						<span class="material-icons">view_comfy</span>
 					</button>
 					<button onclick="restartVideo()" title="Restart video">
 						<span class="material-icons">skip_previous</span>
+					</button>
+					<button onclick="toggleFullscreen()" title="Toggle fullscreen (F)">
+						<span class="material-icons">fullscreen</span>
+					</button>
+					<button id="learnBtn" onclick="toggleLearned()" title="Mark as learned (L)">
+						<span class="material-icons">school</span>
 					</button>
 				</div>
 
@@ -74,13 +88,41 @@
 					<div class="loading">Select a transcript to start</div>
 				</div>
 
-				<div class="progress-bar">
-					<div class="progress-fill" id="progressFill"></div>
-				</div>
+			<div class="progress-bar">
+				<div class="progress-fill" id="progressFill"></div>
 			</div>
 		</div>
+	</div>
 
-		<script src="https://www.youtube.com/iframe_api"></script>
+	<!-- Floating controls for fullscreen mode -->
+	<div class="fullscreen-controls">
+		<button onclick="rewindBack()" title="Go to start of current line (←)">
+			<span class="material-icons">replay_10</span>
+		</button>
+		<button onclick="rewindForward()" title="Go to start of next line (→)">
+			<span class="material-icons">forward_10</span>
+		</button>
+		<button id="fsPauseBtn" onclick="togglePause()" title="Pause/Play (Space)">
+			<span class="material-icons">pause</span>
+		</button>
+		<button onclick="syncVideo()" title="Sync video to transcript (S)">
+			<span class="material-icons">sync</span>
+		</button>
+		<button id="fsDualBtn" onclick="toggleDual()" title="Toggle dual translation (D)">
+			<span class="material-icons">view_comfy</span>
+		</button>
+		<button onclick="restartVideo()" title="Restart video">
+			<span class="material-icons">skip_previous</span>
+		</button>
+		<button onclick="toggleFullscreen()" title="Exit fullscreen (F)">
+			<span class="material-icons">fullscreen_exit</span>
+		</button>
+		<button id="fsLearnBtn" onclick="toggleLearned()" title="Mark as learned (L)">
+			<span class="material-icons">school</span>
+		</button>
+	</div>
+
+	<script src="https://www.youtube.com/iframe_api"></script>
 		<script>
 			let transcriptData = [];
 			let translationData = [];
@@ -91,15 +133,22 @@
 			let totalDuration = 0;
 			let isPaused = false;
 			let isDualMode = false;
+			let isFullscreen = false;
 			let player = null;
 			let syncInterval = null;
-		let vocabData = {};
-		let currentVideoId = null;
-		let lastRewindTime = 0;
+			let vocabData = {};
+			let currentVideoId = null;
+			let lastRewindTime = 0;
+			let learnedVideos = JSON.parse(localStorage.getItem("learnedVideos") || "[]");
+			let isLearnedPanelCollapsed = JSON.parse(localStorage.getItem("learnedPanelCollapsed") || "true");
 
 			const statusEl = document.getElementById("status");
 			const pauseBtn = document.getElementById("pauseBtn");
 			const dualBtn = document.getElementById("dualBtn");
+			const fsPauseBtn = document.getElementById("fsPauseBtn");
+			const fsDualBtn = document.getElementById("fsDualBtn");
+			const learnBtn = document.getElementById("learnBtn");
+			const fsLearnBtn = document.getElementById("fsLearnBtn");
 			const transcriptContainer = document.getElementById("transcript");
 
 			function setStatus(msg) {
@@ -202,13 +251,19 @@
 				isPaused = paused;
 
 				const icon = pauseBtn.querySelector(".material-icons");
+				const fsIcon = fsPauseBtn.querySelector(".material-icons");
+				
 				if (isPaused) {
-					icon.textContent = "play_arrow";
+					if (icon) icon.textContent = "play_arrow";
+					if (fsIcon) fsIcon.textContent = "play_arrow";
 					pauseBtn.classList.add("active");
+					fsPauseBtn.classList.add("active");
 					if (player) player.pauseVideo();
 				} else {
-					icon.textContent = "pause";
+					if (icon) icon.textContent = "pause";
+					if (fsIcon) fsIcon.textContent = "pause";
 					pauseBtn.classList.remove("active");
+					fsPauseBtn.classList.remove("active");
 					if (player) player.playVideo();
 				}
 
@@ -218,9 +273,59 @@
 			function toggleDual() {
 				isDualMode = !isDualMode;
 				dualBtn.classList.toggle("active", isDualMode);
+				fsDualBtn.classList.toggle("active", isDualMode);
 				if (activeIndex >= 0) {
 					renderTranscriptLine();
 				}
+			}
+
+			function toggleFullscreen() {
+				isFullscreen = !isFullscreen;
+				document.body.classList.toggle("fullscreen", isFullscreen);
+				
+				// Sync button states
+				const fsPauseIcon = fsPauseBtn.querySelector(".material-icons");
+				const pauseIcon = pauseBtn.querySelector(".material-icons");
+				if (fsPauseIcon && pauseIcon) {
+					fsPauseIcon.textContent = pauseIcon.textContent;
+				}
+				fsPauseBtn.classList.toggle("active", isPaused);
+				fsDualBtn.classList.toggle("active", isDualMode);
+				updateLearnedButtonState();
+			}
+
+			function toggleLearned() {
+				if (!currentVideoId) return;
+				
+				const index = learnedVideos.indexOf(currentVideoId);
+				if (index > -1) {
+					learnedVideos.splice(index, 1);
+				} else {
+					learnedVideos.push(currentVideoId);
+				}
+				
+				localStorage.setItem("learnedVideos", JSON.stringify(learnedVideos));
+				updateLearnedButtonState();
+				loadAvailableTranscripts();
+			}
+
+			function updateLearnedButtonState() {
+				const isLearned = learnedVideos.includes(currentVideoId);
+				learnBtn.classList.toggle("active", isLearned);
+				fsLearnBtn.classList.toggle("active", isLearned);
+				learnBtn.title = isLearned ? "Mark as not learned (L)" : "Mark as learned (L)";
+				fsLearnBtn.title = isLearned ? "Mark as not learned (L)" : "Mark as learned (L)";
+			}
+
+			function toggleLearnedPanel() {
+				isLearnedPanelCollapsed = !isLearnedPanelCollapsed;
+				localStorage.setItem("learnedPanelCollapsed", JSON.stringify(isLearnedPanelCollapsed));
+				
+				const content = document.getElementById("learnedTags");
+				const icon = document.getElementById("learnedToggleIcon");
+				
+				content.classList.toggle("collapsed", isLearnedPanelCollapsed);
+				icon.textContent = isLearnedPanelCollapsed ? "chevron_right" : "expand_more";
 			}
 
 			function startSync() {
@@ -297,12 +402,20 @@
 				try {
 					const response = await fetch("/api/transcripts");
 					availableTranscripts = await response.json();
+					
 					const tagsContainer = document.getElementById("transcriptTags");
-					if (availableTranscripts.length === 0) {
+					const learnedContainer = document.getElementById("learnedTags");
+					
+					// Separate learned and unlearned
+					const unlearned = availableTranscripts.filter(t => !learnedVideos.includes(t.videoId));
+					const learned = availableTranscripts.filter(t => learnedVideos.includes(t.videoId));
+					
+					// Render unlearned transcripts
+					if (unlearned.length === 0) {
 						tagsContainer.innerHTML =
-							'<span style="color: #666">No local transcripts found</span>';
+							'<span style="color: #666">No transcripts to learn</span>';
 					} else {
-						tagsContainer.innerHTML = availableTranscripts
+						tagsContainer.innerHTML = unlearned
 							.map((t) => {
 								const title = t.title || t.videoId;
 								const icon = t.hasTranslation
@@ -312,6 +425,28 @@
 							})
 							.join("");
 					}
+					
+					// Render learned transcripts
+					if (learned.length === 0) {
+						learnedContainer.innerHTML =
+							'<span style="color: #666; font-size: 0.85rem;">No learned transcripts yet</span>';
+					} else {
+						learnedContainer.innerHTML = learned
+							.map((t) => {
+								const title = t.title || t.videoId;
+								const icon = t.hasTranslation
+									? '<span class="material-icons icon-sm">translate</span>'
+									: '<span class="material-icons icon-sm warning" title="No translation">error_outline</span>';
+								return `<span class="transcript-tag learned" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${title}">${title} ${icon}</span>`;
+							})
+							.join("");
+					}
+					
+					// Initialize learned panel state
+					const content = document.getElementById("learnedTags");
+					const icon = document.getElementById("learnedToggleIcon");
+					content.classList.toggle("collapsed", isLearnedPanelCollapsed);
+					icon.textContent = isLearnedPanelCollapsed ? "chevron_right" : "expand_more";
 				} catch (e) {
 					console.error("Failed to load transcript list:", e);
 				}
@@ -392,6 +527,7 @@
 				});
 				const activeTag = document.getElementById(`tag-${videoId}`);
 				if (activeTag) activeTag.classList.add("active");
+				updateLearnedButtonState();
 				loadVideo(videoId);
 			}
 
@@ -489,6 +625,18 @@
 				if (e.code === "KeyD" && !e.ctrlKey && !e.metaKey) {
 					e.preventDefault();
 					toggleDual();
+				}
+
+				// F key = toggle fullscreen
+				if (e.code === "KeyF" && !e.ctrlKey && !e.metaKey) {
+					e.preventDefault();
+					toggleFullscreen();
+				}
+
+				// L key = toggle learned
+				if (e.code === "KeyL" && !e.ctrlKey && !e.metaKey) {
+					e.preventDefault();
+					toggleLearned();
 				}
 			});
 		</script>
