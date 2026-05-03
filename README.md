@@ -12,11 +12,10 @@ A YouTube video transcript viewer with bilingual support.
 ## Setup
 
 ```bash
-npm install  # or just use Node.js directly
 node server.js
 ```
 
-Open http://localhost:8000
+Open http://localhost:7070
 
 ## Keyboard Shortcuts
 

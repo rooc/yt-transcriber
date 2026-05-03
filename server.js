@@ -11,6 +11,178 @@ if (!fs.existsSync(TRANSCRIPTS_DIR)) {
     fs.mkdirSync(TRANSCRIPTS_DIR, { recursive: true });
 }
 
+// === LINT COMMAND ===
+if (process.argv.includes('lint')) {
+    runLint();
+    process.exit(0);
+}
+
+function runLint() {
+    console.log('\n=== LINT: Processing transcripts ===\n');
+    
+    const cleanedFiles = [];
+    const translationsCreated = [];
+    const vocabCreated = [];
+    
+    // Step 1 & 2: Clean transcripts and create missing translations
+    const files = fs.readdirSync(TRANSCRIPTS_DIR);
+    const transcriptFiles = files.filter(f => {
+        const ext = path.extname(f).toLowerCase();
+        return (ext === '.md' || ext === '.txt') && !f.includes('_translation');
+    });
+    
+    transcriptFiles.forEach(filename => {
+        const filepath = path.join(TRANSCRIPTS_DIR, filename);
+        let content = fs.readFileSync(filepath, 'utf-8');
+        
+        // Step 1: Clean the file
+        const originalContent = content;
+        
+        // Remove markdown headings
+        content = content.replace(/^#+\s+.+$/gm, '');
+        
+        // Remove section dividers like "---" or "___" (but keep frontmatter ---)
+        const lines = content.split('\n');
+        let inFrontmatter = false;
+        let frontmatterEnded = false;
+        const cleanedLines = [];
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            
+            // Handle frontmatter
+            if (line.trim() === '---' && !frontmatterEnded) {
+                inFrontmatter = !inFrontmatter;
+                if (!inFrontmatter) frontmatterEnded = true;
+                cleanedLines.push(line);
+                continue;
+            }
+            
+            // Skip section headers like "## Transcript"
+            if (/^##?\s+\w+/i.test(line)) continue;
+            
+            // Skip section dividers
+            if (/^[-=]{3,}$/.test(line.trim())) continue;
+            
+            // Keep timestamp lines and non-empty lines
+            if (/\*\*\d{1,2}:\d{2}/.test(line) || line.trim()) {
+                cleanedLines.push(line);
+            }
+        }
+        
+        // Remove consecutive empty lines
+        const finalContent = cleanedLines.join('\n').replace(/\n{3,}/g, '\n\n');
+        
+        if (finalContent !== originalContent) {
+            fs.writeFileSync(filepath, finalContent);
+            cleanedFiles.push(filename);
+            // Re-read the cleaned content
+            content = finalContent;
+        }
+        
+        // Extract video ID from frontmatter
+        const sourceMatch = content.match(/source:\s*"([^"]+)"/);
+        if (!sourceMatch) {
+            console.log(`  ⚠️  ${filename}: No source URL found, skipping`);
+            return;
+        }
+        
+        const videoIdMatch = sourceMatch[1].match(/v=([a-zA-Z0-9_-]{11})/);
+        if (!videoIdMatch) {
+            console.log(`  ⚠️  ${filename}: Could not extract video ID, skipping`);
+            return;
+        }
+        
+        const videoId = videoIdMatch[1];
+        
+        // Step 2: Check for missing translation
+        const translationPath = path.join(TRANSCRIPTS_DIR, `${videoId}_translation.md`);
+        if (!fs.existsSync(translationPath)) {
+            console.log(`  📝 ${filename}: Translation missing - manual creation needed`);
+            // Create placeholder translation file with instructions
+            const titleMatch = content.match(/^title:\s*"([^"]+)"/m);
+            const originalTitle = titleMatch ? titleMatch[1] : filename;
+            
+            const placeholderContent = `---
+title: "${originalTitle} (English Translation)"
+source: "${sourceMatch[1]}"
+---
+
+<!-- TRANSLATION NEEDED: Please translate the following content -->
+<!-- Original transcript located at: ${filename} -->
+
+${content.split('---').slice(2).join('---').trim()}
+`;
+            fs.writeFileSync(translationPath, placeholderContent);
+            translationsCreated.push(`${videoId}_translation.md`);
+        }
+        
+        // Step 3: Check for missing vocabulary
+        const vocabPath = path.join(TRANSCRIPTS_DIR, `${videoId}_vocab.json`);
+        if (!fs.existsSync(vocabPath)) {
+            console.log(`  📚 ${filename}: Creating vocabulary file...`);
+            
+            // Extract Spanish text from transcript lines
+            const vocab = {};
+            const transcriptLines = content.match(/\*\*\d{1,2}:\d{2}[^·]*·\s*(.+)/g) || [];
+            
+            transcriptLines.forEach(line => {
+                const text = line.replace(/^\*\*[^·]+·\s*/, '');
+                // Extract words (skip common words)
+                const commonWords = new Set(['el', 'la', 'de', 'en', 'es', 'son', 'muy', 'para', 'por', 'con', 'que', 'como', 'pero', 'una', 'uno', 'los', 'las', 'del', 'al', 'se', 'su', 'lo', 'le', 'me', 'te', 'nos', 'os', 'y', 'o', 'a', 'un', 'sus', 'este', 'esta', 'estos', 'estas', 'ese', 'esa', 'eso', 'esos', 'esas', 'aquel', 'aquella', 'aquello', 'aquellos', 'aquellas', 'ser', 'estar', 'tener', 'hacer', 'poder', 'decir', 'ir', 'ver', 'dar', 'saber', 'querer', 'llegar', 'pasar', 'deber', 'poner', 'parecer', 'quedar', 'creer', 'hablar', 'llevar', 'dejar', 'seguir', 'encontrar', 'llamar', 'venir', 'pensar', 'salir', 'volver', 'tomar', 'conocer', 'vivir', 'sentir', 'tratar', 'mirar', 'contar', 'empezar', 'esperar', 'buscar', 'existir', 'entrar', 'trabajar', 'escribir', 'perder', 'producir', 'ocurrir', 'entender', 'tomar', 'pedir', 'morir', 'lograr', 'estudiar']);
+                
+                // Extract meaningful words (nouns, verbs, adjectives)
+                const words = text.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
+                words.forEach(word => {
+                    if (word.length > 3 && !commonWords.has(word)) {
+                        // Add placeholder translation
+                        vocab[word] = '[translation needed]';
+                    }
+                });
+            });
+            
+            // Sort alphabetically
+            const sortedVocab = {};
+            Object.keys(vocab).sort().forEach(key => {
+                sortedVocab[key] = vocab[key];
+            });
+            
+            fs.writeFileSync(vocabPath, JSON.stringify(sortedVocab, null, 2));
+            vocabCreated.push(`${videoId}_vocab.json`);
+        }
+    });
+    
+    // Report
+    console.log('\n=== LINT REPORT ===\n');
+    
+    if (cleanedFiles.length > 0) {
+        console.log(`✅ Cleaned ${cleanedFiles.length} transcript(s):`);
+        cleanedFiles.forEach(f => console.log(`   - ${f}`));
+    } else {
+        console.log('✅ No transcripts needed cleaning');
+    }
+    
+    console.log('');
+    
+    if (translationsCreated.length > 0) {
+        console.log(`📝 Created ${translationsCreated.length} translation placeholder(s):`);
+        translationsCreated.forEach(f => console.log(`   - ${f}`));
+    } else {
+        console.log('✅ All translations exist');
+    }
+    
+    console.log('');
+    
+    if (vocabCreated.length > 0) {
+        console.log(`📚 Created ${vocabCreated.length} vocabulary file(s):`);
+        vocabCreated.forEach(f => console.log(`   - ${f}`));
+    } else {
+        console.log('✅ All vocabulary files exist');
+    }
+    
+    console.log('\n=== LINT COMPLETE ===\n');
+}
+
 function parseTranscriptFile(content, filename) {
     const ext = path.extname(filename).toLowerCase();
     const lines = [];
@@ -85,11 +257,7 @@ function getTranscriptForVideo(videoId, type = 'transcript') {
     return null;
 }
 
-function extractVideoId(filename) {
-    // Try to extract 11-char YouTube video ID from filename
-    const match = filename.match(/([a-zA-Z0-9_-]{11})/);
-    return match ? match[1] : filename;
-}
+
 
 function getVideoIdFromFile(content) {
     // Try to extract from frontmatter URL
@@ -124,7 +292,7 @@ const server = http.createServer((req, res) => {
         const videoId = url.searchParams.get('v');
         
         if (!videoId) {
-            res.writeHead(400);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Video ID required' }));
             return;
         }
@@ -134,7 +302,7 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, { 'Content-Type': 'application/xml' });
             res.end(convertToXML(translation));
         } else {
-            res.writeHead(404);
+            res.writeHead(404, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'No translation available' }));
         }
         return;
@@ -145,7 +313,7 @@ const server = http.createServer((req, res) => {
         const videoId = url.searchParams.get('v');
         
         if (!videoId) {
-            res.writeHead(400);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Video ID required' }));
             return;
         }
@@ -179,18 +347,18 @@ const server = http.createServer((req, res) => {
                                 res.writeHead(200, { 'Content-Type': 'application/xml' });
                                 res.end(data2);
                             } else {
-                                res.writeHead(404);
+                                res.writeHead(404, { 'Content-Type': 'application/json' });
                                 res.end(JSON.stringify({ error: 'No transcript available' }));
                             }
                         });
                     }).on('error', (e) => {
-                        res.writeHead(500);
+                        res.writeHead(500, { 'Content-Type': 'application/json' });
                         res.end(JSON.stringify({ error: e.message }));
                     });
                 }
             });
         }).on('error', (e) => {
-            res.writeHead(500);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: e.message }));
         });
         return;
@@ -201,7 +369,7 @@ const server = http.createServer((req, res) => {
         const videoId = url.searchParams.get('v');
         
         if (!videoId) {
-            res.writeHead(400);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Video ID required' }));
             return;
         }
@@ -224,9 +392,11 @@ const server = http.createServer((req, res) => {
         const grouped = {};
         
         files.forEach(f => {
+            // Skip vocab files - only process transcripts and translations
+            if (f.includes('_vocab.json')) return;
             const content = fs.readFileSync(path.join(TRANSCRIPTS_DIR, f), 'utf-8');
             const parsed = parseTranscriptFile(content, f);
-            const videoId = getVideoIdFromFile(content) || extractVideoId(f);
+            const videoId = getVideoIdFromFile(content) || f;
             const isTranslation = f.includes('translation') || f.includes('translate');
             
             // Extract title from frontmatter
