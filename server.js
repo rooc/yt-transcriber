@@ -17,6 +17,160 @@ if (process.argv.includes('translate')) {
     process.exit(0);
 }
 
+// === LINT COMMAND ===
+if (process.argv.includes('lint')) {
+    runLint();
+    process.exit(0);
+}
+
+async function checkVideoAvailability(videoId) {
+    return new Promise((resolve) => {
+        const options = {
+            hostname: 'www.youtube.com',
+            path: `/watch?v=${videoId}`,
+            method: 'HEAD',
+            timeout: 5000
+        };
+        
+        const req = https.request(options, (res) => {
+            // 200 = available, 404 = not found, 302/301 = redirect (usually available)
+            resolve(res.statusCode === 200 || res.statusCode === 301 || res.statusCode === 302);
+        });
+        
+        req.on('error', () => resolve(false));
+        req.on('timeout', () => {
+            req.destroy();
+            resolve(false);
+        });
+        
+        req.end();
+    });
+}
+
+async function runLint() {
+    console.log('\n=== LINT: Checking transcripts ===\n');
+    
+    const files = fs.readdirSync(TRANSCRIPTS_DIR);
+    const transcriptFiles = files.filter(f => {
+        const ext = path.extname(f).toLowerCase();
+        return (ext === '.md' || ext === '.txt') && !f.includes('_translation');
+    });
+    
+    // Load exclusion lists
+    let excludedWords = new Set();
+    
+    const a1a2Path = path.join(__dirname, 'a1-a2.json');
+    if (fs.existsSync(a1a2Path)) {
+        try {
+            const a1a2Data = JSON.parse(fs.readFileSync(a1a2Path, 'utf-8'));
+            (a1a2Data.excludedWords || []).forEach(word => excludedWords.add(word.toLowerCase()));
+            console.log(`Loaded ${excludedWords.size} words from a1-a2.json`);
+        } catch (e) {
+            console.log(`Warning: Could not load a1-a2.json: ${e.message}`);
+        }
+    }
+    
+    const manualPath = path.join(__dirname, 'manual-exclude.json');
+    if (fs.existsSync(manualPath)) {
+        try {
+            const manualData = JSON.parse(fs.readFileSync(manualPath, 'utf-8'));
+            const manualCount = (manualData.excludedWords || []).length;
+            (manualData.excludedWords || []).forEach(word => excludedWords.add(word.toLowerCase()));
+            console.log(`Loaded ${manualCount} words from manual-exclude.json`);
+        } catch (e) {
+            console.log(`Warning: Could not load manual-exclude.json: ${e.message}`);
+        }
+    }
+    
+    console.log(`Total exclusion list: ${excludedWords.size} words\n`);
+    
+    // Check each transcript
+    const checkedVideos = [];
+    const cleanedVocabFiles = [];
+    
+    for (const filename of transcriptFiles) {
+        const filepath = path.join(TRANSCRIPTS_DIR, filename);
+        const content = fs.readFileSync(filepath, 'utf-8');
+        
+        // Extract video ID
+        const sourceMatch = content.match(/source:\s*"([^"]+)"/);
+        if (!sourceMatch) {
+            console.log(`⚠️  ${filename}: No source URL found`);
+            continue;
+        }
+        
+        const videoIdMatch = sourceMatch[1].match(/v=([a-zA-Z0-9_-]{11})/);
+        if (!videoIdMatch) {
+            console.log(`⚠️  ${filename}: Could not extract video ID`);
+            continue;
+        }
+        
+        const videoId = videoIdMatch[1];
+        
+        // Check video availability
+        process.stdout.write(`Checking ${filename}... `);
+        const isAvailable = await checkVideoAvailability(videoId);
+        
+        if (!isAvailable) {
+            console.log('❌ VIDEO NOT AVAILABLE');
+            checkedVideos.push({ filename, videoId, status: 'UNAVAILABLE' });
+        } else {
+            console.log('✅ Available');
+            checkedVideos.push({ filename, videoId, status: 'available' });
+        }
+        
+        // Check vocabulary file
+        const vocabPath = path.join(TRANSCRIPTS_DIR, `${videoId}_vocab.json`);
+        if (fs.existsSync(vocabPath)) {
+            try {
+                const vocabData = JSON.parse(fs.readFileSync(vocabPath, 'utf-8'));
+                const originalCount = Object.keys(vocabData).length;
+                let removedCount = 0;
+                
+                // Filter out excluded words
+                const filteredVocab = {};
+                for (const [word, translation] of Object.entries(vocabData)) {
+                    if (!excludedWords.has(word.toLowerCase())) {
+                        filteredVocab[word] = translation;
+                    } else {
+                        removedCount++;
+                    }
+                }
+                
+                if (removedCount > 0) {
+                    fs.writeFileSync(vocabPath, JSON.stringify(filteredVocab, null, 2));
+                    console.log(`   🧹 Removed ${removedCount} A1-A2 words from vocab`);
+                    cleanedVocabFiles.push({ filename: `${videoId}_vocab.json`, removed: removedCount, original: originalCount });
+                }
+            } catch (e) {
+                console.log(`   ⚠️  Error processing vocab: ${e.message}`);
+            }
+        }
+    }
+    
+    // Report
+    console.log('\n=== LINT REPORT ===\n');
+    
+    const unavailableVideos = checkedVideos.filter(v => v.status === 'UNAVAILABLE');
+    if (unavailableVideos.length > 0) {
+        console.log(`❌ ${unavailableVideos.length} video(s) not available on YouTube:`);
+        unavailableVideos.forEach(v => console.log(`   - ${v.filename} (${v.videoId})`));
+    } else {
+        console.log('✅ All videos are available on YouTube');
+    }
+    
+    console.log('');
+    
+    if (cleanedVocabFiles.length > 0) {
+        console.log(`🧹 Cleaned ${cleanedVocabFiles.length} vocabulary file(s):`);
+        cleanedVocabFiles.forEach(v => console.log(`   - ${v.filename}: removed ${v.removed}/${v.original} words`));
+    } else {
+        console.log('✅ No vocabulary files needed cleaning');
+    }
+    
+    console.log('\n=== LINT COMPLETE ===\n');
+}
+
 function runTranslate() {
     console.log('\n=== TRANSLATE: Processing transcripts ===\n');
     
