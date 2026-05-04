@@ -49,7 +49,7 @@ Open http://localhost:7070
 
 ### Method 1: Obsidian Clipper (Recommended)
 
-1. **Install** [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian-web-clipper) extension
+1. **Install** Obsidian Web Clipper extension: [Chrome](https://chromewebstore.google.com/detail/obsidian-web-clipper) | [Firefox](https://addons.mozilla.org/en-US/firefox/addon/obsidian-web-clipper/)
 
 2. **Clip YouTube video**:
    - Open any YouTube video
@@ -79,9 +79,9 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 
 For sentence-by-sentence translation, create `VIDEO_ID_translation.md` with English text.
 
-## AI Translation (NEW)
+## AI Translation
 
-The new workflow uses AI directly via `OPENCODE.md`:
+The workflow uses AI directly via `OPENCODE.md`:
 
 ### Simple Steps:
 
@@ -145,9 +145,6 @@ transcripts/VIDEO_ID.md
 # 3. Watch
 node server.js
 ```
-
-**Total time:** ~2 minutes  
-**Cost:** $0 (included in opencode-go subscription)
 
 ---
 
