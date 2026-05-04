@@ -39,23 +39,44 @@
 
 				<div class="panel" id="learnedTranscripts">
 					<h3 class="collapsible-header" onclick="toggleLearnedPanel()">
-						<span class="material-icons" id="learnedToggleIcon">expand_more</span>
+						<span class="material-icons" id="learnedToggleIcon"
+							>expand_more</span
+						>
 						Learned transcripts
 					</h3>
-					<div id="learnedTags" class="collapsible-content collapsed"></div>
+					<div
+						id="learnedTags"
+						class="collapsible-content collapsed"
+					></div>
 				</div>
 
 				<div class="controls">
-					<button onclick="rewindBack()" title="Go to start of current line (←)">
-						<span class="material-icons">replay_10</span>
-					</button>
-					<button onclick="rewindForward()" title="Go to start of next line (→)">
-						<span class="material-icons">forward_10</span>
-					</button>
-					<button id="pauseBtn" onclick="togglePause()" title="Pause/Play (Space)">
+					<button
+						id="pauseBtn"
+						onclick="togglePause()"
+						title="Pause/Play (Space)"
+					>
 						<span class="material-icons">pause</span>
 					</button>
-					<button onclick="syncVideo()" title="Sync video to transcript (S)">
+					<button
+						onclick="rewindBack()"
+						title="Go to start of current line (←)"
+					>
+						<span class="material-icons">replay_10</span>
+					</button>
+					<button
+						onclick="rewindForward()"
+						title="Go to start of next line (→)"
+					>
+						<span class="material-icons">forward_10</span>
+					</button>
+					<button onclick="restartVideo()" title="Restart video">
+						<span class="material-icons">skip_previous</span>
+					</button>
+					<button
+						onclick="syncVideo()"
+						title="Sync video to transcript (S)"
+					>
 						<span class="material-icons">sync</span>
 					</button>
 					<button
@@ -65,13 +86,17 @@
 					>
 						<span class="material-icons">view_comfy</span>
 					</button>
-					<button onclick="restartVideo()" title="Restart video">
-						<span class="material-icons">skip_previous</span>
-					</button>
-					<button onclick="toggleFullscreen()" title="Toggle fullscreen (F)">
+					<button
+						onclick="toggleFullscreen()"
+						title="Toggle fullscreen (F)"
+					>
 						<span class="material-icons">fullscreen</span>
 					</button>
-					<button id="learnBtn" onclick="toggleLearned()" title="Mark as learned (L)">
+					<button
+						id="learnBtn"
+						onclick="toggleLearned()"
+						title="Mark as learned (L)"
+					>
 						<span class="material-icons">school</span>
 					</button>
 					<button
@@ -110,13 +135,21 @@
 			<button onclick="rewindForward()" title="Go to start of next line (→)">
 				<span class="material-icons">forward_10</span>
 			</button>
-			<button id="fsPauseBtn" onclick="togglePause()" title="Pause/Play (Space)">
+			<button
+				id="fsPauseBtn"
+				onclick="togglePause()"
+				title="Pause/Play (Space)"
+			>
 				<span class="material-icons">pause</span>
 			</button>
 			<button onclick="syncVideo()" title="Sync video to transcript (S)">
 				<span class="material-icons">sync</span>
 			</button>
-			<button id="fsDualBtn" onclick="toggleDual()" title="Toggle dual translation (D)">
+			<button
+				id="fsDualBtn"
+				onclick="toggleDual()"
+				title="Toggle dual translation (D)"
+			>
 				<span class="material-icons">view_comfy</span>
 			</button>
 			<button onclick="restartVideo()" title="Restart video">
@@ -125,7 +158,11 @@
 			<button onclick="toggleFullscreen()" title="Exit fullscreen (F)">
 				<span class="material-icons">fullscreen_exit</span>
 			</button>
-			<button id="fsLearnBtn" onclick="toggleLearned()" title="Mark as learned (L)">
+			<button
+				id="fsLearnBtn"
+				onclick="toggleLearned()"
+				title="Mark as learned (L)"
+			>
 				<span class="material-icons">school</span>
 			</button>
 			<button
