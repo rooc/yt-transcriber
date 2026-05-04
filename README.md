@@ -10,16 +10,20 @@ A YouTube video transcript viewer with bilingual support.
 # 2. Rename file to video ID
 mv transcripts/Video\ Title.md transcripts/VIDEO_ID.md
 
-# 3. Generate everything (clean + translate vocab with AI)
-node server.js translate
+# 3. Generate files (fast, free)
+node server.js translate --free
 
-# 4. Watch!
+# 4. Optional: Get better AI translations
+node server.js vocab-ai
+# → Copy VOCAB_AI_PROMPT.md to AI (ChatGPT, Claude, Qwen3.5 Plus)
+# → Save JSON response
+# → Apply: node server.js vocab-ai-apply response.json
+
+# 5. Watch!
 node server.js
 ```
 
 Open http://localhost:7070
-
-**Want free instead?** `node server.js translate --free`
 
 **Not using opencode-go?** See [FOR_NON_OPENCODE_USERS.md](FOR_NON_OPENCODE_USERS.md)
 
@@ -110,60 +114,59 @@ For sentence-by-sentence translation, create `VIDEO_ID_translation.md` with Engl
 
 ## Commands
 
-### Vocab Auto (Recommended - opencode-go users)
+### Translate (Fast, Free)
 ```bash
-# Step 1: Generate prompt and get instructions
-node server.js vocab-auto
-
-# Step 2: Copy prompt to AI and save response
-opencode run --model "opencode-go/qwen3.5-plus"
-# Paste content from VOCAB_AI_PROMPT.md, save response as ai-response.json
-
-# Step 3: Apply translations automatically
-node server.js vocab-auto-apply ai-response.json
-```
-
-**What it does:**
-- Extracts all untranslated vocabulary from transcripts
-- Generates formatted AI prompt (`VOCAB_AI_PROMPT.md`)
-- Applies AI's JSON response to vocab files
-
-**Cost:** $0 (covered by your $10/month opencode-go subscription)  
-**Time:** ~3-5 minutes total  
-**Quality:** Contextual translations with part-of-speech tags
-
-### Vocab AI (Any AI - Non-opencode users)
-```bash
-# Generate AI prompt
-node server.js vocab-ai
-
-# Copy VOCAB_AI_PROMPT.md to ChatGPT, Claude, Gemini, etc.
-# Save AI's JSON response as: ai-response.json
-
-# Apply translations
-node server.js vocab-ai-apply ai-response.json
-```
-
-**Cost:** $0 (use free tier of ChatGPT/Claude/Gemini) or your existing AI subscription  
-**Quality:** Same as opencode-go (uses same AI models)
-
-### Translate (Default - AI)
-```bash
-# Uses AI (Qwen3.5 Plus) by default
-node server.js translate
-
-# Or use free translate-shell
+# Clean transcripts + generate vocab with translate-shell
 node server.js translate --free
 ```
 
 **What it does:**
 - Cleans transcript markdown
 - Creates translation placeholders (`*_translation.md`)
-- Generates vocabulary with **AI translations** (contextual, with part-of-speech)
-- Use `--free` flag for translate-shell instead
+- Generates vocabulary with translate-shell (literal translations)
 
-**Cost:** $0 (covered by subscription) or Free with `--free` flag  
-**Time:** ~3-5 minutes (AI) or ~1 minute (free)
+**Time:** ~1 minute  
+**Cost:** Free (requires `translate-shell` installed)
+
+---
+
+### Vocab AI (Better Quality - Manual)
+```bash
+# Step 1: Generate AI prompt
+node server.js vocab-ai
+
+# Step 2: Copy VOCAB_AI_PROMPT.md to AI
+# - ChatGPT: https://chat.openai.com
+# - Claude: https://claude.ai
+# - Qwen3.5 Plus: opencode run --model "opencode-go/qwen3.5-plus"
+
+# Step 3: Save AI JSON response as ai-response.json
+
+# Step 4: Apply translations
+node server.js vocab-ai-apply ai-response.json
+```
+
+**What it does:**
+- Generates formatted AI prompt with all words
+- You manually get AI translations (better quality)
+- Applies contextual translations with part-of-speech
+
+**Time:** ~5 minutes (includes manual step)  
+**Cost:** $0 (use free AI tiers or your subscription)
+
+---
+
+### Vocab Auto (Semi-Automated AI)
+```bash
+node server.js vocab-auto
+```
+
+**What it does:**
+- Generates AI prompt
+- Gives instructions for opencode-go users
+
+**Time:** ~5 minutes  
+**Cost:** $0 (opencode-go subscription)
 
 ### Vocab AI (Manual 2-step)
 Run `node server.js vocab-ai` to generate prompt, then `node server.js vocab-ai-apply <file.json>` to apply.
@@ -190,12 +193,12 @@ Run `node server.js vocab` to update vocabulary files only (skip cleaning/transl
 
 ## Translation Methods
 
-| Command | What it does | Quality | Cost |
-|---------|--------------|---------|------|
-| **`translate`** | Clean + AI vocab | ⭐⭐⭐⭐⭐ | $0 |
-| **`translate --free`** | Clean + shell vocab | ⭐⭐⭐ | Free |
-| **`vocab-auto`** | AI vocab only | ⭐⭐⭐⭐⭐ | $0 |
-| **`vocab-ai`** | Generate AI prompt | ⭐⭐⭐⭐⭐ | $0 |
-| **`vocab`** | Shell vocab only | ⭐⭐⭐ | Free |
+| Command | What it does | Quality | Time | Cost |
+|---------|--------------|---------|------|------|
+| **`translate --free`** | Clean + shell vocab | ⭐⭐⭐ | 1 min | Free |
+| **`vocab-ai`** | Generate AI prompt | ⭐⭐⭐⭐⭐ | 5 min | $0 |
+| **`vocab-auto`** | Semi-auto AI | ⭐⭐⭐⭐⭐ | 5 min | $0 |
 
-**Default workflow:** Just use `node server.js translate` — it does everything with AI!
+**Recommended workflow:**
+1. Run `translate --free` for quick setup
+2. Run `vocab-ai` for better AI translations (optional)

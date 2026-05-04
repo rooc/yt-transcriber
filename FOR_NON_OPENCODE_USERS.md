@@ -14,11 +14,30 @@ This project works perfectly **without opencode-go**! You have two options:
 
 ```bash
 # 1. Add your transcript to transcripts/ folder
-# 2. Generate base files
-node server.js translate
+# 2. Generate base files (fast, free)
+node server.js translate --free
 
 # 3. Generate AI translation prompt
 node server.js vocab-ai
+```
+
+This creates `VOCAB_AI_PROMPT.md` with all words to translate.
+
+```bash
+# 4. Copy content from VOCAB_AI_PROMPT.md
+# 5. Paste to your AI of choice:
+#    - ChatGPT: https://chat.openai.com
+#    - Claude: https://claude.ai
+#    - Gemini: https://gemini.google.com
+#    - Or any other AI
+
+# 6. Save AI's JSON response as: ai-response.json
+
+# 7. Apply translations
+node server.js vocab-ai-apply ai-response.json
+
+# 8. Watch!
+node server.js
 ```
 
 This creates `VOCAB_AI_PROMPT.md` with all words to translate.
@@ -134,19 +153,17 @@ brew install translate-shell      # macOS
 # 2. Rename to video ID
 mv "transcripts/Video Title.md" transcripts/VIDEO_ID.md
 
-# 3. Generate base files
-node server.js translate
+# 3. Generate base files (fast, free)
+node server.js translate --free
 
-# 4a. Get AI translations (Option 1 - Recommended)
+# 4. Get AI translations (Recommended - Option 1)
 node server.js vocab-ai
 # Copy VOCAB_AI_PROMPT.md to AI
 # Save response as ai-response.json
 node server.js vocab-ai-apply ai-response.json
 
-# OR
-
-# 4b. Use translate-shell (Option 2 - Free automated)
-node server.js vocab
+# OR skip AI and use free translations (Option 2)
+# Already done in step 3!
 
 # 5. Watch!
 node server.js

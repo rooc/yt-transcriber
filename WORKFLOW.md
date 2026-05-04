@@ -8,16 +8,25 @@
 mv "Video Title.md" transcripts/VIDEO_ID.md
 ```
 
-### 2. Generate Files + AI Vocab
+### 2. Generate Files (Fast, Free)
 ```bash
-# Default: AI translations (recommended)
-node server.js translate
-
-# Or free: translate-shell
+# Clean transcript + create vocab with translate-shell
 node server.js translate --free
 ```
 
-### 3. Watch
+### 3. Optional: Better AI Translations
+```bash
+# Generate AI prompt
+node server.js vocab-ai
+
+# Copy VOCAB_AI_PROMPT.md to AI (ChatGPT, Claude, Qwen3.5 Plus)
+# Save JSON response as ai-response.json
+
+# Apply translations
+node server.js vocab-ai-apply ai-response.json
+```
+
+### 4. Watch
 ```bash
 node server.js
 ```
@@ -25,15 +34,12 @@ Open http://localhost:7070
 
 ---
 
-**That's it!** The `translate` command does everything:
-- ✅ Cleans transcripts
-- ✅ Creates translation placeholders
-- ✅ Generates AI vocabulary translations
+**That's it!**
 
-**Optional commands:**
-- `vocab-auto` — Re-translate vocab with AI (semi-automated)
-- `vocab-ai` — Generate AI prompt for manual translation
-- `vocab` — Free vocab with translate-shell
+**Commands:**
+- `translate --free` — Quick setup (1 min, free)
+- `vocab-ai` — Better AI translations (5 min, manual step)
+- `vocab-auto` — Semi-automated AI for opencode-go users
 
 ---
 
@@ -64,8 +70,8 @@ Open http://localhost:7070
 
 | Method | Quality | Time | Cost |
 |--------|---------|------|------|
-| `translate` (AI) | ⭐⭐⭐⭐⭐ | 5 min | $0 |
 | `translate --free` | ⭐⭐⭐ | 1 min | Free |
+| `vocab-ai` + AI | ⭐⭐⭐⭐⭐ | 5 min | $0 |
 
 ---
 
