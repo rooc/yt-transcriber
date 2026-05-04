@@ -3,6 +3,7 @@
 ## Features
 
 ## Improvements
+- [ ] Add drag and drop functionality between Available transcripts and Learned Transcripts
 - [ ] Add dark/light theme toggle
 
 ## Completed

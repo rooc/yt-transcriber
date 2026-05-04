@@ -8,7 +8,7 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const { PORT, ROOT_DIR, TRANSCRIPTS_DIR } = require('./config');
+const { PORT, ROOT_DIR, TRANSCRIPTS_DIR, VOCAB_DIR } = require('./config');
 const { parseTranscriptFile, getVideoIdFromFile, convertToXML } = require('./store');
 const { getTranscriptForVideo, readVocab } = require('./store');
 
@@ -409,6 +409,11 @@ function setupRoutes(req, res) {
         return;
     }
 
+    if (url.pathname === '/api/transcript' && req.method === 'DELETE') {
+        handleDeleteTranscript(url, res);
+        return;
+    }
+
     if (url.pathname === '/api/transcript') {
         handleTranscript(url, res);
         return;
@@ -436,11 +441,6 @@ function setupRoutes(req, res) {
 
     if (url.pathname === '/api/progress' && req.method === 'POST') {
         handleProgressPost(req, res);
-        return;
-    }
-
-    if (url.pathname === '/api/transcript' && req.method === 'DELETE') {
-        handleDeleteTranscript(url, res);
         return;
     }
 
