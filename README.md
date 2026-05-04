@@ -175,7 +175,7 @@ Run `node server.js translate` to:
 - Add rough machine translations for vocabulary words (via translate-shell)
 - Create translation placeholders if missing
 
-**Note:** This produces rough word translations for quick lookup. For high-quality sentence translations, see `TRANSLATE.md`.
+**Note:** This produces rough word translations for quick lookup.
 
 ### Lint
 Run `node server.js lint` to check and clean up transcripts:

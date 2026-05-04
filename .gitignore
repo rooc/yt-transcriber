@@ -1,0 +1,15 @@
+# Generated files
+VOCAB_AI_PROMPT.md
+ai-response.json
+ai-translations.json
+
+# User data (tracked separately if needed)
+data/learned.json
+data/progress.json
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db

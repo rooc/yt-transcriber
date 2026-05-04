@@ -18,7 +18,6 @@ Quick reference to all documentation files in this project.
 | File | Who It's For | What It Covers |
 |------|--------------|----------------|
 | **[FOR_NON_OPENCODE_USERS.md](FOR_NON_OPENCODE_USERS.md)** | Non-opencode users | How to use without opencode-go (ChatGPT, Claude, translate-shell) |
-| **[AI_VOCAB_WORKFLOW.md](AI_VOCAB_WORKFLOW.md)** | AI users | Detailed AI vocabulary translation workflow |
 
 ---
 
@@ -40,12 +39,6 @@ Quick reference to all documentation files in this project.
 
 ### "I want the complete workflow"
 → Read [WORKFLOW.md](WORKFLOW.md)
-
-### "I want to use AI for vocab"
-→ Read [AI_VOCAB_WORKFLOW.md](AI_VOCAB_WORKFLOW.md)
-
-### "I want to create sentence translations"
-→ Read [TRANSLATE.md](TRANSLATE.md)
 
 ---
 
@@ -83,9 +76,8 @@ yt-transcriber/
 ├── README.md                      # Start here
 ├── WORKFLOW.md                    # Complete workflow
 ├── FOR_NON_OPENCODE_USERS.md      # Non-opencode guide
-├── AI_VOCAB_WORKFLOW.md           # AI vocab details
-├── TRANSLATE.md                   # Sentence translation guide
 ├── DOCS_SUMMARY.md                # This file
+├── .gitignore                     # Git ignore rules
 ├── server.js                      # Main application
 ├── transcripts/                   # Your video transcripts
 ├── vocab/                         # Vocabulary files
