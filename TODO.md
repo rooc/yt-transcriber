@@ -6,7 +6,7 @@
 - [ ] Add dark/light theme toggle
 
 ## Completed
-- [x ] Add drag and drop functionality between Available transcripts and Learned Transcripts
+- [x] Add drag and drop functionality between Available transcripts and Learned Transcripts
 - [x] Add delete transcript button with confirmation
 - [x] Add progress persistence (remember where you left off per video)
 - [x] Restructure project into organized folders
