@@ -532,6 +532,7 @@ button.danger:hover {
 .collapsible-content.collapsed {
 	max-height: 0;
 	opacity: 0;
+	min-height: 0 !important;
 }
 
 #learnedTranscripts h3 {

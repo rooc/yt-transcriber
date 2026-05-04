@@ -1,0 +1,227 @@
+{
+  "adivinar": {
+    "translation": "to guess",
+    "pos": "verb",
+    "context": "vais a adivinar lo que estoy describiendo"
+  },
+  "describir": {
+    "translation": "to describe",
+    "pos": "verb",
+    "context": "voy a describirlos en español"
+  },
+  "caja": {
+    "translation": "box",
+    "pos": "noun",
+    "context": "objetos en esta caja"
+  },
+  "cobre": {
+    "translation": "copper",
+    "pos": "noun",
+    "context": "está hecho de cobre"
+  },
+  "conductor": {
+    "translation": "conductor",
+    "pos": "noun",
+    "context": "conductor de electricidad"
+  },
+  "recubrimiento": {
+    "translation": "coating/covering",
+    "pos": "noun",
+    "context": "recubrimiento protector"
+  },
+  "terminación": {
+    "translation": "end/termination",
+    "pos": "noun",
+    "context": "tiene dos terminaciones"
+  },
+  "delgado": {
+    "translation": "thin",
+    "pos": "adjective",
+    "context": "más delgado, más fino"
+  },
+  "capas": {
+    "translation": "layers",
+    "pos": "noun",
+    "context": "compuesto de varias capas"
+  },
+  "cilíndrico": {
+    "translation": "cylindrical",
+    "pos": "adjective",
+    "context": "tiene forma cilíndrica"
+  },
+  "desenrolla": {
+    "translation": "unrolls",
+    "pos": "verb",
+    "context": "cilindro que se desenrolla"
+  },
+  "pandemia": {
+    "translation": "pandemic",
+    "pos": "noun",
+    "context": "en la pandemia fue el más popular"
+  },
+  "agotado": {
+    "translation": "sold out",
+    "pos": "adjective",
+    "context": "estaba agotado en todas las tiendas"
+  },
+  "papel": {
+    "translation": "paper",
+    "pos": "noun",
+    "context": "rollo de papel"
+  },
+  "lata": {
+    "translation": "can/tin",
+    "pos": "noun",
+    "context": "respuesta es una lata"
+  },
+  "legumbre": {
+    "translation": "legume",
+    "pos": "noun",
+    "context": "legumbre de color marrón"
+  },
+  "abridor": {
+    "translation": "opener",
+    "pos": "noun",
+    "context": "trae un abridor en la propia tapa"
+  },
+  "despensa": {
+    "translation": "pantry",
+    "pos": "noun",
+    "context": "pondrías en la despensa"
+  },
+  "caducidad": {
+    "translation": "expiration",
+    "pos": "noun",
+    "context": "fecha de caducidad"
+  },
+  "embudo": {
+    "translation": "funnel",
+    "pos": "noun",
+    "context": "respuesta es un embudo"
+  },
+  "cónico": {
+    "translation": "conical",
+    "pos": "adjective",
+    "context": "es redondo y cónico"
+  },
+  "inverso": {
+    "translation": "reverse/inverse",
+    "pos": "adjective",
+    "context": "así en inverso"
+  },
+  "recipiente": {
+    "translation": "container",
+    "pos": "noun",
+    "context": "transferir líquidos de un recipiente a otro"
+  },
+  "transferir": {
+    "translation": "to transfer",
+    "pos": "verb",
+    "context": "transferir líquidos"
+  },
+  "facilita": {
+    "translation": "facilitates",
+    "pos": "verb",
+    "context": "facilita la transferencia"
+  },
+  "martillo": {
+    "translation": "hammer",
+    "pos": "noun",
+    "context": "objeto número cinco es un martillo"
+  },
+  "mango": {
+    "translation": "handle",
+    "pos": "noun",
+    "context": "parte alargada es un mango"
+  },
+  "herramienta": {
+    "translation": "tool",
+    "pos": "noun",
+    "context": "este objeto es una herramienta"
+  },
+  "agarrando": {
+    "translation": "grabbing/holding",
+    "pos": "verb",
+    "context": "estoy agarrando ahora mismo"
+  },
+  "clavos": {
+    "translation": "nails",
+    "pos": "noun",
+    "context": "le he dado golpes a principalmente a clavos"
+  },
+  "golpear": {
+    "translation": "to hit",
+    "pos": "verb",
+    "context": "nunca he golpeado a una persona"
+  },
+  "revelar": {
+    "translation": "to reveal",
+    "pos": "verb",
+    "context": "voy a revelar la respuesta"
+  },
+  "bote": {
+    "translation": "bottle/container",
+    "pos": "noun",
+    "context": "es un bote pequeño"
+  },
+  "higiene": {
+    "translation": "hygiene",
+    "pos": "noun",
+    "context": "producto de higiene personal"
+  },
+  "desodorante": {
+    "translation": "deodorant",
+    "pos": "noun",
+    "context": "este objeto era un desodorante"
+  },
+  "previene": {
+    "translation": "prevents",
+    "pos": "verb",
+    "context": "previene el olor en las axilas"
+  },
+  "axilas": {
+    "translation": "underarms",
+    "pos": "noun",
+    "context": "olor en las axilas"
+  },
+  "aluminio": {
+    "translation": "aluminum",
+    "pos": "noun",
+    "context": "rollo de papel de aluminio"
+  },
+  "maleable": {
+    "translation": "malleable",
+    "pos": "adjective",
+    "context": "es muy maleable"
+  },
+  "envolver": {
+    "translation": "to wrap",
+    "pos": "verb",
+    "context": "para envolver mis bocadillos"
+  },
+  "bocadillos": {
+    "translation": "sandwiches",
+    "pos": "noun",
+    "context": "envolver mis bocadillos"
+  },
+  "termómetro": {
+    "translation": "thermometer",
+    "pos": "noun",
+    "context": "esto es un termómetro"
+  },
+  "analógico": {
+    "translation": "analog",
+    "pos": "adjective",
+    "context": "si fuera analógico"
+  },
+  "ambiente": {
+    "translation": "environment/ambient",
+    "pos": "noun",
+    "context": "temperatura del ambiente"
+  },
+  "dosis": {
+    "translation": "dose",
+    "pos": "noun",
+    "context": "vuestra dosis de español"
+  }
+}
