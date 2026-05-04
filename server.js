@@ -1,21 +1,14 @@
 /**
  * Application entry point.
  *
- * Bootstraps the HTTP server on PORT (default 7070) and registers CLI commands:
+ * Bootstraps the HTTP server on PORT (default 7070).
+ *
+ * Usage:
  *   node server.js          → start the web server
- *   node server.js translate → generate missing translations / vocab files
- *   node server.js vocab     → update vocab files only (skip cleaning/placeholders)
- *   node server.js lint      → validate transcripts and clean up vocab
  */
 const http = require('http');
 const fs = require('fs');
 const { PORT, TRANSCRIPTS_DIR, VOCAB_DIR } = require('./src/config');
-const { runVocab } = require('./src/commands/vocab');
-const { runVocabAI } = require('./src/commands/vocab-ai');
-const { runVocabAIApply } = require('./src/commands/vocab-ai-apply');
-const { runVocabAuto } = require('./src/commands/vocab-auto');
-const { runTranslate } = require('./src/commands/translate');
-const { runLint } = require('./src/commands/lint');
 const { setupRoutes } = require('./src/routes');
 
 // Ensure required directories exist at startup
@@ -24,42 +17,6 @@ if (!fs.existsSync(TRANSCRIPTS_DIR)) {
 }
 if (!fs.existsSync(VOCAB_DIR)) {
     fs.mkdirSync(VOCAB_DIR, { recursive: true });
-}
-
-// === CLI COMMANDS ===
-if (process.argv.includes('vocab-auto-apply')) {
-    runVocabAIApply();
-    process.exit(0);
-}
-
-if (process.argv.includes('vocab-auto') || process.argv.includes('vocabauto')) {
-    runVocabAuto();
-    process.exit(0);
-}
-
-if (process.argv.includes('vocab-ai-apply') || process.argv.includes('vocabaiapply')) {
-    runVocabAIApply();
-    process.exit(0);
-}
-
-if (process.argv.includes('vocab-ai') || process.argv.includes('vocabai')) {
-    runVocabAI();
-    process.exit(0);
-}
-
-if (process.argv.includes('vocab')) {
-    runVocab();
-    process.exit(0);
-}
-
-if (process.argv.includes('translate')) {
-    runTranslate();
-    process.exit(0);
-}
-
-if (process.argv.includes('lint')) {
-    runLint();
-    process.exit(0);
 }
 
 // === HTTP SERVER ===

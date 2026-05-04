@@ -2,37 +2,20 @@
 
 A YouTube video transcript viewer with bilingual support.
 
-## Quick Start (Obsidian Clipper)
+## Quick Start (New AI Workflow)
 
 ```bash
-# 1. Clip YouTube video → saves to transcripts/
+# 1. Add transcript manually
+mv "Video Title.md" transcripts/VIDEO_ID.md
 
-# 2. Rename to video ID
-mv transcripts/Video\ Title.md transcripts/VIDEO_ID.md
+# 2. Tell AI to translate (just say: "translate new")
+# AI reads OPENCODE.md and creates both files automatically
 
-# 3. Prepare for AI translation
-node server.js translate
-# → Creates translation placeholder
-# → Creates vocab with [translation needed]
-# → Generates VOCAB_AI_PROMPT.md
-
-# 4. Get AI translations (EASY WAY)
-# Upload VOCAB_AI_PROMPT.md to AI:
-# - ChatGPT: Click 📎 → Upload file → "Do what it says"
-# - Claude: Drag & drop file → "Follow instructions"
-# - Qwen3.5 Plus: opencode run --model "opencode-go/qwen3.5-plus"
-# Save JSON response as: ai-response.json
-
-# 5. Apply translations
-node server.js vocab-ai-apply ai-response.json
-
-# 6. Watch!
+# 3. Watch!
 node server.js
 ```
 
 Open http://localhost:7070
-
-**Not using opencode-go?** See [FOR_NON_OPENCODE_USERS.md](FOR_NON_OPENCODE_USERS.md)
 
 ---
 
@@ -66,40 +49,19 @@ Open http://localhost:7070
 
 ### Method 1: Obsidian Clipper (Recommended)
 
-1. **Install Obsidian Clipper** browser extension
-   - [Chrome Web Store](https://chromewebstore.google.com/detail/obsidian-web-clipper)
-   - [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/obsidian-web-clipper/)
+1. **Install** [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian-web-clipper) extension
 
-2. **Configure Clipper** (first time only):
-   - Open extension settings
-   - Set **Vault location** to this project folder
-   - Set **Folder** to `transcripts`
+2. **Clip YouTube video**:
+   - Open any YouTube video
+   - Click the Clipper icon → Click **Clip**
+   - Saves to `transcripts/` folder automatically
 
-3. **Clip YouTube video**:
-   - Open YouTube video
-   - Click Obsidian Clipper extension icon
-   - Click **Clip** (uses default template with title + URL)
-
-4. **Rename file** to video ID:
+3. **Rename file** to video ID:
    ```bash
-   mv transcripts/Video\ Title.md transcripts/VIDEO_ID.md
+   mv transcripts/"Video Title.md" transcripts/VIDEO_ID.md
    ```
 
-### Obsidian Clipper Template
-
-Create this template in Obsidian for automatic frontmatter:
-
-```markdown
----
-title: "{{title}}"
-source: "{{url}}"
-created: {{date}}
----
-
-{{content}}
-```
-
----
+The default template already includes title and URL, which is all you need.
 
 ### Method 2: Manual
 
@@ -119,65 +81,54 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 
 For sentence-by-sentence translation, create `VIDEO_ID_translation.md` with English text.
 
-## Commands
+## AI Translation (NEW)
 
-### Translate (Prepare for AI)
-```bash
-node server.js translate
-```
+The new workflow uses AI directly via `OPENCODE.md`:
 
-**What it does:**
-1. ✅ Cleans transcript markdown
-2. ✅ Creates `*_translation.md` placeholder
-3. ✅ Creates `*_vocab.json` with `[translation needed]`
-4. ✅ Generates `VOCAB_AI_PROMPT.md` for AI
+### Simple Steps:
 
-**Next:** Copy `VOCAB_AI_PROMPT.md` to AI, then apply with `vocab-ai-apply`
+1. **Add transcript** to `transcripts/` folder
+2. **Tell AI**: "translate new"
+3. **AI automatically creates**:
+   - `VIDEO_ID_translation.md` — Full English translation
+   - `vocab/VIDEO_ID_vocab.json` — Vocabulary with contextual translations
 
----
+### What AI Does:
 
-### Vocab AI Apply
-```bash
-node server.js vocab-ai-apply ai-response.json
-```
+- ✅ Translates naturally (not word-for-word)
+- ✅ Preserves speaker's tone and style
+- ✅ Explains cultural references
+- ✅ Extracts B1+ vocabulary only
+- ✅ Provides contextual translations
+- ✅ Excludes basic words, proper nouns, and English loanwords
 
-**What it does:**
-- Applies AI translations from JSON file
-- Updates vocab files with contextual translations
+### OPENCODE.md
 
----
+The `OPENCODE.md` file contains all instructions for the AI. It specifies:
+- File format and structure
+- Translation guidelines
+- Vocabulary extraction rules
+- Word exclusions (A1-A2, proper nouns, etc.)
 
-### Vocab AI (Alternative)
-```bash
-node server.js vocab-ai
-```
+Just tell the AI to read it and translate!
 
-**What it does:**
-- Same as `translate` but vocab-only
-- Use if you already have cleaned transcripts
+## AI Commands
 
-### Vocab AI (Manual 2-step)
-Run `node server.js vocab-ai` to generate prompt, then `node server.js vocab-ai-apply <file.json>` to apply.
+All operations are AI-driven through `OPENCODE.md`:
 
-### Translate (automated, free)
-Run `node server.js translate` to:
-- Clean transcript markdown
-- Generate missing vocabulary files (`vocab/VIDEO_ID_vocab.json`)
-- Add rough machine translations for vocabulary words (via translate-shell)
-- Create translation placeholders if missing
+### Translate
+**Command:** `"translate new"`
 
-**Note:** This produces rough word translations for quick lookup.
+Translates all untranslated transcripts automatically.
 
-### Lint
-Run `node server.js lint` to check and clean up transcripts:
+### Check / Lint
+**Command:** `"check files"` or `"lint"`
 
-- **Frontmatter validation** - Ensures title and source fields are present
-- **Orphaned files** - Finds vocab/translation files without matching transcripts
-- **Empty translations** - Identifies translation files that need actual content
-- **Vocabulary cleanup** - Removes A1-A2 level words from vocab files
-
-### Vocab (update only)
-Run `node server.js vocab` to update vocabulary files only (skip cleaning/translation placeholders).
+Validates and cleans up:
+- Frontmatter completeness
+- Orphaned files
+- Empty translations  
+- Vocabulary cleanup
 
 ## Workflow
 
@@ -185,18 +136,57 @@ Run `node server.js vocab` to update vocabulary files only (skip cleaning/transl
 # 1. Add transcript
 transcripts/VIDEO_ID.md
 
-# 2. Prepare (clean + placeholders)
-node server.js translate
+# 2. Tell AI to translate
+# "translate new"
 
-# 3. Get AI translations
-# Copy VOCAB_AI_PROMPT.md → AI → Save as ai-response.json
-
-# 4. Apply AI translations
-node server.js vocab-ai-apply ai-response.json
-
-# 5. Watch
+# 3. Watch
 node server.js
 ```
 
-**Total time:** ~5 minutes  
-**Cost:** $0 (use free AI tiers)
+**Total time:** ~2 minutes  
+**Cost:** $0 (included in opencode-go subscription)
+
+---
+
+## Project Structure
+
+```
+├── transcripts/          # Spanish transcript files (.md)
+│   ├── VIDEO_ID.md
+│   └── VIDEO_ID_translation.md
+├── vocab/               # Vocabulary files (.json)
+│   └── VIDEO_ID_vocab.json
+├── data/                # Exclusion lists
+│   ├── a1-a2.json      # Basic words to exclude
+│   ├── proper-nouns.json # Names/countries to exclude
+│   └── manual-exclude.json # Manual exclusions
+├── src/                 # Source code
+│   ├── routes.js       # HTTP routes
+│   ├── store.js        # Data access layer
+│   ├── config.js       # Configuration
+│   └── exclusions.js   # Word filtering
+├── public/              # Web UI files
+│   ├── index.html
+│   ├── app.js
+│   └── style.css
+├── OPENCODE.md         # AI instructions (ALL operations)
+└── server.js           # Entry point (web server only)
+```
+
+## Troubleshooting
+
+**Translation not showing?**
+- Check that `VIDEO_ID_translation.md` exists
+- Verify timestamps match the original file
+
+**Vocabulary not appearing?**
+- Check `vocab/VIDEO_ID_vocab.json` exists
+- Ensure words are B1+ level (not in exclusion lists)
+
+**Server won't start?**
+- Check port 7070 is available
+- Verify Node.js is installed
+
+## License
+
+MIT

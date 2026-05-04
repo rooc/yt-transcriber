@@ -3,98 +3,98 @@ title: "Luces en el cielo☁️☁️| Slow and clear Spanish podcast ep. 86 (En
 source: "https://www.youtube.com/watch?v=Psb9g9UxqZs&t=3s"
 ---
 
-**0:00** · [TRANSLATION NEEDED] Hola a todos y bienvenidos a un nuevo episodio de nuestro podcast para aprender español. Aquí intento hablar de una manera clara, no muy rápida y cuando menciono una palabra difícil la intento explicar. Feliz año nuevo. Es el primer episodio del 2026.
+**0:00** · Hello everyone and welcome to a new episode of our podcast for learning Spanish. Here I try to speak in a clear way, not very fast, and when I mention a difficult word, I try to explain it. Happy New Year. It's the first episode of 2026.
 
-**0:25** · [TRANSLATION NEEDED] Aquí ahora mismo está nevando y hace mucho frío.
+**0:25** · Right now it's snowing here and it's very cold.
 
-**0:33** · [TRANSLATION NEEDED] ¿Qué has hecho para el año nuevo? ¿Cómo celebraste la noche vieja? La noche vieja es la noche del 31 de diciembre en la que pasas de un año al otro. En España tenemos una tradición muy popular.
+**0:33** · What did you do for New Year's? How did you celebrate New Year's Eve? New Year's Eve is the night of December 31st when you go from one year to the next. In Spain we have a very popular tradition.
 
-**0:55** · [TRANSLATION NEEDED] en la que comemos 12 uvas para que nos dé buena suerte. Es una uva por cada mes del próximo año.
+**0:55** · where we eat 12 grapes for good luck. It's one grape for each month of the upcoming year.
 
-**1:05** · [TRANSLATION NEEDED] Este año no he celebrado la noche vieja en España, la he celebrado fuera donde vivo y celebramos la noche Vieja con amigos.
+**1:05** · This year I didn't celebrate New Year's Eve in Spain, I celebrated it outside where I live and we celebrated New Year's Eve with friends.
 
-**1:19** · [TRANSLATION NEEDED] Yo traje a la cena diferentes bolsitas.
+**1:19** · I brought different little bags to dinner.
 
-**1:24** · [TRANSLATION NEEDED] una bolsa de plástico, bolsitas de plástico y cada bolsita tenía 24 uvas. 24 2 cu La idea era ponernos en parejas. Dos personas compartían una bolsa y escribí los nombres de esas personas en las bolsitas de plástico y cuando salimos a ver los fuegos artificiales a la calle por año nuevo.
+**1:24** · a plastic bag, little plastic bags and each little bag had 24 grapes. 24, two dozen. The idea was to pair up. Two people shared a bag and I wrote the names of those people on the little plastic bags and when we went out to see the fireworks on the street for New Year's.
 
-**1:59** · [TRANSLATION NEEDED] Fuegos artificiales son esas luces que lanzamos al cielo y que explotan en el cielo. Fireworks.
+**1:59** · Fireworks are those lights that we launch into the sky and that explode in the sky. Fireworks.
 
-**2:11** · [TRANSLATION NEEDED] Después de ver los fuegos artificiales, mis amigos y yo comimos las uvas. Y es algo gracioso porque ellos no son españoles y no tienen esta tradición, aunque parece ser que en Brasil y Rumanía también lo hacen.
+**2:11** · After watching the fireworks, my friends and I ate the grapes. And it's funny because they're not Spanish and they don't have this tradition, although it seems that in Brazil and Romania they also do it.
 
-**2:33** · [TRANSLATION NEEDED] lo que he oído, pero nos lo pasamos muy bien, aunque ya oficialmente estamos en enero y las fiestas, las vacaciones han terminado y ayer leí sobre las auroras boreales.
+**2:33** · from what I've heard, but we had a great time, although officially we're already in January and the holidays, the vacations are over and yesterday I read about the Northern Lights.
 
-**2:54** · [TRANSLATION NEEDED] Las auroras boreales también son luces en el cielo, pero son un fenómeno meteorológico.
+**2:54** · The Northern Lights are also lights in the sky, but they're a meteorological phenomenon.
 
-**3:04** · [TRANSLATION NEEDED] Aurora Borealis, The Green Lights o Northern Lights.
+**3:04** · Aurora Borealis, The Green Lights or Northern Lights.
 
-**3:10** · [TRANSLATION NEEDED] Y parece ser que van a ser muy activas este año, en particular en la primavera, tipo en marzo y después en septiembre.
+**3:10** · And it seems that they're going to be very active this year, particularly in spring, like in March and then in September.
 
-**3:25** · [TRANSLATION NEEDED] Es lo que he leído.
+**3:25** · That's what I've read.
 
-**3:28** · [TRANSLATION NEEDED] Evidentemente las auroras boreales son más activas en la zona del polo, Alaska, Canadá, Islandia, Noruega, etcétera.
+**3:28** · Obviously the Northern Lights are more active in the polar region, Alaska, Canada, Iceland, Norway, etc.
 
-**3:41** · [TRANSLATION NEEDED] Y he leído sobre Noruega.
+**3:41** · And I read about Norway.
 
-**3:44** · [TRANSLATION NEEDED] Noruega.
+**3:44** · Norway.
 
-**3:46** · [TRANSLATION NEEDED] Noruega es un país que me gustaría visitar.
+**3:46** · Norway is a country I'd like to visit.
 
-**3:50** · [TRANSLATION NEEDED] Y en este artículo hablaban de como las zonas de Tromso y Lofoten o Lofoten, no sé cómo se pronuncia, eran las mejores zonas en Noruega para ver las auroras boreales. Y a mí me encantaría ver las auroras boreales. Me encantaría.
+**3:50** · And in this article they talked about how the areas of Tromsø and Lofoten or Lofoten, I don't know how it's pronounced, were the best areas in Norway to see the Northern Lights. And I would love to see the Northern Lights. I would love to.
 
-**4:16** · [TRANSLATION NEEDED] Ah, así que vamos a hablar un poquito sobre esto. No soy yo la persona indicada para hablar de los términos científicos de cómo una aurora boreal se crea. Okay, para eso está el internet, pero lo voy a intentar. He leído algo, voy a intentar explicarlo de una manera muy simple. Don't come for me if I make a mistake. Okay. Mm.
+**4:16** · Ah, so let's talk a little bit about this. I'm not the right person to talk about the scientific terms of how a Northern Light is created. Okay, that's what the internet is for, but I'll try. I've read something, I'll try to explain it in a very simple way. Don't come for me if I make a mistake. Okay. Mm.
 
-**4:45** · [TRANSLATION NEEDED] Básicamente, cuando las partículas solares del Sol llegan a la Tierra y chocan contra el campo magnético, estas partículas solares se dirigen, son dirigidas hacia los polos y ahí al chocar contra los gases de la atmósfera es cuando se producen estas luces.
+**4:45** · Basically, when solar particles from the Sun reach Earth and collide with the magnetic field, these solar particles are directed, they're directed towards the poles and there when they collide with the gases in the atmosphere is when these lights are produced.
 
-**5:18** · [TRANSLATION NEEDED] Y como las partículas están en movimiento cuando chocan es que se crea ese efecto de baile. Por eso parece que las luces, las auroras boreales están bailando porque se están moviendo.
+**5:18** · And because the particles are in motion when they collide, that's what creates that dancing effect. That's why it seems like the lights, the Northern Lights are dancing because they're moving.
 
-**5:38** · [TRANSLATION NEEDED] En este artículo hablaban de las circunstancias ideales para poder ver las auroras boreales. Lo primero, obviamente, la actividad solar. Segundo, la situación meteorológica.
+**5:38** · In this article they talked about the ideal circumstances to be able to see the Northern Lights. First, obviously, solar activity. Second, the weather situation.
 
-**5:56** · [TRANSLATION NEEDED] Es importante que el cielo no esté muy nublado, que no haya muchas nubes. Y hablaban de como en las noches de mucho frío no suele haber tantas nubes, por eso se recomendaban estos momentos.
+**5:56** · It's important that the sky isn't very cloudy, that there aren't many clouds. And they talked about how on very cold nights there usually aren't as many clouds, that's why these moments were recommended.
 
-**6:14** · [TRANSLATION NEEDED] Evidentemente, tercer punto, también es importante estar en una zona donde no haya muchas luces, es decir, en la naturaleza, apartados de la ciudad.
+**6:14** · Obviously, third point, it's also important to be in an area where there aren't many lights, that is, in nature, away from the city.
 
-**6:31** · [TRANSLATION NEEDED] Pero como pasa con tantos fenómenos meteorológicos, antes de que la ciencia explicara el por qué, los humanos usábamos nuestra imaginación para explicarlos.
+**6:31** · But as happens with so many meteorological phenomena, before science explained why, humans used our imagination to explain them.
 
-**6:49** · [TRANSLATION NEEDED] Se he leído mucho sobre la explicación de los tornados, de los rayos y truenos y hay un par de leyendas sobre las auroras boreales que merecen la pena discutir un poco. hablaban de como en los pueblos del norte de Noruega, en en tribus Sami, veían a las auroras boreales como espíritus.
+**6:49** · I've read a lot about the explanation of tornadoes, of lightning and thunder and there are a couple of legends about the Northern Lights that are worth discussing a bit. They talked about how in the villages of northern Norway, in Sami tribes, they saw the Northern Lights as spirits.
 
-**7:18** · [TRANSLATION NEEDED] Pero mi historia favorita es la de los vikingos.
+**7:18** · But my favorite story is that of the Vikings.
 
-**7:24** · [TRANSLATION NEEDED] Los vikingos pensaban que las auroras boreales eran las armaduras de las valquirias.
+**7:24** · The Vikings thought that the Northern Lights were the armor of the Valkyries.
 
-**7:34** · [TRANSLATION NEEDED] ¿Qué significa? Te explico lo primero.
+**7:34** · What does that mean? Let me explain the first thing.
 
-**7:38** · [TRANSLATION NEEDED] Armadura. ¿Qué es una armadura? La armadura es este traje de metal que los soldados o los guerreros llevan a la guerra para protegerse la armadura.
+**7:38** · Armor. What is armor? Armor is this metal suit that soldiers or warriors wear to war to protect themselves, the armor.
 
-**7:54** · [TRANSLATION NEEDED] Entonces es un conjunto para defenderse de los ataques y las valquirias son mujeres, son figuras de la mitología nórdica. Ellas eran guerreras, luchadoras, eran guerreras y servían al dios Odín. Odínos principal de los vikingos. Se las describe como mujeres fuertes y poderosas con armaduras brillantes.
+**7:54** · So it's a set to defend themselves from attacks and the Valkyries are women, they're figures from Norse mythology. They were warriors, fighters, they were warriors and they served the god Odin. Odin, the main god of the Vikings. They're described as strong and powerful women with bright armor.
 
-**8:30** · [TRANSLATION NEEDED] Armaduras brillantes, armaduras que hacen resplandecer la luz con cascos. Casco es lo que te pones en la cabeza para proteger la cabeza. También lo que debería llevar cuando voy en bici lanzas.
+**8:30** · Bright armor, armor that makes light shine, with helmets. Helmet is what you put on your head to protect your head. Also what I should wear when I go biking, spears.
 
-**8:51** · [TRANSLATION NEEDED] Llevaban también lanzas, que es como un palo \[risas\] con un cuchillo al en el extremo que la gente lanza para atacar o cazar tu hunt y caballos. Entonces, repito esta frase.
+**8:51** · They also carried spears, which is like a stick [laughs] with a knife at the end that people throw to attack or hunt, and horses. So, I'll repeat this phrase.
 
-**9:09** · [TRANSLATION NEEDED] A las valquirias se las describe como mujeres fuertes y poderosas con armaduras brillantes, cascos, lanzas y caballos. ¿Y cuál era su misión? Las valquirias volaban.
+**9:09** · The Valkyries are described as strong and powerful women with bright armor, helmets, spears and horses. And what was their mission? The Valkyries flew.
 
-**9:28** · [TRANSLATION NEEDED] Volar lo que hacen los pájaros con sus alas. Las valquirias volaban sobre los campos de batalla.
+**9:28** · To fly is what birds do with their wings. The Valkyries flew over the battlefields.
 
-**9:37** · [TRANSLATION NEEDED] y elegían a los cuerpos que habían muerto. Entre todos los muertos en ese campo de batalla elegían a los que habían sido más valientes.
+**9:37** · and they chose the bodies that had died. Among all the dead on that battlefield they chose the ones who had been the bravest.
 
-**9:51** · [TRANSLATION NEEDED] Y a estos cuerpos los llevaban al Balhaya, Balhaya, que era como el cielo de los vikingos. Y allí se les preparaba para la batalla final del mundo llamada Ragnarok.
+**9:51** · And these bodies they took to Valhalla, Valhalla, which was like the heaven of the Vikings. And there they were prepared for the final battle of the world called Ragnarök.
 
-**10:13** · [TRANSLATION NEEDED] Y esto, ¿por qué es importante? ¿Por qué eran importantes?
+**10:13** · And this, why is it important? Why were they important?
 
-**10:17** · [TRANSLATION NEEDED] Porque parece ser que para los vikingos su mayor miedo no era morir, era morir sin honor. Y las valquirias ofrecían ese honor a los que habían caído en la batalla.
+**10:17** · Because it seems that for Vikings their greatest fear wasn't dying, it was dying without honor. And the Valkyries offered that honor to those who had fallen in battle.
 
-**10:35** · [TRANSLATION NEEDED] Y por eso los vikingos al ver las auroras boreales, pensaban que eran las armaduras de las valquirias.
+**10:35** · And that's why the Vikings, when they saw the Northern Lights, thought they were the armor of the Valkyries.
 
-**10:47** · [TRANSLATION NEEDED] Bonito. Entonces, ahora tengo el deseo, tengo ganas de ver una aurora boreal.
+**10:47** · Beautiful. So, now I have the desire, I feel like seeing a Northern Light.
 
-**10:56** · [TRANSLATION NEEDED] Hace un par de años se vieron las auroras boreales en en Europa, en Berlín, en Inglaterra se llegaron a ver.
+**10:56** · A couple of years ago the Northern Lights were seen in Europe, in Berlin, in England they were even seen.
 
-**11:09** · [TRANSLATION NEEDED] Pero aún así me parecería tan bonito poder verlas en medio de la nieve, en esos lugares tan escénicos en Noruega, ahí en el quinto pino, quinto pino slang en España. Cuando algo está en el quinto pino, by the way, un pino es un tipo de árbol que ahí no recuerdo el nombre en inglés.
+**11:09** · But still I would find it so beautiful to be able to see them in the middle of the snow, in those places so scenic in Norway, there in the middle of nowhere, middle of nowhere is slang in Spain. When something is in the middle of nowhere, by the way, a pine is a type of tree that I don't remember the name of in English right now.
 
-**11:34** · [TRANSLATION NEEDED] Wait, shocker. Pine tree. Okay.
+**11:34** · Wait, shocker. Pine tree. Okay.
 
-**11:39** · [TRANSLATION NEEDED] Estar en el quinto pino es slang para decir que algo está muy muy lejos. Está lejísimo, apartado de todo. So, hasta aquí. Y tú, ¿has visto alguna vez una aurora boreal? ¿Dónde la has visto?
+**11:39** · To be in the middle of nowhere is slang for saying that something is very very far away. It's extremely far, away from everything. So, that's it for today. And you, have you ever seen a Northern Light? Where did you see it?
 
-**12:00** · [TRANSLATION NEEDED] ¿Fue fácil verlas? Tuviste que esperar mucho porque he leído que mucha gente ha planeado viajes a Noruega y no han conseguido ver las auroras boreales.
+**12:00** · Was it easy to see them? Did you have to wait a lot because I've read that many people have planned trips to Norway and haven't managed to see the Northern Lights.
 
-**12:15** · [TRANSLATION NEEDED] No sería el mejor escenario, pero bueno, me interesa tu opinión. Muchas gracias y hasta la próxima. Yeah.
+**12:15** · It wouldn't be the best scenario, but well, I'm interested in your opinion. Thank you very much and until next time. Yeah.
