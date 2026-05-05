@@ -914,36 +914,53 @@ function loadVideo(videoId) {
 
 		if (player) {
 			player.addEventListener("onStateChange", onPlayerStateChange);
-			// Use loadVideoById to ensure video is loaded (not just cued)
-			player.loadVideoById(videoId);
 			
-			// Wait for video to be ready before seeking
-			const waitForVideoAndSeek = () => {
-				const playerState = player.getPlayerState();
-				// Video is ready when it's playing, paused, or cued
-				if (playerState === YT.PlayerState.PLAYING || 
-				    playerState === YT.PlayerState.PAUSED || 
-				    playerState === YT.PlayerState.CUED) {
-					if (savedProgress) {
-						// Seek to transcript line timestamp if available, otherwise use raw time
-						const seekTime = (savedProgress.line >= 0 && transcriptData[savedProgress.line]) 
-							? transcriptData[savedProgress.line].start 
-							: savedProgress.time;
+			if (savedProgress) {
+				console.log("Restoring progress:", savedProgress);
+				// Have saved progress - cue video first (doesn't autoplay), then seek
+				player.cueVideoById(videoId);
+				
+				// Wait for CUED state, then seek and play
+				const seekWhenCued = () => {
+					const playerState = player.getPlayerState();
+					console.log("Player state:", playerState, "seeking to:", savedProgress.time);
+					
+					const seekTime = (savedProgress.line >= 0 && transcriptData[savedProgress.line]) 
+						? transcriptData[savedProgress.line].start 
+						: savedProgress.time;
+					
+					if (playerState === YT.PlayerState.CUED) {
+						player.seekTo(seekTime, true);
+						console.log("Seeked to:", seekTime);
+						setStatus(`Resumed at ${formatTime(seekTime)}`);
+						player.playVideo();
+						setTimeout(() => {
+							if (loadingOverlay) loadingOverlay.classList.add("hidden");
+						}, 300);
+					} else if (playerState === -1 || playerState === YT.PlayerState.BUFFERING) {
+						// Still loading, wait more
+						console.log("Still loading, retrying...");
+						setTimeout(seekWhenCued, 200);
+					} else {
+						// Video started playing, seek now
+						console.log("Video started, seeking now");
 						player.seekTo(seekTime, true);
 						setStatus(`Resumed at ${formatTime(seekTime)}`);
+						setTimeout(() => {
+							if (loadingOverlay) loadingOverlay.classList.add("hidden");
+						}, 300);
 					}
-					// Hide overlay
-					setTimeout(() => {
-						if (loadingOverlay) loadingOverlay.classList.add("hidden");
-					}, 300);
-				} else {
-					// Video not ready yet, wait and try again
-					setTimeout(waitForVideoAndSeek, 100);
-				}
-			};
-			
-			// Start waiting for video to be ready
-			setTimeout(waitForVideoAndSeek, 200);
+				};
+				
+				setTimeout(seekWhenCued, 500);
+			} else {
+				// No saved progress - just play from start
+				console.log("No saved progress, playing from start");
+				player.loadVideoById(videoId);
+				setTimeout(() => {
+					if (loadingOverlay) loadingOverlay.classList.add("hidden");
+				}, 300);
+			}
 		} else {
 			player = new YT.Player("player", {
 				videoId: videoId,
