@@ -914,24 +914,36 @@ function loadVideo(videoId) {
 
 		if (player) {
 			player.addEventListener("onStateChange", onPlayerStateChange);
-			// Use cueVideoById instead of loadVideoById to prevent autoplay
-			player.cueVideoById(videoId);
-			// Then seek and play after a short delay
-			setTimeout(() => {
-				if (savedProgress) {
-					// Seek to transcript line timestamp if available, otherwise use raw time
-					const seekTime = (savedProgress.line >= 0 && transcriptData[savedProgress.line]) 
-						? transcriptData[savedProgress.line].start 
-						: savedProgress.time;
-					player.seekTo(seekTime, true);
-					setStatus(`Resumed at ${formatTime(seekTime)}`);
+			// Use loadVideoById to ensure video is loaded (not just cued)
+			player.loadVideoById(videoId);
+			
+			// Wait for video to be ready before seeking
+			const waitForVideoAndSeek = () => {
+				const playerState = player.getPlayerState();
+				// Video is ready when it's playing, paused, or cued
+				if (playerState === YT.PlayerState.PLAYING || 
+				    playerState === YT.PlayerState.PAUSED || 
+				    playerState === YT.PlayerState.CUED) {
+					if (savedProgress) {
+						// Seek to transcript line timestamp if available, otherwise use raw time
+						const seekTime = (savedProgress.line >= 0 && transcriptData[savedProgress.line]) 
+							? transcriptData[savedProgress.line].start 
+							: savedProgress.time;
+						player.seekTo(seekTime, true);
+						setStatus(`Resumed at ${formatTime(seekTime)}`);
+					}
+					// Hide overlay
+					setTimeout(() => {
+						if (loadingOverlay) loadingOverlay.classList.add("hidden");
+					}, 300);
+				} else {
+					// Video not ready yet, wait and try again
+					setTimeout(waitForVideoAndSeek, 100);
 				}
-				player.playVideo();
-				// Hide overlay after playing
-				setTimeout(() => {
-					if (loadingOverlay) loadingOverlay.classList.add("hidden");
-				}, 300);
-			}, 500);
+			};
+			
+			// Start waiting for video to be ready
+			setTimeout(waitForVideoAndSeek, 200);
 		} else {
 			player = new YT.Player("player", {
 				videoId: videoId,
