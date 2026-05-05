@@ -162,7 +162,7 @@ function handleGrammar(url, res) {
  *
  * @param {import('http').ServerResponse} res
  */
-function handleStats(res) {
+function handleStatsGet(res) {
     try {
         if (fs.existsSync(STATS_PATH)) {
             const data = fs.readFileSync(STATS_PATH, 'utf-8');
@@ -180,6 +180,30 @@ function handleStats(res) {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: e.message }));
     }
+}
+
+/**
+ * POST /api/stats
+ *
+ * Save learning statistics.
+ *
+ * @param {import('http').IncomingMessage} req
+ * @param {import('http').ServerResponse} res
+ */
+function handleStatsPost(req, res) {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+        try {
+            const data = JSON.parse(body);
+            fs.writeFileSync(STATS_PATH, JSON.stringify(data, null, 2));
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true }));
+        } catch (e) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: e.message }));
+        }
+    });
 }
 
 /**
@@ -403,8 +427,13 @@ function setupRoutes(req, res) {
         return;
     }
 
-    if (url.pathname === '/api/stats') {
-        handleStats(res);
+    if (url.pathname === '/api/stats' && req.method === 'GET') {
+        handleStatsGet(res);
+        return;
+    }
+
+    if (url.pathname === '/api/stats' && req.method === 'POST') {
+        handleStatsPost(req, res);
         return;
     }
 

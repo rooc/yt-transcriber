@@ -25,6 +25,8 @@ let lastRewindTime = 0;
 let learnedVideos = [];
 let isLearnedPanelCollapsed = true;
 let videoProgress = {};
+let statsData = { totalLearned: 0, totalWatchTimeHours: 0 };
+let videoWatchSessions = {};
 
 // --- DOM References ---
 const statusEl = document.getElementById("status");
@@ -75,28 +77,57 @@ async function saveLearnedVideos() {
 // --- Stats (server) ---
 
 async function loadStats() {
+	// Try localStorage first
+	const localStats = localStorage.getItem("statsData");
+	if (localStats) {
+		try {
+			statsData = JSON.parse(localStats);
+			updateStatsDisplay();
+		} catch (e) {
+			console.log("Could not parse local stats");
+		}
+	}
+	
+	// Then try server
 	try {
 		const response = await fetch("/api/stats");
 		if (response.ok) {
 			const data = await response.json();
-			displayStats(data);
-			console.log("Loaded stats from server:", data);
+			statsData = {
+				totalLearned: data.totalLearned || statsData.totalLearned || 0,
+				totalWatchTimeHours: data.totalWatchTimeHours || statsData.totalWatchTimeHours || 0
+			};
+			updateStatsDisplay();
+			console.log("Loaded stats from server:", statsData);
 		}
 	} catch (e) {
-		console.log("Could not load stats from server");
+		console.log("Could not load stats from server, using localStorage");
 	}
 }
 
-function displayStats(stats) {
+async function saveStats() {
+	localStorage.setItem("statsData", JSON.stringify(statsData));
+	try {
+		await fetch("/api/stats", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(statsData)
+		});
+	} catch (e) {
+		console.log("Could not save stats to server");
+	}
+}
+
+function updateStatsDisplay() {
 	const learnedEl = document.getElementById("statsLearned");
 	const timeEl = document.getElementById("statsTime");
 	
 	if (learnedEl) {
-		learnedEl.textContent = `${stats.totalLearned || 0} video${stats.totalLearned !== 1 ? 's' : ''} learned`;
+		learnedEl.textContent = `${statsData.totalLearned || 0} video${statsData.totalLearned !== 1 ? 's' : ''} learned`;
 	}
 	
 	if (timeEl) {
-		const hours = (stats.totalWatchTimeHours || 0).toFixed(1);
+		const hours = (statsData.totalWatchTimeHours || 0).toFixed(1);
 		timeEl.textContent = `${hours}h watched`;
 	}
 }
@@ -144,6 +175,32 @@ async function saveVideoProgress() {
 			console.log("Could not save progress to server, using localStorage only");
 		}
 	}
+}
+
+// Track watch time
+function startWatchSession() {
+	if (!currentVideoId) return;
+	videoWatchSessions[currentVideoId] = {
+		startTime: Date.now(),
+		lastSavedTime: 0
+	};
+}
+
+function endWatchSession() {
+	if (!currentVideoId || !videoWatchSessions[currentVideoId]) return;
+	
+	const session = videoWatchSessions[currentVideoId];
+	const elapsedMs = Date.now() - session.startTime;
+	const elapsedHours = elapsedMs / (1000 * 60 * 60);
+	
+	// Only count if user watched at least 10 seconds
+	if (elapsedHours > 0.003) {
+		statsData.totalWatchTimeHours += elapsedHours;
+		saveStats();
+		updateStatsDisplay();
+	}
+	
+	delete videoWatchSessions[currentVideoId];
 }
 
 function getSavedProgress(videoId) {
@@ -421,10 +478,14 @@ function toggleLearned(videoId) {
 	if (!videoId) return;
 
 	const index = learnedVideos.indexOf(videoId);
-	if (index > -1) {
+	const wasLearned = index > -1;
+	
+	if (wasLearned) {
 		learnedVideos.splice(index, 1);
+		statsData.totalLearned = Math.max(0, statsData.totalLearned - 1);
 	} else {
 		learnedVideos.push(videoId);
+		statsData.totalLearned++;
 	}
 
 	// Reset progress for this video
@@ -441,6 +502,8 @@ function toggleLearned(videoId) {
 	}
 
 	saveLearnedVideos();
+	saveStats();
+	updateStatsDisplay();
 	loadAvailableTranscripts();
 }
 
@@ -851,11 +914,16 @@ function onPlayerStateChange(e) {
 		const icon = pauseBtn.querySelector(".material-icons");
 		if (icon) icon.textContent = "pause";
 		pauseBtn.classList.remove("active");
+		startWatchSession();
 	} else if (e.data === YT.PlayerState.PAUSED) {
 		isPaused = true;
 		const icon = pauseBtn.querySelector(".material-icons");
 		if (icon) icon.textContent = "play_arrow";
 		pauseBtn.classList.add("active");
+		endWatchSession();
+		startWatchSession();
+	} else if (e.data === YT.PlayerState.ENDED) {
+		endWatchSession();
 	}
 }
 
@@ -875,6 +943,7 @@ window.onload = async function() {
 
 // --- Save progress on page unload ---
 window.addEventListener("beforeunload", () => {
+	endWatchSession();
 	saveVideoProgress();
 });
 
