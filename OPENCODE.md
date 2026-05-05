@@ -12,7 +12,15 @@ You are translating Spanish YouTube transcripts to English. Follow these instruc
 
 **Important:** When extracting vocabulary, prioritize **multi-word phrases (2-4 words)** over single words. Phrases like "hacer caso", "en pocas palabras", "sistema inmunitario" are more useful than individual words. See vocabulary extraction rules below for details.
 
-**Before translating, ask:** "How many grammar sentences do you want to extract? (3, 4, 5, or custom number)"
+**Before translating, ask for grammar sentence count using clickable options:**
+
+Present these options to the user:
+- **3 sentences** (default/recommended)
+- **4 sentences**
+- **5 sentences**
+- **Custom number** (user specifies)
+
+Wait for user selection before proceeding with translation.
 
 Or manually:
 1. **Find** transcript files in `transcripts/` folder (e.g., `087XVp3JIpk.md`)
@@ -359,7 +367,7 @@ Skip words that are the same or similar in English:
 
 **Output:** `grammar/[VIDEO_ID]_grammar.json`
 
-**Extract exactly 3 sentences per video** that demonstrate B1+ grammar structures:
+**Extract the user-selected number of sentences per video** (3, 4, 5, or custom) that demonstrate B1+ grammar structures:
 
 ### Target Grammar Structures (select 3 different ones):
 
@@ -554,10 +562,11 @@ source: "https://www.youtube.com/watch?v=087XVp3JIpk"
 
 ## Quality Checklist
 
-### Before Starting (Input Validation):
+### Before Starting (Input Validation & Setup):
 - [ ] Input file has required frontmatter: `title:` and `source:` with YouTube URL
 - [ ] Input file has at least one timestamped line with Spanish content
 - [ ] No matching `[ID]_translation.md` file already exists
+- [ ] Asked user for grammar sentence count using clickable options (3, 4, 5, or custom)
 
 ### Before Finishing (Output Verification):
 - [ ] Translation file has same timestamps as original
@@ -612,7 +621,7 @@ After creating the files:
 2. Read `transcripts/[ID].md`
 3. Create `transcripts/[ID]_translation.md` (full English translation)
 4. Create `vocab/[ID]_vocab.json` (B1+ vocabulary with multi-word phrases)
-5. Create `grammar/[ID]_grammar.json` (3 sentences with B1+ grammar + explanations)
+5. Create `grammar/[ID]_grammar.json` (user-selected number of sentences with B1+ grammar + explanations)
 6. Skip files that already have translations
 7. Exclude basic words (see `data/a1-a2.json`), proper nouns (see `data/proper-nouns.json`), and manual exclusions (see `data/manual-exclude.json`)
 
