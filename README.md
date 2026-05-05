@@ -21,12 +21,14 @@ Open http://localhost:7070
 
 ## Features
 
-- Watch YouTube videos with synchronized transcripts
-- Toggle dual-language view (original + English translation)
-- Drag and drop transcripts between Available and Learned panels
-- Keyboard shortcuts for playback control
-- Hover transcript to see vocabulary translation
-- Auto-synchronized transcript scrolling
+- **Watch YouTube videos** with synchronized transcripts
+- **Dual-language view** (original + English translation)
+- **Interactive vocabulary** - Hover words to see translations in tooltips
+- **Grammar sentences** - 3 clickable grammar examples per video with explanations
+- **Statistics tracking** - Auto-tracks learned videos and total watch time
+- **Drag and drop** transcripts between Available and Learned panels
+- **Keyboard shortcuts** for quick playback control
+- **Auto-synchronized** transcript scrolling
 
 ## Setup
 
@@ -46,6 +48,24 @@ Open http://localhost:7070
 | `D` | Toggle dual translation |
 | `F` | Toggle fullscreen mode |
 | `L` | Toggle learned status (resets progress) |
+
+## Statistics
+
+The app automatically tracks your learning progress:
+
+- **📚 Videos Learned**: Counts when you mark a video as learned (press `L`)
+- **⏱️ Watch Time**: Tracks actual viewing time in hours (starts when you play, stops when you pause)
+
+Stats are displayed below the control buttons and persist across sessions.
+
+## Grammar Sentences
+
+Each video includes 3 grammar sentences that demonstrate B1+ Spanish structures:
+
+- **Clickable tags** in the "Grammar sentences" panel
+- **Full sentence** with English translation in popup
+- **Brief explanation** of the grammar structure used
+- Examples: subjunctive mood, compound tenses, relative clauses
 
 ## Adding Transcripts
 
@@ -98,7 +118,8 @@ The workflow uses AI directly via `OPENCODE.md`:
 - ✅ Translates naturally (not word-for-word)
 - ✅ Preserves speaker's tone and style
 - ✅ Explains cultural references
-- ✅ Extracts B1+ vocabulary only
+- ✅ Extracts **multi-word phrases** (2-4 words) as primary vocabulary
+- ✅ Creates **3 grammar sentences** with B1+ structures (you choose: 3, 4, 5, or custom)
 - ✅ Provides contextual translations
 - ✅ Excludes basic words, proper nouns, and English loanwords
 
@@ -146,14 +167,19 @@ Removes a transcript and all associated files (translation, vocab, progress, lea
 ## Workflow
 
 ```bash
-# 1. Add transcript
+# 1. Add transcript to transcripts/ folder
 transcripts/VIDEO_ID.md
 
-# 2. Tell AI to translate
+# 2. Tell AI to translate and create files
 # "translate new"
+# AI asks: "How many grammar sentences? (3, 4, 5, or custom)"
 
-# 3. Watch
+# 3. Watch and learn!
 node server.js
+# - Hover words for vocabulary
+# - Click grammar tags for explanations
+# - Press L to mark as learned
+# - Track your stats automatically
 ```
 
 ---
@@ -166,10 +192,15 @@ node server.js
 │   └── VIDEO_ID_translation.md
 ├── vocab/               # Vocabulary files (.json)
 │   └── VIDEO_ID_vocab.json
-├── data/                # Exclusion lists
+├── grammar/             # Grammar sentences (.json)
+│   └── VIDEO_ID_grammar.json
+├── data/                # App data and exclusion lists
 │   ├── a1-a2.json      # Basic words to exclude
 │   ├── proper-nouns.json # Names/countries to exclude
-│   └── manual-exclude.json # Manual exclusions
+│   ├── manual-exclude.json # Manual exclusions
+│   ├── learned.json    # Learned videos list
+│   ├── progress.json   # Video progress positions
+│   └── stats.json      # Learning statistics
 ├── src/                 # Source code
 │   ├── routes.js       # HTTP routes
 │   ├── store.js        # Data access layer
@@ -192,6 +223,15 @@ node server.js
 **Vocabulary not appearing?**
 - Check `vocab/VIDEO_ID_vocab.json` exists
 - Ensure words are B1+ level (not in exclusion lists)
+
+**Grammar sentences not showing?**
+- Check `grammar/VIDEO_ID_grammar.json` exists
+- Click the "Grammar sentences" panel to expand it
+
+**Stats not updating?**
+- Stats save automatically when you mark videos as learned or pause playback
+- Check browser console for errors
+- Stats are stored in both localStorage and `data/stats.json`
 
 **Server won't start?**
 - Check port 7070 is available
