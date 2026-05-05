@@ -633,30 +633,76 @@ async function fetchGrammar(videoId) {
 	}
 }
 
+let currentGrammarData = [];
+
 function renderGrammarSentences(grammar) {
 	const container = document.getElementById("grammarSentences");
+	currentGrammarData = grammar || [];
 	
 	if (!grammar || grammar.length === 0) {
 		container.innerHTML = 'No grammar sentences available for this video';
 		return;
 	}
 	
-	let html = '';
+	let html = '<div class="grammar-tags">';
 	grammar.forEach((item, index) => {
+		// Extract first 3-4 words for the tag
+		const shortText = item.spanish.split(' ').slice(0, 4).join(' ') + '...';
 		html += `
-			<div class="grammar-item">
-				<div class="grammar-number">${index + 1}</div>
-				<div class="grammar-content">
-					<div class="grammar-spanish">${item.spanish}</div>
-					<div class="grammar-english">${item.english}</div>
-					<div class="grammar-explanation">${item.explanation}</div>
-				</div>
+			<div class="grammar-tag" onclick="showGrammarModal(${index})" title="Click to see full sentence">
+				<span class="grammar-tag-number">${index + 1}</span>
+				<span class="grammar-tag-text">${shortText}</span>
 			</div>
 		`;
 	});
+	html += '</div>';
 	
 	container.innerHTML = html;
 }
+
+function showGrammarModal(index) {
+	const item = currentGrammarData[index];
+	if (!item) return;
+	
+	const modal = document.getElementById("grammarModal");
+	const content = document.getElementById("grammarModalContent");
+	
+	content.innerHTML = `
+		<div class="grammar-modal-item">
+			<div class="grammar-modal-icon">
+				<span class="material-icons">menu_book</span>
+			</div>
+			<div class="grammar-modal-text">
+				<div class="grammar-modal-spanish">${item.spanish}</div>
+				<div class="grammar-modal-english">${item.english}</div>
+				<div class="grammar-modal-explanation">${item.explanation}</div>
+			</div>
+		</div>
+	`;
+	
+	modal.classList.add("active");
+}
+
+function closeGrammarModal() {
+	const modal = document.getElementById("grammarModal");
+	modal.classList.remove("active");
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+	const modal = document.getElementById("grammarModal");
+	if (event.target === modal) {
+		closeGrammarModal();
+	}
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(event) {
+	const modal = document.getElementById("grammarModal");
+	if (event.key === "Escape" && modal.classList.contains("active")) {
+		closeGrammarModal();
+	}
+});
 
 let isGrammarPanelCollapsed = true;
 
