@@ -346,9 +346,14 @@ function handleListTranscripts(res) {
         const isTranslation = f.includes('translation') || f.includes('translate');
 
         const titleMatch = content.match(/^title:\s*(.+)$/m);
+        const sourceMatch = content.match(/^source:\s*(.+)$/m);
         let fullTitle = titleMatch ? titleMatch[1].trim() : null;
+        let sourceUrl = sourceMatch ? sourceMatch[1].trim() : null;
         if (fullTitle && /^["']/.test(fullTitle) && /["']$/.test(fullTitle)) {
             fullTitle = fullTitle.slice(1, -1);
+        }
+        if (sourceUrl && /^["']/.test(sourceUrl) && /["']$/.test(sourceUrl)) {
+            sourceUrl = sourceUrl.slice(1, -1);
         }
         let shortTitle = fullTitle;
         if (fullTitle) {
@@ -358,7 +363,7 @@ function handleListTranscripts(res) {
         }
 
         if (!grouped[videoId]) {
-            grouped[videoId] = { videoId, title: shortTitle, fullTitle: fullTitle || shortTitle, lines: 0, hasTranslation: false };
+            grouped[videoId] = { videoId, title: shortTitle, fullTitle: fullTitle || shortTitle, sourceUrl, lines: 0, hasTranslation: false };
         }
 
         if (parsed.length > 0) {

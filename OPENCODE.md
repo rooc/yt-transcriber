@@ -8,6 +8,8 @@ You are translating Spanish YouTube transcripts to English. Follow these instruc
 
 **Simple command:** Just say "**translate new**" to translate all untranslated transcripts.
 
+**Automatic Validation:** Every input file is validated before translation starts. Files must have complete frontmatter (title + source URL) and proper timestamp format. See "Step 0: Input Validation" below for details.
+
 **Important:** When extracting vocabulary, prioritize **multi-word phrases (2-4 words)** over single words. Phrases like "hacer caso", "en pocas palabras", "sistema inmunitario" are more useful than individual words. See vocabulary extraction rules below for details.
 
 **Before translating, ask:** "How many grammar sentences do you want to extract? (3, 4, 5, or custom number)"
@@ -19,6 +21,51 @@ Or manually:
    - `transcripts/[ID]_translation.md` — Full English translation
    - `vocab/[ID]_vocab.json` — Vocabulary with contextual translations
    - `grammar/[ID]_grammar.json` — Grammar sentences with explanations
+
+---
+
+## Step 0: Input Validation (REQUIRED Before Translation)
+
+**CRITICAL:** Before starting any translation, the input file MUST pass ALL validation checks below. If any check fails, stop and report the issue.
+
+### ✅ Validation Checklist (MUST PASS ALL):
+
+1. **File Location & Extension**
+   - [ ] File is in `transcripts/` folder
+   - [ ] File ends with `.md` extension
+   - [ ] File does NOT contain `_translation` in filename
+   - [ ] File does NOT have a matching `[ID]_translation.md` already
+
+2. **Frontmatter Required Fields**
+   - [ ] Has `title:` field with non-empty value
+   - [ ] Has `source:` field with valid YouTube URL (format: `https://www.youtube.com/watch?v=VIDEO_ID`)
+
+3. **Content Format**
+   - [ ] Has at least one timestamped line (format: `**M:SS**` or `**H:MM:SS**`)
+   - [ ] Contains Spanish text content (not empty)
+
+### ❌ Skip These Files (Do Not Process):
+- `*_translation.md` files (already translated)
+- Files without YouTube source URL in frontmatter
+- Files missing required frontmatter fields (title or source)
+- Non-transcript markdown files (README, TODO, etc.)
+- Files with invalid or missing timestamps
+
+### Validation Failure Messages:
+
+If validation fails, report exactly what's wrong:
+```
+❌ VALIDATION FAILED: transcripts/VIDEO_ID.md
+   - Missing: title field in frontmatter
+   ❌ CANNOT PROCEED WITH TRANSLATION
+```
+
+```
+❌ VALIDATION FAILED: transcripts/VIDEO_ID.md
+   - Invalid source URL: "https://example.com/video"
+   - Expected: YouTube URL (https://www.youtube.com/watch?v=...)
+   ❌ CANNOT PROCEED WITH TRANSLATION
+```
 
 ---
 
@@ -61,6 +108,89 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 **Timestamp formats:**
 - `**M:SS**` — minutes:seconds (most common)
 - `**H:MM:SS**` — hours:minutes:seconds (for long videos)
+
+---
+
+## Step 2b: Format Conversion (If Needed)
+
+Some transcripts use an alternative "copy-paste" format and must be converted to the standard "obsidian" format before translation.
+
+### Format Types:
+
+**"obsidian" format (default):**
+```markdown
+---
+title: "Video Title in Spanish"
+source: "https://www.youtube.com/watch?v=VIDEO_ID"
+---
+
+**0:00** · Primera línea en español
+**0:05** · Segunda línea en español
+**1:23** · Tercera línea en español
+```
+
+**"copy-paste" format:**
+```markdown
+---
+title: "Video Title in Spanish"
+source: "https://www.youtube.com/watch?v=VIDEO_ID"
+type: "copy-paste"
+---
+
+Section Name
+0:00
+Text line 1
+0:05
+Text line 2
+0:10
+Text line 3
+```
+
+### Conversion Rules:
+
+**If `type: "copy-paste"` is present in frontmatter:**
+1. **Remove** the `type: "copy-paste"` line from frontmatter
+2. **Convert** alternating timestamp/text lines to inline format:
+   - Input: `0:00` followed by newline, then `Text line`
+   - Output: `**0:00** · Text line`
+3. **Remove artifacts:**
+   - Section headers (lines without timestamps that precede timestamps) - DELETE these
+   - Audio markers like `[música]`, `[risas]`, `[aplausos]` - DELETE these
+   - Empty lines between timestamped entries - DELETE these
+4. **Final format should be:** Only frontmatter + timestamped lines (`**M:SS** · text`)
+
+**Example conversion:**
+```
+Input:
+---
+title: "Video Title"
+source: "https://www.youtube.com/watch?v=ID"
+type: "copy-paste"
+---
+
+Intro
+0:00
+99% de las especies que han habitado la [música]
+0:03
+Tierra ya se extinguieron
+Las Extinciones
+0:06
+Nueva sección aquí
+
+Output:
+---
+title: "Video Title"
+source: "https://www.youtube.com/watch?v=ID"
+---
+
+**0:00** · 99% de las especies que han habitado la
+**0:03** · Tierra ya se extinguieron
+**0:06** · Nueva sección aquí
+```
+
+**Note:** Section headers ("Intro", "Las Extinciones") and audio markers (`[música]`) are removed.
+
+**Files without `type` field are assumed to be "obsidian" format and don't need conversion.**
 
 ---
 
@@ -424,8 +554,12 @@ source: "https://www.youtube.com/watch?v=087XVp3JIpk"
 
 ## Quality Checklist
 
-Before finishing, verify:
+### Before Starting (Input Validation):
+- [ ] Input file has required frontmatter: `title:` and `source:` with YouTube URL
+- [ ] Input file has at least one timestamped line with Spanish content
+- [ ] No matching `[ID]_translation.md` file already exists
 
+### Before Finishing (Output Verification):
 - [ ] Translation file has same timestamps as original
 - [ ] All sentences are translated (no `[TRANSLATION NEEDED]` placeholders)
 - [ ] Vocabulary excludes A1-A2 words (check `data/a1-a2.json`)
@@ -474,12 +608,13 @@ After creating the files:
 ## Summary
 
 **Your job:**
-1. Read `transcripts/[ID].md`
-2. Create `transcripts/[ID]_translation.md` (full English translation)
-3. Create `vocab/[ID]_vocab.json` (B1+ vocabulary with multi-word phrases)
-4. Create `grammar/[ID]_grammar.json` (3 sentences with B1+ grammar + explanations)
-5. Skip files that already have translations
-6. Exclude basic words (see `data/a1-a2.json`), proper nouns (see `data/proper-nouns.json`), and manual exclusions (see `data/manual-exclude.json`)
+1. **Validate** `transcripts/[ID].md` has required frontmatter (title + source URL) and proper format
+2. Read `transcripts/[ID].md`
+3. Create `transcripts/[ID]_translation.md` (full English translation)
+4. Create `vocab/[ID]_vocab.json` (B1+ vocabulary with multi-word phrases)
+5. Create `grammar/[ID]_grammar.json` (3 sentences with B1+ grammar + explanations)
+6. Skip files that already have translations
+7. Exclude basic words (see `data/a1-a2.json`), proper nouns (see `data/proper-nouns.json`), and manual exclusions (see `data/manual-exclude.json`)
 
 **Goal:** Help language learners understand Spanish YouTube videos with accurate translations, contextual vocabulary, and grammar-focused learning sentences.
 

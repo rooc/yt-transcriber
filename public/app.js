@@ -896,6 +896,13 @@ function loadVideo(videoId) {
 	} else {
 		titleEl.textContent = `Video: ${videoId}`;
 	}
+	
+	// Set the href to the YouTube video URL
+	if (transcript && transcript.sourceUrl) {
+		titleEl.href = transcript.sourceUrl;
+	} else {
+		titleEl.href = `https://www.youtube.com/watch?v=${videoId}`;
+	}
 
 	Promise.all([
 		fetchTranscript(videoId),
