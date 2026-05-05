@@ -882,7 +882,7 @@ function loadByVideoId(videoId) {
 function loadVideo(videoId) {
 	if (!videoId) return;
 
-	saveVideoProgress();
+	// Note: saveVideoProgress() is already called in loadByVideoId before switching videos
 
 	if (syncInterval) clearInterval(syncInterval);
 	isPaused = false;
