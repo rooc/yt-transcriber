@@ -920,42 +920,40 @@ function loadVideo(videoId) {
 			
 			if (savedProgress) {
 				console.log("Restoring progress:", savedProgress);
-				// Have saved progress - cue video first (doesn't autoplay), then seek
-				player.cueVideoById(videoId);
+				// Load video and seek to saved position
+				player.loadVideoById(videoId);
 				
-				// Wait for CUED state, then seek and play
-				const seekWhenCued = () => {
+				// Wait for video to be ready then seek
+				const seekWhenReady = () => {
 					const playerState = player.getPlayerState();
 					console.log("Player state:", playerState, "seeking to:", savedProgress.time);
 					
-					const seekTime = (savedProgress.line >= 0 && transcriptData[savedProgress.line]) 
-						? transcriptData[savedProgress.line].start 
-						: savedProgress.time;
-					
-					if (playerState === YT.PlayerState.CUED) {
-						player.seekTo(seekTime, true);
-						console.log("Seeked to:", seekTime);
-						setStatus(`Resumed at ${formatTime(seekTime)}`);
-						player.playVideo();
+					if (playerState === YT.PlayerState.PLAYING || 
+					    playerState === YT.PlayerState.PAUSED ||
+					    playerState === YT.PlayerState.CUED) {
+						// Video is ready, seek to saved time
+						player.seekTo(savedProgress.time, true);
+						console.log("Seeked to:", savedProgress.time);
+						setStatus(`Resumed at ${formatTime(savedProgress.time)}`);
 						setTimeout(() => {
 							if (loadingOverlay) loadingOverlay.classList.add("hidden");
 						}, 300);
 					} else if (playerState === -1 || playerState === YT.PlayerState.BUFFERING) {
 						// Still loading, wait more
 						console.log("Still loading, retrying...");
-						setTimeout(seekWhenCued, 200);
+						setTimeout(seekWhenReady, 200);
 					} else {
-						// Video started playing, seek now
-						console.log("Video started, seeking now");
-						player.seekTo(seekTime, true);
-						setStatus(`Resumed at ${formatTime(seekTime)}`);
+						// Some other state, just try seeking
+						console.log("Trying to seek in state:", playerState);
+						player.seekTo(savedProgress.time, true);
+						setStatus(`Resumed at ${formatTime(savedProgress.time)}`);
 						setTimeout(() => {
 							if (loadingOverlay) loadingOverlay.classList.add("hidden");
 						}, 300);
 					}
 				};
 				
-				setTimeout(seekWhenCued, 500);
+				setTimeout(seekWhenReady, 300);
 			} else {
 				// No saved progress - just play from start
 				console.log("No saved progress, playing from start");
@@ -966,7 +964,7 @@ function loadVideo(videoId) {
 			}
 		} else {
 			player = new YT.Player("player", {
-				videoId: videoId,
+					videoId: videoId,
 				playerVars: { playsinline: 1, rel: 0, autoplay: 0 },
 				events: {
 					onReady: () => {
@@ -974,12 +972,9 @@ function loadVideo(videoId) {
 						if (savedProgress) {
 							// Pause first to prevent sound from beginning
 							player.pauseVideo();
-							// Seek to transcript line timestamp if available, otherwise use raw time
-							const seekTime = (savedProgress.line >= 0 && transcriptData[savedProgress.line]) 
-								? transcriptData[savedProgress.line].start 
-								: savedProgress.time;
-							player.seekTo(seekTime, true);
-							setStatus(`Resumed at ${formatTime(seekTime)}`);
+							// Seek to saved time
+							player.seekTo(savedProgress.time, true);
+							setStatus(`Resumed at ${formatTime(savedProgress.time)}`);
 							// Small delay then play
 							setTimeout(() => {
 								player.playVideo();
