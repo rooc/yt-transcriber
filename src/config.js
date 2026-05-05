@@ -25,6 +25,7 @@ module.exports = {
     TRANSCRIPTS_DIR: path.join(ROOT_DIR, 'transcripts'),
     VOCAB_DIR: path.join(ROOT_DIR, 'vocab'),
     GRAMMAR_DIR: path.join(ROOT_DIR, 'grammar'),
+    SUMMARY_DIR: path.join(ROOT_DIR, 'summary'),
     DATA_DIR: path.join(ROOT_DIR, 'data'),
     STATS_PATH: path.join(ROOT_DIR, 'data', 'stats.json'),
 };

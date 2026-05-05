@@ -28,13 +28,32 @@
 				>
 			</div>
 			<div class="header-main">
-				<h1 id="videoTitle">YouTube Video with Transcript</h1>
+				<div class="video-title-container">
+					<h1 id="videoTitle">YouTube Video with Transcript</h1>
+					<span id="summaryIcon" class="summary-icon" onclick="showSummaryModal()" title="View summary">
+						<span class="material-icons">summarize</span>
+					</span>
+				</div>
 			</div>
 
 			<div class="sidebar">
 				<div class="panel" id="availableTranscripts">
 					<h3>Available transcripts:</h3>
 					<div id="transcriptTags"></div>
+				</div>
+
+				<div class="panel" id="grammarPanel">
+					<h3 class="collapsible-header" onclick="toggleGrammarPanel()">
+						<span class="material-icons" id="grammarToggleIcon"
+							>expand_more</span
+						>
+						Grammar sentences
+					</h3>
+					<div id="grammarContent" class="collapsible-content collapsed">
+						<div id="grammarSentences">
+							Select a transcript to see grammar examples
+						</div>
+					</div>
 				</div>
 
 				<div class="panel" id="learnedTranscripts">
@@ -48,16 +67,6 @@
 						id="learnedTags"
 						class="collapsible-content collapsed"
 					></div>
-				</div>
-
-				<div class="panel" id="grammarPanel">
-					<h3 class="collapsible-header" onclick="toggleGrammarPanel()">
-						<span class="material-icons" id="grammarToggleIcon">expand_more</span>
-						Grammar sentences
-					</h3>
-					<div id="grammarContent" class="collapsible-content collapsed">
-						<div id="grammarSentences">Select a transcript to see grammar examples</div>
-					</div>
 				</div>
 
 				<div class="controls">
@@ -161,8 +170,28 @@
 		<!-- Grammar Modal -->
 		<div id="grammarModal" class="grammar-modal">
 			<div class="grammar-modal-content">
-				<span class="grammar-modal-close" onclick="closeGrammarModal()">&times;</span>
+				<span class="grammar-modal-close" onclick="closeGrammarModal()"
+					>&times;</span
+				>
 				<div id="grammarModalContent"></div>
+			</div>
+		</div>
+
+		<!-- Summary Modal -->
+		<div id="summaryModal" class="grammar-modal summary-modal">
+			<div class="grammar-modal-content">
+				<span class="grammar-modal-close" onclick="closeSummaryModal()"
+					>&times;</span
+				>
+				<div id="summaryModalContent">
+					<div class="summary-modal-header">
+						<span class="material-icons">summarize</span>
+						<h3>Video Summary</h3>
+					</div>
+					<div id="summaryText" class="summary-text">
+						Select a transcript to see summary
+					</div>
+				</div>
 			</div>
 		</div>
 

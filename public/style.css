@@ -161,6 +161,37 @@ h1 {
 	overflow: hidden;
 }
 
+.video-title-container {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	width: 100%;
+}
+
+.summary-icon {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: var(--bg-hover);
+	border: 1px solid var(--border-light);
+	border-radius: var(--radius-md);
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.summary-icon:hover {
+	background: var(--bg-hover-alt);
+	border-color: var(--brand);
+}
+
+.summary-icon .material-icons {
+	font-size: 1.25rem;
+	color: var(--text-accent);
+}
+
 button {
 	background: var(--brand);
 	padding: 0.625rem 1rem;
@@ -731,4 +762,36 @@ h3.collapsible-header:has(+ .collapsed) {
 
 button.active {
 	background: var(--text-accent);
+}
+
+/* Summary Modal */
+.summary-modal .grammar-modal-content {
+	max-width: 700px;
+}
+
+.summary-modal-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--border-light);
+}
+
+.summary-modal-header .material-icons {
+	font-size: 1.5rem;
+	color: var(--text-accent);
+}
+
+.summary-modal-header h3 {
+	font-size: 1.25rem;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.summary-text {
+	font-size: 1.1rem;
+	color: var(--text-primary);
+	line-height: 1.6;
+	white-space: pre-wrap;
 }

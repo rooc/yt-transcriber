@@ -284,15 +284,45 @@ Skip words that are the same or similar in English:
 
 ---
 
+## Step 4c: Create Summary File
+
+**Output:** `summary/[VIDEO_ID]_summary.json`
+
+**Write a short summary** of the video content in Spanish (2-4 sentences), using the original vocabulary from the transcript. The summary should capture the main ideas and key points discussed.
+
+### Summary Guidelines:
+- **Language:** Spanish (original language of the video)
+- **Length:** 2-4 sentences
+- **Style:** Use vocabulary from the transcript (not simplified A1-A2 words)
+- **Content:** Main topic, key points, main conclusion or takeaway
+- **Format:** Plain text, not markdown
+
+### JSON Structure:
+```json
+{
+  "summary": "Spanish summary text here using original vocabulary from the transcript. Should capture the main ideas and key points of the video in 2-4 sentences."
+}
+```
+
+### Example:
+```json
+{
+  "summary": "Este episodio explica por qué tenemos muelas del juicio y por qué duelen tanto cuando salen. El dentista describe cómo extrajo una muela con tres raíces en lugar de una sola. También se discute la tradición del Ratón Pérez en España versus el Hada de los Dientes en Estados Unidos."
+}
+```
+
+---
+
 ## Step 5: File Creation
 
-### Create Three Files
+### Create Four Files
 
-For each transcript, create **three** files:
+For each transcript, create **four** files:
 
 1. **Translation file** in `transcripts/` folder
 2. **Vocab file** in `vocab/` folder  
 3. **Grammar file** in `grammar/` folder
+4. **Summary file** in `summary/` folder
 
 ### Naming Convention
 
@@ -301,6 +331,7 @@ transcripts/087XVp3JIpk.md          ← Original (you read this)
 transcripts/087XVp3JIpk_translation.md  ← Translation (you create this)
 vocab/087XVp3JIpk_vocab.json       ← Vocabulary (you create this)
 grammar/087XVp3JIpk_grammar.json   ← Grammar sentences (you create this)
+summary/087XVp3JIpk_summary.json   ← Video summary (you create this)
 ```
 
 ---
@@ -508,6 +539,7 @@ Removes a transcript and all associated files:
 - `transcripts/VIDEO_ID_translation.md`
 - `vocab/VIDEO_ID_vocab.json`
 - `grammar/VIDEO_ID_grammar.json`
+- `summary/VIDEO_ID_summary.json`
 - Progress data
 - Learned status
 

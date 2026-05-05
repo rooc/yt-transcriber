@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { PORT, ROOT_DIR, TRANSCRIPTS_DIR, VOCAB_DIR, STATS_PATH } = require('./config');
 const { parseTranscriptFile, getVideoIdFromFile, convertToXML } = require('./store');
-const { getTranscriptForVideo, readVocab, readGrammar } = require('./store');
+const { getTranscriptForVideo, readVocab, readGrammar, readSummary } = require('./store');
 
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 const LEARNED_PATH = path.join(ROOT_DIR, 'data', 'learned.json');
@@ -152,6 +152,32 @@ function handleGrammar(url, res) {
     } else {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify([]));
+    }
+}
+
+/**
+ * GET /api/summary?v=VIDEO_ID
+ *
+ * Returns the summary JSON for a video.  Empty object if none.
+ *
+ * @param {URL} url
+ * @param {import('http').ServerResponse} res
+ */
+function handleSummary(url, res) {
+    const videoId = url.searchParams.get('v');
+    if (!videoId) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Video ID required' }));
+        return;
+    }
+
+    const summary = readSummary(videoId);
+    if (summary) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(summary));
+    } else {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({}));
     }
 }
 
@@ -424,6 +450,11 @@ function setupRoutes(req, res) {
 
     if (url.pathname === '/api/grammar') {
         handleGrammar(url, res);
+        return;
+    }
+
+    if (url.pathname === '/api/summary') {
+        handleSummary(url, res);
         return;
     }
 

@@ -725,6 +725,49 @@ async function fetchGrammar(videoId) {
 	}
 }
 
+// --- Summary ---
+
+let currentSummary = null;
+
+async function fetchSummary(videoId) {
+	try {
+		const response = await fetch(`/api/summary?v=${videoId}`);
+		if (!response.ok) {
+			currentSummary = null;
+			updateSummaryIconVisibility();
+			return;
+		}
+		const summary = await response.json();
+		currentSummary = summary && summary.summary ? summary : null;
+		updateSummaryIconVisibility();
+	} catch (e) {
+		currentSummary = null;
+		updateSummaryIconVisibility();
+	}
+}
+
+function updateSummaryIconVisibility() {
+	const summaryIcon = document.getElementById("summaryIcon");
+	if (summaryIcon) {
+		summaryIcon.style.display = currentSummary ? 'flex' : 'none';
+	}
+}
+
+function showSummaryModal() {
+	if (!currentSummary) return;
+	
+	const modal = document.getElementById("summaryModal");
+	const textEl = document.getElementById("summaryText");
+	
+	textEl.textContent = currentSummary.summary;
+	modal.classList.add("active");
+}
+
+function closeSummaryModal() {
+	const modal = document.getElementById("summaryModal");
+	modal.classList.remove("active");
+}
+
 let currentGrammarData = [];
 
 function renderGrammarSentences(grammar) {
@@ -782,17 +825,27 @@ function closeGrammarModal() {
 
 // Close modal when clicking outside
 window.onclick = function(event) {
-	const modal = document.getElementById("grammarModal");
-	if (event.target === modal) {
+	const grammarModal = document.getElementById("grammarModal");
+	const summaryModal = document.getElementById("summaryModal");
+	
+	if (event.target === grammarModal) {
 		closeGrammarModal();
+	} else if (event.target === summaryModal) {
+		closeSummaryModal();
 	}
 }
 
 // Close modal with ESC key
 document.addEventListener('keydown', function(event) {
-	const modal = document.getElementById("grammarModal");
-	if (event.key === "Escape" && modal.classList.contains("active")) {
-		closeGrammarModal();
+	if (event.key === "Escape") {
+		const grammarModal = document.getElementById("grammarModal");
+		const summaryModal = document.getElementById("summaryModal");
+		
+		if (grammarModal.classList.contains("active")) {
+			closeGrammarModal();
+		} else if (summaryModal.classList.contains("active")) {
+			closeSummaryModal();
+		}
 	}
 });
 
@@ -849,6 +902,7 @@ function loadVideo(videoId) {
 		fetchTranslation(videoId),
 		fetchVocab(videoId),
 		fetchGrammar(videoId),
+		fetchSummary(videoId),
 	]).then(() => {
 		const savedProgress = getSavedProgress(videoId);
 		const loadingOverlay = document.getElementById("videoLoadingOverlay");

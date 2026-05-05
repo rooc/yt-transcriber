@@ -259,6 +259,11 @@
     "pos": "verb phrase",
     "context": "mezclan aleatoriamente"
   },
+  "aleatoriamente": {
+    "translation": "randomly",
+    "pos": "adverb",
+    "context": "mezclan aleatoriamente"
+  },
   "ejército de cocineros": {
     "translation": "army of chefs",
     "pos": "noun phrase",
