@@ -61,8 +61,10 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **2:22** all its secrets. Given its complexity,
 **2:25** we must simplify and go step by step. At the
 **2:28** end of the video we'll see how to go deeper
-**2:30** Well then, why doesn't some
+**2:30** deeper
+**2:32** more. Well then, why doesn't some
 **2:34** new bacteria or virus kill us all?
+**2:37** everyone?
 **2:38** In short, we have two
 **2:40** immune systems, the innate and the
 **2:43** acquired. The innate immune system
@@ -89,7 +91,8 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **3:30** 100 years.
 **3:32** This allows counteracting the ability
 **3:35** that bacteria and viruses have to mutate so
-**3:37** quickly. How is it possible? To
+**3:37** so
+**3:38** quickly. How is it possible? To
 **3:41** understand what happens we must take
 **3:43** perspective. All terrestrial organisms
 **3:45** are composed of the same
@@ -131,14 +134,16 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **5:06** compose its shell change a little bit
 **5:08** constantly. The innate immune system soldiers
 **5:10** have a bunch of puzzle pieces for
-**5:13** common bacteria and viruses memorized,
+**5:13** common bacteria and viruses
+**5:14** memorized,
 **5:17** which makes them universal weapons,
 **5:18** but they are ineffective against
 **5:21** the billions of mutations and
 **5:23** adaptations that enemies can develop.
 **5:25** And so, the reason we're still
 **5:28** alive is that the acquired immune
-**5:29** system is capable of recognizing between 1,000 and 10,000 million
+**5:29** system is capable of
+**5:31** recognizing between 1,000 and 10,000 million
 **5:33** different enemy protein pieces,
 **5:36** enough to be ready for
 **5:38** every possible enemy. How is it possible?
@@ -214,6 +219,7 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **8:19** deadly course. Fundamentally it presents them
 **8:21** with all kinds of protein pieces that
 **8:23** our own cells use to
+**8:25** our own cells to
 **8:27** see how they react. When a young
 **8:30** cell recognizes a piece of the body and
 **8:32** tries to attack it, the professor orders
@@ -226,9 +232,11 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **8:49** begin working to truly protect us.
 **8:53** If the process fails and cells that recognize our
 **8:55** own protein pieces escape, they can
+**8:57** own protein pieces,
 **8:59** cause autoimmune diseases in
 **9:02** which the system attacks us from within.
-**9:03** Something that also deserves that we dedicate time to it at another time. Well,
+**9:03** Something that also deserves that we dedicate
+**9:06** time to it at another time. Well,
 **9:09** let's summarize. The immune system has
 **9:12** two parts, one that defines us
 **9:14** directly after birth and another with the
@@ -248,7 +256,8 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **9:45** wait a moment. If all this is true, why
 **9:47** do we get sick? Why did a
 **9:50** new disease like COVID-19 manage to kill
-**9:52** millions? Okay, we've only opened
+**9:52** millions?
+**9:53** millions? Okay, we've only opened
 **9:56** a tiny window to the
 **9:58** fascinating battle between life and
 **10:00** death that takes place daily in
@@ -257,6 +266,7 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **10:06** How does the body locate the right cell
 **10:09** to protect us? How do enemies defend themselves and end up
 **10:11** overcoming the immune system? And what
+**10:13** the immune system? And
 **10:16** about everything that doesn't fit in this
 **10:18** video? Well, today we finally present
 **10:21** the book Immune, a journey to the mysterious
@@ -269,11 +279,13 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **10:37** and disease. Written in terms as
 **10:40** fun and understandable as Kurzgesagt videos, the book deals with
 **10:42** the topic in greater depth. Feel encouraged to
+**10:44** in greater depth. Feel
 **10:46** start a journey through the hidden
 **10:48** microverse of our body. Be
 **10:50** witnesses of the wars between thousands of
 **10:52** millions of invaders and cells and
-**10:53** learn how the immune system really works and protects us from
+**10:53** learn how the immune system really works
+**10:55** and protects us from
 **10:57** cuts, cancer, COVID. Immune is
 **11:00** fun, a pleasure for the eyes and even
 **11:02** smells good. Click on the
@@ -285,8 +297,9 @@ source: "https://www.youtube.com/watch?v=bDRVjoVn0Fg"
 **11:15** become a sponsor and join the
 **11:17** bird army. Although you shouldn't
 **11:19** feel obligated, just by watching,
-**11:21** commenting or sharing our videos already
+**11:22** commenting or sharing our videos already
 **11:24** helps us a lot. But if you want
 **11:26** to support us directly, thank you very much.
 **11:29** This way they will remain free for
 **11:31** everyone.
+**11:33** everyone.
