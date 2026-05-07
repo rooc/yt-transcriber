@@ -263,12 +263,41 @@ English: **1:30** I'm fed up with this. (Mexican slang)
 
 **Extract BOTH single words AND multi-word phrases:**
 
-#### Single Words (B1+)
+#### Single Words (B1+ LEVEL)
 - Individual words at B1 level or higher
 - Technical/specialized terms
 
+**⚠️ IMPORTANT:** Vocabulary selection is based on **B1+ GRAMMAR COMPLEXITY**, not just word difficulty. This means:
+- **Exclude** simple A1-A2 words when used in basic tenses (present, preterite)
+- **INCLUDE** A1-A2 words when they appear in **B1+ grammatical structures** (subjunctive, conditional, compound tenses, etc.)
+
 #### Multi-Word Phrases (2-4 words) - HIGH PRIORITY
-These are often MORE useful than single words:
+These are often MORE useful than single words. **Extract phrases that demonstrate B1+ grammar, even if individual words are basic:**
+
+**Complex Verb Phrases (2-3 words) - B1+ GRAMMAR RULE:**
+Extract 2-3 word phrases containing **complex verb tenses and grammatical structures** EVEN if individual words are A1-A2 level. These demonstrate B1+ grammar and are valuable for learning:
+
+**Include phrases with these B1+ structures:**
+- **Subjunctive**: "sin haberla visto" (without having seen her), "que tú digas" (that you say), "cuando vengas" (when you come)
+- **Conditional**: "lo haría" (I would do it), "querrías venir" (would you want to come), "me gustaría" (I would like)
+- **Future**: "lo haré" (I will do it), "qué será" (what will it be), "dirán que" (they will say that)
+- **Imperfect**: "cuando era" (when I was), "lo hacía" (I used to do it), "si tenía" (if I had)
+- **Compound tenses**: "había comido" (had eaten), "habría dicho" (would have said), "ha estado" (has been)
+- **Imperative + object**: "dime eso" (tell me that), "cuéntame" (tell me), "dámelo" (give it to me)
+- **Relative clauses**: "el libro que compré" (the book that I bought), "la persona de quien hablamos" (the person we're talking about)
+- **Reflexive pronouns + verbs**: "me acuerdo de" (I remember), "se olvidan de" (they forget)
+- **Preposition + infinitive**: "antes de comer" (before eating), "después de llegar" (after arriving), "al entrar" (upon entering)
+
+**Examples to extract (B1+ grammar, even with basic words):**
+- "sin haberla visto" - perfect infinitive with pronouns
+- "que tú dirás" - future in subordinate clause
+- "si hubiera sabido" - past perfect subjunctive
+- "me lo estoy diciendo" - present progressive with double pronouns
+- "lo he hecho" - present perfect (auxiliary + participle)
+- "para que entiendas" - present subjunctive
+- "cuando llegué" - preterite in time clause (advanced usage)
+
+**Key principle:** A word like "decir" (A1) in simple present "yo digo" is excluded. But "que dirás" is included because it demonstrates B1+ grammar (future in subordinate clause).
 
 **Verb + Preposition combinations:**
 - "hacer caso" (to pay attention)
@@ -288,7 +317,13 @@ These are often MORE useful than single words:
 - "en el quinto pino" (in the middle of nowhere)
 - "costar un ojo de la cara" (to cost an arm and a leg)
 
-**DO NOT extract (skip these):**
+**DO NOT extract simple phrases:**
+- Simple present: "yo digo", "él come", "tú tienes"
+- Simple preterite: "yo dije", "él comió", "tú tuviste"
+- Basic ser/estar: "es bueno", "está aquí"
+- These don't demonstrate B1+ grammar complexity
+
+**DO NOT extract (skip these):
 
 #### 1. Basic A1-A2 Words
 Read `data/a1-a2.json` for the complete exclusion list (~680 words). These include:

@@ -80,21 +80,34 @@ Each video includes a **4-6 sentence summary** in Spanish:
 
 ## Adding Transcripts
 
-### Method 1: Obsidian Clipper (Recommended)
+**Note:** There are many ways to add transcripts - use whatever method works best for you! Here are some options:
+
+### Method 1: Browser Extensions
+
+**YouTube Transcript Copier (Firefox)**
+- Install the "YouTube Transcript Copier" extension for Firefox
+- Open any YouTube video and copy the transcript
+- Paste into a new file and save to the transcripts folder
+
+**Other extensions** - Any extension that can extract YouTube transcripts will work. Choose whichever fits your workflow.
+
+### Method 2: Obsidian Clipper
 
 1. **Install** Obsidian Web Clipper extension: [Chrome](https://chromewebstore.google.com/detail/obsidian-web-clipper) | [Firefox](https://addons.mozilla.org/en-US/firefox/addon/obsidian-web-clipper/)
 
 2. **Clip YouTube video**:
    - Open any YouTube video
    - Click the Clipper icon → Click **Clip**
-   - Save file and put it in transcipts folder
+   - Save file and put it in transcripts folder
 
 3. **Rename file** to video ID:
-   - transcripts/"Video Title.md" transcripts/VIDEO_ID.md
+   - transcripts/"Video Title.md" → transcripts/VIDEO_ID.md
+
+**Note:** Obsidian creates transcripts as paragraphs (often with 2-5 lines of text), which isn't very usable for language learning. You may need to reformat the transcript to have one timestamp per line for the best experience.
 
 The default template already includes title and URL, which is all you need.
 
-### Method 2: Manual
+### Method 3: Manual
 
 Place transcript files in `/transcripts/` folder:
 
@@ -104,8 +117,8 @@ title: "Video Title"
 source: "https://www.youtube.com/watch?v=VIDEO_ID"
 ---
 
-**0:00** · First line of transcript
-**0:05** · Second line
+**0:00** First line of transcript
+**0:05** Second line
 ```
 
 ---
