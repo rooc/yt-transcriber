@@ -197,38 +197,42 @@ export function restartVideo() {
  * Rewind to previous or current segment.
  */
 export function rewindBack() {
-	const now = Date.now();
-	const lastRewindTime = 0; // Will be managed differently in refactored version
-	const isDoubleTap = now - lastRewindTime < 500;
+	import('./state.js').then(state => {
+		const now = Date.now();
+		const isDoubleTap = now - state.lastRewindTime < 500;
+		state.setLastRewindTime(now);
 
-	let targetTime;
-	if (isDoubleTap && activeIndex > 0) {
-		targetTime = transcriptData[activeIndex - 1].time;
-	} else if (activeIndex >= 0) {
-		targetTime = transcriptData[activeIndex].time;
-	} else {
-		targetTime = Math.max(0, player?.getCurrentTime() - 10 || 0);
-	}
-	setActiveIndex(-1);
+		let targetTime;
+		if (isDoubleTap && state.activeIndex > 0) {
+			targetTime = state.transcriptData[state.activeIndex - 1].time;
+		} else if (state.activeIndex >= 0) {
+			targetTime = state.transcriptData[state.activeIndex].time;
+		} else {
+			targetTime = Math.max(0, state.player?.getCurrentTime() - 10 || 0);
+		}
+		state.setActiveIndex(-1);
 
-	if (player) player.seekTo(targetTime, true);
-	updateDisplay();
+		if (state.player) state.player.seekTo(targetTime, true);
+		updateDisplay();
+	});
 }
 
 /**
  * Forward to next segment.
  */
 export function rewindForward() {
-	let targetTime;
-	if (activeIndex >= 0 && activeIndex < transcriptData.length - 1) {
-		targetTime = transcriptData[activeIndex + 1].time;
-	} else {
-		targetTime = (player?.getCurrentTime() || 0) + 10;
-	}
-	setActiveIndex(-1);
+	import('./state.js').then(state => {
+		let targetTime;
+		if (state.activeIndex >= 0 && state.activeIndex < state.transcriptData.length - 1) {
+			targetTime = state.transcriptData[state.activeIndex + 1].time;
+		} else {
+			targetTime = (state.player?.getCurrentTime() || 0) + 10;
+		}
+		state.setActiveIndex(-1);
 
-	if (player) player.seekTo(targetTime, true);
-	updateDisplay();
+		if (state.player) state.player.seekTo(targetTime, true);
+		updateDisplay();
+	});
 }
 
 /**
