@@ -29,26 +29,28 @@ import { updateSegmentEndTime } from './player.js';
  * Render the current active transcript line.
  */
 export function renderTranscriptLine() {
-	if (activeIndex < 0 || activeIndex >= transcriptData.length) return;
+	import('./state.js').then(state => {
+		if (state.activeIndex < 0 || state.activeIndex >= state.transcriptData.length) return;
 
-	const original = wrapVocabWords(transcriptData[activeIndex].text);
-	const translated = hasTranslation && translationData[activeIndex]
-		? translationData[activeIndex].text
-		: null;
+		const original = wrapVocabWords(state.transcriptData[state.activeIndex].text);
+		const translated = state.hasTranslation && state.translationData[state.activeIndex]
+			? state.translationData[state.activeIndex].text
+			: null;
 
-	const pauseIconHtml = isSegmentRepeatMode
-		? '<span class="segment-pause-icon"><span class="material-icons">pause</span></span>'
-		: '';
+		const pauseIconHtml = state.isSegmentRepeatMode
+			? '<span class="segment-pause-icon"><span class="material-icons">pause</span></span>'
+			: '';
 
-	if (isDualMode && translated) {
-		transcriptContainer.innerHTML = `
-			<div class="transcript-dual">
-				<div class="transcript-line original"><span>${original}</span>${pauseIconHtml}</div>
-				<div class="transcript-line translated"><span>${translated}</span></div>
-			</div>`;
-	} else {
-		transcriptContainer.innerHTML = `<div class="transcript-line"><span>${original}</span>${pauseIconHtml}</div>`;
-	}
+		if (state.isDualMode && translated) {
+			state.transcriptContainer.innerHTML = `
+				<div class="transcript-dual">
+					<div class="transcript-line original"><span>${original}</span>${pauseIconHtml}</div>
+					<div class="transcript-line translated"><span>${translated}</span></div>
+				</div>`;
+		} else {
+			state.transcriptContainer.innerHTML = `<div class="transcript-line"><span>${original}</span>${pauseIconHtml}</div>`;
+		}
+	});
 }
 
 /**
@@ -125,7 +127,7 @@ export function updateDisplay() {
  */
 export function toggleDual(renderCallback) {
 	import('./state.js').then(state => {
-		const newMode = !isDualMode;
+		const newMode = !state.isDualMode;
 		state.setIsDualMode(newMode);
 		
 		const dualBtn = document.getElementById("dualBtn");
@@ -134,6 +136,6 @@ export function toggleDual(renderCallback) {
 		dualBtn.classList.toggle("active", newMode);
 		fsDualBtn.classList.toggle("active", newMode);
 		
-		if (activeIndex >= 0 && renderCallback) renderCallback();
+		if (state.activeIndex >= 0 && renderCallback) renderCallback();
 	});
 }
