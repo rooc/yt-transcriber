@@ -162,8 +162,6 @@ if (document.readyState === 'loading') {
 window.toggleLearned = toggleLearned;
 window.toggleLearnedPanel = toggleLearnedPanel;
 window.togglePause = () => import('./modules/player.js').then(m => m.togglePause());
-window.rewindBack = () => import('./modules/player.js').then(m => m.rewindBack());
-window.rewindForward = () => import('./modules/player.js').then(m => m.rewindForward());
 window.restartVideo = () => import('./modules/player.js').then(m => m.restartVideo());
 window.toggleFullscreen = () => import('./modules/player.js').then(m => m.toggleFullscreen());
 window.toggleSegmentRepeat = () => import('./modules/player.js').then(m => m.toggleSegmentRepeat(renderTranscriptLine));

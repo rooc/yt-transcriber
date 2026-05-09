@@ -74,26 +74,14 @@
 				</div>
 
 				<div class="controls">
-					<button
-						id="pauseBtn"
-						onclick="togglePause()"
-						title="Pause/Play (Space)"
-					>
-						<span class="material-icons">pause</span>
-					</button>
-					<button
-						onclick="rewindBack()"
-						title="Go to start of current line (←)"
-					>
-						<span class="material-icons">replay_10</span>
-					</button>
-					<button
-						onclick="rewindForward()"
-						title="Go to start of next line (→)"
-					>
-						<span class="material-icons">forward_10</span>
-					</button>
-					<button onclick="restartVideo()" title="Restart video">
+				<button
+					id="pauseBtn"
+					onclick="togglePause()"
+					title="Pause/Play (Space)"
+				>
+					<span class="material-icons">pause</span>
+				</button>
+				<button onclick="restartVideo()" title="Restart video">
 						<span class="material-icons">skip_previous</span>
 					</button>
 					<button
@@ -150,12 +138,6 @@
 
 		<!-- Floating controls for fullscreen mode -->
 		<div class="fullscreen-controls">
-			<button onclick="rewindBack()" title="Go to start of current line (←)">
-				<span class="material-icons">replay_10</span>
-			</button>
-			<button onclick="rewindForward()" title="Go to start of next line (→)">
-				<span class="material-icons">forward_10</span>
-			</button>
 			<button
 				id="fsPauseBtn"
 				onclick="togglePause()"

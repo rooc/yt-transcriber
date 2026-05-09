@@ -31,14 +31,14 @@ function handleKeyDown(e) {
 		return;
 	}
 
-	// Arrow Left - Rewind
+	// Arrow Left - Rewind 5s or previous timestamp (in segment repeat mode)
 	if (e.code === "ArrowLeft") {
 		e.preventDefault();
 		rewindBack();
 		return;
 	}
 
-	// Arrow Right - Forward
+	// Arrow Right - Forward 5s or next timestamp (in segment repeat mode)
 	if (e.code === "ArrowRight") {
 		e.preventDefault();
 		rewindForward();

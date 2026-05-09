@@ -27,7 +27,7 @@ import {
 import { pauseBtn as pauseBtnState, fsPauseBtn as fsPauseBtnState, setIsFullscreen, isFullscreen } from './state.js';
 import { setStatus, formatTime } from './utils.js';
 import { saveVideoProgress } from './api.js';
-import { updateDisplay } from './transcript.js';
+import { updateDisplay, renderTranscriptLine } from './transcript.js';
 import { startWatchSession, endWatchSession } from './stats.js';
 
 /**
@@ -194,42 +194,64 @@ export function restartVideo() {
 }
 
 /**
- * Rewind to previous or current segment.
+ * Rewind 5 seconds or go to previous timestamp (in segment repeat mode).
  */
 export function rewindBack() {
 	import('./state.js').then(state => {
-		const now = Date.now();
-		const isDoubleTap = now - state.lastRewindTime < 500;
-		state.setLastRewindTime(now);
-
 		let targetTime;
-		if (isDoubleTap && state.activeIndex > 0) {
-			targetTime = state.transcriptData[state.activeIndex - 1].time;
-		} else if (state.activeIndex >= 0) {
-			targetTime = state.transcriptData[state.activeIndex].time;
+		let newIndex = state.activeIndex;
+		
+		if (state.isSegmentRepeatMode) {
+			// In segment repeat mode: go to start of previous timestamp and update activeIndex
+			if (state.activeIndex > 0) {
+				newIndex = state.activeIndex - 1;
+				targetTime = state.transcriptData[newIndex].time;
+				state.setActiveIndex(newIndex);
+				// Update segment end time for the new segment
+				updateSegmentEndTime();
+				// Immediately render the new transcript line
+				renderTranscriptLine();
+			} else if (state.activeIndex === 0) {
+				targetTime = state.transcriptData[0].time;
+			} else {
+				targetTime = Math.max(0, state.player?.getCurrentTime() - 5 || 0);
+			}
 		} else {
-			targetTime = Math.max(0, state.player?.getCurrentTime() - 10 || 0);
+			// Normal mode: rewind 5 seconds
+			targetTime = Math.max(0, state.player?.getCurrentTime() - 5 || 0);
 		}
-		state.setActiveIndex(-1);
-
+		
 		if (state.player) state.player.seekTo(targetTime, true);
 		updateDisplay();
 	});
 }
 
 /**
- * Forward to next segment.
+ * Forward 5 seconds or go to next timestamp (in segment repeat mode).
  */
 export function rewindForward() {
 	import('./state.js').then(state => {
 		let targetTime;
-		if (state.activeIndex >= 0 && state.activeIndex < state.transcriptData.length - 1) {
-			targetTime = state.transcriptData[state.activeIndex + 1].time;
+		let newIndex = state.activeIndex;
+		
+		if (state.isSegmentRepeatMode) {
+			// In segment repeat mode: go to start of next timestamp and update activeIndex
+			if (state.activeIndex >= 0 && state.activeIndex < state.transcriptData.length - 1) {
+				newIndex = state.activeIndex + 1;
+				targetTime = state.transcriptData[newIndex].time;
+				state.setActiveIndex(newIndex);
+				// Update segment end time for the new segment
+				updateSegmentEndTime();
+				// Immediately render the new transcript line
+				renderTranscriptLine();
+			} else {
+				targetTime = (state.player?.getCurrentTime() || 0) + 5;
+			}
 		} else {
-			targetTime = (state.player?.getCurrentTime() || 0) + 10;
+			// Normal mode: forward 5 seconds
+			targetTime = (state.player?.getCurrentTime() || 0) + 5;
 		}
-		state.setActiveIndex(-1);
-
+		
 		if (state.player) state.player.seekTo(targetTime, true);
 		updateDisplay();
 	});
