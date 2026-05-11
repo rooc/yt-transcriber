@@ -1,0 +1,457 @@
+{
+  "con esta tensión": {
+    "translation": "with this tension",
+    "pos": "phrase",
+    "context": "no resuelta todavía"
+  },
+  "no resuelta": {
+    "translation": "unresolved",
+    "pos": "adj",
+    "context": "con esta tensión que no resuelta todavía"
+  },
+  "matar estos minutos": {
+    "translation": "kill these minutes",
+    "pos": "phrase",
+    "context": "vamos a matar estos 30 minutos que tengo extra"
+  },
+  "me he encontrado": {
+    "translation": "I came across / I found",
+    "pos": "phrase",
+    "context": "me he encontrado con con esto"
+  },
+  "pieza de ajedrez": {
+    "translation": "chess piece",
+    "pos": "noun phrase",
+    "context": "Esto es una pieza de ajedrez es un peón"
+  },
+  "iba andando": {
+    "translation": "I was walking",
+    "pos": "phrase",
+    "context": "hace tiempo iba andando por la calle"
+  },
+  "noté que pisé": {
+    "translation": "I noticed I stepped on",
+    "pos": "phrase",
+    "context": "Noté que pisé algo"
+  },
+  "apartar mi pie": {
+    "translation": "move my foot away",
+    "pos": "phrase",
+    "context": "al apartar mi pie vi que era este Peón"
+  },
+  "me tomé esto": {
+    "translation": "I took this",
+    "pos": "phrase",
+    "context": "me tomé esto como una señal"
+  },
+  "se estaba riendo": {
+    "translation": "was laughing",
+    "pos": "phrase",
+    "context": "se estaba riendo de mí por ser una inútil"
+  },
+  "rating patético": {
+    "translation": "pathetic rating",
+    "pos": "noun phrase",
+    "context": "por el rating tan patético que tengo"
+  },
+  "no pasa nada": {
+    "translation": "no worries / it's fine",
+    "pos": "phrase",
+    "context": "pero no pasa nada esto"
+  },
+  "me ha inspirado": {
+    "translation": "it inspired me",
+    "pos": "phrase",
+    "context": "simplemente me ha inspirado para hablar hoy"
+  },
+  "en resumido": {
+    "translation": "in short",
+    "pos": "phrase",
+    "context": "en resumido son dos jugadores rusos muy famosos"
+  },
+  "estuvieron iendo": {
+    "translation": "were competing",
+    "pos": "phrase",
+    "context": "estuvieron iendo por muchos años por el título"
+  },
+  "rivalidad icónica": {
+    "translation": "iconic rivalry",
+    "pos": "noun phrase",
+    "context": "ha sido una rivalidad muy icónica"
+  },
+  "cometer errores": {
+    "translation": "make mistakes",
+    "pos": "phrase",
+    "context": "puedo cometer errores con números fechas"
+  },
+  "a nadie le importa": {
+    "translation": "nobody cares",
+    "pos": "phrase",
+    "context": "pero a nadie le importa"
+  },
+  "tengo fresco": {
+    "translation": "I have it fresh / fresh in my mind",
+    "pos": "phrase",
+    "context": "Entonces lo tengo fresco"
+  },
+  "nos remontamos": {
+    "translation": "we go back",
+    "pos": "phrase",
+    "context": "nos remontamos al año 71 72 en Islandia"
+  },
+  "consiguió el título": {
+    "translation": "won the title",
+    "pos": "phrase",
+    "context": "Bobby fiser consiguió el título de campeón del mundo"
+  },
+  "estaban todos": {
+    "translation": "they were all",
+    "pos": "phrase",
+    "context": "la unión soviética estaban todos madre mía"
+  },
+  "madre mía": {
+    "translation": "oh my / oh my goodness",
+    "pos": "interjection",
+    "context": "estaban todos madre mía El Americano este nos ha ganado"
+  },
+  "honrar nuestra dignidad": {
+    "translation": "honor our dignity",
+    "pos": "phrase",
+    "context": "tenemos que hacer algo para honrar nuestra dignidad"
+  },
+  "tenían mal perder": {
+    "translation": "they were bad losers",
+    "pos": "phrase",
+    "context": "tenían mal perder obviamente como yo"
+  },
+  "nos ganan volvemos": {
+    "translation": "they beat us we come back",
+    "pos": "phrase",
+    "context": "nos ganan volvemos y aplastamos al enemigo"
+  },
+  "aplastamos al enemigo": {
+    "translation": "we crush the enemy",
+    "pos": "phrase",
+    "context": "nos ganan volvemos y aplastamos al enemigo"
+  },
+  "mejor preparado": {
+    "translation": "better prepared",
+    "pos": "adj phrase",
+    "context": "preparó muy bien a uno de sus mejores jugadores"
+  },
+  "se centró en": {
+    "translation": "focused on",
+    "pos": "phrase",
+    "context": "se centró en preparar a este hombre"
+  },
+  "le arrebatara": {
+    "translation": "snatch from him / take away from him",
+    "pos": "verb phrase (subjunctive)",
+    "context": "para que le arrebatara el título a Bobby Fisher"
+  },
+  "mundo ajedrecístico": {
+    "translation": "chess world",
+    "pos": "noun",
+    "context": "en el top del mundo ajedrecístico"
+  },
+  "lo intentó": {
+    "translation": "he tried",
+    "pos": "phrase",
+    "context": "y lo intentó karpov estuvo compitiendo"
+  },
+  "no consiguió": {
+    "translation": "he didn't manage",
+    "pos": "phrase",
+    "context": "pero no consiguió jugar contra Bobby Fisher"
+  },
+  "fama de loco": {
+    "translation": "reputation for being crazy",
+    "pos": "noun phrase",
+    "context": "tenía un poco fama de loco un poco paranoico"
+  },
+  "haciendo trampas": {
+    "translation": "cheating",
+    "pos": "phrase",
+    "context": "preocupado de que le estaban haciendo trampas"
+  },
+  "se quejaba constantemente": {
+    "translation": "he constantly complained",
+    "pos": "phrase",
+    "context": "se quejaba constantemente de detalles como la luz"
+  },
+  "estaba como muy": {
+    "translation": "he was like very",
+    "pos": "phrase",
+    "context": "estaba como muy emparanoiado"
+  },
+  "emparanoiado": {
+    "translation": "paranoid",
+    "pos": "adj",
+    "context": "estaba como muy emparanoiado"
+  },
+  "no se presentó": {
+    "translation": "he didn't show up",
+    "pos": "phrase",
+    "context": "no se presentó para defender el título"
+  },
+  "automáticamente": {
+    "translation": "automatically",
+    "pos": "adv",
+    "context": "el título automáticamente fue para kpof"
+  },
+  "país satélite": {
+    "translation": "satellite country",
+    "pos": "noun phrase",
+    "context": "de un país satélite de la unión soviética"
+  },
+  "se veía que": {
+    "translation": "it was clear that",
+    "pos": "phrase",
+    "context": "se veía que iba a ir a competir contra karpov"
+  },
+  "voy a arriesgarme": {
+    "translation": "I'm going to risk",
+    "pos": "phrase",
+    "context": "aquí es donde yo voy a arriesgarme un poco con lo que voy a decir"
+  },
+  "en mi interpretación": {
+    "translation": "in my interpretation",
+    "pos": "phrase",
+    "context": "en mi interpretación diría que"
+  },
+  "asegurarse de que": {
+    "translation": "to make sure that",
+    "pos": "phrase",
+    "context": "querían asegurarse de que karpov seguía siendo el que tuviera el título"
+  },
+  "aquel entonces": {
+    "translation": "back then / at that time",
+    "pos": "phrase",
+    "context": "a la ideología de aquel entonces"
+  },
+  "mantuviera el título": {
+    "translation": "kept the title (subjunctive)",
+    "pos": "verb phrase",
+    "context": "querían que él mantuviera el título"
+  },
+  "ten en cuenta": {
+    "translation": "keep in mind / bear in mind",
+    "pos": "phrase",
+    "context": "kasparov ten en cuenta que en estas competiciones"
+  },
+  "según pasaban": {
+    "translation": "as they passed / as time went by",
+    "pos": "phrase",
+    "context": "según pasaban las partidas"
+  },
+  "estaba mejorando": {
+    "translation": "was improving",
+    "pos": "phrase",
+    "context": "kasparov estaba mejorando y karpov iba perdiendo"
+  },
+  "iba perdiendo": {
+    "translation": "was losing",
+    "pos": "phrase",
+    "context": "karpov iba perdiendo un poco su confianza"
+  },
+  "quedaban bastantes": {
+    "translation": "there were still quite a few",
+    "pos": "phrase",
+    "context": "todavía quedaban bastantes partidas"
+  },
+  "se vio interrumpida": {
+    "translation": "was interrupted",
+    "pos": "passive phrase",
+    "context": "cuando esta competición se vio interrumpida"
+  },
+  "diría que": {
+    "translation": "I'd say that",
+    "pos": "phrase",
+    "context": "diría que las autoridades soviéticas interrumpieron"
+  },
+  "tenían miedo": {
+    "translation": "they were afraid",
+    "pos": "phrase",
+    "context": "era porque tenían miedo de que él fuera a ganar"
+  },
+  "fuera a ganar": {
+    "translation": "was going to win (subjunctive)",
+    "pos": "phrase",
+    "context": "miedo de que él fuera a ganar"
+  },
+  "no le sentó bien": {
+    "translation": "it didn't sit well with him",
+    "pos": "phrase",
+    "context": "evidentemente esto a kasparov no le sentó bien"
+  },
+  "públicamente encima": {
+    "translation": "publicly on top of",
+    "pos": "phrase",
+    "context": "públicamente encima de un escenario criticó a las autoridades"
+  },
+  "una anomalía": {
+    "translation": "an anomaly",
+    "pos": "noun",
+    "context": "esto era algo una anomalía"
+  },
+  "en contra del": {
+    "translation": "against the",
+    "pos": "phrase",
+    "context": "hablaba públicamente en contra del gobierno"
+  },
+  "dejó de verlo": {
+    "translation": "stopped seeing him",
+    "pos": "phrase",
+    "context": "la gente dejó de verlo tal vez como un simple jugador"
+  },
+  "empezaron a considerar": {
+    "translation": "started to consider",
+    "pos": "phrase",
+    "context": "lo empezaron a considerar también un político"
+  },
+  "habían sido muy claras": {
+    "translation": "had been very clear",
+    "pos": "phrase",
+    "context": "sus ideas en contra del gobierno habían sido muy claras"
+  },
+  "toma más riesgos": {
+    "translation": "takes more risks",
+    "pos": "phrase",
+    "context": "jugador más agresivo que toma Más riesgos en el tablero"
+  },
+  "en el tablero": {
+    "translation": "on the board",
+    "pos": "phrase",
+    "context": "en el tablero"
+  },
+  "sometía al enemigo": {
+    "translation": "subjected the enemy",
+    "pos": "phrase",
+    "context": "más tranquilo que sometía al enemigo con más presión"
+  },
+  "no tuvo la oportunidad": {
+    "translation": "didn't have the opportunity",
+    "pos": "phrase",
+    "context": "kasparov no tuvo la oportunidad de ganar el título"
+  },
+  "apenas": {
+    "translation": "barely / just",
+    "pos": "adv",
+    "context": "con apenas 22 añitos"
+  },
+  "22 añitos": {
+    "translation": "22 little years (affectionate)",
+    "pos": "noun phrase",
+    "context": "con apenas 22 añitos"
+  },
+  "aquellos tiempos": {
+    "translation": "in those times / back then",
+    "pos": "phrase",
+    "context": "cuando aquellos tiempos"
+  },
+  "no consiguió mucha paz": {
+    "translation": "didn't get much peace",
+    "pos": "phrase",
+    "context": "no consiguió mucha paz porque apenas 3 meses después"
+  },
+  "tendría que haber": {
+    "translation": "there would have to be",
+    "pos": "conditional phrase",
+    "context": "dijeron que tenía que haber un rematch"
+  },
+  "le parecía injusto": {
+    "translation": "it seemed unfair to him",
+    "pos": "phrase",
+    "context": "kasparov comentaba que le parecía Injusto"
+  },
+  "habían pasado": {
+    "translation": "had passed",
+    "pos": "phrase",
+    "context": "apenas habían pasado TR meses de su Victoria"
+  },
+  "intentando retarlo": {
+    "translation": "trying to challenge him",
+    "pos": "phrase",
+    "context": "ya estaban intentando retarlo a defender su título"
+  },
+  "demuestre ser el mejor": {
+    "translation": "prove to be the best (subjunctive)",
+    "pos": "phrase",
+    "context": "tendría que ser el candidato que demuestre ser el mejor"
+  },
+  "no tuvo alternativa": {
+    "translation": "had no alternative",
+    "pos": "phrase",
+    "context": "kasparov no tuvo alternativa de decir que no"
+  },
+  "se negaba": {
+    "translation": "he refused",
+    "pos": "phrase",
+    "context": "porque si se negaba le iban a quitar el título"
+  },
+  "estoy segura": {
+    "translation": "I'm sure",
+    "pos": "phrase",
+    "context": "estoy 99% segura de que volvió a ganar"
+  },
+  "continuó siendo": {
+    "translation": "kept being / continued to be",
+    "pos": "phrase",
+    "context": "consiguió ser continuó siendo el campeón del mundo"
+  },
+  "mostró su desacuerdo": {
+    "translation": "showed his disagreement",
+    "pos": "phrase",
+    "context": "kasparov siempre mostró su desacuerdo con la unión soviética"
+  },
+  "no es ningún secreto": {
+    "translation": "it's no secret",
+    "pos": "phrase",
+    "context": "no es ningún secreto"
+  },
+  "hay un vídeo": {
+    "translation": "there's a video",
+    "pos": "phrase",
+    "context": "hay un vídeo en YouTube de la policía arrestando a kasparov"
+  },
+  "intento visitarlo": {
+    "translation": "tried to visit him",
+    "pos": "phrase",
+    "context": "karpov su enemigo intentó visitarlo en la cárcel"
+  },
+  "al no poder": {
+    "translation": "since he couldn't",
+    "pos": "phrase",
+    "context": "al no poder ir a visitar a su rival le mandó"
+  },
+  "se lo tomó": {
+    "translation": "he took it",
+    "pos": "phrase",
+    "context": "kasparov se lo tomó como Oye un detalle bonito"
+  },
+  "detalle bonito": {
+    "translation": "nice gesture / nice detail",
+    "pos": "noun phrase",
+    "context": "un detalle bonito y una manera de dejar al lado su rivalidad"
+  },
+  "dejar al lado": {
+    "translation": "set aside",
+    "pos": "phrase",
+    "context": "de dejar al lado su rivalidad y sus diferencias políticas"
+  },
+  "nos vemos la próxima": {
+    "translation": "see you next time",
+    "pos": "phrase",
+    "context": "nos vemos la próxima semana"
+  },
+  "divinos": {
+    "translation": "divine / wonderful",
+    "pos": "adj",
+    "context": "tengo dos cursos online divinos"
+  },
+  "hasta la próxima": {
+    "translation": "until next time",
+    "pos": "phrase",
+    "context": "Muchas gracias y hasta la próxima"
+  }
+}
