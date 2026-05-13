@@ -1,0 +1,309 @@
+{
+  "aunque parezca": {
+    "translation": "although it may seem",
+    "pos": "expression",
+    "level": "B1",
+    "source": "subjunctive_phrase",
+    "context": "aunque parezca extraño todos los seres de este planeta"
+  },
+  "provenimos de": {
+    "translation": "we come from / descend from",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "verb_conjugation",
+    "context": "provenimos de las mismas formas de vida"
+  },
+  "se ramificaron": {
+    "translation": "they branched out",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "reflexive_verb",
+    "context": "las diferentes especies evolucionaron y se ramificaron"
+  },
+  "se puede inferir": {
+    "translation": "can be inferred",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "passive_construction",
+    "context": "no se puede inferir la evolución a través del análisis"
+  },
+  "homólogas": {
+    "translation": "homologous",
+    "pos": "adjective",
+    "level": "B2",
+    "source": "technical_term",
+    "context": "estructuras homólogas son las que tienen un origen en común"
+  },
+  "análogas": {
+    "translation": "analogous",
+    "pos": "adjective",
+    "level": "B2",
+    "source": "technical_term",
+    "context": "las estructuras análogas son las que a pesar de su origen diferente"
+  },
+  "vestigiales": {
+    "translation": "vestigial",
+    "pos": "adjective",
+    "level": "B2",
+    "source": "technical_term",
+    "context": "homólogas análogas y vestigiales"
+  },
+  "cumplen diferentes funciones": {
+    "translation": "fulfill different functions",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "verb_conjugation",
+    "context": "tienen un origen en común aunque cumplen diferentes funciones"
+  },
+  "a pesar de": {
+    "translation": "despite / in spite of",
+    "pos": "preposition",
+    "level": "B1",
+    "source": "expression",
+    "context": "a pesar de su origen diferente"
+  },
+  "a lo largo de": {
+    "translation": "throughout / along",
+    "pos": "expression",
+    "level": "B1",
+    "source": "expression",
+    "context": "a lo largo de la evolución"
+  },
+  "llamados": {
+    "translation": "so-called / called",
+    "pos": "adjective",
+    "level": "B1",
+    "source": "verb_conjugation",
+    "context": "son los llamados órganos vestigiales"
+  },
+  "a pesar de arrastrarse": {
+    "translation": "despite crawling",
+    "pos": "expression",
+    "level": "B1",
+    "source": "subjunctive-triggering construction",
+    "context": "algunas serpientes a pesar de arrastrarse tienen patas diminutas"
+  },
+  "si bien": {
+    "translation": "although / even though",
+    "pos": "conjunction",
+    "level": "B2",
+    "source": "expression",
+    "context": "si bien los avestruces no pueden volar poseen pequeñas alas"
+  },
+  "parece que": {
+    "translation": "it seems that",
+    "pos": "expression",
+    "level": "B1",
+    "source": "expression",
+    "context": "parece que está solo para golpearse"
+  },
+  "estudiarla": {
+    "translation": "studying it",
+    "pos": "verb",
+    "level": "B1",
+    "source": "verb_conjugation",
+    "context": "estudiarla sirve para entender cómo se formó la vida"
+  },
+  "se formó": {
+    "translation": "formed / was formed",
+    "pos": "verb",
+    "level": "B1",
+    "source": "reflexive_verb",
+    "context": "cómo se formó la vida en la tierra"
+  },
+  "pertencen a": {
+    "translation": "belong to",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "verb_conjugation",
+    "context": "características físicas que pertenecen a sus parientes más antiguos"
+  },
+  "perdieron su función": {
+    "translation": "lost their function",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "verb_conjugation",
+    "context": "perdieron su función a lo largo de la evolución"
+  },
+  "esencial": {
+    "translation": "essential",
+    "pos": "adjective",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "murciélagos": {
+    "translation": "bats",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "avestruces": {
+    "translation": "ostriches",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "pelvis": {
+    "translation": "pelvis",
+    "pos": "noun",
+    "level": "B2",
+    "source": "technical_term"
+  },
+  "meñique": {
+    "translation": "pinky (finger/toe)",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "diminutas": {
+    "translation": "tiny / diminutive",
+    "pos": "adjective",
+    "level": "B2",
+    "source": "technical_term"
+  },
+  "origin": {
+    "translation": "origin",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "organismos": {
+    "translation": "organisms",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "especies": {
+    "translation": "species",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "evolucionaron": {
+    "translation": "evolved",
+    "pos": "verb",
+    "level": "B1",
+    "source": "verb_conjugation"
+  },
+  "inferir": {
+    "translation": "to infer",
+    "pos": "verb",
+    "level": "B2",
+    "source": "technical_term"
+  },
+  "análisis": {
+    "translation": "analysis",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "estructuras": {
+    "translation": "structures",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "funciones": {
+    "translation": "functions",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "vertebrados": {
+    "translation": "vertebrates",
+    "pos": "noun",
+    "level": "B2",
+    "source": "technical_term"
+  },
+  "lagartijas": {
+    "translation": "lizards",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "tortugas": {
+    "translation": "turtles",
+    "pos": "noun",
+    "level": "A1_A2_advanced_form",
+    "source": "technical_term"
+  },
+  "alas": {
+    "translation": "wings",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "insectos": {
+    "translation": "insects",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "características físicas": {
+    "translation": "physical characteristics",
+    "pos": "noun phrase",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "parientes": {
+    "translation": "relatives / kin",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "antiguos": {
+    "translation": "ancient / old",
+    "pos": "adjective",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "órganos": {
+    "translation": "organs",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "serpientes": {
+    "translation": "snakes",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "arrastrarse": {
+    "translation": "to crawl / slither",
+    "pos": "verb",
+    "level": "B2",
+    "source": "reflexive_verb"
+  },
+  "patas": {
+    "translation": "legs / paws",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "proceso": {
+    "translation": "process",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "naturaleza": {
+    "translation": "nature",
+    "pos": "noun",
+    "level": "B1",
+    "source": "technical_term"
+  },
+  "habitamos": {
+    "translation": "we inhabit",
+    "pos": "verb",
+    "level": "B1",
+    "source": "verb_conjugation"
+  },
+  "parezcamos": {
+    "translation": "we appear / seem (subjunctive)",
+    "pos": "verb",
+    "level": "B1",
+    "source": "subjunctive_conjugation",
+    "context": "formas diferentes que parezcamos"
+  }
+}

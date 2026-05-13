@@ -4,11 +4,11 @@
  * Learned video tracking, drag-and-drop functionality, and persistence.
  */
 
+import * as state from './state.js';
 import {
 	learnedVideos,
 	isLearnedPanelCollapsed,
 	availableTranscripts,
-	currentVideoId,
 	setIsLearnedPanelCollapsed,
 	setDraggedVideoId,
 	draggedVideoId,
@@ -49,7 +49,7 @@ export function toggleLearned(videoId) {
 	setStatus(`Progress reset for video`);
 
 	// If marking current video as learned, clear the screen
-	if (!wasLearned && videoId === currentVideoId) {
+	if (!wasLearned && videoId === state.currentVideoId) {
 		clearCurrentVideo();
 	}
 
@@ -227,7 +227,7 @@ export function renderTranscriptLists(loadByVideoId) {
 			.map((t) => {
 				const shortTitle = t.title || t.videoId;
 				const fullTitle = t.fullTitle || shortTitle;
-				return `<span class="transcript-tag" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
+				return `<span class="transcript-tag" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" data-videoid="${t.videoId}" title="Copy ID">content_copy</span></span>`;
 			})
 			.join("");
 		
@@ -236,6 +236,17 @@ export function renderTranscriptLists(loadByVideoId) {
 			const tag = document.getElementById(`tag-${t.videoId}`);
 			if (tag) {
 				tag.addEventListener('click', () => loadByVideoId(t.videoId));
+			}
+		});
+		
+		// Add copy icon click handlers
+		unlearned.forEach(t => {
+			const copyBtn = tagsContainer.querySelector(`#tag-${t.videoId} .copy-id`);
+			if (copyBtn) {
+				copyBtn.addEventListener('click', (e) => {
+					e.stopPropagation();
+					copyVideoId(t.videoId);
+				});
 			}
 		});
 	}
@@ -247,7 +258,7 @@ export function renderTranscriptLists(loadByVideoId) {
 			.map((t) => {
 				const shortTitle = t.title || t.videoId;
 				const fullTitle = t.fullTitle || shortTitle;
-				return `<span class="transcript-tag learned" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
+				return `<span class="transcript-tag learned" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" data-videoid="${t.videoId}" title="Copy ID">content_copy</span></span>`;
 			})
 			.join("");
 		
@@ -256,6 +267,17 @@ export function renderTranscriptLists(loadByVideoId) {
 			const tag = document.getElementById(`tag-${t.videoId}`);
 			if (tag) {
 				tag.addEventListener('click', () => loadByVideoId(t.videoId));
+			}
+		});
+		
+		// Add copy icon click handlers
+		learned.forEach(t => {
+			const copyBtn = learnedContainer.querySelector(`#tag-${t.videoId} .copy-id`);
+			if (copyBtn) {
+				copyBtn.addEventListener('click', (e) => {
+					e.stopPropagation();
+					copyVideoId(t.videoId);
+				});
 			}
 		});
 	}

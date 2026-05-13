@@ -270,6 +270,8 @@ button.danger:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	-webkit-user-drag: element;
+	user-select: none;
 }
 
 .transcript-tag:hover {
@@ -287,6 +289,9 @@ button.danger:hover {
 	font-size: 0.875rem;
 	cursor: pointer;
 	transition: opacity 0.2s;
+	pointer-events: auto;
+	-webkit-user-drag: none;
+	user-select: none;
 }
 
 .transcript-tag .copy-id:hover {
