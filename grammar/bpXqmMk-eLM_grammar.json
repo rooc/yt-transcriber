@@ -1,0 +1,18 @@
+[
+  {
+    "spanish": "Si estás acercándote al mundo de Linux, seguramente ya hayas visto el término release candidate.",
+    "english": "If you're approaching the world of Linux, you've probably already seen the term release candidate.",
+    "explanation": "Present subjunctive 'hayas visto' after 'seguramente' - expresses probability/doubt in present perfect tense"
+  },
+  {
+    "spanish": "No lo pongas en producción hasta que no se revise bien.",
+    "english": "Don't put it into production until it has been thoroughly reviewed.",
+    "context": "Es como si dijéramos que el edificio está construido, pero todavía se están haciendo las últimas inspecciones.",
+    "explanation": "Imperfect subjunctive 'dijéramos' after 'como si' - hypothetical comparison in the present"
+  },
+  {
+    "spanish": "Cuando esa ventana se cierra, Linus Torvalds lanza la primera release candidate.",
+    "english": "When that window closes, Linus Torvalds launches the first release candidate.",
+    "explanation": "Present indicative with 'cuando' referring to habitual action - not subjunctive because it's a definite, regular occurrence"
+  }
+]

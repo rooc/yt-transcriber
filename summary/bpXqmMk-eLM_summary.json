@@ -1,0 +1,3 @@
+{
+  "summary": "Este vídeo explica qué es un Release Candidate (RC) en el contexto del kernel de Linux, utilizando como ejemplo el lanzamiento de Linux 7.0. Un RC es una versión casi final que está en fase de pruebas antes de convertirse en estable. El proceso típico incluye una ventana de integración seguida de varias RC semanales hasta que el código se estabiliza. Linus Torvalds expresó preocupación por el tamaño de algunas RC de Linux 7.0 debido a los riesgos que implican cambios importantes cerca del lanzamiento. Normalmente se publican entre 6 y 8 RC antes de la versión estable, que en este caso se esperaba para abril de 2026. El vídeo destaca que Linux 7.0 es una actualización significativa respaldada por grandes empresas tecnológicas."
+}

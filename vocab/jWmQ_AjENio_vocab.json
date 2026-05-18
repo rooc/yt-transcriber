@@ -1,0 +1,212 @@
+{
+  "realizas": {
+    "translation": "you perform/do",
+    "pos": "verb",
+    "context": "cada acción que realizas en línea"
+  },
+  "transacciones electrónicas": {
+    "translation": "electronic transactions",
+    "pos": "noun phrase",
+    "context": "realizar transacciones electrónicas"
+  },
+  "cobrar importancia": {
+    "translation": "to become important/gain importance",
+    "pos": "expression",
+    "context": "es ahí donde cobra importancia el osin"
+  },
+  "siglas": {
+    "translation": "acronym/initials",
+    "pos": "noun",
+    "context": "osin son las siglas de Open source intelligence"
+  },
+  "disciplina": {
+    "translation": "discipline/field",
+    "pos": "noun",
+    "context": "una disciplina esencial en la seguridad e inteligencia"
+  },
+  "recopilar": {
+    "translation": "to collect/gather",
+    "pos": "verb",
+    "context": "se utiliza para recopilar información sobre amenazas"
+  },
+  "amenazas potenciales": {
+    "translation": "potential threats",
+    "pos": "noun phrase",
+    "context": "información sobre amenazas potenciales"
+  },
+  "investigar delitos": {
+    "translation": "to investigate crimes",
+    "pos": "verb phrase",
+    "context": "investigar delitos Identificar vulnerabilidades"
+  },
+  "Identificar vulnerabilidades": {
+    "translation": "to identify vulnerabilities",
+    "pos": "verb phrase",
+    "context": "Identificar vulnerabilidades y evaluar riesgos"
+  },
+  "evaluar riesgos": {
+    "translation": "to evaluate risks",
+    "pos": "verb phrase",
+    "context": "evaluar riesgos y todo gracias a la inmensa cantidad"
+  },
+  "inmensa": {
+    "translation": "immense/huge",
+    "pos": "adjective",
+    "context": "gracias a la inmensa cantidad de información"
+  },
+  "disponibles": {
+    "translation": "available",
+    "pos": "adjective",
+    "context": "que están disponibles para cualquiera"
+  },
+  "emplean": {
+    "translation": "they use/employ",
+    "pos": "verb",
+    "context": "los expertos en ci lo emplean para descubrir"
+  },
+  "ciberataques": {
+    "translation": "cyberattacks",
+    "pos": "noun",
+    "context": "vulnerable a los ciberataques"
+  },
+  "competencia": {
+    "translation": "competition",
+    "pos": "noun",
+    "context": "información sobre la competencia identificar oportunidades"
+  },
+  "oportunidades de Mercado": {
+    "translation": "market opportunities",
+    "pos": "noun phrase",
+    "context": "identificar oportunidades de Mercado"
+  },
+  "monitorear": {
+    "translation": "to monitor",
+    "pos": "verb",
+    "context": "y monitorear su reputación en línea"
+  },
+  "reputación": {
+    "translation": "reputation",
+    "pos": "noun",
+    "context": "monitorear su reputación en línea"
+  },
+  "consumidores": {
+    "translation": "consumers/users",
+    "pos": "noun",
+    "context": "los gobiernos son grandes consumidores de osin"
+  },
+  "lucha contra": {
+    "translation": "fight against",
+    "pos": "expression",
+    "context": "la lucha contra el terrorismo"
+  },
+  "categorías": {
+    "translation": "categories",
+    "pos": "noun",
+    "context": "se dividen en dos categorías principales"
+  },
+  "pasivas": {
+    "translation": "passive",
+    "pos": "adjective",
+    "context": "pasivas y activas la recopilación pasiva"
+  },
+  "recopilación": {
+    "translation": "collection/gathering",
+    "pos": "noun",
+    "context": "la recopilación pasiva implica obtener información"
+  },
+  "implica": {
+    "translation": "implies/involves",
+    "pos": "verb",
+    "context": "la recopilación pasiva implica obtener información"
+  },
+  "objetivo": {
+    "translation": "target/objective",
+    "pos": "noun",
+    "context": "sin interactuar directamente con el objetivo"
+  },
+  "interactuar": {
+    "translation": "to interact",
+    "pos": "verb",
+    "context": "sin interactuar directamente con el objetivo"
+  },
+  "detectado": {
+    "translation": "detected",
+    "pos": "adjective",
+    "context": "con un mayor riesgo de ser detectado"
+  },
+  "diversas": {
+    "translation": "various/diverse",
+    "pos": "adjective",
+    "context": "existen diversas fuentes de información públicas"
+  },
+  "boletín oficial": {
+    "translation": "official gazette/bulletin",
+    "pos": "noun phrase",
+    "context": "el boletín oficial del Estado"
+  },
+  "registro mercantil": {
+    "translation": "mercantile registry",
+    "pos": "noun phrase",
+    "context": "el registro mercantil el Instituto Nacional de estadística"
+  },
+  "proveedores": {
+    "translation": "providers/suppliers",
+    "pos": "noun",
+    "context": "o incluso proveedores que recopilan y venden información"
+  },
+  "ética": {
+    "translation": "ethical",
+    "pos": "adjective",
+    "context": "deben usarla siempre de manera ética"
+  },
+  "legítimos": {
+    "translation": "legitimate",
+    "pos": "adjective",
+    "context": "con fines legítimos"
+  },
+  "explotar": {
+    "translation": "to exploit",
+    "pos": "verb",
+    "context": "no se utilice para explotar acosar o dañar"
+  },
+  "acosar": {
+    "translation": "to harass",
+    "pos": "verb",
+    "context": "no se utilice para explotar acosar o dañar"
+  },
+  "dañar": {
+    "translation": "to harm/damage",
+    "pos": "verb",
+    "context": "no se utilice para explotar acosar o dañar"
+  },
+  "públicamente": {
+    "translation": "publicly",
+    "pos": "adverb",
+    "context": "la información disponible públicamente"
+  },
+  "distribuir": {
+    "translation": "to distribute",
+    "pos": "verb",
+    "context": "perfectamente legal para acceder analizar y distribuir"
+  },
+  "promover": {
+    "translation": "to promote",
+    "pos": "verb",
+    "context": "para promover actividades ilegales"
+  },
+  "engañosos": {
+    "translation": "deceptive/misleading",
+    "pos": "adjective",
+    "context": "llenar las webs de datos engañosos o maliciosos"
+  },
+  "maliciosos": {
+    "translation": "malicious",
+    "pos": "adjective",
+    "context": "datos engañosos o maliciosos"
+  },
+  "andarse con ojo": {
+    "translation": "to be careful/watch out",
+    "pos": "expression",
+    "context": "así que hay que andarse con mucho ojo"
+  }
+}

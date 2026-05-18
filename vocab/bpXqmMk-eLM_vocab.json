@@ -1,0 +1,302 @@
+{
+  "acercándote": {
+    "translation": "approaching/getting close",
+    "pos": "verb (gerund)",
+    "context": "Si estás acercándote al mundo de Linux"
+  },
+  "release candidate": {
+    "translation": "release candidate",
+    "pos": "noun phrase",
+    "context": "seguramente ya hayas visto el término release candidate"
+  },
+  "anuncio": {
+    "translation": "announcement",
+    "pos": "noun",
+    "context": "en un anuncio de kernel o en un foro"
+  },
+  "advertencia": {
+    "translation": "warning",
+    "pos": "noun",
+    "context": "Suele venir acompañado de una advertencia muy clara"
+  },
+  "producción": {
+    "translation": "production",
+    "pos": "noun",
+    "context": "No lo pongas en producción hasta que no se revise bien"
+  },
+  "foco": {
+    "translation": "spotlight/focus",
+    "pos": "noun",
+    "context": "Estas RC han estado muy en el foco"
+  },
+  "no se ha cortado": {
+    "translation": "hasn't held back",
+    "pos": "expression",
+    "context": "Linus Torbals no se ha cortado en decir que"
+  },
+  "sin vivir": {
+    "translation": "constant anxiety/living hell",
+    "pos": "expression",
+    "context": "le han tenido en un sin vivir"
+  },
+  "candidato a lanzamiento": {
+    "translation": "launch candidate",
+    "pos": "noun phrase",
+    "context": "Release candidate vendría a ser como un candidato a lanzamiento"
+  },
+  "ecosistema": {
+    "translation": "ecosystem",
+    "pos": "noun",
+    "context": "En el ecosistema Linux una RC es una versión del kernel"
+  },
+  "fase de pruebas": {
+    "translation": "testing phase",
+    "pos": "noun phrase",
+    "context": "aún está en fase de pruebas internas"
+  },
+  "fontanería": {
+    "translation": "plumbing",
+    "pos": "noun",
+    "context": "inspecciones de seguridad de fontanería y de electricidad"
+  },
+  "habilitar": {
+    "translation": "to enable/make habitable",
+    "pos": "verb",
+    "context": "antes de habilitar el edificio para que la gente viva ahí"
+  },
+  "distribución": {
+    "translation": "distribution",
+    "pos": "noun",
+    "context": "la RC no es algo de tu fedora o de tu distribución"
+  },
+  "núcleo": {
+    "translation": "core/kernel",
+    "pos": "noun",
+    "context": "sino del núcleo del sistema operativo"
+  },
+  "superordenadores": {
+    "translation": "supercomputers",
+    "pos": "noun",
+    "context": "servidores ordenadores de escritorio móviles sistemas e incluso superordenadores"
+  },
+  "ventana de integración": {
+    "translation": "merge window",
+    "pos": "noun phrase",
+    "context": "Primero se abre la ventana de integración"
+  },
+  "drivers": {
+    "translation": "drivers",
+    "pos": "noun",
+    "context": "se aceptan cambios fuertes nuevos drivers"
+  },
+  "reescritura": {
+    "translation": "rewrite",
+    "pos": "noun",
+    "context": "reescritura de subsistemas"
+  },
+  "subsistemas": {
+    "translation": "subsystems",
+    "pos": "noun",
+    "context": "reescritura de subsistemas"
+  },
+  "soporte": {
+    "translation": "support",
+    "pos": "noun",
+    "context": "soporte para hardware nuevo"
+  },
+  "testers": {
+    "translation": "testers",
+    "pos": "noun",
+    "context": "expertos testers y distribuciones"
+  },
+  "entornos de laboratorio": {
+    "translation": "laboratory environments",
+    "pos": "noun phrase",
+    "context": "la pongan a prueba en entornos de laboratorio"
+  },
+  "nerviosismo": {
+    "translation": "nervousness/anxiety",
+    "pos": "noun",
+    "context": "Y aquí es donde entra el nerviosismo de Linux"
+  },
+  "datacenters": {
+    "translation": "datacenters",
+    "pos": "noun",
+    "context": "afecta a millones de máquinas servidores datacenters PCs"
+  },
+  "parches": {
+    "translation": "patches",
+    "pos": "noun",
+    "context": "si se meten parches delicados en subsistemas críticos"
+  },
+  "delicados": {
+    "translation": "delicate",
+    "pos": "adjective",
+    "context": "parches delicados en subsistemas críticos"
+  },
+  "críticos": {
+    "translation": "critical",
+    "pos": "adjective",
+    "context": "subsistemas críticos"
+  },
+  "riesgo de fallo": {
+    "translation": "risk of failure",
+    "pos": "noun phrase",
+    "context": "el riesgo de fallo se multiplica"
+  },
+  "toqueteando": {
+    "translation": "touching/tinkering with",
+    "pos": "verb (gerund)",
+    "context": "toqueteando partes sensibles del kernel"
+  },
+  "cuelgues": {
+    "translation": "crashes/freezes",
+    "pos": "noun",
+    "context": "un fallo puede traducirse en cuelgues"
+  },
+  "pérdidas de datos": {
+    "translation": "data loss",
+    "pos": "noun phrase",
+    "context": "cuelgues pérdidas de datos o caída de rendimiento"
+  },
+  "caída de rendimiento": {
+    "translation": "performance drop",
+    "pos": "noun phrase",
+    "context": "cuelgues pérdidas de datos o caída de rendimiento"
+  },
+  "lanzamiento": {
+    "translation": "launch/release",
+    "pos": "noun",
+    "context": "tan cerca del lanzamiento"
+  },
+  "desviando": {
+    "translation": "deviating/diverting",
+    "pos": "verb (gerund)",
+    "context": "el ciclo de desarrollo se está desviando de la calma"
+  },
+  "scheduler": {
+    "translation": "scheduler",
+    "pos": "noun",
+    "context": "cambios importantes en el scheduler"
+  },
+  "memoria": {
+    "translation": "memory",
+    "pos": "noun",
+    "context": "en el subsistema de memoria"
+  },
+  "controladores": {
+    "translation": "drivers/controllers",
+    "pos": "noun",
+    "context": "en controladores de GPU"
+  },
+  "colgado": {
+    "translation": "frozen/hung",
+    "pos": "adjective",
+    "context": "hacer que el sistema se quedara colgado"
+  },
+  "carga de procesos": {
+    "translation": "process load",
+    "pos": "noun phrase",
+    "context": "bajo ciertas condiciones de carga de procesos"
+  },
+  "señal": {
+    "translation": "signal/sign",
+    "pos": "noun",
+    "context": "era una señal de nuevo de que el sistema no estaba yendo como debería"
+  },
+  "books": {
+    "translation": "bugs",
+    "pos": "noun",
+    "context": "correcciones de books mappings y detalles de hardware"
+  },
+  "mappings": {
+    "translation": "mappings",
+    "pos": "noun",
+    "context": "correcciones de books mappings"
+  },
+  "calmando": {
+    "translation": "calming down",
+    "pos": "verb (gerund)",
+    "context": "las cosas se estaban calmando"
+  },
+  "movido": {
+    "translation": "eventful/busy",
+    "pos": "adjective",
+    "context": "el ciclo ha sido más movido de lo habitual"
+  },
+  "timing": {
+    "translation": "timing",
+    "pos": "noun",
+    "context": "muchas miradas puestas en el timing"
+  },
+  "listón": {
+    "translation": "target/bar",
+    "pos": "noun",
+    "context": "no es un listón de 7 RC y se cierra sí o sí"
+  },
+  "barajadas": {
+    "translation": "considered/shuffled",
+    "pos": "adjective",
+    "context": "Algunas fechas concretas barajadas eran"
+  },
+  "alargaba": {
+    "translation": "extended/lengthened",
+    "pos": "verb",
+    "context": "o se alargaba con alguna extra"
+  },
+  "contratiempos": {
+    "translation": "setbacks",
+    "pos": "noun",
+    "context": "Si no aparecen contratiempos graves"
+  },
+  "disponible": {
+    "translation": "available",
+    "pos": "adjective",
+    "context": "la versión final debería estar disponible en esos días"
+  },
+  "lío": {
+    "translation": "fuss/mess",
+    "pos": "noun",
+    "context": "¿Y por qué todo este lío nerviosismo y protagonismo?"
+  },
+  "protagonismo": {
+    "translation": "prominence/leading role",
+    "pos": "noun",
+    "context": "todo este lío nerviosismo y protagonismo"
+  },
+  "gigantes": {
+    "translation": "giants",
+    "pos": "noun",
+    "context": "con apoyo de gigantes como Google Intel"
+  },
+  "enemigo": {
+    "translation": "enemy",
+    "pos": "noun",
+    "context": "ya no mira Linux como un enemigo sino como un aliado"
+  },
+  "aliado": {
+    "translation": "ally",
+    "pos": "noun",
+    "context": "sino como un aliado"
+  },
+  "pelos de punta": {
+    "translation": "hair standing on end",
+    "pos": "expression",
+    "context": "las RC pueden poner los pelos de punta al propio Linux"
+  },
+  "garantía": {
+    "translation": "guarantee",
+    "pos": "noun",
+    "context": "también son la garantía de que el kernel"
+  },
+  "ronda de pruebas": {
+    "translation": "round of tests",
+    "pos": "noun phrase",
+    "context": "han pasado por una ronda de pruebas intensas"
+  },
+  "precisamente": {
+    "translation": "precisely",
+    "pos": "adverb",
+    "context": "diseñadas precisamente para que no tengas que saltar"
+  }
+}
