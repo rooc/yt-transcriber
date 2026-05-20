@@ -1,0 +1,607 @@
+{
+  "celestiales": {
+    "translation": "heavenly/delightful",
+    "pos": "adjective",
+    "context": "los celestiales frijolitos en olla de barro"
+  },
+  "alfareros": {
+    "translation": "potters",
+    "pos": "noun",
+    "context": "más del 90% de los alfareros siguen utilizando esmaltes con plomo"
+  },
+  "esmaltes": {
+    "translation": "glazes/enamels",
+    "pos": "noun",
+    "context": "utilizando esmaltes con plomo"
+  },
+  "informalidad": {
+    "translation": "informality",
+    "pos": "noun",
+    "context": "No dejes que la informalidad mate tu negocio"
+  },
+  "contabilidad": {
+    "translation": "accounting",
+    "pos": "noun",
+    "context": "gestionar la contabilidad ventas inventario"
+  },
+  "corteza": {
+    "translation": "crust",
+    "pos": "noun",
+    "context": "El plomo es bastante común en la corteza de la tierra"
+  },
+  "abundancia": {
+    "translation": "abundance",
+    "pos": "noun",
+    "context": "Ocupa el puesto número 36 según su abundancia"
+  },
+  "depósitos": {
+    "translation": "deposits",
+    "pos": "noun",
+    "context": "hay depósitos importantes en México"
+  },
+  "maleabilidad": {
+    "translation": "malleability",
+    "pos": "noun",
+    "context": "propiedades como maleabilidad conductividad y resistencia"
+  },
+  "fundimos": {
+    "translation": "we smelted",
+    "pos": "verb (past)",
+    "context": "uno de los primeros metales que fundimos"
+  },
+  "adversos": {
+    "translation": "adverse",
+    "pos": "adjective",
+    "context": "efectos adversos causados por grandes dosis de plomo"
+  },
+  "cólicos": {
+    "translation": "colic/colic pains",
+    "pos": "noun",
+    "context": "cólicos palidez y parálisis"
+  },
+  "palidez": {
+    "translation": "pallor/paleness",
+    "pos": "noun",
+    "context": "cólicos palidez y parálisis"
+  },
+  "parálisis": {
+    "translation": "paralysis",
+    "pos": "noun",
+    "context": "cólicos palidez y parálisis"
+  },
+  "hipótesis": {
+    "translation": "hypothesis",
+    "pos": "noun",
+    "context": "Hay una hipótesis que sostiene que una causa importante"
+  },
+  "sostiene": {
+    "translation": "holds/maintains",
+    "pos": "verb",
+    "context": "una hipótesis que sostiene que una causa importante"
+  },
+  "caída": {
+    "translation": "fall/decline",
+    "pos": "noun",
+    "context": "causa importante de la caída del Imperio Romano"
+  },
+  "provision": {
+    "translation": "supply/provision",
+    "pos": "noun",
+    "context": "sistema de provisión de agua y alcantarillado"
+  },
+  "alcantarillado": {
+    "translation": "sewer system",
+    "pos": "noun",
+    "context": "sistema de provisión de agua y alcantarillado"
+  },
+  "tuberías": {
+    "translation": "pipes/tubes",
+    "pos": "noun",
+    "context": "todas las tuberías y sus uniones estaban fabricadas con plomo"
+  },
+  "conservante": {
+    "translation": "preservative",
+    "pos": "noun",
+    "context": "el conservante del vino el sapa"
+  },
+  "mosto": {
+    "translation": "must/grape juice",
+    "pos": "noun",
+    "context": "calentando el mosto en contenedores con plomo"
+  },
+  "acetato": {
+    "translation": "acetate",
+    "pos": "noun",
+    "context": "acetato de plomo también conocido como azúcar de plomo"
+  },
+  "intoxicación": {
+    "translation": "poisoning/intoxication",
+    "pos": "noun",
+    "context": "intoxicación por plomo o saturnismo"
+  },
+  "renacimiento": {
+    "translation": "Renaissance",
+    "pos": "noun",
+    "context": "En el renacimiento y la ilustración el plomo se usaba en todo"
+  },
+  "ilustración": {
+    "translation": "Enlightenment",
+    "pos": "noun",
+    "context": "En el renacimiento y la ilustración el plomo se usaba en todo"
+  },
+  "imprenta": {
+    "translation": "printing press",
+    "pos": "noun",
+    "context": "En la imprenta la construcción pintura maquillaje"
+  },
+  "personajes": {
+    "translation": "characters/figures",
+    "pos": "noun",
+    "context": "Algunos personajes famosos que se cree que sufrieron"
+  },
+  "calcio": {
+    "translation": "calcium",
+    "pos": "noun",
+    "context": "El calcio es importantísimo en nuestro organismo"
+  },
+  "importantísimo": {
+    "translation": "extremely important",
+    "pos": "adjective (superlative)",
+    "context": "El calcio es importantísimo en nuestro organismo"
+  },
+  "coagulación": {
+    "translation": "clotting/coagulation",
+    "pos": "noun",
+    "context": "la coagulación de la sangre"
+  },
+  "contracción": {
+    "translation": "contraction",
+    "pos": "noun",
+    "context": "la contracción y relajación de los músculos"
+  },
+  "relajación": {
+    "translation": "relaxation",
+    "pos": "noun",
+    "context": "la contracción y relajación de los músculos"
+  },
+  "transmisión": {
+    "translation": "transmission",
+    "pos": "noun",
+    "context": "la transmisión de señales nerviosas"
+  },
+  "señales nerviosas": {
+    "translation": "nerve signals",
+    "pos": "noun phrase",
+    "context": "la transmisión de señales nerviosas"
+  },
+  "secreción": {
+    "translation": "secretion",
+    "pos": "noun",
+    "context": "la secreción de hormonas"
+  },
+  "hormonas": {
+    "translation": "hormones",
+    "pos": "noun",
+    "context": "la secreción de hormonas"
+  },
+  "ritmo cardíaco": {
+    "translation": "heart rhythm",
+    "pos": "noun phrase",
+    "context": "regular el ritmo cardíaco"
+  },
+  "ion": {
+    "translation": "ion",
+    "pos": "noun",
+    "context": "el plomo se parece al ion calcio"
+  },
+  "impostor": {
+    "translation": "impostor/imposter",
+    "pos": "noun",
+    "context": "ocupando su lugar como un impostor"
+  },
+  "fetos": {
+    "translation": "fetuses",
+    "pos": "noun",
+    "context": "La exposición en fetos y la infancia temprana"
+  },
+  "infancia": {
+    "translation": "childhood/infancy",
+    "pos": "noun",
+    "context": "fetos y la infancia temprana"
+  },
+  "barrera hematoencefálica": {
+    "translation": "blood-brain barrier",
+    "pos": "noun phrase",
+    "context": "la barrera hematoencefálica está en formación"
+  },
+  "micronutrientes": {
+    "translation": "micronutrients",
+    "pos": "noun",
+    "context": "absorber más micronutrientes para poder crecer"
+  },
+  "cognitivas": {
+    "translation": "cognitive",
+    "pos": "adjective",
+    "context": "menor volumen cerebral y deficiencias cognitivas"
+  },
+  "trauma": {
+    "translation": "trauma",
+    "pos": "noun",
+    "context": "similares a un trauma o tumores cerebrales"
+  },
+  "tumores": {
+    "translation": "tumors",
+    "pos": "noun",
+    "context": "trauma o tumores cerebrales"
+  },
+  "permanentes": {
+    "translation": "permanent",
+    "pos": "adjective",
+    "context": "los daños son permanentes"
+  },
+  "atribuyen": {
+    "translation": "are attributed",
+    "pos": "verb (passive)",
+    "context": "se le atribuyen más de 600000 casos"
+  },
+  "discapacidad intelectual": {
+    "translation": "intellectual disability",
+    "pos": "noun phrase",
+    "context": "casos de discapacidad intelectual"
+  },
+  "infantes": {
+    "translation": "infants",
+    "pos": "noun",
+    "context": "uno de cada tres infantes tiene concentraciones"
+  },
+  "concentraciones": {
+    "translation": "concentrations",
+    "pos": "noun",
+    "context": "concentraciones de plomo en sangre"
+  },
+  "coeficiente intelectual": {
+    "translation": "intelligence quotient (IQ)",
+    "pos": "noun phrase",
+    "context": "tres a cinco puntos menos de coeficiente intelectual"
+  },
+  "TDAH": {
+    "translation": "ADHD",
+    "pos": "noun (acronym)",
+    "context": "aumento de casos de autismo y TDAH"
+  },
+  "juicio": {
+    "translation": "judgment",
+    "pos": "noun",
+    "context": "falta de juicio comportamiento impulsivo"
+  },
+  "impulsivo": {
+    "translation": "impulsive",
+    "pos": "adjective",
+    "context": "comportamiento impulsivo antisocial"
+  },
+  "antisocial": {
+    "translation": "antisocial",
+    "pos": "adjective",
+    "context": "comportamiento impulsivo antisocial violento"
+  },
+  "delictivo": {
+    "translation": "criminal/delinquent",
+    "pos": "adjective",
+    "context": "comportamiento violento y delictivo"
+  },
+  "incremento": {
+    "translation": "increase",
+    "pos": "noun",
+    "context": "por cada incremento de 5 microgr por decilitro"
+  },
+  "asesinos en serie": {
+    "translation": "serial killers",
+    "pos": "noun phrase",
+    "context": "la época dorada de los asesinos en serie"
+  },
+  "emisiones": {
+    "translation": "emissions",
+    "pos": "noun",
+    "context": "las altas emisiones de plomo que había en esa época"
+  },
+  "contaminación": {
+    "translation": "contamination/pollution",
+    "pos": "noun",
+    "context": "famoso por la contaminación de plomo"
+  },
+  "disminución": {
+    "translation": "decrease/reduction",
+    "pos": "noun",
+    "context": "hubo una disminución en la tasa de asesinatos"
+  },
+  "tasa": {
+    "translation": "rate",
+    "pos": "noun",
+    "context": "la tasa de asesinatos"
+  },
+  "anemia": {
+    "translation": "anemia",
+    "pos": "noun",
+    "context": "puede ocasionar anemia enfermedades cardiovasculares"
+  },
+  "cardiovasculares": {
+    "translation": "cardiovascular",
+    "pos": "adjective",
+    "context": "enfermedades cardiovasculares"
+  },
+  "renal": {
+    "translation": "renal/kidney",
+    "pos": "adjective",
+    "context": "enfermedad renal crónica"
+  },
+  "cataratas": {
+    "translation": "cataracts",
+    "pos": "noun",
+    "context": "cataratas infertilidad espermas anormales"
+  },
+  "infertilidad": {
+    "translation": "infertility",
+    "pos": "noun",
+    "context": "cataratas infertilidad espermas anormales"
+  },
+  "espermas": {
+    "translation": "sperm",
+    "pos": "noun",
+    "context": "espermas anormales"
+  },
+  "abortos": {
+    "translation": "miscarriages/abortions",
+    "pos": "noun",
+    "context": "abortos Alzheimer Parkinson y esquizofrenia"
+  },
+  "muertes prematuras": {
+    "translation": "premature deaths",
+    "pos": "noun phrase",
+    "context": "1.5 millones de muertes prematuras al año"
+  },
+  "fundidora": {
+    "translation": "smelting",
+    "pos": "adjective/noun",
+    "context": "industria minera fundidora y soldadora"
+  },
+  "soldadora": {
+    "translation": "welding",
+    "pos": "adjective/noun",
+    "context": "industria minera fundidora y soldadora"
+  },
+  "manufactura": {
+    "translation": "manufacturing",
+    "pos": "noun",
+    "context": "La manufactura y reciclaje de baterías"
+  },
+  "reciclaje": {
+    "translation": "recycling",
+    "pos": "noun",
+    "context": "manufactura y reciclaje de baterías"
+  },
+  "baterías": {
+    "translation": "batteries",
+    "pos": "noun",
+    "context": "reciclaje de baterías y productos electrónicos"
+  },
+  "vidriado": {
+    "translation": "glazed",
+    "pos": "adjective",
+    "context": "el barro vidriado artesanal"
+  },
+  "artesanal": {
+    "translation": "artisanal/handcrafted",
+    "pos": "adjective",
+    "context": "barro vidriado artesanal"
+  },
+  "bordes": {
+    "translation": "edges/rims",
+    "pos": "noun",
+    "context": "ollas con esos bonitos bordes brillantes"
+  },
+  "almacenar": {
+    "translation": "to store",
+    "pos": "verb",
+    "context": "Usar el barro vidriado para almacenar servir y cocinar"
+  },
+  "considerablemente": {
+    "translation": "considerably",
+    "pos": "adverb",
+    "context": "te expone considerablemente"
+  },
+  "población": {
+    "translation": "population",
+    "pos": "noun",
+    "context": "de la población de niños mexicanos"
+  },
+  "presenta": {
+    "translation": "presents/has",
+    "pos": "verb",
+    "context": "presenta intoxicación por plomo"
+  },
+  "simple vista": {
+    "translation": "naked eye",
+    "pos": "expression",
+    "context": "el plomo no se ve a simple vista"
+  },
+  "pruebas de laboratorio": {
+    "translation": "laboratory tests",
+    "pos": "noun phrase",
+    "context": "hay que realizar pruebas de laboratorio"
+  },
+  "instantáneas": {
+    "translation": "instant",
+    "pos": "adjective",
+    "context": "pruebas instantáneas que puedes comprar"
+  },
+  "confiable": {
+    "translation": "reliable",
+    "pos": "adjective",
+    "context": "esta prueba no es confiable"
+  },
+  "falso positivo": {
+    "translation": "false positive",
+    "pos": "noun phrase",
+    "context": "darte un falso positivo"
+  },
+  "falso negativo": {
+    "translation": "false negative",
+    "pos": "noun phrase",
+    "context": "darte un falso negativo"
+  },
+  "análisis clínicos": {
+    "translation": "clinical analyses",
+    "pos": "noun phrase",
+    "context": "son necesarios análisis clínicos"
+  },
+  "tóxicas": {
+    "translation": "toxic",
+    "pos": "adjective",
+    "context": "concentraciones bajas pero tóxicas"
+  },
+  "específicos": {
+    "translation": "specific",
+    "pos": "adjective",
+    "context": "no son específicos"
+  },
+  "elevadas": {
+    "translation": "elevated/high",
+    "pos": "adjective",
+    "context": "concentraciones muy elevadas"
+  },
+  "indicios": {
+    "translation": "signs/indications",
+    "pos": "noun",
+    "context": "hay algunos indicios visibles"
+  },
+  "distribuye": {
+    "translation": "distributes",
+    "pos": "verb",
+    "context": "se distribuye a todos los órganos y sistemas"
+  },
+  "almacena": {
+    "translation": "stores",
+    "pos": "verb",
+    "context": "se almacena en los huesos"
+  },
+  "huesos": {
+    "translation": "bones",
+    "pos": "noun",
+    "context": "se almacena en los huesos"
+  },
+  "quelante": {
+    "translation": "chelating",
+    "pos": "adjective/noun",
+    "context": "se inyecta un agente quelante"
+  },
+  "atrapa": {
+    "translation": "traps/catches",
+    "pos": "verb",
+    "context": "sustancia que atrapa iones metálicos"
+  },
+  "iones metálicos": {
+    "translation": "metal ions",
+    "pos": "noun phrase",
+    "context": "atrapa iones metálicos"
+  },
+  "efectos secundarios": {
+    "translation": "side effects",
+    "pos": "noun phrase",
+    "context": "puede tener efectos secundarios graves"
+  },
+  "medidas de protección": {
+    "translation": "protective measures",
+    "pos": "noun phrase",
+    "context": "seguir las medidas de protección"
+  },
+  "cuidadosos": {
+    "translation": "careful",
+    "pos": "adjective",
+    "context": "ser muy cuidadosos de no contaminar"
+  },
+  "contaminar": {
+    "translation": "to contaminate/pollute",
+    "pos": "verb",
+    "context": "no contaminar tu hogar"
+  },
+  "sospecha": {
+    "translation": "suspicion",
+    "pos": "noun",
+    "context": "la más mínima sospecha de contaminación"
+  },
+  "chupen": {
+    "translation": "they suck",
+    "pos": "verb (subjunctive)",
+    "context": "evitar que chupen mastiquen o coman objetos"
+  },
+  "mastiquen": {
+    "translation": "they chew",
+    "pos": "verb (subjunctive)",
+    "context": "evitar que chupen mastiquen o coman"
+  },
+  "desprenda": {
+    "translation": "comes off/detaches",
+    "pos": "verb (subjunctive)",
+    "context": "no se desprenda polvo de pintura vieja"
+  },
+  "etiquetas": {
+    "translation": "labels/tags",
+    "pos": "noun",
+    "context": "es buena idea fijarse en las etiquetas"
+  },
+  "disponer": {
+    "translation": "to dispose",
+    "pos": "verb",
+    "context": "no hay muchos lugares para disponer de ellas"
+  },
+  "adorno": {
+    "translation": "decoration/ornament",
+    "pos": "noun",
+    "context": "seguirlas utilizando pero como adorno"
+  },
+  "llaves": {
+    "translation": "keys",
+    "pos": "noun",
+    "context": "Ponle flores llaves o papeles"
+  },
+  "papeles": {
+    "translation": "papers",
+    "pos": "noun",
+    "context": "flores llaves o papeles"
+  },
+  "vía cutánea": {
+    "translation": "through the skin/cutaneous",
+    "pos": "expression",
+    "context": "cuidar la absorción por vía cutánea"
+  },
+  "corriente": {
+    "translation": "up to date/current",
+    "pos": "adjective",
+    "context": "estar al corriente en todos tus procesos"
+  },
+  "elabora": {
+    "translation": "prepare/issue",
+    "pos": "verb",
+    "context": "Elabora facturas recibe y realiza pagos"
+  },
+  "clientes": {
+    "translation": "customers/clients",
+    "pos": "noun",
+    "context": "mantén toda la información de clientes"
+  },
+  "reportes": {
+    "translation": "reports",
+    "pos": "noun",
+    "context": "mantén toda la información de clientes y genera reportes"
+  },
+  "colaboración": {
+    "translation": "collaboration",
+    "pos": "noun",
+    "context": "por su colaboración en este video"
+  },
+  "decoración": {
+    "translation": "decoration",
+    "pos": "noun",
+    "context": "usar su losa de barro como decoración"
+  }
+}
