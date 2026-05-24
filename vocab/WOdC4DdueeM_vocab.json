@@ -1,0 +1,182 @@
+{
+  "amor odio": {
+    "translation": "love-hate relationship",
+    "pos": "noun phrase",
+    "context": "el amor odio que muchos usuarios sienten"
+  },
+  "rendimiento": {
+    "translation": "performance",
+    "pos": "noun",
+    "context": "que si la publicidad que si el rendimiento"
+  },
+  "ganando terreno": {
+    "translation": "gaining ground",
+    "pos": "expression",
+    "context": "Linux está ganando terreno"
+  },
+  "lanzamiento": {
+    "translation": "release/launch",
+    "pos": "noun",
+    "context": "tras el lanzamiento de la versión 7.0"
+  },
+  "cambian de bando": {
+    "translation": "switch sides/change sides",
+    "pos": "expression",
+    "context": "más gente se cambia de bando"
+  },
+  "seamos sinceros": {
+    "translation": "let's be honest",
+    "pos": "expression",
+    "context": "Pero seamos sinceros"
+  },
+  "interfaz": {
+    "translation": "interface",
+    "pos": "noun",
+    "context": "una interfaz rarísima para programadores"
+  },
+  "rarísima": {
+    "translation": "very strange/weird",
+    "pos": "adjective (superlative)",
+    "context": "interfaz rarísima para programadores expertos"
+  },
+  "sostiene": {
+    "translation": "holds/supports",
+    "pos": "verb",
+    "context": "algo que sostiene todo"
+  },
+  "director de orquesta": {
+    "translation": "orchestra conductor",
+    "pos": "noun phrase",
+    "context": "el gran director de orquesta"
+  },
+  "núcleo": {
+    "translation": "core/nucleus",
+    "pos": "noun",
+    "context": "el kernel es el núcleo el corazón y el cerebro"
+  },
+  "encargado": {
+    "translation": "in charge/responsible",
+    "pos": "noun/adjective",
+    "context": "es el encargado de que el software sepa"
+  },
+  "cargar": {
+    "translation": "to load",
+    "pos": "verb",
+    "context": "un programa que se carga en la memoria"
+  },
+  "arrancar": {
+    "translation": "to boot/start up",
+    "pos": "verb",
+    "context": "nada más arrancar"
+  },
+  "gestiona": {
+    "translation": "manages/handles",
+    "pos": "verb",
+    "context": "gestiona la comunicación entre la CPU"
+  },
+  "gráfica": {
+    "translation": "graphics (card)",
+    "pos": "noun",
+    "context": "entre la CPU la RAM o la gráfica"
+  },
+  "traduce": {
+    "translation": "translates",
+    "pos": "verb",
+    "context": "él traduce esa orden"
+  },
+  "asigna": {
+    "translation": "assigns/allots",
+    "pos": "verb",
+    "context": "Asigna recursos"
+  },
+  "vigila": {
+    "translation": "monitors/watches",
+    "pos": "verb",
+    "context": "vigila que todo funcione correctamente"
+  },
+  "monolítico": {
+    "translation": "monolithic",
+    "pos": "adjective",
+    "context": "el kernel de Linux es monolítico"
+  },
+  "código abierto": {
+    "translation": "open source",
+    "pos": "noun phrase",
+    "context": "de código abierto"
+  },
+  "comunidad": {
+    "translation": "community",
+    "pos": "noun",
+    "context": "la comunidad entera puede ver el error"
+  },
+  "arreglarlo": {
+    "translation": "to fix it",
+    "pos": "verb",
+    "context": "puede ver el error y arreglarlo"
+  },
+  "transparencia": {
+    "translation": "transparency",
+    "pos": "noun",
+    "context": "la transparencia es el mejor escudo"
+  },
+  "escudo": {
+    "translation": "shield",
+    "pos": "noun",
+    "context": "el mejor escudo"
+  },
+  "fallo de seguridad": {
+    "translation": "security flaw/breach",
+    "pos": "noun phrase",
+    "context": "Si hay un fallo de seguridad"
+  },
+  "parche": {
+    "translation": "patch",
+    "pos": "noun",
+    "context": "sacar un parche como ocurre con Microsoft"
+  },
+  "superordenadores": {
+    "translation": "supercomputers",
+    "pos": "noun",
+    "context": "Los superordenadores más potentes del mundo"
+  },
+  "bolsa": {
+    "translation": "stock market",
+    "pos": "noun",
+    "context": "Los bancos la bolsa el tráfico aéreo"
+  },
+  "semáforos": {
+    "translation": "traffic lights",
+    "pos": "noun",
+    "context": "hasta los semáforos de tu ciudad"
+  },
+  "capa visual": {
+    "translation": "visual layer",
+    "pos": "noun phrase",
+    "context": "una capa visual montada sobre un kernel"
+  },
+  "montada sobre": {
+    "translation": "mounted on/built on",
+    "pos": "expression",
+    "context": "montada sobre un kernel de Linux"
+  },
+  "omnipresente": {
+    "translation": "omnipresent/ubiquitous",
+    "pos": "adjective",
+    "context": "es omnipresente"
+  },
+  "acuérdate": {
+    "translation": "remember",
+    "pos": "verb (imperative)",
+    "context": "acuérdate de que si mañana el kernel"
+  },
+  "era analógica": {
+    "translation": "analog era",
+    "pos": "noun phrase",
+    "context": "volvería literalmente a la era analógica"
+  },
+  "caja de comentarios": {
+    "translation": "comments box",
+    "pos": "noun phrase",
+    "context": "en la caja de comentarios"
+  }
+}
