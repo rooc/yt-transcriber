@@ -3,7 +3,8 @@ title: ¿Qué es ARTEMIS？
 source: https://www.youtube.com/watch?v=Nf4ktdVN3ks
 ---
 
-**0:02** Nowadays, when talking about returning to the moon, it no longer sounds so much like impossible madness as it did a few years ago. NASA is not only thinking about sending some astronauts to the surface and bringing them
+**0:02** Nowadays, when talking about returning to the moon, it no longer sounds so much like impossible madness
+**0:11** as it did a few years ago. NASA is not only thinking about sending some astronauts to the surface and bringing them
 **0:17** back, but about setting up something much more similar to a long-term base with rotating crews, more science,
 **0:25** more technology and above all a sustainable presence over time. Behind all of this is the
 **0:31** Artemis program, the name that NASA has chosen for this new generation of trips to the Moon. We're talking about several
