@@ -52,11 +52,11 @@ body {
 }
 
 .container {
-	max-width: min(92rem, 86vw);
+	max-width: min(96rem, 90vw);
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: max(21rem, 25vw) 1fr;
-	gap: 2rem;
+	grid-template-columns: max(24rem, 30vw) 1fr;
+	gap: 1.5rem;
 }
 
 /* Fullscreen mode */
@@ -802,10 +802,14 @@ h3.collapsible-header:has(+ .collapsed) {
 	min-height: 0 !important;
 }
 
+#grammarPanel h3,
+#vocabularPanel h3,
 #learnedTranscripts h3 {
 	margin-bottom: 0;
 }
 
+#grammarPanel .collapsible-content:not(.collapsed),
+#vocabularPanel .collapsible-content:not(.collapsed),
 #learnedTranscripts .collapsible-content:not(.collapsed) {
 	margin-top: 0.625rem;
 }
