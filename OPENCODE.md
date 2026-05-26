@@ -247,13 +247,30 @@ English: **1:30** I'm fed up with this. (Mexican slang)
 
 **Output:** `vocab/[VIDEO_ID]_vocab.json`
 
+**Standard Format (Simple Key-Value):**
+
 ```json
 {
-  "palabra": {
-    "translation": "english meaning",
-    "pos": "part of speech",
-    "context": "original sentence or phrase"
-  }
+  "phrase in spanish": "english translation",
+  "another phrase": "another translation"
+}
+```
+
+**Rules:**
+- Use simple key-value pairs (NOT nested objects)
+- Keys: Spanish phrase/word (2-4 words preferred)
+- Values: English translation (1-5 words, contextual)
+- Prioritize multi-word phrases over single words
+- Include contextual notes in parentheses when needed
+
+**Example:**
+```json
+{
+  "hacer caso": "to pay attention",
+  "muela del juicio": "wisdom tooth",
+  "hasta la madre": "fed up (Mexican slang)",
+  "en el quinto pino": "in the middle of nowhere",
+  "sin haberla visto": "without having seen her"
 }
 ```
 
@@ -410,70 +427,30 @@ Skip words that are the same or similar in English:
 
 **For each vocabulary entry:**
 
-1. **translation** — Use 1-5 words, lowercase
-   - Good: "masticar" → "to chew"
-   - Good: "hacer caso" → "to pay attention"
-   - Bad: "masticar" → "chew, masticate, grind food with teeth"
+- **Key:** Spanish phrase/word (prioritize 2-4 word phrases)
+- **Value:** English translation (1-5 words, contextual, lowercase)
 
-2. **pos** — Part of speech (optional)
-   - "expression" for phrases
-   - "verb phrase", "noun phrase" for collocations
-
-3. **context** — The original Spanish sentence (optional)
-   - Helps remember the usage
-
-**Example vocab entries:**
+**Good examples:**
 ```json
 {
-  "masticar": {
-    "translation": "to chew",
-    "pos": "verb"
-  },
-  "muela del juicio": {
-    "translation": "wisdom tooth",
-    "pos": "noun phrase"
-  },
-  "hacer caso": {
-    "translation": "to pay attention",
-    "pos": "verb phrase"
-  },
-  "hasta la madre": {
-    "translation": "fed up / completely full",
-    "pos": "expression"
-  },
-  "en el quinto pino": {
-    "translation": "in the middle of nowhere",
-    "pos": "expression"
-  },
-  "si tuviera tiempo": {
-    "translation": "if I had time",
-    "pos": "verb phrase",
-    "context": "Si tuviera tiempo, aprendería a tocar la guitarra."
-  },
-  "aunque llueva": {
-    "translation": "even if it rains",
-    "pos": "expression",
-    "context": "Vamos a salir aunque llueva."
-  },
-  "irse": {
-    "translation": "to leave / take off",
-    "pos": "verb"
-  },
-  "rapidísimo": {
-    "translation": "extremely fast",
-    "pos": "adjective",
-    "level": "B1",
-    "source": "superlative"
-  },
-  "tenga": {
-    "translation": "I have (subjunctive)",
-    "pos": "verb",
-    "level": "A1_A2_advanced_form",
-    "source": "subjunctive_conjugation",
-    "context": "Espero que tengas razón."
-  }
+  "masticar": "to chew",
+  "muela del juicio": "wisdom tooth",
+  "hacer caso": "to pay attention",
+  "hasta la madre": "fed up / completely full (Mexican slang)",
+  "en el quinto pino": "in the middle of nowhere",
+  "si tuviera tiempo": "if I had time",
+  "aunque llueva": "even if it rains",
+  "irse": "to leave / take off",
+  "rapidísimo": "extremely fast",
+  "tenga": "I have (subjunctive)"
 }
 ```
+
+**Translation guidelines:**
+- ✅ Use 1-5 words, lowercase
+- ✅ Include context notes in parentheses when needed: `(slang)`, `(subjunctive)`, `(literally "cold that peels")`
+- ✅ Good: "hacer caso" → "to pay attention"
+- ❌ Bad: "masticar" → "chew, masticate, grind food with teeth"
 
 ### Additional Word Categories to Include
 
@@ -540,16 +517,6 @@ Include **all forms** of A1-A2 words if they appear in **B1+ structures**:
 - **Imperfect**: "tenía" (I had), "era" (I was)
 - **Compound tenses**: "he tenido" (I have had), "había sido" (I had been)
 - **Reflexive forms**: "me levanto" (I get up), "te vistes" (you get dressed)
-
-### Enhanced JSON Fields
-
-**For each vocabulary entry, include these fields when possible:**
-
-1. **translation** — Use 1-5 words, lowercase
-2. **pos** — Part of speech (verb, noun, adjective, expression, verb phrase, noun phrase)
-3. **level** — CEFR level: "B1", "B2", "C1", or "A1_A2_advanced_form"
-4. **source** — Origin: "idiom", "verb_conjugation", "compound_noun", "false_friend", "technical_term", "reflexive_verb", "superlative", "subjunctive_phrase"
-5. **context** — Original Spanish sentence (optional but recommended)
 
 ### Quick Reference: Include vs Exclude
 
@@ -722,18 +689,9 @@ source: "https://www.youtube.com/watch?v=087XVp3JIpk"
 ### Output: `vocab/087XVp3JIpk_vocab.json`
 ```json
 {
-  "bienvenidos": {
-    "translation": "welcome",
-    "pos": "adjective"
-  },
-  "episodio": {
-    "translation": "episode",
-    "pos": "noun"
-  },
-  "manera": {
-    "translation": "way / manner",
-    "pos": "noun"
-  }
+  "bienvenidos": "welcome",
+  "episodio": "episode",
+  "manera": "way / manner"
 }
 ```
 
