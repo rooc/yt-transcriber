@@ -48,16 +48,16 @@
     "timestamp": 1779108905148
   },
   "HcbPtWTn8y4": {
-    "time": 5.30820694468689,
-    "duration": 700.461,
-    "line": -1,
-    "timestamp": 1779630567628
+    "time": 2.076687,
+    "duration": 701,
+    "line": 0,
+    "timestamp": 1779779795770
   },
   "GOhMh__Z4xI": {
-    "time": 2.8709160400543214,
-    "duration": 1061.741,
-    "line": -1,
-    "timestamp": 1779630563265
+    "time": 1.989291,
+    "duration": 1062,
+    "line": 0,
+    "timestamp": 1779778973565
   },
   "Md-oyBV3HzA": {
     "time": 1.4182499523162841,
@@ -72,9 +72,9 @@
     "timestamp": 1779630575121
   },
   "bpXqmMk-eLM": {
-    "time": 1.3680199103546142,
+    "time": 11.318851959945679,
     "duration": 343.141,
     "line": -1,
-    "timestamp": 1779630578178
+    "timestamp": 1779777880618
   }
 }
