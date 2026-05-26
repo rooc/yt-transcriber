@@ -17,7 +17,8 @@ import {
 import { 
 	loadLearnedVideos, 
 	loadVideoProgress, 
-	loadStats, 
+	loadStats,
+	loadVocabular,
 	loadAvailableTranscripts as loadTranscriptsAPI,
 	fetchTranscript,
 	fetchTranslation,
@@ -30,6 +31,7 @@ import { loadVideo, startSync, onPlayerStateChange } from './modules/player.js';
 import { renderTranscriptLists, getLastWatchedVideo, getSavedProgress, toggleLearned, toggleLearnedPanel } from './modules/learned.js';
 import { updateStatsDisplay } from './modules/stats.js';
 import { renderGrammarSentences, loadSummary, setupModalHandlers } from './modules/grammar.js';
+import { renderVocabularWords } from './modules/vocabular.js';
 import { setupKeyboardHandlers } from './modules/keyboard.js';
 import { endWatchSession } from './modules/stats.js';
 import { renderTranscriptLine } from './modules/transcript.js';
@@ -80,6 +82,16 @@ async function loadVideoAndData(videoId, options = {}) {
 		titleEl.textContent = transcript.fullTitle;
 	} else {
 		titleEl.textContent = `Video: ${videoId}`;
+	}
+	
+	// Update grammar panel title to show which video it belongs to
+	const grammarTitleEl = document.getElementById("grammarVideoTitle");
+	if (grammarTitleEl) {
+		if (transcript && transcript.fullTitle) {
+			grammarTitleEl.textContent = `— ${transcript.fullTitle}`;
+		} else {
+			grammarTitleEl.textContent = "";
+		}
 	}
 	
 	// Set the href to the YouTube video URL
@@ -133,6 +145,10 @@ async function init() {
 	
 	// Update stats display
 	updateStatsDisplay();
+	
+	// Load vocabular words
+	await loadVocabular();
+	renderVocabularWords();
 	
 	// Setup modal handlers
 	setupModalHandlers();

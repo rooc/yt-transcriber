@@ -5,6 +5,7 @@
  */
 
 import { vocabData } from './state.js';
+import { handleVocabWordClick } from './vocabular.js';
 
 /**
  * Wrap vocabulary words in transcript text with tooltip spans.
@@ -44,9 +45,25 @@ export function wrapVocabWords(text) {
 		
 		const before = result.slice(0, match.start);
 		const after = result.slice(match.end);
-		const wrapped = `<span class="vocab-word" data-en="${tooltipContent}">${match.text}</span>`;
+		const wrapped = `<span class="vocab-word" data-en="${tooltipContent}" data-word="${match.word.replace(/"/g, '&quot;')}">${match.text}</span>`;
 		result = before + wrapped + after;
 	}
 
 	return result;
+}
+
+/**
+ * Attach click handlers to vocab words in a container element.
+ * Must be called after the transcript HTML is inserted into the DOM.
+ * @param {HTMLElement} container - The transcript container element
+ */
+export function attachVocabClickHandlers(container) {
+	if (!container) return;
+	container.querySelectorAll('.vocab-word').forEach(el => {
+		el.addEventListener('click', (e) => {
+			e.preventDefault();
+			const word = el.dataset.word;
+			if (word) handleVocabWordClick(word);
+		});
+	});
 }

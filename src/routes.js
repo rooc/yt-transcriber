@@ -15,6 +15,7 @@ const { getTranscriptForVideo, readVocab, readGrammar, readSummary } = require('
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 const LEARNED_PATH = path.join(ROOT_DIR, 'data', 'learned.json');
 const PROGRESS_PATH = path.join(ROOT_DIR, 'data', 'progress.json');
+const VOCABULAR_PATH = path.join(ROOT_DIR, 'data', 'vocabular.json');
 
 /**
  * GET /api/translation?v=VIDEO_ID
@@ -327,6 +328,53 @@ function handleProgressPost(req, res) {
 }
 
 /**
+ * GET /api/vocabular
+ *
+ * Load the persisted list of vocabular words and panel state.
+ *
+ * @param {import('http').ServerResponse} res
+ */
+function handleVocabularGet(res) {
+    try {
+        if (fs.existsSync(VOCABULAR_PATH)) {
+            const data = fs.readFileSync(VOCABULAR_PATH, 'utf-8');
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(data);
+        } else {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ vocabularWords: [], vocabularPanelCollapsed: true }));
+        }
+    } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: e.message }));
+    }
+}
+
+/**
+ * POST /api/vocabular
+ *
+ * Save the list of vocabular words and panel collapsed state.
+ *
+ * @param {import('http').IncomingMessage} req
+ * @param {import('http').ServerResponse} res
+ */
+function handleVocabularPost(req, res) {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+        try {
+            const data = JSON.parse(body);
+            fs.writeFileSync(VOCABULAR_PATH, JSON.stringify(data, null, 2));
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true }));
+        } catch (e) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: e.message }));
+        }
+    });
+}
+
+/**
  * GET /api/transcripts
  *
  * Scan the transcripts directory and return a grouped list of videos
@@ -480,6 +528,16 @@ function setupRoutes(req, res) {
 
     if (url.pathname === '/api/learned' && req.method === 'POST') {
         handleLearnedPost(req, res);
+        return;
+    }
+
+    if (url.pathname === '/api/vocabular' && req.method === 'GET') {
+        handleVocabularGet(res);
+        return;
+    }
+
+    if (url.pathname === '/api/vocabular' && req.method === 'POST') {
+        handleVocabularPost(req, res);
         return;
     }
 

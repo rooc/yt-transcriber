@@ -17,10 +17,14 @@ import {
 	setIsLearnedPanelCollapsed,
 	setVideoProgress,
 	setStatsData,
+	setVocabularWords,
+	setIsVocabularPanelCollapsed,
 	learnedVideos,
 	isLearnedPanelCollapsed,
 	videoProgress,
 	statsData,
+	vocabularWords,
+	isVocabularPanelCollapsed,
 } from './state.js';
 import { setStatus, formatTime, parseTranscriptXML } from './utils.js';
 
@@ -311,6 +315,50 @@ export async function loadStats() {
 		}
 	} catch (e) {
 		console.log("Could not load stats from server, using localStorage");
+	}
+}
+
+// --- Vocabular API ---
+
+/**
+ * Load vocabular words from server or localStorage.
+ */
+export async function loadVocabular() {
+	try {
+		const response = await fetch("/api/vocabular");
+		if (response.ok) {
+			const data = await response.json();
+			setVocabularWords(data.vocabularWords || []);
+			setIsVocabularPanelCollapsed(data.vocabularPanelCollapsed !== undefined ? data.vocabularPanelCollapsed : true);
+			console.log("Loaded vocabular from server:", data.vocabularWords.length);
+		} else {
+			setVocabularWords(JSON.parse(localStorage.getItem("vocabularWords") || "[]"));
+			setIsVocabularPanelCollapsed(JSON.parse(localStorage.getItem("vocabularPanelCollapsed") || "true"));
+			console.log("Loaded vocabular from localStorage:", vocabularWords.length);
+		}
+	} catch (e) {
+		setVocabularWords(JSON.parse(localStorage.getItem("vocabularWords") || "[]"));
+		setIsVocabularPanelCollapsed(JSON.parse(localStorage.getItem("vocabularPanelCollapsed") || "true"));
+		console.log("Loaded vocabular from localStorage (error):", vocabularWords.length);
+	}
+}
+
+/**
+ * Save vocabular words to server and localStorage.
+ */
+export async function saveVocabular() {
+	const data = { vocabularWords, vocabularPanelCollapsed: isVocabularPanelCollapsed };
+	localStorage.setItem("vocabularWords", JSON.stringify(vocabularWords));
+	localStorage.setItem("vocabularPanelCollapsed", JSON.stringify(isVocabularPanelCollapsed));
+	try {
+		const response = await fetch("/api/vocabular", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(data)
+		});
+		if (response.ok) console.log("Saved vocabular to server");
+	} catch (e) {
+		console.log("Could not save vocabular to server, using localStorage only");
 	}
 }
 

@@ -51,11 +51,26 @@
 						<span class="material-icons" id="grammarToggleIcon"
 							>expand_more</span
 						>
-						Grammar sentences
+						<span class="grammar-header-title">Grammar sentences</span>
+						<span id="grammarVideoTitle" class="grammar-video-title"></span>
 					</h3>
 					<div id="grammarContent" class="collapsible-content collapsed">
 						<div id="grammarSentences">
 							Select a transcript to see grammar examples
+						</div>
+					</div>
+				</div>
+
+				<div class="panel" id="vocabularPanel">
+					<h3 class="collapsible-header" onclick="toggleVocabularPanel()">
+						<span class="material-icons" id="vocabularToggleIcon"
+							>expand_more</span
+						>
+						Vocabular <span id="vocabularCount"></span>
+					</h3>
+					<div id="vocabularContent" class="collapsible-content collapsed">
+						<div id="vocabularWords">
+							Click words in transcript to add them here
 						</div>
 					</div>
 				</div>
@@ -174,6 +189,16 @@
 					>&times;</span
 				>
 				<div id="grammarModalContent"></div>
+			</div>
+		</div>
+
+		<!-- Vocabular Modal -->
+		<div id="vocabularModal" class="grammar-modal vocabular-modal">
+			<div class="grammar-modal-content">
+				<span class="grammar-modal-close" onclick="closeVocabularModal()"
+					>&times;</span
+				>
+				<div id="vocabularModalContent"></div>
 			</div>
 		</div>
 

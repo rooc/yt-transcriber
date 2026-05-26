@@ -20,10 +20,26 @@ export function setupKeyboardHandlers() {
 }
 
 /**
+ * Check if any modal is currently open.
+ * @returns {boolean}
+ */
+function isModalOpen() {
+	const grammarModal = document.getElementById("grammarModal");
+	const summaryModal = document.getElementById("summaryModal");
+	const vocabularModal = document.getElementById("vocabularModal");
+	return (grammarModal && grammarModal.classList.contains("active")) ||
+		(summaryModal && summaryModal.classList.contains("active")) ||
+		(vocabularModal && vocabularModal.classList.contains("active"));
+}
+
+/**
  * Handle keyboard shortcuts.
  * @param {KeyboardEvent} e - Keyboard event
  */
 function handleKeyDown(e) {
+	// Skip video controls when any modal is open (modal handles its own keys)
+	if (isModalOpen()) return;
+
 	// Space - Pause/Play
 	if (e.code === "Space") {
 		e.preventDefault();

@@ -9,6 +9,7 @@ import {
 	isGrammarPanelCollapsed,
 	setIsGrammarPanelCollapsed,
 } from './state.js';
+import { closeVocabularModal } from './vocabular.js';
 import { fetchSummary } from './api.js';
 
 let currentSummary = null;
@@ -145,11 +146,14 @@ export function setupModalHandlers() {
 	window.addEventListener('click', function(event) {
 		const grammarModal = document.getElementById("grammarModal");
 		const summaryModal = document.getElementById("summaryModal");
+		const vocabularModal = document.getElementById("vocabularModal");
 		
 		if (event.target === grammarModal) {
 			closeGrammarModal();
 		} else if (event.target === summaryModal) {
 			closeSummaryModal();
+		} else if (event.target === vocabularModal) {
+			closeVocabularModal();
 		}
 	});
 
@@ -158,11 +162,14 @@ export function setupModalHandlers() {
 		if (event.key === "Escape") {
 			const grammarModal = document.getElementById("grammarModal");
 			const summaryModal = document.getElementById("summaryModal");
+			const vocabularModal = document.getElementById("vocabularModal");
 			
 			if (grammarModal.classList.contains("active")) {
 				closeGrammarModal();
 			} else if (summaryModal.classList.contains("active")) {
 				closeSummaryModal();
+			} else if (vocabularModal.classList.contains("active")) {
+				closeVocabularModal();
 			}
 		}
 	});

@@ -38,6 +38,10 @@ export let isLearnedPanelCollapsed = true;
 export let currentGrammarData = [];
 export let isGrammarPanelCollapsed = true;
 
+// --- Vocabular State ---
+export let vocabularWords = [];
+export let isVocabularPanelCollapsed = true;
+
 // --- Statistics State ---
 export let videoProgress = {};
 export let statsData = { totalLearned: 0, totalWatchTimeHours: 0 };
@@ -83,6 +87,9 @@ export function setIsLearnedPanelCollapsed(value) { isLearnedPanelCollapsed = va
 
 export function setCurrentGrammarData(value) { currentGrammarData = value; }
 export function setIsGrammarPanelCollapsed(value) { isGrammarPanelCollapsed = value; }
+
+export function setVocabularWords(value) { vocabularWords = value; }
+export function setIsVocabularPanelCollapsed(value) { isVocabularPanelCollapsed = value; }
 
 export function setVideoProgress(value) { videoProgress = value; }
 export function setStatsData(value) { statsData = value; }

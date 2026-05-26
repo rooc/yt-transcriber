@@ -22,7 +22,7 @@ import {
 	setIsPaused,
 } from './state.js';
 import { setStatus, formatTime } from './utils.js';
-import { wrapVocabWords } from './vocab.js';
+import { wrapVocabWords, attachVocabClickHandlers } from './vocab.js';
 import { updateSegmentEndTime } from './player.js';
 
 /**
@@ -50,6 +50,8 @@ export function renderTranscriptLine() {
 		} else {
 			state.transcriptContainer.innerHTML = `<div class="transcript-line"><span>${original}</span>${pauseIconHtml}</div>`;
 		}
+		
+		attachVocabClickHandlers(state.transcriptContainer);
 	});
 }
 

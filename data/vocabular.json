@@ -1,0 +1,23 @@
+{
+  "vocabularWords": [
+    {
+      "word": "celestiales",
+      "translation": "heavenly/delightful",
+      "pos": "adjective",
+      "context": "los celestiales frijolitos en olla de barro"
+    },
+    {
+      "word": "alojados",
+      "translation": "hosted/housed",
+      "pos": "adjective/verb",
+      "context": "podríamos tener alojados en data centers"
+    },
+    {
+      "word": "área del conocimiento",
+      "translation": "area of knowledge",
+      "pos": "noun phrase",
+      "context": "cada área del conocimiento"
+    }
+  ],
+  "vocabularPanelCollapsed": false
+}
