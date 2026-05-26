@@ -110,7 +110,7 @@ export function toggleLearnedPanel() {
 	setIsLearnedPanelCollapsed(!isLearnedPanelCollapsed);
 	saveLearnedAPI();
 
-	const content = document.getElementById("learnedTags");
+	const content = document.getElementById("learnedContent");
 	const icon = document.getElementById("learnedToggleIcon");
 
 	content.classList.toggle("collapsed", isLearnedPanelCollapsed);
@@ -318,7 +318,7 @@ export function renderTranscriptLists(loadByVideoId) {
 	// Setup drag and drop
 	setupDragAndDrop();
 
-	const content = document.getElementById("learnedTags");
+	const content = document.getElementById("learnedContent");
 	const icon = document.getElementById("learnedToggleIcon");
 	content.classList.toggle("collapsed", isLearnedPanelCollapsed);
 	icon.textContent = isLearnedPanelCollapsed ? "chevron_right" : "expand_more";
