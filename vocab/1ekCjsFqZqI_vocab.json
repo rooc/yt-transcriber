@@ -1,0 +1,441 @@
+{
+  "bienvenida": {
+    "translation": "welcome",
+    "pos": "noun"
+  },
+  "recomiendo": {
+    "translation": "I recommend",
+    "pos": "verb",
+    "context": "te recomiendo que primero vayas a la web"
+  },
+  "descargues": {
+    "translation": "you download (subjunctive)",
+    "pos": "verb",
+    "context": "descargues en formato PDF la guía de vocabulario",
+    "level": "A1_A2_advanced_form",
+    "source": "subjunctive_conjugation"
+  },
+  "conversación": {
+    "translation": "conversation",
+    "pos": "noun"
+  },
+  "sin adaptar": {
+    "translation": "unadapted",
+    "pos": "expression"
+  },
+  "comprensión": {
+    "translation": "comprehension / understanding",
+    "pos": "noun"
+  },
+  "compañera": {
+    "translation": "colleague / companion",
+    "pos": "noun"
+  },
+  "complicado": {
+    "translation": "complicated",
+    "pos": "adjective"
+  },
+  "comentarios": {
+    "translation": "comments",
+    "pos": "noun"
+  },
+  "valora": {
+    "translation": "values / appreciates",
+    "pos": "verb"
+  },
+  "privacidad": {
+    "translation": "privacy",
+    "pos": "noun"
+  },
+  "redes sociales": {
+    "translation": "social media",
+    "pos": "noun phrase"
+  },
+  "miedo": {
+    "translation": "fear",
+    "pos": "noun"
+  },
+  "compañeros": {
+    "translation": "colleagues / classmates",
+    "pos": "noun"
+  },
+  "ventana": {
+    "translation": "window",
+    "pos": "noun"
+  },
+  "pandemia": {
+    "translation": "pandemic",
+    "pos": "noun"
+  },
+  "mudé": {
+    "translation": "I moved",
+    "pos": "verb",
+    "level": "B1",
+    "source": "preterite_conjugation"
+  },
+  "burocracia": {
+    "translation": "bureaucracy",
+    "pos": "noun"
+  },
+  "situación extraña": {
+    "translation": "strange situation",
+    "pos": "noun phrase"
+  },
+  "naturalicé": {
+    "translation": "I naturalized / became a citizen",
+    "pos": "verb",
+    "context": "me naturalicé como británico antes de irme",
+    "level": "B1",
+    "source": "verb_conjugation"
+  },
+  "pasaporte": {
+    "translation": "passport",
+    "pos": "noun"
+  },
+  "permiso de residencia": {
+    "translation": "residence permit",
+    "pos": "noun phrase"
+  },
+  "nacionalidad": {
+    "translation": "nationality / citizenship",
+    "pos": "noun"
+  },
+  "currar": {
+    "translation": "to work hard / to grind",
+    "pos": "verb"
+  },
+  "costumbres": {
+    "translation": "customs / habits",
+    "pos": "noun"
+  },
+  "casándote": {
+    "translation": "getting married (gerund)",
+    "pos": "verb",
+    "context": "Ni casándote con uno de ellos te dan el pasaporte",
+    "level": "B1",
+    "source": "gerund_conjugation"
+  },
+  "marido": {
+    "translation": "husband",
+    "pos": "noun"
+  },
+  "broma": {
+    "translation": "joke",
+    "pos": "noun"
+  },
+  "mejorado": {
+    "translation": "improved",
+    "pos": "verb",
+    "level": "B1",
+    "source": "past_participle"
+  },
+  "descarte": {
+    "translation": "discard / leftover",
+    "pos": "noun"
+  },
+  "podcastera": {
+    "translation": "podcaster",
+    "pos": "noun"
+  },
+  "formato largo": {
+    "translation": "long format",
+    "pos": "noun phrase"
+  },
+  "cansé": {
+    "translation": "I got tired",
+    "pos": "verb",
+    "context": "sinceramente me cansé de hacer vídeos cortos",
+    "level": "B1",
+    "source": "preterite_conjugation"
+  },
+  "dedicqué": {
+    "translation": "I dedicated",
+    "pos": "verb",
+    "context": "lo dediqué de lleno a todo esto",
+    "level": "B1",
+    "source": "preterite_conjugation"
+  },
+  "comprensión auditiva": {
+    "translation": "listening comprehension",
+    "pos": "noun phrase"
+  },
+  "vergüencilla": {
+    "translation": "a bit of embarrassment / sheepishness",
+    "pos": "noun"
+  },
+  "habilidad": {
+    "translation": "skill / ability",
+    "pos": "noun"
+  },
+  "empujón": {
+    "translation": "push / boost",
+    "pos": "noun"
+  },
+  "estructurado": {
+    "translation": "structured",
+    "pos": "adjective"
+  },
+  "inscripciones": {
+    "translation": "registrations / enrollments",
+    "pos": "noun"
+  },
+  "talento": {
+    "translation": "talent",
+    "pos": "noun"
+  },
+  "constancia": {
+    "translation": "consistency / persistence",
+    "pos": "noun"
+  },
+  "limitaciones": {
+    "translation": "limitations",
+    "pos": "noun"
+  },
+  "realista": {
+    "translation": "realistic",
+    "pos": "adjective"
+  },
+  "innato": {
+    "translation": "innate",
+    "pos": "adjective"
+  },
+  "carisma": {
+    "translation": "charisma",
+    "pos": "noun"
+  },
+  "chorro": {
+    "translation": "stream / jet / bunch (colloquial)",
+    "pos": "noun",
+    "context": "no tienen un chorro de voz"
+  },
+  "generación": {
+    "translation": "generation",
+    "pos": "noun"
+  },
+  "divertido": {
+    "translation": "fun / entertaining",
+    "pos": "adjective"
+  },
+  "curada": {
+    "translation": "cured / over it (colloquial)",
+    "pos": "adjective",
+    "context": "ya estoy curada, ya me da igual"
+  },
+  "trauma": {
+    "translation": "trauma",
+    "pos": "noun"
+  },
+  "obsesión": {
+    "translation": "obsession",
+    "pos": "noun"
+  },
+  "anunciaron": {
+    "translation": "they announced",
+    "pos": "verb",
+    "level": "B1",
+    "source": "preterite_conjugation"
+  },
+  "emoción": {
+    "translation": "emotion / excitement",
+    "pos": "noun"
+  },
+  "outfit": {
+    "translation": "outfit",
+    "pos": "noun",
+    "context": "preparando el outfit"
+  },
+  "terroristas": {
+    "translation": "terrorists",
+    "pos": "noun"
+  },
+  "desastre": {
+    "translation": "disaster",
+    "pos": "noun"
+  },
+  "amenazas": {
+    "translation": "threats",
+    "pos": "noun"
+  },
+  "documental": {
+    "translation": "documentary",
+    "pos": "noun"
+  },
+  "oportunidad": {
+    "translation": "opportunity",
+    "pos": "noun"
+  },
+  "quemamos": {
+    "translation": "we burned out / overplayed",
+    "pos": "verb",
+    "context": "lo quemamos y ya creo que yo no lo he vuelto a escuchar",
+    "level": "B1",
+    "source": "preterite_conjugation"
+  },
+  "desgarramiento emocional": {
+    "translation": "emotional tearing / heart-wrenching",
+    "pos": "noun phrase"
+  },
+  "poéticas": {
+    "translation": "poetic",
+    "pos": "adjective"
+  },
+  "empresaria": {
+    "translation": "businesswoman",
+    "pos": "noun"
+  },
+  "videoclip": {
+    "translation": "music video",
+    "pos": "noun"
+  },
+  "dirigido": {
+    "translation": "directed",
+    "pos": "verb",
+    "level": "B1",
+    "source": "past_participle"
+  },
+  "libertad": {
+    "translation": "freedom",
+    "pos": "noun"
+  },
+  "expresión artística": {
+    "translation": "artistic expression",
+    "pos": "noun phrase"
+  },
+  "idolatra": {
+    "translation": "idolizes / worships",
+    "pos": "verb"
+  },
+  "cantautora": {
+    "translation": "singer-songwriter",
+    "pos": "noun"
+  },
+  "embarazada": {
+    "translation": "pregnant",
+    "pos": "adjective"
+  },
+  "multitud": {
+    "translation": "crowd / multitude",
+    "pos": "noun"
+  },
+  "estadio": {
+    "translation": "stadium",
+    "pos": "noun"
+  },
+  "amistad": {
+    "translation": "friendship",
+    "pos": "noun"
+  },
+  "interpretar": {
+    "translation": "to interpret",
+    "pos": "verb"
+  },
+  "precioso": {
+    "translation": "beautiful / gorgeous",
+    "pos": "adjective"
+  },
+  "dramáticos": {
+    "translation": "dramatic",
+    "pos": "adjective"
+  },
+  "vascos": {
+    "translation": "Basque (people)",
+    "pos": "noun"
+  },
+  "estereotipos": {
+    "translation": "stereotypes",
+    "pos": "noun"
+  },
+  "realidad": {
+    "translation": "reality",
+    "pos": "noun"
+  },
+  "exageramos": {
+    "translation": "we exaggerate",
+    "pos": "verb",
+    "level": "B1",
+    "source": "present_conjugation"
+  },
+  "cariño": {
+    "translation": "affection / care",
+    "pos": "noun"
+  },
+  "recelo": {
+    "translation": "reluctance / distrust",
+    "pos": "noun"
+  },
+  "personalidad colectiva": {
+    "translation": "collective personality",
+    "pos": "noun phrase"
+  },
+  "retraída": {
+    "translation": "withdrawn / reserved",
+    "pos": "adjective"
+  },
+  "envidia": {
+    "translation": "envy / jealousy",
+    "pos": "noun"
+  },
+  "terrazas": {
+    "translation": "terraces / outdoor seating",
+    "pos": "noun"
+  },
+  "círculo social": {
+    "translation": "social circle",
+    "pos": "noun phrase"
+  },
+  "inmigrantes": {
+    "translation": "immigrants",
+    "pos": "noun"
+  },
+  "cultura clásica": {
+    "translation": "classical culture",
+    "pos": "noun phrase"
+  },
+  "instituto": {
+    "translation": "high school / institute",
+    "pos": "noun"
+  },
+  "flexibilidad": {
+    "translation": "flexibility",
+    "pos": "noun"
+  },
+  "programadora": {
+    "translation": "programmer (female)",
+    "pos": "noun"
+  },
+  "hubiese gustado": {
+    "translation": "I would have liked",
+    "pos": "verb phrase",
+    "context": "sí que me hubiese gustado tal vez dedicarle tiempo a ello",
+    "level": "B1",
+    "source": "subjunctive_phrase"
+  },
+  "hubiera tenido": {
+    "translation": "I would have had",
+    "pos": "verb phrase",
+    "context": "igual habría tenido algún potencial",
+    "level": "B1",
+    "source": "subjunctive_phrase"
+  },
+  "habría podido": {
+    "translation": "she could have",
+    "pos": "verb phrase",
+    "context": "al principio esto nunca lo habría podido hacer",
+    "level": "B1",
+    "source": "conditional_perfect"
+  },
+  "se muestren": {
+    "translation": "they show themselves (subjunctive)",
+    "pos": "verb phrase",
+    "context": "no se muestren tan cariñosos",
+    "level": "B1",
+    "source": "subjunctive_conjugation"
+  },
+  "me hubiese importado": {
+    "translation": "I would have minded",
+    "pos": "verb phrase",
+    "context": "no me hubiese importado ir",
+    "level": "B1",
+    "source": "subjunctive_phrase"
+  }
+}
