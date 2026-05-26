@@ -645,11 +645,11 @@ Include **all forms** of A1-A2 words if they appear in **B1+ structures**:
 
 **Output:** `summary/[VIDEO_ID]_summary.json`
 
-**Write a short summary** of the video content in Spanish (4-6 sentences), using the original vocabulary from the transcript. The summary should capture the main ideas and key points discussed.
+**Write a short summary** of the video content in Spanish (2-4 sentences), using the original vocabulary from the transcript.
 
 ### Summary Guidelines:
 - **Language:** Spanish (original language of the video)
-- **Length:** 4-6 sentences
+- **Length:** 2-4 sentences
 - **Style:** Use vocabulary from the transcript (not simplified A1-A2 words)
 - **Content:** Main topic, key points, main conclusion or takeaway
 - **Format:** Plain text, not markdown
@@ -657,7 +657,7 @@ Include **all forms** of A1-A2 words if they appear in **B1+ structures**:
 ### JSON Structure:
 ```json
 {
-  "summary": "Spanish summary text here using original vocabulary from the transcript. Should capture the main ideas and key points of the video in 4-6 sentences."
+  "summary": "Spanish summary text here using original vocabulary from the transcript. Should capture the main ideas and key points of the video in 2-4 sentences."
 }
 ```
 
