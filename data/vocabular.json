@@ -13,16 +13,40 @@
       "context": "podríamos tener alojados en data centers"
     },
     {
-      "word": "área del conocimiento",
-      "translation": "area of knowledge",
-      "pos": "noun phrase",
-      "context": "cada área del conocimiento"
-    },
-    {
       "word": "gestación subrogada",
       "translation": "surrogacy",
       "pos": "noun phrase",
       "context": "parejas de todo el mundo aún llegan a Ucrania para tener bebés a través de la gestación subrogada"
+    },
+    {
+      "word": "asolado",
+      "translation": "devastated / ravaged",
+      "pos": "adjective",
+      "context": "un país asolado por cuatro años de guerra"
+    },
+    {
+      "word": "recurso",
+      "translation": "resource / remedy / last resort",
+      "pos": "noun",
+      "context": "la gestación subrogada era su último recurso"
+    },
+    {
+      "word": "a largo plazo",
+      "translation": "long-term",
+      "pos": "",
+      "context": ""
+    },
+    {
+      "word": "velocidades de descarga",
+      "translation": "download speeds",
+      "pos": "",
+      "context": ""
+    },
+    {
+      "word": "recogida de residuos",
+      "translation": "waste collection",
+      "pos": "",
+      "context": ""
     }
   ],
   "vocabularPanelCollapsed": false

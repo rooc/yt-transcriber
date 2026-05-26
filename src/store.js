@@ -15,11 +15,12 @@ const fs = require('fs');
 const { TRANSCRIPTS_DIR, VOCAB_DIR, GRAMMAR_DIR, SUMMARY_DIR } = require('./config');
 
 /**
- * Parse a markdown transcript file into timed lines.
+ * Parse a transcript file into timed lines.
  *
- * Supports two timestamp formats:
- *   **H:MM:SS** Text  (or **MM:SS** Text)
- *   [MM:SS] Text          (fallback)
+ * Supports multiple timestamp formats:
+ *   **H:MM:SS** Text  (or **MM:SS** Text) - markdown bold
+ *   [MM:SS] Text                           - bracket timestamps
+ *   SRT format: HH:MM:SS,mmm --> HH:MM:SS,mmm with sequential numbers
  *
  * @param {string} content  — raw file content
  * @param {string} filename — used to decide parser based on extension
@@ -29,25 +30,51 @@ function parseTranscriptFile(content, filename) {
     const ext = path.extname(filename).toLowerCase();
     const lines = [];
 
-    if (ext === '.md' || ext === '.txt') {
-        // Primary format: **H:MM:SS** Text or **MM:SS** Text (· separator optional)
-        const regex = /\*\*(\d{1,2}):(\d{2})(?::(\d{2}))?\*\*\s*(?:[·•]\s*)?(.+)/g;
+    if (ext === '.md' || ext === '.txt' || ext === '.srt') {
+        // Remove YAML frontmatter if present
+        const contentWithoutFrontmatter = content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
+
+        // Try SRT format first: sequential number, timestamp line, text
+        // Pattern: number\nHH:MM:SS,mmm --> HH:MM:SS,mmm\ntext
+        const srtRegex = /(\d+)\s*\n(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*\n([^\n]+(?:\n(?!\d+\s*\n\d{2}:\d{2}:\d{2},\d{3})[^\n]+)*)/g;
         let match;
-        while ((match = regex.exec(content)) !== null) {
-            const first = parseInt(match[1]);
-            const second = parseInt(match[2]);
-            const third = match[3] ? parseInt(match[3]) : null;
+        while ((match = srtRegex.exec(contentWithoutFrontmatter)) !== null) {
+            const hours = parseInt(match[2]);
+            const mins = parseInt(match[3]);
+            const secs = parseInt(match[4]);
+            const ms = parseInt(match[5]);
+            const endHours = parseInt(match[6]);
+            const endMins = parseInt(match[7]);
+            const endSecs = parseInt(match[8]);
+            const endMs = parseInt(match[9]);
 
-            let time;
-            if (third !== null) {
-                // H:MM:SS
-                time = first * 3600 + second * 60 + third;
-            } else {
-                // M:SS
-                time = first * 60 + second;
+            const startTime = hours * 3600 + mins * 60 + secs + ms / 1000;
+            const endTime = endHours * 3600 + endMins * 60 + endSecs + endMs / 1000;
+            const duration = endTime - startTime;
+            const text = match[10].trim().replace(/\n+/g, ' ');
+
+            lines.push({ start: startTime, dur: duration, text: text });
+        }
+
+        // Primary format: **H:MM:SS** Text or **MM:SS** Text (· separator optional)
+        if (lines.length === 0) {
+            const regex = /\*\*(\d{1,2}):(\d{2})(?::(\d{2}))?\*\*\s*(?:[·•]\s*)?(.+)/g;
+            while ((match = regex.exec(content)) !== null) {
+                const first = parseInt(match[1]);
+                const second = parseInt(match[2]);
+                const third = match[3] ? parseInt(match[3]) : null;
+
+                let time;
+                if (third !== null) {
+                    // H:MM:SS
+                    time = first * 3600 + second * 60 + third;
+                } else {
+                    // M:SS
+                    time = first * 60 + second;
+                }
+
+                lines.push({ start: time, dur: 3, text: match[4].trim() });
             }
-
-            lines.push({ start: time, dur: 3, text: match[4].trim() });
         }
 
         // Fallback format: [00:00] Text
@@ -165,6 +192,102 @@ function readSummary(videoId) {
     return JSON.parse(fs.readFileSync(summaryPath, 'utf-8'));
 }
 
+/**
+ * Merge short transcript lines into longer segments (80-120 characters).
+ *
+ * @param {{ start: number, dur: number, text: string }[]} lines - Parsed transcript lines
+ * @param {number} minLength - Minimum target length per merged segment (default: 80)
+ * @param {number} maxLength - Maximum target length per merged segment (default: 120)
+ * @returns {{ start: number, dur: number, text: string }[]} Merged segments
+ */
+function mergeTranscriptLines(lines, minLength = 80, maxLength = 120) {
+    if (lines.length === 0) return [];
+    
+    const merged = [];
+    let current = { ...lines[0] };
+    
+    for (let i = 1; i < lines.length; i++) {
+        const line = lines[i];
+        const combinedText = current.text + ' ' + line.text;
+        const combinedLength = combinedText.length;
+        
+        if (combinedLength <= maxLength) {
+            // Can merge - add to current segment
+            current.text = combinedText;
+            current.dur = (line.start + line.dur) - current.start;
+        } else if (current.text.length < minLength) {
+            // Current is too short, merge anyway (but don't exceed maxLength too much)
+            if (combinedLength <= maxLength + 20) {
+                current.text = combinedText;
+                current.dur = (line.start + line.dur) - current.start;
+            } else {
+                // Would exceed max by too much, start new segment
+                merged.push(current);
+                current = { ...line };
+            }
+        } else {
+            // Current is good length, start new segment
+            merged.push(current);
+            current = { ...line };
+        }
+    }
+    
+    // Don't forget the last segment
+    merged.push(current);
+    
+    return merged;
+}
+
+/**
+ * Format seconds as MM:SS or H:MM:SS timestamp.
+ *
+ * @param {number} seconds - Time in seconds
+ * @returns {string} Formatted timestamp
+ */
+function formatTimestamp(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    
+    if (hours > 0) {
+        return `${hours}:${mins.toString().padStart(2, '0')}`;
+    }
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+/**
+ * Convert transcript segments to markdown format with **MM:SS** timestamps.
+ *
+ * @param {{ start: number, dur: number, text: string }[]} lines - Transcript lines
+ * @param {string} frontmatter - Optional YAML frontmatter to preserve
+ * @returns {string} Markdown formatted transcript
+ */
+function convertToMarkdown(lines, frontmatter = '') {
+    const content = lines.map(line => {
+        const timestamp = formatTimestamp(line.start);
+        return `**${timestamp}** ${line.text}`;
+    }).join('\n');
+    
+    if (frontmatter) {
+        return frontmatter + '\n' + content;
+    }
+    return content;
+}
+
+/**
+ * Extract YAML frontmatter from content if present.
+ *
+ * @param {string} content - File content
+ * @returns {{ frontmatter: string, body: string }} Frontmatter and body
+ */
+function extractFrontmatter(content) {
+    const match = content.match(/^(---\s*\n[\s\S]*?\n---\s*\n)([\s\S]*)$/);
+    if (match) {
+        return { frontmatter: match[1].trim(), body: match[2] };
+    }
+    return { frontmatter: '', body: content };
+}
+
 module.exports = {
     parseTranscriptFile,
     getVideoIdFromFile,
@@ -173,4 +296,8 @@ module.exports = {
     readVocab,
     readGrammar,
     readSummary,
+    mergeTranscriptLines,
+    convertToMarkdown,
+    extractFrontmatter,
+    formatTimestamp,
 };
