@@ -247,30 +247,44 @@ English: **1:30** I'm fed up with this. (Mexican slang)
 
 **Output:** `vocab/[VIDEO_ID]_vocab.json`
 
-**Standard Format (Simple Key-Value):**
+**Standard Format (Extended with Metadata):**
 
 ```json
 {
-  "phrase in spanish": "english translation",
-  "another phrase": "another translation"
+  "phrase in spanish": {
+    "translation": "english translation",
+    "pos": "part of speech",
+    "context": "original sentence from transcript"
+  }
 }
 ```
 
-**Rules:**
-- Use simple key-value pairs (NOT nested objects)
-- Keys: Spanish phrase/word (2-4 words preferred)
-- Values: English translation (1-5 words, contextual)
-- Prioritize multi-word phrases over single words
-- Include contextual notes in parentheses when needed
+**Required Fields:**
+1. **translation** — English meaning (1-5 words, lowercase)
+2. **pos** — Part of speech:
+   - `"verb"`, `"noun"`, `"adjective"`, `"adverb"`
+   - `"verb phrase"`, `"noun phrase"` for multi-word expressions
+   - `"expression"` for idioms/slang
+3. **context** — Original Spanish sentence from transcript (shows usage)
 
 **Example:**
 ```json
 {
-  "hacer caso": "to pay attention",
-  "muela del juicio": "wisdom tooth",
-  "hasta la madre": "fed up (Mexican slang)",
-  "en el quinto pino": "in the middle of nowhere",
-  "sin haberla visto": "without having seen her"
+  "hacer caso": {
+    "translation": "to pay attention",
+    "pos": "verb phrase",
+    "context": "Debes hacer caso a tu madre."
+  },
+  "muela del juicio": {
+    "translation": "wisdom tooth",
+    "pos": "noun phrase",
+    "context": "Me duele la muela del juicio."
+  },
+  "hasta la madre": {
+    "translation": "fed up",
+    "pos": "expression",
+    "context": "Estoy hasta la madre de este ruido."
+  }
 }
 ```
 
@@ -428,29 +442,42 @@ Skip words that are the same or similar in English:
 **For each vocabulary entry:**
 
 - **Key:** Spanish phrase/word (prioritize 2-4 word phrases)
-- **Value:** English translation (1-5 words, contextual, lowercase)
+- **translation:** English meaning (1-5 words, lowercase)
+- **pos:** Part of speech (verb, noun, adjective, expression, verb phrase, noun phrase)
+- **context:** Original sentence from transcript showing usage
 
 **Good examples:**
 ```json
 {
-  "masticar": "to chew",
-  "muela del juicio": "wisdom tooth",
-  "hacer caso": "to pay attention",
-  "hasta la madre": "fed up / completely full (Mexican slang)",
-  "en el quinto pino": "in the middle of nowhere",
-  "si tuviera tiempo": "if I had time",
-  "aunque llueva": "even if it rains",
-  "irse": "to leave / take off",
-  "rapidísimo": "extremely fast",
-  "tenga": "I have (subjunctive)"
+  "masticar": {
+    "translation": "to chew",
+    "pos": "verb",
+    "context": "Tienes que masticar bien la comida."
+  },
+  "muela del juicio": {
+    "translation": "wisdom tooth",
+    "pos": "noun phrase",
+    "context": "Me duele la muela del juicio."
+  },
+  "hacer caso": {
+    "translation": "to pay attention",
+    "pos": "verb phrase",
+    "context": "Debes hacer caso a tu madre."
+  },
+  "hasta la madre": {
+    "translation": "fed up",
+    "pos": "expression",
+    "context": "Estoy hasta la madre de este ruido."
+  }
 }
 ```
 
 **Translation guidelines:**
-- ✅ Use 1-5 words, lowercase
-- ✅ Include context notes in parentheses when needed: `(slang)`, `(subjunctive)`, `(literally "cold that peels")`
-- ✅ Good: "hacer caso" → "to pay attention"
-- ❌ Bad: "masticar" → "chew, masticate, grind food with teeth"
+- ✅ Use 1-5 words for translation, lowercase
+- ✅ Include pos: "expression" for idioms/slang, "verb phrase" for verb+preposition
+- ✅ Include full context sentence from transcript
+- ✅ Good: "hacer caso" → "to pay attention" with context
+- ❌ Bad: Missing pos or context fields
 
 ### Additional Word Categories to Include
 
@@ -689,9 +716,21 @@ source: "https://www.youtube.com/watch?v=087XVp3JIpk"
 ### Output: `vocab/087XVp3JIpk_vocab.json`
 ```json
 {
-  "bienvenidos": "welcome",
-  "episodio": "episode",
-  "manera": "way / manner"
+  "bienvenidos": {
+    "translation": "welcome",
+    "pos": "adjective",
+    "context": "Hola a todos y bienvenidos a un nuevo episodio."
+  },
+  "episodio": {
+    "translation": "episode",
+    "pos": "noun",
+    "context": "Bienvenidos a un nuevo episodio de nuestro podcast."
+  },
+  "manera": {
+    "translation": "way / manner",
+    "pos": "noun",
+    "context": "Aquí hablamos español de una manera no muy rápida."
+  }
 }
 ```
 

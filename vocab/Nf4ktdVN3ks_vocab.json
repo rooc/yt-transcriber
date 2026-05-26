@@ -1,28 +1,132 @@
 {
-  "a largo plazo": "long-term",
-  "tripulaciones rotativas": "rotating crews",
-  "presencia sostenible": "sustainable presence",
-  "viaje histórico puntual": "one-time historic trip",
-  "banco de pruebas": "testing ground",
-  "a tiro de piedra": "within reach / a stone's throw away",
-  "magnitud totalmente distinta": "totally different magnitude",
-  "sistemas de vida": "life support systems",
-  "entrada en la atmósfera": "atmospheric reentry",
-  "sistema de presurización": "pressurization system",
-  "fugas de gas": "gas leaks",
-  "diagnóstico remoto": "remote diagnostics",
-  "polo sur lunar": "lunar south pole",
-  "punto de apoyo": "stepping stone / foothold",
-  "sistema solar": "solar system",
-  "cara oculta": "far side / hidden face",
-  "cohete más potente": "most powerful rocket",
-  "velocidades de descarga": "download speeds",
-  "comunicaciones de radio": "radio communications",
-  "recogida de residuos": "waste collection",
-  "módulos de aterrizaje": "landing modules",
-  "aterrizaje lunar": "lunar landing",
-  "estación espacial lunar": "lunar space station",
-  "construcción de la base": "base construction",
-  "lanzamientos anuales": "annual launches",
-  "foco se mueve": "focus shifts"
+  "a largo plazo": {
+    "translation": "long-term",
+    "pos": "expression",
+    "context": "A largo plazo, esta inversión será muy rentable."
+  },
+  "tripulaciones rotativas": {
+    "translation": "rotating crews",
+    "pos": "noun phrase",
+    "context": "Las tripulaciones rotativas permiten mantener la estación operativa."
+  },
+  "presencia sostenible": {
+    "translation": "sustainable presence",
+    "pos": "noun phrase",
+    "context": "La presencia sostenible en la Luna es el objetivo principal."
+  },
+  "viaje histórico puntual": {
+    "translation": "one-time historic trip",
+    "pos": "noun phrase",
+    "context": "Fue un viaje histórico puntual que marcó una época."
+  },
+  "banco de pruebas": {
+    "translation": "testing ground",
+    "pos": "noun phrase",
+    "context": "La Antártida sirve como banco de pruebas para misiones espaciales."
+  },
+  "a tiro de piedra": {
+    "translation": "within reach / a stone's throw away",
+    "pos": "expression",
+    "context": "La playa está a tiro de piedra de mi casa."
+  },
+  "magnitud totalmente distinta": {
+    "translation": "totally different magnitude",
+    "pos": "noun phrase",
+    "context": "El coste del proyecto es de una magnitud totalmente distinta."
+  },
+  "sistemas de vida": {
+    "translation": "life support systems",
+    "pos": "noun phrase",
+    "context": "Los sistemas de vida son críticos para la supervivencia en el espacio."
+  },
+  "entrada en la atmósfera": {
+    "translation": "atmospheric reentry",
+    "pos": "noun phrase",
+    "context": "La entrada en la atmósfera es una de las fases más peligrosas."
+  },
+  "sistema de presurización": {
+    "translation": "pressurization system",
+    "pos": "noun phrase",
+    "context": "El sistema de presurización mantuvo la cápsula estable."
+  },
+  "fugas de gas": {
+    "translation": "gas leaks",
+    "pos": "noun phrase",
+    "context": "Detectaron varias fugas de gas en el módulo de habitación."
+  },
+  "diagnóstico remoto": {
+    "translation": "remote diagnostics",
+    "pos": "noun phrase",
+    "context": "El diagnóstico remoto permite resolver problemas desde la Tierra."
+  },
+  "polo sur lunar": {
+    "translation": "lunar south pole",
+    "pos": "noun phrase",
+    "context": "El polo sur lunar tiene grandes reservas de hielo."
+  },
+  "punto de apoyo": {
+    "translation": "stepping stone / foothold",
+    "pos": "noun phrase",
+    "context": "La Luna será un punto de apoyo para misiones a Marte."
+  },
+  "sistema solar": {
+    "translation": "solar system",
+    "pos": "noun phrase",
+    "context": "El sistema solar tiene ocho planetas principales."
+  },
+  "cara oculta": {
+    "translation": "far side / hidden face",
+    "pos": "noun phrase",
+    "context": "La cara oculta de la Luna nunca es visible desde la Tierra."
+  },
+  "cohete más potente": {
+    "translation": "most powerful rocket",
+    "pos": "noun phrase",
+    "context": "El cohete más potente del mundo despegó ayer."
+  },
+  "velocidades de descarga": {
+    "translation": "download speeds",
+    "pos": "noun phrase",
+    "context": "Las velocidades de descarga mejoraron considerablemente."
+  },
+  "comunicaciones de radio": {
+    "translation": "radio communications",
+    "pos": "noun phrase",
+    "context": "Las comunicaciones de radio son esenciales en el espacio."
+  },
+  "recogida de residuos": {
+    "translation": "waste collection",
+    "pos": "noun phrase",
+    "context": "La recogida de residuos es fundamental en una estación espacial."
+  },
+  "módulos de aterrizaje": {
+    "translation": "landing modules",
+    "pos": "noun phrase",
+    "context": "Los módulos de aterrizaje se desplegaron con éxito."
+  },
+  "aterrizaje lunar": {
+    "translation": "lunar landing",
+    "pos": "noun phrase",
+    "context": "El primer aterrizaje lunar cambió la historia de la humanidad."
+  },
+  "estación espacial lunar": {
+    "translation": "lunar space station",
+    "pos": "noun phrase",
+    "context": "La estación espacial lunar albergará a varios astronautas."
+  },
+  "construcción de la base": {
+    "translation": "base construction",
+    "pos": "noun phrase",
+    "context": "La construcción de la base comenzará el próximo año."
+  },
+  "lanzamientos anuales": {
+    "translation": "annual launches",
+    "pos": "noun phrase",
+    "context": "Los lanzamientos anuales aumentaron en los últimos años."
+  },
+  "foco se mueve": {
+    "translation": "focus shifts",
+    "pos": "expression",
+    "context": "El foco se mueve hacia la exploración de otros planetas."
+  }
 }
