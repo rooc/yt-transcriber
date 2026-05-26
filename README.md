@@ -23,9 +23,10 @@ Open http://localhost:9090
 
 - **Watch YouTube videos** with synchronized transcripts
 - **Dual-language view** (original + English translation)
-- **Interactive vocabulary** - Hover words to see translations in tooltips
+- **Interactive vocabulary** - Hover words to see translations in tooltips, click to save them
+- **Vocabular panel** - Collect and review saved words across all videos with translations and context
 - **Grammar sentences** - 3-5 clickable grammar examples per video with explanations
-- **Video summaries** - 4-6 sentence summaries in Spanish with original vocabulary
+- **Video summaries** - 2-4 sentence summaries in Spanish with original vocabulary
 - **Statistics tracking** - Auto-tracks learned videos and total watch time
 - **Drag and drop** transcripts between Available and Learned panels
 - **Keyboard shortcuts** for quick playback control
@@ -71,9 +72,20 @@ Each video includes 3-5 grammar sentences that demonstrate B1+ Spanish structure
 - **Brief explanation** of the grammar structure used
 - Examples: subjunctive mood, compound tenses, relative clauses
 
+## Vocabular Panel
+
+Save words while watching to build your personal vocabulary collection:
+
+- **Click any highlighted word** in the transcript to add it to the Vocabular panel
+- **Removable tags** — each word has an X button to remove it
+- **Click a tag** to open a popup with translation, part of speech, and context
+- **Arrow keys** navigate between words when popup is open
+- Words persist across sessions and are shared across all videos
+- The panel auto-expands when you add your first word
+
 ## Video Summaries
 
-Each video includes a **4-6 sentence summary** in Spanish:
+Each video includes a **2-4 sentence summary** in Spanish:
 
 - 📋 **Summary icon** next to video title
 - **Click to open** popup with full summary
@@ -147,7 +159,7 @@ The workflow uses AI directly via `OPENCODE.md`:
 - ✅ Explains cultural references
 - ✅ Extracts **multi-word phrases** (2-4 words) as primary vocabulary
 - ✅ Creates **3-5 grammar sentences** with B1+ structures (you choose: 3, 4, 5, or custom)
-- ✅ Writes **4-6 sentence summary** in Spanish using original vocabulary
+- ✅ Writes **2-4 sentence summary** in Spanish using original vocabulary
 - ✅ Provides contextual translations
 - ✅ Excludes basic words, proper nouns, and English loanwords
 
@@ -187,6 +199,11 @@ Drag and drop transcript tags between panels:
 
 Or use the `L` keyboard shortcut to toggle the current video.
 
+### Merge Transcript Lines
+**Command:** `"merge VIDEO_ID"` or `"merge lines VIDEO_ID"`
+
+Merges short transcript lines into longer segments (80-120 characters per line) for better readability.
+
 ### Delete Transcript
 **Command:** `"delete VIDEO_ID"` or `"remove VIDEO_ID"` (AI only)
 
@@ -204,7 +221,8 @@ transcripts/VIDEO_ID.md
 
 # 3. Watch and learn!
 node server.js
-# - Hover words for vocabulary
+# - Hover or click highlighted words for vocabulary
+# - Click words to save them to your Vocabular panel
 # - Click grammar tags for explanations
 # - Click summary icon for video overview
 # - Press L to mark as learned
@@ -231,7 +249,8 @@ node server.js
 │   ├── manual-exclude.json # Manual exclusions
 │   ├── learned.json    # Learned videos list
 │   ├── progress.json   # Video progress positions
-│   └── stats.json      # Learning statistics
+│   ├── stats.json      # Learning statistics
+│   └── vocabular.json  # Saved vocabulary words
 ├── src/                 # Source code
 │   ├── routes.js       # HTTP routes
 │   ├── store.js        # Data access layer
@@ -239,8 +258,10 @@ node server.js
 │   └── exclusions.js   # Word filtering
 ├── public/              # Web UI files
 │   ├── index.html
-│   ├── app.js
-│   └── style.css
+│   ├── style.css
+│   └── js/
+│       └── modules/      # Frontend modules
+│           ├── vocabular.js  # Vocabular panel logic
 ├── OPENCODE.md         # AI instructions (ALL operations)
 └── server.js           # Entry point (web server only)
 ```
