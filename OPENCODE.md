@@ -972,7 +972,12 @@ Downloads Spanish auto-generated subtitles from YouTube and creates a properly f
    ```
    yt-dlp --cookies-from-browser firefox --print title "https://www.youtube.com/watch?v=[VIDEO_ID]"
    ```
-3. Parse the SRT file and convert timestamps to `**M:SS**` format
+3. Parse the SRT file and convert timestamps to the project's format
+   **Preserve milliseconds!** Use `**M:SS.mmm**` or `**H:MM:SS.mmm**` when the SRT contains them:
+   ```
+   SRT: 00:00:05,320 --> 00:00:08,150
+   →    **0:05.320** Texto aquí
+   ```
 4. Write `transcripts/[VIDEO_ID].md` with frontmatter:
    ```markdown
    ---
@@ -981,7 +986,7 @@ Downloads Spanish auto-generated subtitles from YouTube and creates a properly f
    ---
 
    **0:00** Primera linea en español
-   **0:05** Segunda linea en español
+   **0:05.320** Segunda linea en español
    ```
 
 **Requirements:**
