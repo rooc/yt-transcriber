@@ -2,14 +2,15 @@
 
 A YouTube video transcript viewer with bilingual support.
 
-## Quick Start (New AI Workflow)
+## Quick Start
 
 ```bash
-# 1. Add transcript manually
-mv "Video Title.md" transcripts/VIDEO_ID.md
+# 1. Download Spanish transcript from YouTube
+# Tell AI: "download VIDEO_ID" (requires yt-dlp + Firefox)
 
-# 2. Tell AI to translate (just say: "translate new")
-# AI reads OPENCODE.md and creates both files automatically
+# 2. Tell AI to translate
+# "translate new"
+# AI asks: "How many grammar sentences? (3, 4, 5, or custom)"
 
 # 3. Watch!
 node server.js
@@ -98,20 +99,23 @@ Each video includes a **2-4 sentence summary** in Spanish:
 
 ## Adding Transcripts
 
-**Note:** There are many ways to add transcripts - use whatever method works best for you! Here are some options:
+### Method 1: yt-dlp (Recommended)
 
-### Method 1: Browser Extensions
+Tell the AI: `"download VIDEO_ID"` or `"dl VIDEO_ID"`
 
-**YouTube Transcript Copier (Firefox)**
-- Install the "YouTube Transcript Copier" extension for Firefox
-- Open any YouTube video and copy the transcript
-- Paste into a new file and save to the transcripts folder
+The AI will download Spanish auto-subtitles from YouTube and create a properly formatted transcript file.
 
-**Other extensions** - Any extension that can extract YouTube transcripts will work. Choose whichever fits your workflow.
+**Requirements:**
+- `yt-dlp` installed and in your PATH
+- Firefox browser with cookies (for `--cookies-from-browser`)
 
-### Method 2: Manual
+### Method 2: Browser Extensions
 
-Place transcript files in `/transcripts/` folder:
+Any extension that extracts YouTube transcripts will work. Copy the transcript and paste it into a new file in the `transcripts/` folder.
+
+### Method 3: Manual
+
+Create transcript files directly in `/transcripts/` folder:
 
 ```markdown
 ---
@@ -123,8 +127,6 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 **0:05** Second line
 ```
 
----
-
 For sentence-by-sentence translation, create `VIDEO_ID_translation.md` with English text.
 
 ## AI Translation
@@ -133,7 +135,7 @@ The workflow uses AI directly via `OPENCODE.md`:
 
 ### Simple Steps:
 
-1. **Add transcript** to `transcripts/` folder
+1. **Download or add transcript** to `transcripts/` folder
 2. **Tell AI**: "translate new"
 3. **AI automatically creates**:
    - `VIDEO_ID_translation.md` — Full English translation
@@ -245,17 +247,26 @@ node server.js
 │   ├── progress.json   # Video progress positions
 │   ├── stats.json      # Learning statistics
 │   └── vocabular.json  # Saved vocabulary words
-├── src/                 # Source code
+├── src/                 # Backend source code
 │   ├── routes.js       # HTTP routes
 │   ├── store.js        # Data access layer
-│   ├── config.js       # Configuration
-│   └── exclusions.js   # Word filtering
+│   └── config.js       # Configuration
 ├── public/              # Web UI files
 │   ├── index.html
 │   ├── style.css
 │   └── js/
 │       └── modules/      # Frontend modules
-│           ├── vocabular.js  # Vocabular panel logic
+│           ├── api.js        # API calls
+│           ├── grammar.js    # Grammar panel & modals
+│           ├── keyboard.js   # Keyboard shortcuts
+│           ├── learned.js    # Learned panel & drag-drop
+│           ├── player.js     # YouTube player control
+│           ├── state.js      # App state management
+│           ├── stats.js      # Statistics tracking
+│           ├── transcript.js # Transcript rendering
+│           ├── utils.js      # Utility functions
+│           ├── vocab.js      # Vocabulary tooltips
+│           └── vocabular.js  # Vocabular panel
 ├── OPENCODE.md         # AI instructions (ALL operations)
 └── server.js           # Entry point (web server only)
 ```
