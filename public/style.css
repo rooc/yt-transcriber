@@ -1044,3 +1044,63 @@ button.active {
 		opacity: 0.6;
 	}
 }
+
+/* Shortcuts Modal */
+#logoHeader {
+	cursor: pointer;
+}
+
+.shortcuts-modal .grammar-modal-content {
+	max-width: 500px;
+	padding: 2rem;
+}
+
+.shortcuts-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--border-light);
+}
+
+.shortcuts-header .material-icons {
+	font-size: 1.5rem;
+	color: var(--text-accent);
+}
+
+.shortcuts-header h3 {
+	font-size: 1.25rem;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.shortcuts-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.shortcut-row {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.shortcut-row kbd {
+	background: var(--bg-trans);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+	padding: 0.35rem 0.6rem;
+	font-family: inherit;
+	font-size: 0.9rem;
+	color: var(--text-primary);
+	min-width: 3.5rem;
+	text-align: center;
+	box-shadow: 0 2px 0 var(--border);
+}
+
+.shortcut-row span {
+	color: var(--text-secondary);
+	font-size: 1rem;
+}

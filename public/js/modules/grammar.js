@@ -13,6 +13,7 @@ import { closeVocabularModal } from './vocabular.js';
 import { fetchSummary } from './api.js';
 
 let currentSummary = null;
+let currentGrammarModalIndex = -1;
 
 /**
  * Render grammar sentences in the panel.
@@ -57,6 +58,8 @@ export function renderGrammarSentences(grammar) {
 export function showGrammarModal(index) {
 	const item = currentGrammarData[index];
 	if (!item) return;
+	
+	currentGrammarModalIndex = index;
 	
 	const modal = document.getElementById("grammarModal");
 	const content = document.getElementById("grammarModalContent");
@@ -163,6 +166,7 @@ export function setupModalHandlers() {
 			const grammarModal = document.getElementById("grammarModal");
 			const summaryModal = document.getElementById("summaryModal");
 			const vocabularModal = document.getElementById("vocabularModal");
+			const shortcutsModal = document.getElementById("shortcutsModal");
 			
 			if (grammarModal.classList.contains("active")) {
 				closeGrammarModal();
@@ -170,6 +174,8 @@ export function setupModalHandlers() {
 				closeSummaryModal();
 			} else if (vocabularModal.classList.contains("active")) {
 				closeVocabularModal();
+			} else if (shortcutsModal && shortcutsModal.classList.contains("active")) {
+				shortcutsModal.classList.remove("active");
 			}
 		}
 	});
@@ -180,3 +186,24 @@ window.showSummaryModal = showSummaryModal;
 window.closeSummaryModal = closeSummaryModal;
 window.closeGrammarModal = closeGrammarModal;
 window.toggleGrammarPanel = toggleGrammarPanel;
+
+// --- Keyboard Navigation for Grammar Modal ---
+
+document.addEventListener('keydown', function(event) {
+	const modal = document.getElementById("grammarModal");
+	if (!modal.classList.contains("active")) return;
+	
+	if (currentGrammarData.length === 0) return;
+	
+	if (event.key === "ArrowLeft") {
+		event.preventDefault();
+		let prevIndex = currentGrammarModalIndex - 1;
+		if (prevIndex < 0) prevIndex = currentGrammarData.length - 1;
+		showGrammarModal(prevIndex);
+	} else if (event.key === "ArrowRight") {
+		event.preventDefault();
+		let nextIndex = currentGrammarModalIndex + 1;
+		if (nextIndex >= currentGrammarData.length) nextIndex = 0;
+		showGrammarModal(nextIndex);
+	}
+});
