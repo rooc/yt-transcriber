@@ -45,14 +45,17 @@ Open http://localhost:9090
 | Key | Action |
 |-----|--------|
 | `Space` | Pause/Play |
-| `←` | Rewind 10s |
-| `→` | Forward 10s |
+| `←` | Rewind 5s |
+| `→` | Forward 5s |
 | `D` | Toggle dual translation |
 | `F` | Toggle fullscreen mode |
 | `L` | Toggle learned status (resets progress) |
 | `R` | Toggle segment repeat mode |
+| `G` | Open first grammar sentence popup |
+| `V` | Open first vocabular word popup |
+| `?` | Show keyboard shortcuts reference |
 | `Enter` | Replay current segment (in repeat mode) |
-| `Esc` | Close popup/modal |
+| `Esc` | Close popup / Exit fullscreen |
 
 ## Statistics
 
@@ -161,6 +164,13 @@ Just tell the AI to read it and translate!
 
 All operations are AI-driven through `OPENCODE.md`:
 
+### Download
+**Command:** `"download VIDEO_ID"` or `"dl VIDEO_ID"`
+
+Downloads Spanish auto-generated subtitles from YouTube using yt-dlp and creates a properly formatted transcript file in `transcripts/VIDEO_ID.md`.
+
+Requires: yt-dlp installed and in PATH, Firefox browser with cookies.
+
 ### Translate
 **Command:** `"translate new"`
 
@@ -196,8 +206,8 @@ Removes a transcript and all associated files (translation, vocab, progress, lea
 ## Workflow
 
 ```bash
-# 1. Add transcript to transcripts/ folder
-transcripts/VIDEO_ID.md
+# 1. Download transcript from YouTube
+# "download VIDEO_ID"  (requires yt-dlp)
 
 # 2. Tell AI to translate and create files
 # "translate new"
