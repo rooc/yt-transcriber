@@ -225,52 +225,6 @@ node server.js
 # - Track your stats automatically
 ```
 
----
-
-## Project Structure
-
-```
-├── transcripts/          # Spanish transcript files (.md)
-│   ├── VIDEO_ID.md
-│   └── VIDEO_ID_translation.md
-├── vocab/               # Vocabulary files (.json)
-│   └── VIDEO_ID_vocab.json
-├── grammar/             # Grammar sentences (.json)
-│   └── VIDEO_ID_grammar.json
-├── summary/             # Video summaries (.json)
-│   └── VIDEO_ID_summary.json
-├── data/                # App data and exclusion lists
-│   ├── a1-a2.json      # Basic words to exclude
-│   ├── proper-nouns.json # Names/countries to exclude
-│   ├── manual-exclude.json # Manual exclusions
-│   ├── learned.json    # Learned videos list
-│   ├── progress.json   # Video progress positions
-│   ├── stats.json      # Learning statistics
-│   └── vocabular.json  # Saved vocabulary words
-├── src/                 # Backend source code
-│   ├── routes.js       # HTTP routes
-│   ├── store.js        # Data access layer
-│   └── config.js       # Configuration
-├── public/              # Web UI files
-│   ├── index.html
-│   ├── style.css
-│   └── js/
-│       └── modules/      # Frontend modules
-│           ├── api.js        # API calls
-│           ├── grammar.js    # Grammar panel & modals
-│           ├── keyboard.js   # Keyboard shortcuts
-│           ├── learned.js    # Learned panel & drag-drop
-│           ├── player.js     # YouTube player control
-│           ├── state.js      # App state management
-│           ├── stats.js      # Statistics tracking
-│           ├── transcript.js # Transcript rendering
-│           ├── utils.js      # Utility functions
-│           ├── vocab.js      # Vocabulary tooltips
-│           └── vocabular.js  # Vocabular panel
-├── OPENCODE.md         # AI instructions (ALL operations)
-└── server.js           # Entry point (web server only)
-```
-
 ## License
 
 MIT
