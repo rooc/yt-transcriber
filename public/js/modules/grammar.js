@@ -176,6 +176,8 @@ export function setupModalHandlers() {
 				closeVocabularModal();
 			} else if (shortcutsModal && shortcutsModal.classList.contains("active")) {
 				shortcutsModal.classList.remove("active");
+			} else if (document.body.classList.contains("fullscreen")) {
+				import('./player.js').then(m => m.toggleFullscreen());
 			}
 		}
 	});
