@@ -367,7 +367,6 @@ button.danger:hover {
 .transcript-container {
 	border-radius: var(--radius-sm);
 	padding: 0;
-	min-height: 5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -381,7 +380,7 @@ button.danger:hover {
 .transcript-line {
 	font-size: 1.25rem;
 	line-height: 1.4;
-	padding: 0.5rem 2.75rem 0.5rem 1.5rem;
+	padding: 1rem 2.5rem;
 	width: 100%;
 	position: relative;
 	max-width: 65vw;
@@ -398,14 +397,13 @@ button.danger:hover {
 	align-items: stretch;
 	gap: 0;
 	width: 100%;
-	min-height: 10rem;
 	max-width: 65vw;
 }
 
 .transcript-dual .original {
 	font-size: 1.25rem;
 	color: var(--text-primary);
-	padding: 1rem 2.5rem 1rem 1rem;
+	padding: 1rem 2.5rem;
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
@@ -417,7 +415,7 @@ button.danger:hover {
 	color: var(--tooltip-text);
 	font-size: 1.2rem;
 	background-color: var(--bg-trans);
-	padding: 1rem;
+	padding: 1rem 2.5rem;
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
