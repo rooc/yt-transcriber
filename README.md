@@ -2,6 +2,8 @@
 
 A YouTube video transcript viewer with bilingual support.
 
+**Language support:** Currently Spanish → English only.
+
 ## Quick Start
 
 ```bash
