@@ -49,7 +49,7 @@ Or manually:
    - [ ] Has `source:` field with valid YouTube URL (format: `https://www.youtube.com/watch?v=VIDEO_ID`)
 
 3. **Content Format**
-   - [ ] Has at least one timestamped line (format: `**M:SS**` or `**H:MM:SS**`)
+   - [ ] Has at least one timestamped line (format: `**M:SS**`, `**M:SS.mmm**`, `**H:MM:SS**`, or `**H:MM:SS.mmm**`)
    - [ ] Contains Spanish text content (not empty)
 
 ### ❌ Skip These Files (Do Not Process):
@@ -114,8 +114,10 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 **Timestamp formats:**
-- `**M:SS**` — minutes:seconds (most common)
-- `**H:MM:SS**` — hours:minutes:seconds (for long videos)
+- `**M:SS**` — minutes:seconds
+- `**M:SS.mmm**` — minutes:seconds.milliseconds
+- `**H:MM:SS**` — hours:minutes:seconds
+- `**H:MM:SS.mmm**` — hours:minutes:seconds.milliseconds
 
 ---
 
@@ -165,7 +167,7 @@ Text line 3
    - Section headers (lines without timestamps that precede timestamps) - DELETE these
    - Audio markers like `[música]`, `[risas]`, `[aplausos]` - DELETE these
    - Empty lines between timestamped entries - DELETE these
- 4. **Final format should be:** Only frontmatter + timestamped lines (`**M:SS** text`)
+ 4. **Final format should be:** Only frontmatter + timestamped lines (`**M:SS** text` or `**M:SS.mmm** text`)
 
 **Example conversion:**
 ```
@@ -812,7 +814,7 @@ source: "https://www.youtube.com/watch?v=087XVp3JIpk"
 
 ❌ **Inconsistent timestamps:**
 - Don't change timestamps from original
-- Do keep exact same format: `**M:SS**` or `**H:MM:SS**`
+- Do keep exact same format: `**M:SS**`, `**M:SS.mmm**`, `**H:MM:SS**`, or `**H:MM:SS.mmm**`
 
 ---
 
@@ -898,6 +900,7 @@ Merges short transcript lines to create longer segments (80-120 characters per l
 - Keeps the first timestamp of each merged segment
 - Removes redundant timestamps from merged lines
 - Preserves all original text content
+- Preserves milliseconds in timestamps when present
 - Maintains 80-120 character target length per line
 
 **How to use:**
@@ -907,6 +910,7 @@ The AI will:
 - Read the original transcript file
 - Merge consecutive lines to achieve 80-120 character segments
 - Keep timestamps aligned with merged content
+- Preserve milliseconds in timestamps when present
 - Overwrite the original file with the merged version
 - Report how many lines were reduced
 

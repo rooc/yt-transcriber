@@ -56,34 +56,39 @@ function parseTranscriptFile(content, filename) {
             lines.push({ start: startTime, dur: duration, text: text });
         }
 
-        // Primary format: **H:MM:SS** Text or **MM:SS** Text (· separator optional)
+        // Primary format: **H:MM:SS.mmm** Text or **MM:SS.mmm** Text (· separator optional)
         if (lines.length === 0) {
-            const regex = /\*\*(\d{1,2}):(\d{2})(?::(\d{2}))?\*\*\s*(?:[·•]\s*)?(.+)/g;
+            const regex = /\*\*(\d{1,2}):(\d{2})(?::(\d{2}))?(?:\.(\d{3}))?\*\*\s*(?:[·•]\s*)?(.+)/g;
             while ((match = regex.exec(content)) !== null) {
                 const first = parseInt(match[1]);
                 const second = parseInt(match[2]);
                 const third = match[3] ? parseInt(match[3]) : null;
+                const millis = match[4] ? parseInt(match[4]) : 0;
 
                 let time;
                 if (third !== null) {
-                    // H:MM:SS
+                    // H:MM:SS[.mmm]
                     time = first * 3600 + second * 60 + third;
                 } else {
-                    // M:SS
+                    // M:SS[.mmm]
                     time = first * 60 + second;
                 }
+                if (millis > 0) {
+                    time += millis / 1000;
+                }
 
-                lines.push({ start: time, dur: 3, text: match[4].trim() });
+                lines.push({ start: time, dur: 3, text: match[5].trim() });
             }
         }
 
-        // Fallback format: [00:00] Text
+        // Fallback format: [MM:SS.mmm] Text
         if (lines.length === 0) {
-            const regex2 = /\[(\d{1,2}):(\d{2})(?::(\d{2}))?\]\s*(.+)/g;
+            const regex2 = /\[(\d{1,2}):(\d{2})(?::(\d{2}))?(?:\.(\d{3}))?\]\s*(.+)/g;
             while ((match = regex2.exec(content)) !== null) {
                 const first = parseInt(match[1]);
                 const second = parseInt(match[2]);
                 const third = match[3] ? parseInt(match[3]) : null;
+                const millis = match[4] ? parseInt(match[4]) : 0;
 
                 let time;
                 if (third !== null) {
@@ -91,8 +96,11 @@ function parseTranscriptFile(content, filename) {
                 } else {
                     time = first * 60 + second;
                 }
+                if (millis > 0) {
+                    time += millis / 1000;
+                }
 
-                lines.push({ start: time, dur: 3, text: match[4].trim() });
+                lines.push({ start: time, dur: 3, text: match[5].trim() });
             }
         }
     }
@@ -239,18 +247,27 @@ function mergeTranscriptLines(lines, minLength = 80, maxLength = 120) {
 }
 
 /**
- * Format seconds as MM:SS or H:MM:SS timestamp.
+ * Format seconds as MM:SS[.mmm] or H:MM:SS[.mmm] timestamp.
+ * Preserves milliseconds when present in the input.
  *
- * @param {number} seconds - Time in seconds
+ * @param {number} seconds - Time in seconds (may include fractional milliseconds)
  * @returns {string} Formatted timestamp
  */
 function formatTimestamp(seconds) {
     const hours = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = Math.floor(seconds % 60);
+    const ms = Math.round((seconds % 1) * 1000);
     
     if (hours > 0) {
-        return `${hours}:${mins.toString().padStart(2, '0')}`;
+        if (ms > 0) {
+            return `${hours}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
+        }
+        return `${hours}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    if (ms > 0) {
+        return `${mins}:${secs.toString().padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
     }
     return `${mins}:${secs.toString().padStart(2, '0')}`;
 }

@@ -47,6 +47,18 @@
       "translation": "waste collection",
       "pos": "",
       "context": ""
+    },
+    {
+      "word": "apuntarían",
+      "translation": "would point/indicate",
+      "pos": "verb (conditional)",
+      "context": "que apuntarían hacia que ya contamos"
+    },
+    {
+      "word": "agilizan",
+      "translation": "they streamline/speed up",
+      "pos": "verb",
+      "context": "ya agilizan la búsqueda y lectura"
     }
   ],
   "vocabularPanelCollapsed": false

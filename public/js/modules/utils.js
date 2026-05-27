@@ -15,13 +15,27 @@ export function setStatus(msg) {
 }
 
 /**
- * Format seconds into MM:SS format.
- * @param {number} seconds - Time in seconds
+ * Format seconds into MM:SS[.mmm] or H:MM:SS[.mmm] format.
+ * Preserves milliseconds when present in the input.
+ * @param {number} seconds - Time in seconds (may include fractional milliseconds)
  * @returns {string} Formatted time string
  */
 export function formatTime(seconds) {
-	const mins = Math.floor(seconds / 60);
+	const hours = Math.floor(seconds / 3600);
+	const mins = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
+	const ms = Math.round((seconds % 1) * 1000);
+	
+	if (hours > 0) {
+		if (ms > 0) {
+			return `${hours}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}.${ms.toString().padStart(3, "0")}`;
+		}
+		return `${hours}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+	}
+	
+	if (ms > 0) {
+		return `${mins}:${secs.toString().padStart(2, "0")}.${ms.toString().padStart(3, "0")}`;
+	}
 	return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 

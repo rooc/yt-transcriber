@@ -1,602 +1,402 @@
 {
-  "inteligencia artificial": {
-    "translation": "artificial intelligence",
-    "pos": "noun phrase",
-    "context": "¿Puede la inteligencia artificial generar nuevo conocimiento científico?"
-  },
-  "conocimiento científico": {
-    "translation": "scientific knowledge",
-    "pos": "noun phrase",
-    "context": "generar nuevo conocimiento científico"
-  },
-  "acelerar": {
-    "translation": "to accelerate/speed up",
-    "pos": "verb",
-    "context": "Acelerar la ciencia"
-  },
-  "ensayo": {
-    "translation": "essay",
-    "pos": "noun",
-    "context": "introdujo en su ensayo Machines of Loving Grace"
-  },
   "país de genios": {
     "translation": "country of geniuses",
     "pos": "noun phrase",
-    "context": "concepto de país de genios en un data center"
+    "context": "El concepto de país de genios en un data center."
   },
-  "data center": {
-    "translation": "data center",
-    "pos": "noun",
-    "context": "país de genios en un data center"
-  },
-  "evolución": {
-    "translation": "evolution",
-    "pos": "noun",
-    "context": "con la evolución de los modelos actuales"
-  },
-  "alojados": {
-    "translation": "hosted/housed",
-    "pos": "adjective/verb",
-    "context": "podríamos tener alojados en data centers"
-  },
-  "mentes brillantes": {
-    "translation": "bright minds",
+  "mentes más brillantes": {
+    "translation": "brightest minds",
     "pos": "noun phrase",
-    "context": "tan potentes como serían las mentes más brillantes"
+    "context": "Modelos tan potentes como serían las mentes más brillantes en cada área del conocimiento."
   },
-  "área del conocimiento": {
-    "translation": "area of knowledge",
-    "pos": "noun phrase",
-    "context": "cada área del conocimiento"
-  },
-  "utópico": {
-    "translation": "utopian",
-    "pos": "adjective",
-    "context": "sé que es una utópico"
-  },
-  "empresas tecnológicas": {
-    "translation": "tech companies",
-    "pos": "noun phrase",
-    "context": "líderes de otras empresas tecnológicas"
-  },
-  "señales": {
-    "translation": "signals/signs",
-    "pos": "noun",
-    "context": "cuáles son esas señales que yo identifico"
-  },
-  "identifico": {
-    "translation": "I identify",
-    "pos": "verb",
-    "context": "señales que yo identifico"
-  },
-  "apuntarían": {
-    "translation": "would point/indicate",
-    "pos": "verb (conditional)",
-    "context": "que apuntarían hacia que ya contamos"
-  },
-  "contamos con": {
-    "translation": "we have/count on",
+  "acelerar la ciencia": {
+    "translation": "to accelerate science",
     "pos": "verb phrase",
-    "context": "que ya contamos con inteligencias artificiales"
-  },
-  "lo suficientemente": {
-    "translation": "sufficiently/enough",
-    "pos": "expression",
-    "context": "son lo suficientemente potentes"
+    "context": "Inteligencias artificiales capaces de generar nuevo conocimiento científico e incluso acelerar la ciencia."
   },
   "modelos de lenguaje": {
     "translation": "language models",
     "pos": "noun phrase",
-    "context": "modelos de lenguaje como los que tenemos"
-  },
-  "agilizan": {
-    "translation": "they streamline/speed up",
-    "pos": "verb",
-    "context": "ya agilizan la búsqueda y lectura"
-  },
-  "bibliografía": {
-    "translation": "literature/bibliography",
-    "pos": "noun",
-    "context": "búsqueda y lectura de bibliografía"
+    "context": "Modelos de lenguaje como los que tenemos ya agilizan la búsqueda y lectura de bibliografía."
   },
   "artículos científicos": {
     "translation": "scientific articles",
     "pos": "noun phrase",
-    "context": "generación de figuras para artículos científicos"
+    "context": "La generación de figuras para artículos científicos."
   },
-  "prácticas programando": {
-    "translation": "programming practices",
+  "mejores prácticas": {
+    "translation": "best practices",
     "pos": "noun phrase",
-    "context": "mejores prácticas programando"
-  },
-  "asistencia científica": {
-    "translation": "scientific assistance",
-    "pos": "noun phrase",
-    "context": "uso de la IA para asistencia científica"
-  },
-  "aprovechando": {
-    "translation": "taking advantage/leveraging",
-    "pos": "verb (gerund)",
-    "context": "se ha venido aprovechando el potencial"
-  },
-  "potencial": {
-    "translation": "potential",
-    "pos": "noun",
-    "context": "aprovechando el potencial de aprendizaje"
-  },
-  "redes neuronales": {
-    "translation": "neural networks",
-    "pos": "noun phrase",
-    "context": "patrones de las redes neuronales"
-  },
-  "plegado tridimensional": {
-    "translation": "three-dimensional folding",
-    "pos": "noun phrase",
-    "context": "plegado tridimensional de proteínas"
-  },
-  "proteínas": {
-    "translation": "proteins",
-    "pos": "noun",
-    "context": "plegado tridimensional de proteínas"
-  },
-  "metrológicos": {
-    "translation": "meteorological",
-    "pos": "adjective",
-    "context": "modelos metrológicos para poder hacer predicciones"
-  },
-  "predicciones": {
-    "translation": "predictions",
-    "pos": "noun",
-    "context": "hacer predicciones más rigurosas"
-  },
-  "rigurosas": {
-    "translation": "rigorous",
-    "pos": "adjective",
-    "context": "predicciones más rigurosas"
-  },
-  "evolución del clima": {
-    "translation": "climate evolution",
-    "pos": "noun phrase",
-    "context": "evolución del clima"
-  },
-  "propiedades físicas": {
-    "translation": "physical properties",
-    "pos": "noun phrase",
-    "context": "predicciones de propiedades físicas"
-  },
-  "estabilización": {
-    "translation": "stabilization",
-    "pos": "noun",
-    "context": "estabilización del plasma en reactores de fusión"
-  },
-  "reactores de fusión": {
-    "translation": "fusion reactors",
-    "pos": "noun phrase",
-    "context": "reactores de fusión"
-  },
-  "condecoraciones": {
-    "translation": "decorations/awards",
-    "pos": "noun",
-    "context": "la mayor de todas las condecoraciones científicas"
-  },
-  "conocimiento frontera": {
-    "translation": "frontier knowledge",
-    "pos": "noun phrase",
-    "context": "descubrimiento del conocimiento frontera"
-  },
-  "disrupción": {
-    "translation": "disruption",
-    "pos": "noun",
-    "context": "están causando una disrupción"
-  },
-  "capacidades fronteras": {
-    "translation": "frontier capabilities",
-    "pos": "noun phrase",
-    "context": "sus capacidades fronteras no han dejado de mejorar"
-  },
-  "algoritmos computacionales": {
-    "translation": "computational algorithms",
-    "pos": "noun phrase",
-    "context": "siendo algoritmos computacionales"
-  },
-  "reinforcement learning": {
-    "translation": "reinforcement learning",
-    "pos": "noun phrase",
-    "context": "con la llegada del reinforcement learning"
-  },
-  "modelos razonadores": {
-    "translation": "reasoning models",
-    "pos": "noun phrase",
-    "context": "en los modelos razonadores"
-  },
-  "heurísticas": {
-    "translation": "heuristics",
-    "pos": "noun",
-    "context": "aquellas heurísticas útiles"
-  },
-  "sobrehumanos": {
-    "translation": "superhuman",
-    "pos": "adjective",
-    "context": "a niveles sobrehumanos"
-  },
-  "olimpiadas matemáticas": {
-    "translation": "math olympics",
-    "pos": "noun phrase",
-    "context": "haber ganado las olimpiadas matemáticas internacionales"
-  },
-  "insignias": {
-    "translation": "flagship",
-    "pos": "noun",
-    "context": "modelos de lenguaje insignias"
-  },
-  "hito": {
-    "translation": "milestone",
-    "pos": "noun",
-    "context": "todo un hito para la inteligencia artificial"
-  },
-  "búsqueda en profundidad": {
-    "translation": "in-depth search",
-    "pos": "noun phrase",
-    "context": "una búsqueda en profundidad de la literatura"
-  },
-  "literatura": {
-    "translation": "literature",
-    "pos": "noun",
-    "context": "búsqueda en profundidad de la literatura"
-  },
-  "desmerece": {
-    "translation": "detracts from/undervalues",
-    "pos": "verb",
-    "context": "no desmerece el trabajo que ha hecho la IA"
-  },
-  "iniciativa": {
-    "translation": "initiative",
-    "pos": "noun",
-    "context": "la iniciativa First Proof"
-  },
-  "recopiló": {
-    "translation": "compiled/collected",
-    "pos": "verb",
-    "context": "una iniciativa que recopiló el pasado mes de enero"
-  },
-  "problemas abiertos": {
-    "translation": "open problems",
-    "pos": "noun phrase",
-    "context": "problemas abiertos de investigación"
-  },
-  "verificaron": {
-    "translation": "verified",
-    "pos": "verb",
-    "context": "soluciones que se verificaron rigurosamente"
-  },
-  "enunciados": {
-    "translation": "statements/wordings",
-    "pos": "noun",
-    "context": "publicar los enunciados de estos problemas"
-  },
-  "plazo": {
-    "translation": "deadline/time limit",
-    "pos": "noun",
-    "context": "dar un plazo de una semana"
-  },
-  "laboratorio": {
-    "translation": "laboratory",
-    "pos": "noun",
-    "context": "cualquier laboratorio cualquier organización"
-  },
-  "consiguió": {
-    "translation": "managed/achieved",
-    "pos": "verb",
-    "context": "el sistema de Google consiguió resolver"
-  },
-  "agente de investigación": {
-    "translation": "research agent",
-    "pos": "noun phrase",
-    "context": "un nuevo agente de investigación matemática"
-  },
-  "motor de razonamiento": {
-    "translation": "reasoning engine",
-    "pos": "noun phrase",
-    "context": "usando a Yemini Deep Think como motor de razonamiento"
-  },
-  "autónomamente": {
-    "translation": "autonomously",
-    "pos": "adverb",
-    "context": "consigue trabajar autónomamente"
-  },
-  "candidatas": {
-    "translation": "candidate",
-    "pos": "adjective/noun",
-    "context": "generar soluciones candidatas"
-  },
-  "correctitud": {
-    "translation": "correctness",
-    "pos": "noun",
-    "context": "verificar su correctitud"
-  },
-  "arreglos": {
-    "translation": "fixes/adjustments",
-    "pos": "noun",
-    "context": "plantear arreglos de forma iterativa"
-  },
-  "iterativa": {
-    "translation": "iterative",
-    "pos": "adjective",
-    "context": "de forma iterativa"
-  },
-  "canjear": {
-    "translation": "to exchange/trade",
-    "pos": "verb",
-    "context": "canjear computación por tiempo de trabajo cognitivo"
-  },
-  "benchmarks": {
-    "translation": "benchmarks",
-    "pos": "noun",
-    "context": "los benchmarks más exigentes"
-  },
-  "exigentes": {
-    "translation": "demanding/rigorous",
-    "pos": "adjective",
-    "context": "benchmarks más exigentes"
-  },
-  "conquistado": {
-    "translation": "conquered",
-    "pos": "adjective/verb",
-    "context": "no ha dejado de ser conquistado"
-  },
-  "resistido": {
-    "translation": "resisted",
-    "pos": "verb",
-    "context": "han resistido intentos serios de resolución"
-  },
-  "intentos": {
-    "translation": "attempts",
-    "pos": "noun",
-    "context": "intentos serios de resolución"
-  },
-  "resolución": {
-    "translation": "resolution/solving",
-    "pos": "noun",
-    "context": "intentos serios de resolución"
-  },
-  "redacción": {
-    "translation": "writing/editing",
-    "pos": "noun",
-    "context": "a fecha de redacción de este guion"
-  },
-  "guion": {
-    "translation": "script",
-    "pos": "noun",
-    "context": "redacción de este guion"
-  },
-  "loros estocásticos": {
-    "translation": "stochastic parrots",
-    "pos": "noun phrase",
-    "context": "aquellos loros estocásticos"
-  },
-  "correlación directa": {
-    "translation": "direct correlation",
-    "pos": "noun phrase",
-    "context": "ha habido una correlación directa"
-  },
-  "potentísima": {
-    "translation": "very powerful",
-    "pos": "adjective (superlative)",
-    "context": "herramienta potentísima"
-  },
-  "preprint": {
-    "translation": "preprint",
-    "pos": "noun",
-    "context": "publicó un preprint colaboración"
-  },
-  "colaboración": {
-    "translation": "collaboration",
-    "pos": "noun",
-    "context": "preprint colaboración con otras universidades"
-  },
-  "derivar": {
-    "translation": "to derive",
-    "pos": "verb",
-    "context": "habían conseguido derivar un nuevo resultado"
-  },
-  "hipótesis": {
-    "translation": "hypotheses",
-    "pos": "noun",
-    "context": "desde las hipótesis planteadas por los investigadores"
-  },
-  "planteadas": {
-    "translation": "posed/raised",
-    "pos": "adjective/verb",
-    "context": "hipótesis planteadas por los investigadores"
-  },
-  "expresiones": {
-    "translation": "expressions",
-    "pos": "noun",
-    "context": "expresiones que son muy largas y muy complicadas"
-  },
-  "galardonado": {
-    "translation": "awarded",
-    "pos": "adjective",
-    "context": "galardonado con el premio Turing"
-  },
-  "premio Turing": {
-    "translation": "Turing Prize",
-    "pos": "noun phrase",
-    "context": "galardonado con el premio Turing"
-  },
-  "formulaciones": {
-    "translation": "formulations",
-    "pos": "noun",
-    "context": "explorando varias formulaciones"
-  },
-  "casos impares": {
-    "translation": "odd cases",
-    "pos": "noun phrase",
-    "context": "solución para los casos impares"
-  },
-  "casos pares": {
-    "translation": "even cases",
-    "pos": "noun phrase",
-    "context": "soluciones para los casos pares"
-  },
-  "lacito": {
-    "translation": "little bow/finishing touch",
-    "pos": "noun",
-    "context": "acabo de ponerle el lacito"
-  },
-  "demostración matemática": {
-    "translation": "mathematical demonstration/proof",
-    "pos": "noun phrase",
-    "context": "demostración matemática de por qué estos métodos funcionaban"
-  },
-  "destilar": {
-    "translation": "to distill/extract",
-    "pos": "verb",
-    "context": "que podemos destilar de todos los ejemplos"
-  },
-  "patrón": {
-    "translation": "pattern",
-    "pos": "noun",
-    "context": "hay un patrón que se repite"
-  },
-  "proceso iterativo": {
-    "translation": "iterative process",
-    "pos": "noun phrase",
-    "context": "tienen un proceso iterativo de varios pasos"
-  },
-  "investigador autónomo": {
-    "translation": "independent researcher",
-    "pos": "noun phrase",
-    "context": "el investigador autónomo de machine learning"
+    "context": "Quizás no tenga un conocimiento tan profundo de las mejores prácticas programando."
   },
   "programación agéntica": {
     "translation": "agentic programming",
     "pos": "noun phrase",
-    "context": "capacidades de programación agéntica"
+    "context": "Modelos de programación agénticas que aceleran enormemente su capacidad de investigación."
   },
-  "hincapié": {
-    "translation": "emphasis",
+  "asistencia científica": {
+    "translation": "scientific assistance",
+    "pos": "noun phrase",
+    "context": "El nivel del uso de la IA para asistencia científica."
+  },
+  "modelado científico": {
+    "translation": "scientific modeling",
+    "pos": "noun phrase",
+    "context": "A este nivel lo podemos denominar el uso de la IA para modelado científico."
+  },
+  "conocimiento frontera": {
+    "translation": "frontier knowledge",
+    "pos": "noun phrase",
+    "context": "El uso de la IA para el descubrimiento del conocimiento frontera."
+  },
+  "causando una disrupción": {
+    "translation": "causing a disruption",
+    "pos": "verb phrase",
+    "context": "En otros ámbitos como la investigación científica están causando una disrupción."
+  },
+  "capacidades fronteras": {
+    "translation": "frontier capabilities",
+    "pos": "noun phrase",
+    "context": "Mes tras mes sus capacidades fronteras no han dejado de mejorar."
+  },
+  "olimpiadas matemáticas": {
+    "translation": "math olympiads",
+    "pos": "noun phrase",
+    "context": "Google como Open AI declararon haber ganado las olimpiadas matemáticas internacionales."
+  },
+  "búsqueda en profundidad": {
+    "translation": "in-depth search",
+    "pos": "noun phrase",
+    "context": "Lo que parecía un resultado original era una búsqueda en profundidad de la literatura."
+  },
+  "problemas abiertos": {
+    "translation": "open problems",
+    "pos": "noun phrase",
+    "context": "Problemas abiertos de investigación para los que solo ellos conocían cuál era la respuesta."
+  },
+  "verificar su correctitud": {
+    "translation": "to verify its correctness",
+    "pos": "verb phrase",
+    "context": "Generar soluciones candidatas, verificar su correctitud."
+  },
+  "de forma iterativa": {
+    "translation": "iteratively",
+    "pos": "adverb phrase",
+    "context": "Plantear arreglos de forma iterativa."
+  },
+  "resultados novedosos": {
+    "translation": "novel results",
+    "pos": "noun phrase",
+    "context": "Sí tienen la capacidad de resolver tareas agénticas de investigación con resultados novedosos."
+  },
+  "benchmarks más exigentes": {
+    "translation": "most demanding benchmarks",
+    "pos": "noun phrase",
+    "context": "Los benchmarks más exigentes a nivel de matemáticas."
+  },
+  "problemas no resueltos": {
+    "translation": "unsolved problems",
+    "pos": "noun phrase",
+    "context": "Una recopilación de problemas matemáticos no resueltos."
+  },
+  "a día de hoy": {
+    "translation": "to this day",
+    "pos": "expression",
+    "context": "De los que a día de hoy no conocemos sus soluciones."
+  },
+  "loros estocásticos": {
+    "translation": "stochastic parrots",
+    "pos": "noun phrase",
+    "context": "Esta es la liga en la que juegan aquellos loros estocásticos."
+  },
+  "correlación directa": {
+    "translation": "direct correlation",
+    "pos": "noun phrase",
+    "context": "Ha habido una correlación directa con el aumento en sus capacidades."
+  },
+  "herramienta potentísima": {
+    "translation": "very powerful tool",
+    "pos": "noun phrase",
+    "context": "Las matemáticas son una herramienta potentísima."
+  },
+  "informática teórica": {
+    "translation": "theoretical computer science",
+    "pos": "noun phrase",
+    "context": "Pionero de la informática teórica galardonado con el premio Turing."
+  },
+  "casos impares": {
+    "translation": "odd cases",
+    "pos": "noun phrase",
+    "context": "Una solución para los casos impares."
+  },
+  "casos pares": {
+    "translation": "even cases",
+    "pos": "noun phrase",
+    "context": "Días más tarde aparecieron también soluciones para los casos pares."
+  },
+  "demostración matemática": {
+    "translation": "mathematical proof",
+    "pos": "noun phrase",
+    "context": "Un artículo de 14 páginas con la demostración matemática."
+  },
+  "flujo de trabajo": {
+    "translation": "workflow",
+    "pos": "noun phrase",
+    "context": "Ver a la gente realizar todo ese flujo de trabajo."
+  },
+  "de principio a fin": {
+    "translation": "from start to finish",
+    "pos": "expression",
+    "context": "Trabajando de principio a fin en aproximadamente unos 700 cambios de forma autónoma."
+  },
+  "búsqueda de hiperparámetros": {
+    "translation": "hyperparameter search",
+    "pos": "noun phrase",
+    "context": "Búsqueda de hiperparámetros, búsqueda de mejores arquitecturas."
+  },
+  "proceso de retroalimentación": {
+    "translation": "feedback process",
+    "pos": "noun phrase",
+    "context": "Este proceso en bucle, en un bucle de retroalimentación enorme."
+  },
+  "fase de despegue": {
+    "translation": "takeoff phase",
+    "pos": "noun phrase",
+    "context": "Estamos en una fase de despegue que no para."
+  },
+  "patrocinio": {
+    "translation": "sponsorship",
     "pos": "noun",
-    "context": "hacer el suficiente hincapié"
+    "context": "Este vídeo es posible gracias al patrocinio de 480."
   },
-  "sector": {
-    "translation": "sector",
-    "pos": "noun",
-    "context": "puesto al sector de la programación patas arriba"
-  },
-  "productividad": {
-    "translation": "productivity",
-    "pos": "noun",
-    "context": "aumentando la productividad de forma real"
-  },
-  "redefiniendo": {
-    "translation": "redefining",
-    "pos": "verb (gerund)",
-    "context": "redefiniendo lo que una persona y una máquina pueden construir"
-  },
-  "transversal": {
-    "translation": "transversal/cross-cutting",
-    "pos": "adjective",
-    "context": "habilidad que en ciencia es transversal"
-  },
-  "repositorio": {
-    "translation": "repository",
-    "pos": "noun",
-    "context": "un repositorio de código"
-  },
-  "implementación": {
-    "translation": "implementation",
-    "pos": "noun",
-    "context": "implementación mínima de cómo son todas las etapas"
-  },
-  "etapas": {
-    "translation": "stages/phases",
-    "pos": "noun",
-    "context": "todas las etapas de entrenar a un modelo"
-  },
-  "stack": {
-    "translation": "stack",
-    "pos": "noun",
-    "context": "optimizando todo el stack"
-  },
-  "métrica": {
-    "translation": "metric",
-    "pos": "noun",
-    "context": "mirando esta métrica"
-  },
-  "experimentos": {
-    "translation": "experiments",
-    "pos": "noun",
-    "context": "lanzar experimentos cortos de entrenamiento"
-  },
-  "evaluar": {
-    "translation": "to evaluate",
+  "agilizan": {
+    "translation": "speed up",
     "pos": "verb",
-    "context": "evaluar si el resultado mejora"
+    "context": "Modelos de lenguaje como los que tenemos pues ya agilizan la búsqueda."
   },
-  "aporten": {
-    "translation": "contribute/add value",
-    "pos": "verb (subjunctive)",
-    "context": "modificaciones que realmente aporten"
-  },
-  "conclusiones": {
-    "translation": "conclusions",
+  "bibliografía": {
+    "translation": "literature / bibliography",
     "pos": "noun",
-    "context": "Las conclusiones de este experimento"
+    "context": "Agilizan la búsqueda y lectura de bibliografía."
   },
-  "gráfica": {
-    "translation": "graph/chart",
-    "pos": "noun",
-    "context": "esta gráfica de aquí"
+  "profundo": {
+    "translation": "deep / profound",
+    "pos": "adjective",
+    "context": "Quizás no tenga un conocimiento tan profundo de las mejores prácticas."
   },
-  "arquitecturas": {
-    "translation": "architectures",
+  "fundamentales": {
+    "translation": "fundamental",
+    "pos": "adjective",
+    "context": "Resolver problemas fundamentales en ciencia."
+  },
+  "plegado": {
+    "translation": "folding",
     "pos": "noun",
-    "context": "transferir a otras arquitecturas"
+    "context": "Los patrones del plegado tridimensional de proteínas."
+  },
+  "tridimensional": {
+    "translation": "three-dimensional",
+    "pos": "adjective",
+    "context": "El plegado tridimensional de proteínas."
+  },
+  "proteínas": {
+    "translation": "proteins",
+    "pos": "noun",
+    "context": "El plegado tridimensional de proteínas."
+  },
+  "metrológicos": {
+    "translation": "metrological",
+    "pos": "adjective",
+    "context": "Modelos metrológicos para hacer predicciones más rigurosas."
+  },
+  "rigurosas": {
+    "translation": "rigorous",
+    "pos": "adjective",
+    "context": "Predicciones más rigurosas de la evolución del clima."
+  },
+  "predicciones": {
+    "translation": "predictions",
+    "pos": "noun",
+    "context": "Modelos de predicciones de propiedades físicas."
+  },
+  "propiedades": {
+    "translation": "properties",
+    "pos": "noun",
+    "context": "Predicciones de propiedades físicas para el descubrimiento de nuevos materiales."
+  },
+  "materiales": {
+    "translation": "materials",
+    "pos": "noun",
+    "context": "Descubrimiento de nuevos materiales."
+  },
+  "plasma": {
+    "translation": "plasma",
+    "pos": "noun",
+    "context": "Modelos que simulan la estabilización del plasma en reactores de fusión."
+  },
+  "reactores": {
+    "translation": "reactors",
+    "pos": "noun",
+    "context": "Reactores de fusión."
+  },
+  "fusión": {
+    "translation": "fusion",
+    "pos": "noun",
+    "context": "Reactores de fusión."
+  },
+  "condecoraciones": {
+    "translation": "awards / decorations",
+    "pos": "noun",
+    "context": "La mayor de todas las condecoraciones científicas."
+  },
+  "ambiciosa": {
+    "translation": "ambitious",
+    "pos": "adjective",
+    "context": "La más ambiciosa de todas las categorías de uso de la IA en ciencia."
+  },
+  "disrupción": {
+    "translation": "disruption",
+    "pos": "noun",
+    "context": "Están causando una disrupción."
+  },
+  "tontísima": {
+    "translation": "very silly / stupid",
+    "pos": "adjective",
+    "context": "Pero es tontísima a la hora de hacer matemáticas."
+  },
+  "heurísticas": {
+    "translation": "heuristics",
+    "pos": "noun",
+    "context": "Aquellas heurísticas útiles que puedan impulsar sus capacidades."
+  },
+  "sobrehumanos": {
+    "translation": "superhuman",
+    "pos": "adjective",
+    "context": "Impulsar sus capacidades a niveles sobrehumanos."
+  },
+  "hito": {
+    "translation": "milestone",
+    "pos": "noun",
+    "context": "Se convirtió en todo un hito para la inteligencia artificial."
+  },
+  "rigurosa": {
+    "translation": "rigorous",
+    "pos": "adjective",
+    "context": "Necesitamos una estrategia más rigurosa."
+  },
+  "enunciados": {
+    "translation": "statements / problem statements",
+    "pos": "noun",
+    "context": "Publicar los enunciados de estos problemas."
+  },
+  "correctitud": {
+    "translation": "correctness",
+    "pos": "noun",
+    "context": "Verificar su correctitud."
+  },
+  "iterativa": {
+    "translation": "iterative",
+    "pos": "adjective",
+    "context": "Plantear arreglos de forma iterativa."
+  },
+  "novedosos": {
+    "translation": "novel / new",
+    "pos": "adjective",
+    "context": "Resolver tareas agénticas de investigación con resultados novedosos."
+  },
+  "exigentes": {
+    "translation": "demanding",
+    "pos": "adjective",
+    "context": "Los benchmarks más exigentes a nivel de matemáticas."
+  },
+  "resistido": {
+    "translation": "resisted",
+    "pos": "verb",
+    "context": "Problemas que han resistido intentos serios de resolución."
+  },
+  "intentos": {
+    "translation": "attempts",
+    "pos": "noun",
+    "context": "Resistido intentos serios de resolución."
+  },
+  "resolución": {
+    "translation": "resolution / solving",
+    "pos": "noun",
+    "context": "Intentos serios de resolución."
+  },
+  "redacción": {
+    "translation": "drafting / writing",
+    "pos": "noun",
+    "context": "Al menos a fecha de redacción de este guion."
+  },
+  "derivar": {
+    "translation": "to derive",
+    "pos": "verb",
+    "context": "Habían conseguido derivar un nuevo resultado general útil para la física."
+  },
+  "hipótesis": {
+    "translation": "hypotheses",
+    "pos": "noun",
+    "context": "Desde las hipótesis planteadas por los investigadores humanos."
+  },
+  "planteadas": {
+    "translation": "posed / raised",
+    "pos": "adjective",
+    "context": "Las hipótesis planteadas por los investigadores humanos."
+  },
+  "expresiones": {
+    "translation": "expressions",
+    "pos": "noun",
+    "context": "Expresiones que son muy largas y muy complicadas."
+  },
+  "patrón": {
+    "translation": "pattern",
+    "pos": "noun",
+    "context": "Consiguió detectar un patrón y proponer una expresión general válida."
+  },
+  "válida": {
+    "translation": "valid",
+    "pos": "adjective",
+    "context": "Proponer una expresión general válida."
+  },
+  "galardonado": {
+    "translation": "awarded",
+    "pos": "adjective",
+    "context": "Pionero de la informática teórica galardonado con el premio Turing."
+  },
+  "sorprendido": {
+    "translation": "surprised",
+    "pos": "adjective",
+    "context": "Si Donald ya estaba sorprendido al haber encontrado una solución general."
+  },
+  "desmerece": {
+    "translation": "to detract from / underestimate",
+    "pos": "verb",
+    "context": "Esto realmente no desmerece el trabajo que ha hecho la IA."
+  },
+  "acostumbrado": {
+    "translation": "accustomed / used to",
+    "pos": "adjective",
+    "context": "Estoy muy acostumbrado a hacer manualmente la optimización iterativa."
   },
   "ingenuo": {
     "translation": "naive",
     "pos": "adjective",
-    "context": "mi primer intento ingenuo"
+    "context": "Mi primer intento ingenuo haya funcionado tan bien."
   },
-  "novedad": {
-    "translation": "novelty/news",
-    "pos": "noun",
-    "context": "Esto es una novedad para mí"
-  },
-  "acostumbrado": {
-    "translation": "accustomed/used to",
+  "autónoma": {
+    "translation": "autonomous",
     "pos": "adjective",
-    "context": "estoy muy acostumbrado a hacer manualmente"
-  },
-  "pan de cada día": {
-    "translation": "daily bread/routine",
-    "pos": "expression",
-    "context": "Ese es el pan de cada día de lo que llevo haciendo"
+    "context": "Trabajando de principio a fin en unos 700 cambios de forma autónoma."
   },
   "salvaje": {
     "translation": "wild",
     "pos": "adjective",
-    "context": "es salvaje"
+    "context": "Es salvaje."
   },
-  "hiperparámetros": {
-    "translation": "hyperparameters",
-    "pos": "noun",
-    "context": "búsqueda de hiperparámetros"
-  },
-  "retroalimentación": {
-    "translation": "feedback",
-    "pos": "noun",
-    "context": "bucle de retroalimentación enorme"
-  },
-  "despegue": {
-    "translation": "take-off",
-    "pos": "noun",
-    "context": "estamos en una fase de despegue"
-  },
-  "franja": {
-    "translation": "span/period",
-    "pos": "noun",
-    "context": "han ocurrido en una franja de 2 tr meses"
+  "poderoso": {
+    "translation": "powerful",
+    "pos": "adjective",
+    "context": "Vamos a poderoso."
   }
 }
