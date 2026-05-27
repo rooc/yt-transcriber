@@ -35,13 +35,6 @@ Open http://localhost:9090
 - **Keyboard shortcuts** for quick playback control
 - **Auto-synchronized** transcript scrolling
 
-## Setup
-
-```bash
-node server.js
-```
-
-Open http://localhost:9090
 
 ## Keyboard Shortcuts
 
