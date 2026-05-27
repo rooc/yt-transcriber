@@ -958,7 +958,46 @@ The AI will:
 
 ---
 
+### Download YouTube Transcript
+**Command:** `"download VIDEO_ID"` or `"dl VIDEO_ID"`
+
+Downloads Spanish auto-generated subtitles from YouTube and creates a properly formatted transcript file.
+
+**How it works (AI executes directly):**
+1. Run yt-dlp to fetch Spanish auto-subtitles:
+   ```
+   yt-dlp --cookies-from-browser firefox --skip-download --write-auto-sub --sub-lang es --sub-format srt -o /tmp/[VIDEO_ID] "https://www.youtube.com/watch?v=[VIDEO_ID]"
+   ```
+2. Get video title from YouTube:
+   ```
+   yt-dlp --cookies-from-browser firefox --print title "https://www.youtube.com/watch?v=[VIDEO_ID]"
+   ```
+3. Parse the SRT file and convert timestamps to `**M:SS**` format
+4. Write `transcripts/[VIDEO_ID].md` with frontmatter:
+   ```markdown
+   ---
+   title: "Video Title from YouTube"
+   source: "https://www.youtube.com/watch?v=VIDEO_ID"
+   ---
+
+   **0:00** Primera linea en español
+   **0:05** Segunda linea en español
+   ```
+
+**Requirements:**
+- `yt-dlp` must be installed and in PATH
+- Firefox browser with cookies (for `--cookies-from-browser`)
+- Video must have Spanish auto-generated captions available
+
+**Error handling:**
+- If transcript already exists → report and skip
+- If no Spanish subtitles → report failure
+- If yt-dlp not installed → report missing dependency
+
+---
+
 **Ready to work! Just say:**
+- `"download VIDEO_ID"` - Download Spanish transcript from YouTube
 - `"translate new"` - Translate all new transcripts (asks for grammar sentence count: 3, 4, 5, or custom)
 - `"merge VIDEO_ID"` - Merge short transcript lines into longer segments (80-120 chars)
 - `"check files"` - Run validation and cleanup
