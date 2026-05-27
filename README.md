@@ -106,23 +106,7 @@ Each video includes a **2-4 sentence summary** in Spanish:
 
 **Other extensions** - Any extension that can extract YouTube transcripts will work. Choose whichever fits your workflow.
 
-### Method 2: Obsidian Clipper
-
-1. **Install** Obsidian Web Clipper extension: [Chrome](https://chromewebstore.google.com/detail/obsidian-web-clipper) | [Firefox](https://addons.mozilla.org/en-US/firefox/addon/obsidian-web-clipper/)
-
-2. **Clip YouTube video**:
-   - Open any YouTube video
-   - Click the Clipper icon → Click **Clip**
-   - Save file and put it in transcripts folder
-
-3. **Rename file** to video ID:
-   - transcripts/"Video Title.md" → transcripts/VIDEO_ID.md
-
-**Note:** Obsidian creates transcripts as paragraphs (often with 2-5 lines of text), which isn't very usable for language learning. You may need to reformat the transcript to have one timestamp per line for the best experience.
-
-The default template already includes title and URL, which is all you need.
-
-### Method 3: Manual
+### Method 2: Manual
 
 Place transcript files in `/transcripts/` folder:
 
