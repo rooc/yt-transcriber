@@ -187,7 +187,7 @@ function renderVocabModalContent(content, item, showAnswer = false) {
 			promptHtml = `
 				<div class="vocab-review-prompt vocab-review-success">
 					<span class="material-icons">check_circle</span>
-					<span>enter to next word</span>
+					<span>Enter to next word</span>
 				</div>
 			`;
 		}
@@ -195,7 +195,7 @@ function renderVocabModalContent(content, item, showAnswer = false) {
 		translationHtml = `<div class="vocabular-modal-translation vocab-translation-hidden">???</div>`;
 		promptHtml = `
 			<div class="vocab-review-prompt">
-				<span>remember?</span>
+				<span>Remember?</span>
 				<div class="vocab-review-buttons">
 					<span class="vocab-review-hint"><kbd>Y</kbd> Yes</span>
 					<span class="vocab-review-hint"><kbd>N</kbd> No</span>
