@@ -127,7 +127,12 @@
   "me da pereza": {
     "translation": "I feel lazy / I can't be bothered",
     "pos": "expression",
-    "context": "Me da pereza salir cuando hace tanto frío."
+    "context": "me da mucha pereza de por sí salir de casa"
+  },
+  "me da mucha pereza": {
+    "translation": "I really can't be bothered / I feel very lazy",
+    "pos": "expression",
+    "context": "me da mucha pereza de por sí salir de casa"
   },
   "pequeño alivio": {
     "translation": "small relief",
