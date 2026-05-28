@@ -325,6 +325,32 @@ Even 2-3 word phrases should be excluded if they consist entirely of A1-A2 basic
 
 **Key rule:** If ALL words in the phrase are A1-A2 basic AND the grammatical structure is elementary (present, preterite, basic word order), **skip it**. Only include multi-word phrases that demonstrate B1+ grammar complexity OR contain at least one B1+ word.
 
+#### ⚠️ CRITICAL: Never Skip Compound Tenses
+
+**Even when ALL individual words are A1-A2 basic verbs, ALWAYS extract phrases containing compound or auxiliary verb constructions.** The grammatical structure itself is B1+ regardless of the base verb's level.
+
+**ALWAYS extract when you see these patterns:**
+- **había + past participle**: "yo había quedado", "había hablado", "había comido" — past perfect
+- **he/ha/han + past participle**: "me he despertado", "se ha convertido", "hemos decidido" — present perfect
+- **he/ha estado + gerund**: "he estado mirando", "ha estado lloviendo" — present perfect progressive
+- **hacía + noun + gerund**: "me hacía mucha ilusión" — imperfect with emotional state
+- **a no ser que + subjunctive**: "a no ser que tengas" — subjunctive-triggering construction
+- **aunque + imperfect subjunctive**: "aunque la cita nos diese" — imperfect subjunctive
+
+**Real examples that were WRONGLY skipped:**
+- ❌ "yo había quedado" — base verb "quedar" is A1, but **past perfect is B1+**
+- ❌ "había hablado" — base verb "hablar" is A1, but **past perfect is B1+**
+- ❌ "me he despertado" — base verb "despertar" is A1-A2, but **present perfect reflexive is B1+**
+- ❌ "he estado mirando" — "estar" and "mirar" are both A1, but **present perfect progressive is B1+**
+- ❌ "aunque la cita nos diese" — "dar" is A1, but **imperfect subjunctive is B1+**
+
+**When scanning transcripts, specifically look for:**
+- Forms of **haber** (he, ha, había, habría, hubiera, hubo) followed by a past participle
+- Forms of **estar** (he estado, ha estado) followed by a gerund (-ando, -iendo)
+- Subjunctive-triggering phrases: "a no ser que", "aunque", "para que", "con tal de que"
+
+**Never skip a phrase just because you recognize the base verb as simple. Check the actual conjugated form and grammatical structure first.**
+
 **DO NOT extract (skip these):
 
 #### 1. Basic A1-A2 Words
