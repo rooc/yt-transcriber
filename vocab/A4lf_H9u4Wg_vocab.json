@@ -158,5 +158,55 @@
     "translation": "to carry the weight / to bear the burden",
     "pos": "verb phrase",
     "context": "Ella lleva el peso de la responsabilidad en casa."
+  },
+  "yo había quedado": {
+    "translation": "I had made plans",
+    "pos": "verb phrase",
+    "context": "yo había quedado con algunas personas para hacer una caminata"
+  },
+  "me hacía mucha ilusión": {
+    "translation": "I was really looking forward to it",
+    "pos": "expression",
+    "context": "la idea al principio me hacía mucha ilusión"
+  },
+  "había hablado": {
+    "translation": "I had talked",
+    "pos": "verb phrase",
+    "context": "con la que había hablado antes"
+  },
+  "aunque la cita nos diese": {
+    "translation": "even though the date would give us",
+    "pos": "expression",
+    "context": "aunque la cita nos diese pereza sentimos satisfacción"
+  },
+  "has quedado": {
+    "translation": "you have made plans",
+    "pos": "verb phrase",
+    "context": "cuando has quedado con alguien que realmente no te gusta"
+  },
+  "he estado mirando": {
+    "translation": "I have been looking",
+    "pos": "verb phrase",
+    "context": "He estado mirando en internet y hay un artículo"
+  },
+  "me he despertado": {
+    "translation": "I have woken up",
+    "pos": "verb phrase",
+    "context": "pero me he despertado y hace un frío que pela"
+  },
+  "hemos decidido": {
+    "translation": "we have decided",
+    "pos": "verb phrase",
+    "context": "hemos decidido cancelar ese plan con esa gente"
+  },
+  "se ha convertido": {
+    "translation": "it has become",
+    "pos": "verb phrase",
+    "context": "la ansiedad se ha convertido en el mal del siglo"
+  },
+  "a no ser que tengas": {
+    "translation": "unless you have",
+    "pos": "expression",
+    "context": "a no ser que tengas 18 años y tengas un cuerpo radioactivo"
   }
 }
