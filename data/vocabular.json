@@ -59,7 +59,13 @@
       "translation": "they streamline/speed up",
       "pos": "verb",
       "context": "ya agilizan la búsqueda y lectura"
+    },
+    {
+      "word": "boquiabierto",
+      "translation": "amazed/astonished",
+      "pos": "adjective",
+      "context": "te has quedado boquiabierto cuando has visto un anuncio"
     }
   ],
-  "vocabularPanelCollapsed": true
+  "vocabularPanelCollapsed": false
 }
