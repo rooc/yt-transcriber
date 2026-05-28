@@ -154,6 +154,11 @@
     "pos": "verb phrase",
     "context": "Debes hacer caso a los consejos de tus padres."
   },
+  "deslumbrado podcast": {
+    "translation": "dazzling podcast (humorous/self-deprecating sign-off)",
+    "pos": "expression",
+    "context": "Muchas gracias por escuchar este deslumbrado podcast"
+  },
   "en pocas palabras": {
     "translation": "in a few words / briefly",
     "pos": "expression",
