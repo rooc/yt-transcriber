@@ -14,6 +14,32 @@ import {
 import { saveVocabular } from './api.js';
 
 let currentVocabularModalIndex = -1;
+let showingAnswer = false;
+
+/**
+ * Get review count for a vocab word, initializing if needed.
+ * @param {Object} item - Vocab word item
+ * @returns {number} Review count
+ */
+function getReviewCount(item) {
+	if (typeof item.reviewCount !== 'number') {
+		item.reviewCount = 0;
+	}
+	return item.reviewCount;
+}
+
+/**
+ * Set review count for a vocab word.
+ * @param {number} index - Word index
+ * @param {number} count - New count
+ */
+function setReviewCount(index, count) {
+	const item = vocabularWords[index];
+	if (!item) return;
+	item.reviewCount = count;
+	// Save to backend
+	import('./api.js').then(({ saveVocabular }) => saveVocabular());
+}
 
 /**
  * Render vocabular words in the sidebar panel.
@@ -78,7 +104,7 @@ export function addVocabularWord(word, translation, pos, context) {
 	const exists = vocabularWords.some(item => item.word === word);
 	if (exists) return;
 	
-	const newItem = { word, translation, pos, context };
+	const newItem = { word, translation, pos, context, reviewCount: 0 };
 	const newList = [...vocabularWords, newItem];
 	setVocabularWords(newList);
 	renderVocabularWords();
@@ -110,12 +136,67 @@ export function showVocabularModal(index) {
 	if (!item) return;
 	
 	currentVocabularModalIndex = index;
+	showingAnswer = false;
 	
 	const modal = document.getElementById("vocabularModal");
 	const content = document.getElementById("vocabularModalContent");
 	
+	renderVocabModalContent(content, item);
+	
+	modal.classList.add("active");
+}
+
+/**
+ * Render the vocab modal content in test mode.
+ * @param {HTMLElement} content - Modal content container
+ * @param {Object} item - Vocab word item
+ * @param {boolean} showAnswer - Whether to show the answer
+ */
+function renderVocabModalContent(content, item, showAnswer = false) {
+	const count = getReviewCount(item);
 	const posHtml = item.pos ? `<div class="vocabular-modal-pos">${item.pos}</div>` : '';
 	const contextHtml = item.context ? `<div class="vocabular-modal-context">${item.context}</div>` : '';
+	
+	// Counter badge
+	const counterBadge = count > 0 ? `<span class="vocab-counter-badge">${count}/4</span>` : '';
+	
+	// Translation display
+	let translationHtml;
+	let promptHtml = '';
+	
+	if (showAnswer) {
+		translationHtml = `<div class="vocabular-modal-translation">${item.translation}</div>`;
+		
+		if (count >= 4) {
+			promptHtml = `
+				<div class="vocab-review-prompt vocab-review-suggest">
+					<span class="material-icons">emoji_events</span>
+					<span>Mastered! Remove from vocab?</span>
+					<button onclick="removeCurrentVocabWord()" class="vocab-review-btn vocab-review-btn-remove">
+						<span class="material-icons">delete</span> Remove
+					</button>
+				</div>
+			`;
+		} else {
+			promptHtml = `
+				<div class="vocab-review-prompt vocab-review-success">
+					<span class="material-icons">check_circle</span>
+					<span>press enter to next word</span>
+				</div>
+			`;
+		}
+	} else {
+		translationHtml = `<div class="vocabular-modal-translation vocab-translation-hidden">???</div>`;
+		promptHtml = `
+			<div class="vocab-review-prompt">
+				<span>Do you remember?</span>
+				<div class="vocab-review-buttons">
+					<span class="vocab-review-hint"><kbd>Y</kbd> Yes</span>
+					<span class="vocab-review-hint"><kbd>N</kbd> No</span>
+				</div>
+			</div>
+		`;
+	}
 	
 	content.innerHTML = `
 		<div class="vocabular-modal-item">
@@ -123,15 +204,17 @@ export function showVocabularModal(index) {
 				<span class="material-icons">translate</span>
 			</div>
 			<div class="vocabular-modal-text">
-				<div class="vocabular-modal-word">${item.word}</div>
+				<div class="vocabular-modal-word">
+					${item.word}
+					${counterBadge}
+				</div>
 				${posHtml}
-				<div class="vocabular-modal-translation">${item.translation}</div>
+				${translationHtml}
+				${promptHtml}
 				${contextHtml}
 			</div>
 		</div>
 	`;
-	
-	modal.classList.add("active");
 }
 
 /**
@@ -174,9 +257,29 @@ export function handleVocabWordClick(word) {
 	addVocabularWord(word, translation, pos, context);
 }
 
+/**
+ * Remove the currently displayed vocab word and show the next one.
+ */
+export function removeCurrentVocabWord() {
+	if (currentVocabularModalIndex >= 0 && currentVocabularModalIndex < vocabularWords.length) {
+		removeVocabularWord(currentVocabularModalIndex);
+		
+		// Show next word, or close if vocab is now empty
+		if (vocabularWords.length > 0) {
+			const nextIndex = currentVocabularModalIndex >= vocabularWords.length 
+				? 0 
+				: currentVocabularModalIndex;
+			showVocabularModal(nextIndex);
+		} else {
+			closeVocabularModal();
+		}
+	}
+}
+
 // Make functions available globally for onclick handlers
 window.toggleVocabularPanel = toggleVocabularPanel;
 window.closeVocabularModal = closeVocabularModal;
+window.removeCurrentVocabWord = removeCurrentVocabWord;
 
 // --- Keyboard Navigation ---
 
@@ -186,6 +289,61 @@ document.addEventListener('keydown', function(event) {
 	
 	if (vocabularWords.length === 0) return;
 	
+	const item = vocabularWords[currentVocabularModalIndex];
+	if (!item) return;
+	
+	// Y - Yes, I remember (increment counter)
+	if (event.code === "KeyY") {
+		event.preventDefault();
+		if (!showingAnswer) {
+			const newCount = getReviewCount(item) + 1;
+			setReviewCount(currentVocabularModalIndex, newCount);
+			showingAnswer = true;
+			const content = document.getElementById("vocabularModalContent");
+			renderVocabModalContent(content, item, true);
+		} else {
+			// If already showing answer, close modal or go to next
+			let nextIndex = currentVocabularModalIndex + 1;
+			if (nextIndex >= vocabularWords.length) nextIndex = 0;
+			showVocabularModal(nextIndex);
+		}
+		return;
+	}
+	
+	// N - No, I don't remember (reset counter)
+	if (event.code === "KeyN") {
+		event.preventDefault();
+		if (!showingAnswer) {
+			setReviewCount(currentVocabularModalIndex, 0);
+			showingAnswer = true;
+			const content = document.getElementById("vocabularModalContent");
+			renderVocabModalContent(content, item, true);
+		} else {
+			// If already showing answer, close modal or go to next
+			let nextIndex = currentVocabularModalIndex + 1;
+			if (nextIndex >= vocabularWords.length) nextIndex = 0;
+			showVocabularModal(nextIndex);
+		}
+		return;
+	}
+	
+	// Enter / Space - advance to next word (when showing answer)
+	if (showingAnswer && (event.code === "Enter" || event.code === "Space")) {
+		event.preventDefault();
+		let nextIndex = currentVocabularModalIndex + 1;
+		if (nextIndex >= vocabularWords.length) nextIndex = 0;
+		showVocabularModal(nextIndex);
+		return;
+	}
+	
+	// Esc - close modal
+	if (event.code === "Escape") {
+		event.preventDefault();
+		closeVocabularModal();
+		return;
+	}
+	
+	// Arrow keys for navigation
 	if (event.key === "ArrowLeft") {
 		event.preventDefault();
 		let prevIndex = currentVocabularModalIndex - 1;
