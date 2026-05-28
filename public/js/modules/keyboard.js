@@ -13,8 +13,8 @@ import {
 import { togglePause, rewindBack, rewindForward, restartVideo, toggleFullscreen, toggleSegmentRepeat, replayCurrentSegment } from './player.js';
 import { toggleDual, renderTranscriptLine } from './transcript.js';
 import { toggleLearned } from './learned.js';
-import { showGrammarModal } from './grammar.js';
-import { showVocabularModal } from './vocabular.js';
+import { showGrammarModal, closeGrammarModal } from './grammar.js';
+import { showVocabularModal, closeVocabularModal } from './vocabular.js';
 import { setStatus } from './utils.js';
 
 /**
@@ -22,12 +22,6 @@ import { setStatus } from './utils.js';
  */
 export function setupKeyboardHandlers() {
 	document.addEventListener("keydown", handleKeyDown);
-
-	// Logo click handler to open shortcuts modal
-	const logoHeader = document.getElementById("logoHeader");
-	if (logoHeader) {
-		logoHeader.addEventListener("click", openShortcutsModal);
-	}
 
 	// Close shortcuts modal when clicking outside
 	const shortcutsModal = document.getElementById("shortcutsModal");
@@ -80,6 +74,48 @@ function isModalOpen() {
  * @param {KeyboardEvent} e - Keyboard event
  */
 function handleKeyDown(e) {
+	// ? - Toggle keyboard shortcuts reference (always works, even when modal is open)
+	if (e.code === "Slash" && e.shiftKey) {
+		e.preventDefault();
+		const shortcutsModal = document.getElementById("shortcutsModal");
+		if (shortcutsModal && shortcutsModal.classList.contains("active")) {
+			closeShortcutsModal();
+		} else {
+			openShortcutsModal();
+		}
+		return;
+	}
+
+	// G - Toggle grammar modal (always works, even when modal is open)
+	if (e.code === "KeyG" && !e.ctrlKey && !e.metaKey) {
+		e.preventDefault();
+		const grammarModal = document.getElementById("grammarModal");
+		if (grammarModal && grammarModal.classList.contains("active")) {
+			closeGrammarModal();
+		} else if (currentGrammarData.length > 0) {
+			showGrammarModal(0);
+		} else {
+			setStatus("No grammar sentences available");
+			setTimeout(() => setStatus(""), 2000);
+		}
+		return;
+	}
+
+	// V - Toggle vocabulary modal (always works, even when modal is open)
+	if (e.code === "KeyV" && !e.ctrlKey && !e.metaKey) {
+		e.preventDefault();
+		const vocabularModal = document.getElementById("vocabularModal");
+		if (vocabularModal && vocabularModal.classList.contains("active")) {
+			closeVocabularModal();
+		} else if (vocabularWords.length > 0) {
+			showVocabularModal(0);
+		} else {
+			setStatus("No vocabulary words saved");
+			setTimeout(() => setStatus(""), 2000);
+		}
+		return;
+	}
+
 	// Skip video controls when any modal is open (modal handles its own keys)
 	if (isModalOpen()) return;
 
@@ -132,34 +168,17 @@ function handleKeyDown(e) {
 		return;
 	}
 
-	// G - Open first grammar sentence popup
-	if (e.code === "KeyG" && !e.ctrlKey && !e.metaKey) {
+	// B - Toggle sidebar
+	if (e.code === "KeyB" && !e.ctrlKey && !e.metaKey) {
 		e.preventDefault();
-		if (currentGrammarData.length > 0) {
-			showGrammarModal(0);
-		} else {
-			setStatus("No grammar sentences available");
-			setTimeout(() => setStatus(""), 2000);
-		}
+		window.toggleSidebar();
 		return;
 	}
 
-	// V - Open first vocabulary word popup
-	if (e.code === "KeyV" && !e.ctrlKey && !e.metaKey) {
+	// 0 - Restart video
+	if (e.code === "Digit0" && !e.ctrlKey && !e.metaKey) {
 		e.preventDefault();
-		if (vocabularWords.length > 0) {
-			showVocabularModal(0);
-		} else {
-			setStatus("No vocabulary words saved");
-			setTimeout(() => setStatus(""), 2000);
-		}
-		return;
-	}
-
-	// ? - Show keyboard shortcuts reference
-	if (e.code === "Slash" && e.shiftKey) {
-		e.preventDefault();
-		openShortcutsModal();
+		restartVideo();
 		return;
 	}
 
