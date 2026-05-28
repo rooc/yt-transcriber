@@ -22,24 +22,12 @@
 		/>
 	</head>
 	<body>
-		<div class="container">
-			<div class="header-sidebar" id="logoHeader" title="Click to view keyboard shortcuts">
-				<span class="material-icons" style="font-size: 32px; color: #ff0000"
-					>play_circle</span
-				>
-				<span style="font-size: 1.5rem; font-weight: 600; margin-left: 8px"
-					>Yotuscript</span
-				>
+		<div class="sidebar-wrapper" id="sidebarWrapper" style="width: var(--sidebar-width, max(22rem, 26vw));">
+			<div class="sidebar-resize" id="sidebarResize"></div>
+			<div class="sidebar-header" id="logoHeader" onclick="toggleSidebar()" title="Toggle sidebar">
+				<span class="material-icons" style="font-size: 32px; color: #ff0000">play_circle</span>
+				<span class="sidebar-title">Yotuscript</span>
 			</div>
-			<div class="header-main">
-				<div class="video-title-container">
-					<a id="videoTitle" href="#" target="_blank" rel="noopener noreferrer">YouTube Video with Transcript</a>
-				<span id="summaryIcon" class="summary-icon" onclick="showSummaryModal()" title="View summary">
-					<span class="material-icons-outlined">summarize</span>
-				</span>
-				</div>
-			</div>
-
 			<div class="sidebar">
 				<div class="panel" id="availableTranscripts">
 					<h3>Available transcripts <span id="availableCount">(0)</span></h3>
@@ -48,9 +36,7 @@
 
 				<div class="panel" id="grammarPanel">
 					<h3 class="collapsible-header" onclick="toggleGrammarPanel()">
-						<span class="material-icons" id="grammarToggleIcon"
-							>expand_more</span
-						>
+						<span class="material-icons" id="grammarToggleIcon">expand_more</span>
 						<span class="grammar-header-title">Grammar sentences</span>
 						<span id="grammarVideoTitle" class="grammar-video-title"></span>
 					</h3>
@@ -63,9 +49,7 @@
 
 				<div class="panel" id="vocabularPanel">
 					<h3 class="collapsible-header" onclick="toggleVocabularPanel()">
-						<span class="material-icons" id="vocabularToggleIcon"
-							>expand_more</span
-						>
+						<span class="material-icons" id="vocabularToggleIcon">expand_more</span>
 						Vocabular <span id="vocabularCount"></span>
 					</h3>
 					<div id="vocabularContent" class="collapsible-content collapsed">
@@ -77,9 +61,7 @@
 
 				<div class="panel" id="learnedTranscripts">
 					<h3 class="collapsible-header" onclick="toggleLearnedPanel()">
-						<span class="material-icons" id="learnedToggleIcon"
-							>expand_more</span
-						>
+						<span class="material-icons" id="learnedToggleIcon">expand_more</span>
 						Learned transcripts <span id="learnedCount">(0)</span>
 					</h3>
 					<div id="learnedContent" class="collapsible-content collapsed">
@@ -88,37 +70,22 @@
 				</div>
 
 				<div class="controls">
-				<button
-					id="pauseBtn"
-					onclick="togglePause()"
-					title="Pause/Play (Space)"
-				>
-					<span class="material-icons">pause</span>
-				</button>
-				<button onclick="restartVideo()" title="Restart video">
+					<button id="pauseBtn" onclick="togglePause()" title="Pause/Play (Space)">
+						<span class="material-icons">pause</span>
+					</button>
+					<button onclick="restartVideo()" title="Restart video">
 						<span class="material-icons">skip_previous</span>
 					</button>
-					<button
-						id="dualBtn"
-						onclick="toggleDual()"
-						title="Toggle dual translation (D)"
-					>
+					<button id="dualBtn" onclick="toggleDual()" title="Toggle dual translation (D)">
 						<span class="material-icons">view_comfy</span>
 					</button>
-				<button
-					onclick="toggleFullscreen()"
-					title="Toggle fullscreen (F)"
-				>
-					<span class="material-icons">fullscreen</span>
-				</button>
-				<button
-					id="segmentRepeatBtn"
-					onclick="toggleSegmentRepeat()"
-					title="Segment repeat mode (R)"
-				>
-					<span class="material-icons">repeat_one</span>
-				</button>
-			</div>
+					<button onclick="toggleFullscreen()" title="Toggle fullscreen (F)">
+						<span class="material-icons">fullscreen</span>
+					</button>
+					<button id="segmentRepeatBtn" onclick="toggleSegmentRepeat()" title="Segment repeat mode (R)">
+						<span class="material-icons">repeat_one</span>
+					</button>
+				</div>
 
 				<div id="statsLine" class="stats-line">
 					<span class="material-icons">school</span>
@@ -129,6 +96,17 @@
 				</div>
 
 				<div id="status">Ready</div>
+			</div>
+		</div>
+
+		<div class="container" id="mainContainer">
+			<div class="header-main">
+				<div class="video-title-container">
+					<a id="videoTitle" href="#" target="_blank" rel="noopener noreferrer">YouTube Video with Transcript</a>
+					<span id="summaryIcon" class="summary-icon" onclick="showSummaryModal()" title="View summary">
+						<span class="material-icons-outlined">summarize</span>
+					</span>
+				</div>
 			</div>
 
 			<div class="main">
@@ -213,6 +191,10 @@
 				</div>
 				<div class="shortcuts-list">
 					<div class="shortcut-row">
+						<kbd>B</kbd>
+						<span>Toggle sidebar</span>
+					</div>
+					<div class="shortcut-row">
 						<kbd>Space</kbd>
 						<span>Pause / Play</span>
 					</div>
@@ -223,6 +205,10 @@
 					<div class="shortcut-row">
 						<kbd>→</kbd>
 						<span>Forward 5 seconds</span>
+					</div>
+						<div class="shortcut-row">
+						<kbd>0</kbd>
+						<span>Restart video</span>
 					</div>
 					<div class="shortcut-row">
 						<kbd>D</kbd>
@@ -246,15 +232,15 @@
 					</div>
 					<div class="shortcut-row">
 						<kbd>G</kbd>
-						<span>Open first grammar sentence</span>
+						<span>Toggle grammar modal</span>
 					</div>
 					<div class="shortcut-row">
 						<kbd>V</kbd>
-						<span>Open first vocabulary word</span>
+						<span>Toggle vocabulary modal</span>
 					</div>
 					<div class="shortcut-row">
 						<kbd>?</kbd>
-						<span>Show this shortcuts reference</span>
+						<span>Toggle this shortcuts reference</span>
 					</div>
 					<div class="shortcut-row">
 						<kbd>Esc</kbd>

@@ -4,67 +4,64 @@
       "word": "celestiales",
       "translation": "heavenly/delightful",
       "pos": "adjective",
-      "context": "los celestiales frijolitos en olla de barro"
+      "context": "los celestiales frijolitos en olla de barro",
+      "reviewCount": 0
     },
     {
       "word": "alojados",
       "translation": "hosted/housed",
       "pos": "adjective/verb",
-      "context": "podríamos tener alojados en data centers"
-    },
-    {
-      "word": "gestación subrogada",
-      "translation": "surrogacy",
-      "pos": "noun phrase",
-      "context": "parejas de todo el mundo aún llegan a Ucrania para tener bebés a través de la gestación subrogada"
+      "context": "podríamos tener alojados en data centers",
+      "reviewCount": 0
     },
     {
       "word": "asolado",
       "translation": "devastated / ravaged",
       "pos": "adjective",
-      "context": "un país asolado por cuatro años de guerra"
-    },
-    {
-      "word": "recurso",
-      "translation": "resource / remedy / last resort",
-      "pos": "noun",
-      "context": "la gestación subrogada era su último recurso"
+      "context": "un país asolado por cuatro años de guerra",
+      "reviewCount": 1
     },
     {
       "word": "a largo plazo",
       "translation": "long-term",
       "pos": "",
-      "context": ""
+      "context": "",
+      "reviewCount": 0
     },
     {
       "word": "velocidades de descarga",
       "translation": "download speeds",
       "pos": "",
-      "context": ""
+      "context": "",
+      "reviewCount": 0
     },
     {
       "word": "recogida de residuos",
       "translation": "waste collection",
       "pos": "",
-      "context": ""
+      "context": "",
+      "reviewCount": 0
     },
     {
       "word": "apuntarían",
       "translation": "would point/indicate",
       "pos": "verb (conditional)",
-      "context": "que apuntarían hacia que ya contamos"
+      "context": "que apuntarían hacia que ya contamos",
+      "reviewCount": 0
     },
     {
       "word": "agilizan",
       "translation": "they streamline/speed up",
       "pos": "verb",
-      "context": "ya agilizan la búsqueda y lectura"
+      "context": "ya agilizan la búsqueda y lectura",
+      "reviewCount": 0
     },
     {
-      "word": "boquiabierto",
-      "translation": "amazed/astonished",
-      "pos": "adjective",
-      "context": "te has quedado boquiabierto cuando has visto un anuncio"
+      "word": "descargues",
+      "translation": "you download (subjunctive)",
+      "pos": "verb",
+      "context": "descargues en formato PDF la guía de vocabulario",
+      "reviewCount": 0
     }
   ],
   "vocabularPanelCollapsed": false

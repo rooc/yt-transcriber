@@ -128,9 +128,109 @@ async function loadVideoAndData(videoId, options = {}) {
 }
 
 /**
+ * Toggle sidebar collapse/expand state.
+ */
+export function toggleSidebar() {
+	const wrapper = document.getElementById('sidebarWrapper');
+	
+	if (!wrapper) return;
+	
+	const isCollapsed = wrapper.classList.toggle('collapsed');
+	
+	// Save state to localStorage
+	localStorage.setItem('sidebarCollapsed', isCollapsed ? '1' : '0');
+}
+
+/**
+ * Initialize sidebar state from localStorage.
+ */
+function initSidebar() {
+	const wrapper = document.getElementById('sidebarWrapper');
+	
+	if (!wrapper) return;
+	
+	const isCollapsed = localStorage.getItem('sidebarCollapsed') === '1';
+	if (isCollapsed) {
+		wrapper.classList.add('collapsed');
+	}
+	
+	// Restore custom width if saved
+	const savedWidth = localStorage.getItem('sidebarWidth');
+	if (savedWidth && !isCollapsed) {
+		wrapper.style.setProperty('--sidebar-width', savedWidth);
+	}
+}
+
+/**
+ * Setup sidebar resize functionality.
+ */
+function setupSidebarResize() {
+	const wrapper = document.getElementById('sidebarWrapper');
+	const resizeHandle = document.getElementById('sidebarResize');
+	
+	if (!wrapper || !resizeHandle) return;
+	
+	let isResizing = false;
+	let startX = 0;
+	let startWidth = 0;
+	
+	function handleStart(e) {
+		if (wrapper.classList.contains('collapsed')) return;
+		
+		isResizing = true;
+		startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+		startWidth = wrapper.getBoundingClientRect().width;
+		
+		resizeHandle.classList.add('dragging');
+		document.body.style.cursor = 'ew-resize';
+		document.body.style.userSelect = 'none';
+		
+		// Prevent text selection during resize
+		wrapper.style.pointerEvents = 'none';
+	}
+	
+	function handleMove(e) {
+		if (!isResizing) return;
+		
+		const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+		const delta = clientX - startX;
+		const newWidth = Math.max(256, Math.min(window.innerWidth * 0.5, startWidth + delta));
+		
+		wrapper.style.setProperty('--sidebar-width', `${newWidth}px`);
+	}
+	
+	function handleEnd() {
+		if (!isResizing) return;
+		
+		isResizing = false;
+		resizeHandle.classList.remove('dragging');
+		document.body.style.cursor = '';
+		document.body.style.userSelect = '';
+		wrapper.style.pointerEvents = '';
+		
+		// Save width to localStorage
+		const currentWidth = wrapper.getBoundingClientRect().width;
+		localStorage.setItem('sidebarWidth', `${currentWidth}px`);
+	}
+	
+	// Mouse events
+	resizeHandle.addEventListener('mousedown', handleStart);
+	document.addEventListener('mousemove', handleMove);
+	document.addEventListener('mouseup', handleEnd);
+	
+	// Touch events for mobile
+	resizeHandle.addEventListener('touchstart', handleStart);
+	document.addEventListener('touchmove', handleMove);
+	document.addEventListener('touchend', handleEnd);
+}
+
+/**
  * Initialize the application.
  */
 async function init() {
+	// Initialize sidebar state first
+	initSidebar();
+	
 	// Load persisted data
 	await loadLearnedVideos();
 	await loadVideoProgress();
@@ -184,6 +284,13 @@ if (document.readyState === 'loading') {
 	init();
 }
 
+// Setup resize handlers after DOM is ready
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', setupSidebarResize);
+} else {
+	setupSidebarResize();
+}
+
 // Make toggleLearned and toggleLearnedPanel available globally for onclick handlers
 window.toggleLearned = toggleLearned;
 window.toggleLearnedPanel = toggleLearnedPanel;
@@ -193,3 +300,4 @@ window.toggleFullscreen = () => import('./modules/player.js').then(m => m.toggle
 window.toggleSegmentRepeat = () => import('./modules/player.js').then(m => m.toggleSegmentRepeat(renderTranscriptLine));
 window.toggleDual = () => import('./modules/transcript.js').then(m => m.toggleDual(renderTranscriptLine));
 window.renderTranscriptLine = renderTranscriptLine;
+window.toggleSidebar = toggleSidebar;
