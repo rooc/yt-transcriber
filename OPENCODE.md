@@ -351,6 +351,32 @@ Even 2-3 word phrases should be excluded if they consist entirely of A1-A2 basic
 
 **Never skip a phrase just because you recognize the base verb as simple. Check the actual conjugated form and grammatical structure first.**
 
+#### ⚠️ CRITICAL: Never Skip Idioms, Slang, or Figurative Expressions
+
+**Even when every individual word is A1-A2 basic, ALWAYS extract idioms, slang, and figurative expressions.** The meaning is NOT compositional — learners cannot deduce it from the individual words.
+
+**ALWAYS extract:**
+- Fixed expressions with non-literal meaning
+- Slang and colloquialisms
+- Regional/cultural phrases
+- Metaphorical phrases
+
+**Real examples that would be wrongly skipped if judged word-by-word:**
+- ❌ "hasta la madre" — "hasta"=until (A1), "la"=the (A1), "madre"=mother (A1) → but means "fed up" (expression)
+- ❌ "frío que pela" — "frío"=cold (A1), "que"=that (A1), "pela"=peels (A1) → but means "freezing cold" (expression)
+- ❌ "dar palo" — "dar"=to give (A1), "palo"=stick (A1) → but means "to be a hassle" (expression)
+- ❌ "se la suda" — "se" (A1), "la" (A1), "suda"=sweats (A1) → but means "doesn't care at all" (expression)
+- ❌ "mal del siglo" — all words are basic → but means "disease of the century" as a fixed phrase
+- ❌ "cuerpo radioactivo" — literal words but used figuratively to mean "very healthy young body"
+
+**When scanning transcripts, watch for:**
+- Words that seem odd or humorous in context (often slang/idioms)
+- Phrases where the literal translation makes no sense
+- Common Spanish expressions: "hacer ilusión", "dar palo", "echar para atrás", "pasar frío", "de vez en cuando", "en pocas palabras"
+- Slang and colloquial markers that indicate non-literal usage
+
+**Never judge an expression by the difficulty of its individual words. Judge by whether the meaning is literal or idiomatic.**
+
 **DO NOT extract (skip these):
 
 #### 1. Basic A1-A2 Words
