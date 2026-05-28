@@ -59,6 +59,12 @@
       "translation": "they streamline/speed up",
       "pos": "verb",
       "context": "ya agilizan la búsqueda y lectura"
+    },
+    {
+      "word": "descargues",
+      "translation": "you download (subjunctive)",
+      "pos": "verb",
+      "context": "descargues en formato PDF la guía de vocabulario"
     }
   ],
   "vocabularPanelCollapsed": true
