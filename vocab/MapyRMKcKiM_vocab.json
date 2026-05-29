@@ -1,0 +1,82 @@
+{
+  "alta gama": {
+    "translation": "high-end",
+    "pos": "noun phrase",
+    "context": "Si estás pensando en comprar un nuevo móvil de alta gama"
+  },
+  "lo más probable": {
+    "translation": "chances are / most likely",
+    "pos": "expression",
+    "context": "lo más probable es que hayas pensado en marcas como Apple"
+  },
+  "ecosistema": {
+    "translation": "ecosystem",
+    "pos": "noun",
+    "context": "si te gusta el ecosistema de los iPhone"
+  },
+  "quédate": {
+    "translation": "stay / stick around",
+    "pos": "verb",
+    "context": "pero quédate porque este móvil te puede sorprender"
+  },
+  "módulo de cámaras": {
+    "translation": "camera module",
+    "pos": "noun phrase",
+    "context": "me recuerda muchísimo el módulo de cámaras"
+  },
+  "quitando las lentes": {
+    "translation": "minus the lenses",
+    "pos": "expression",
+    "context": "quitando las lentes, lógicamente"
+  },
+  "joya de la corona": {
+    "translation": "jewel in the crown / crown jewel",
+    "pos": "expression",
+    "context": "esta es la joya de la corona, el teleobjetivo 5X"
+  },
+  "teleobjetivo": {
+    "translation": "telephoto lens",
+    "pos": "noun",
+    "context": "el teleobjetivo 5X"
+  },
+  "barbaridad": {
+    "translation": "beast / incredible thing",
+    "pos": "noun",
+    "context": "una barbaridad en esta alta gama"
+  },
+  "por lo demás": {
+    "translation": "otherwise / apart from that",
+    "pos": "expression",
+    "context": "Por lo demás, cuenta con una pantalla espectacular"
+  },
+  "quedarse sin": {
+    "translation": "to run out of",
+    "pos": "verb phrase",
+    "context": "nunca te vas a quedar sin brillo"
+  },
+  "brillo": {
+    "translation": "brightness",
+    "pos": "noun",
+    "context": "nunca te vas a quedar sin brillo"
+  },
+  "combo": {
+    "translation": "combo / combination",
+    "pos": "noun",
+    "context": "Un combo que podría convertir a este móvil"
+  },
+  "convertir en": {
+    "translation": "to turn into / make into",
+    "pos": "verb phrase",
+    "context": "podría convertir a este móvil en uno de los mejores"
+  },
+  "desbancar": {
+    "translation": "to dethrone / overthrow",
+    "pos": "verb",
+    "context": "¿Podrá Xiaomi desbancar a marcas como Samsung y Apple?"
+  },
+  "gigantes del mercado": {
+    "translation": "market giants",
+    "pos": "noun phrase",
+    "context": "dos gigantes del mercado"
+  }
+}
