@@ -51,7 +51,9 @@ function parseTranscriptFile(content, filename) {
             const startTime = hours * 3600 + mins * 60 + secs + ms / 1000;
             const endTime = endHours * 3600 + endMins * 60 + endSecs + endMs / 1000;
             const duration = endTime - startTime;
-            const text = match[10].trim().replace(/\n+/g, ' ');
+            let text = match[10].trim().replace(/\n+/g, ' ');
+            // Remove bracketed descriptions like [música], [risas], etc.
+            text = text.replace(/\[[^\]]+\]/g, '');
 
             lines.push({ start: startTime, dur: duration, text: text });
         }
@@ -77,7 +79,10 @@ function parseTranscriptFile(content, filename) {
                     time += millis / 1000;
                 }
 
-                lines.push({ start: time, dur: 3, text: match[5].trim() });
+                let text = match[5].trim();
+                // Remove bracketed descriptions like [música], [risas], etc.
+                text = text.replace(/\[[^\]]+\]/g, '');
+                lines.push({ start: time, dur: 3, text: text });
             }
         }
 
@@ -100,7 +105,10 @@ function parseTranscriptFile(content, filename) {
                     time += millis / 1000;
                 }
 
-                lines.push({ start: time, dur: 3, text: match[5].trim() });
+                let text = match[5].trim();
+                // Remove bracketed descriptions like [música], [risas], etc.
+                text = text.replace(/\[[^\]]+\]/g, '');
+                lines.push({ start: time, dur: 3, text: text });
             }
         }
     }
