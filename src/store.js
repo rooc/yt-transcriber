@@ -117,8 +117,12 @@ function parseTranscriptFile(content, filename) {
  * @returns {string | null}
  */
 function getVideoIdFromFile(content) {
+    // Standard watch URL
     const urlMatch = content.match(/https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/);
     if (urlMatch) return urlMatch[1];
+    // Shorts URL
+    const shortsMatch = content.match(/https:\/\/www\.youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/);
+    if (shortsMatch) return shortsMatch[1];
     return null;
 }
 
