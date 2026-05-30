@@ -31,6 +31,31 @@ import { updateDisplay, renderTranscriptLine } from './transcript.js';
 import { startWatchSession, endWatchSession } from './stats.js';
 
 /**
+ * Fetch video dimensions from YouTube oEmbed API and update container aspect ratio.
+ * @param {string} videoId - YouTube video ID
+ */
+function fetchVideoAspectRatio(videoId) {
+	const videoWrapper = document.querySelector('.video-wrapper');
+	if (!videoWrapper) return;
+
+	// Reset to default 16:9 first
+	videoWrapper.style.aspectRatio = '16 / 9';
+
+	fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`)
+		.then(response => response.json())
+		.then(data => {
+			if (data.width && data.height) {
+				videoWrapper.style.aspectRatio = `${data.width} / ${data.height}`;
+				console.log(`Video aspect ratio updated: ${data.width}x${data.height}`);
+			}
+		})
+		.catch(err => {
+			// Keep default 16:9 on error
+			console.warn('Could not fetch video aspect ratio, using default 16:9', err);
+		});
+}
+
+/**
  * Initialize or load a YouTube video.
  * @param {string} videoId - YouTube video ID
  * @param {Object} options - Options including saved progress
@@ -40,6 +65,9 @@ export function loadVideo(videoId, options = {}) {
 
 	const { savedProgress, onReady, autoPlay = true } = options;
 	const loadingOverlay = document.getElementById("videoLoadingOverlay");
+
+	// Fetch actual video dimensions to set correct aspect ratio
+	fetchVideoAspectRatio(videoId);
 
 	// Show loading overlay if we have saved progress
 	if (savedProgress && loadingOverlay) {

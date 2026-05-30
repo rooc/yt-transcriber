@@ -6,6 +6,20 @@ A YouTube video transcript viewer with bilingual support.
 
 ## Quick Start
 
+### For New Users (with demo data)
+
+```bash
+# 1. Setup demo data (creates sample transcripts + all required files)
+node scripts/setup-demo.js
+
+# 2. Start the server
+node server.js
+
+# 3. Open http://localhost:9090 and try the demo transcripts!
+```
+
+### For Existing Users (with real videos)
+
 ```bash
 # 1. Download Spanish transcript from YouTube
 # Tell AI: "download VIDEO_ID" (requires yt-dlp + Firefox)
@@ -19,6 +33,22 @@ node server.js
 ```
 
 Open http://localhost:9090
+
+### Data Location
+
+By default, all user data is stored in `~/Sync/Data/yotuscript/`:
+- `transcripts/` — Original transcript files
+- `vocab/` — Vocabulary JSON files
+- `grammar/` — Grammar sentence JSON files
+- `summary/` — Video summary JSON files
+- `data/` — App data (progress, stats, learned videos, etc.)
+
+**Override with environment variable:**
+```bash
+YOTUSCRIPT_DATA=/path/to/data node server.js
+```
+
+This keeps your transcript data separate from the application code and makes it easy to sync across devices.
 
 ---
 
@@ -94,7 +124,32 @@ Each video includes a **2-4 sentence summary** in Spanish:
 
 ## Adding Transcripts
 
-### Method 1: yt-dlp (Recommended)
+### Method 1: Demo Data (For Testing Only)
+
+Run the setup script to create 2 sample transcripts with translations, vocab, grammar, and summaries:
+
+```bash
+node scripts/setup-demo.js
+```
+
+Creates:
+- `demo1234567` — "Introducción al Español" (Beginner)
+- `demo7654321` — "Viajar por España" (Intermediate)
+
+**Note:** This creates real files in your data directory. To remove demo data later:
+```bash
+rm -f ~/Sync/Data/yotuscript/transcripts/demo*.md \
+       ~/Sync/Data/yotuscript/vocab/demo*.json \
+       ~/Sync/Data/yotuscript/grammar/demo*.json \
+       ~/Sync/Data/yotuscript/summary/demo*.json
+```
+
+Use `--force` to recreate:
+```bash
+node scripts/setup-demo.js --force
+```
+
+### Method 2: yt-dlp (Recommended for Real Videos)
 
 Tell the AI: `"download VIDEO_ID"` or `"dl VIDEO_ID"`
 
@@ -104,13 +159,13 @@ The AI will download Spanish auto-subtitles from YouTube and create a properly f
 - `yt-dlp` installed and in your PATH
 - Firefox browser with cookies (for `--cookies-from-browser`)
 
-### Method 2: Browser Extensions
+### Method 3: Browser Extensions
 
 Any extension that extracts YouTube transcripts will work. Copy the transcript and paste it into a new file in the `transcripts/` folder.
 
-### Method 3: Manual
+### Method 4: Manual
 
-Create transcript files directly in `/transcripts/` folder:
+Create transcript files directly in your data `transcripts/` folder (default: `~/Sync/Data/yotuscript/transcripts/`):
 
 ```markdown
 ---
@@ -121,6 +176,11 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 **0:00** First line of transcript
 **0:05** Second line
 ```
+
+**Supported formats:**
+- **Markdown timestamps** (recommended): `**MM:SS** Text` or `**H:MM:SS** Text`
+- **SRT format**: Sequential numbers with `HH:MM:SS,mmm --> HH:MM:SS,mmm` timestamps
+- **With milliseconds**: `**MM:SS.mmm** Text` for precise sync
 
 For sentence-by-sentence translation, create `VIDEO_ID_translation.md` with English text.
 
@@ -144,8 +204,27 @@ The workflow uses AI directly via `OPENCODE.md`:
 - ✅ Extracts **multi-word phrases** (2-4 words) as primary vocabulary
 - ✅ Creates **3-5 grammar sentences** with B1+ structures (you choose: 3, 4, 5, or custom)
 - ✅ Writes **2-4 sentence summary** in Spanish using original vocabulary
-- ✅ Provides contextual translations
+- ✅ Provides contextual translations with part of speech and usage examples
 - ✅ Excludes basic words, proper nouns, and English loanwords
+
+### Vocabulary Format
+
+Vocabulary files use an extended format with metadata:
+
+```json
+{
+  "hacer caso": {
+    "translation": "to pay attention",
+    "pos": "verb phrase",
+    "context": "Debes hacer caso a los consejos."
+  }
+}
+```
+
+Each entry includes:
+- `translation` — English meaning (1-5 words)
+- `pos` — Part of speech (verb, noun, expression, verb phrase, noun phrase)
+- `context` — Original sentence from the transcript showing usage
 
 ### OPENCODE.md
 

@@ -36,7 +36,8 @@ function parseTranscriptFile(content, filename) {
 
         // Try SRT format first: sequential number, timestamp line, text
         // Pattern: number\nHH:MM:SS,mmm --> HH:MM:SS,mmm\ntext
-        const srtRegex = /(\d+)\s*\n(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*\n([^\n]+(?:\n(?!\d+\s*\n\d{2}:\d{2}:\d{2},\d{3})[^\n]+)*)/g;
+        // Handles optional blank lines between entries and multi-line text
+        const srtRegex = /(\d+)[ \t]*\r?\n(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})[ \t]*\r?\n((?:[^\r\n]+(?:\r?\n(?![ \t]*\d+\r?\n\d{2}:\d{2}:\d{2},\d{3})[^\r\n]+)*)*)/g;
         let match;
         while ((match = srtRegex.exec(contentWithoutFrontmatter)) !== null) {
             const hours = parseInt(match[2]);

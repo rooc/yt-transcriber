@@ -425,8 +425,9 @@ button.danger:hover {
 
 .video-wrapper {
 	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	transition: aspect-ratio 0.3s ease;
 	--s: 75px; /* control the size*/
 	--c1: var(--bg-primary);
 	--c2: var(--bg-elevated);
