@@ -1,0 +1,3 @@
+#!/bin/bash
+# Wrapper for download.js - allows running "npm run download VIDEO_ID" or "./download VIDEO_ID"
+node scripts/download.js "$@"

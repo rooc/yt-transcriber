@@ -20,6 +20,7 @@ Ask user: "What would you like to do? (translate new, check files, merge lines, 
 
 ## Available Commands
 
+- `download VIDEO_ID` — Download YouTube transcript using `./download VIDEO_ID`
 - `translate new` — Translate all untranslated transcripts
 - `check files` / `lint` — Validation and cleanup
 - `merge VIDEO_ID` — Merge short transcript lines
