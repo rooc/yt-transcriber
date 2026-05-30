@@ -9,8 +9,8 @@ const os = require("os");
 
 const ROOT_DIR = path.join(__dirname, "..");
 
-// User data lives in ~/Sync/Data/yotuscript so it syncs across devices
-const DATA_ROOT = path.join(os.homedir(), "Sync", "Data", "yotuscript");
+// User data location — configurable via env var or defaults to ~/Sync/Data/yotuscript
+const DATA_ROOT = process.env.YOTUSCRIPT_DATA || path.join(os.homedir(), "Sync", "Data", "yotuscript");
 
 /**
  * @typedef {Object} AppConfig

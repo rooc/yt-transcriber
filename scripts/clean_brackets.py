@@ -12,6 +12,9 @@ import os
 import re
 import glob
 
+DATA_ROOT = os.environ.get('YOTUSCRIPT_DATA', os.path.join(os.path.expanduser('~'), 'Sync', 'Data', 'yotuscript'))
+TRANSCRIPTS_DIR = os.path.join(DATA_ROOT, 'transcripts')
+
 def clean_file(filepath):
     """Remove bracketed descriptions from a transcript file."""
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -29,7 +32,7 @@ def clean_file(filepath):
         print(f"No brackets found: {filepath}")
         return False
 
-def clean_all_transcripts(transcripts_dir='transcripts'):
+def clean_all_transcripts(transcripts_dir=TRANSCRIPTS_DIR):
     """Clean all markdown transcript files."""
     pattern = os.path.join(transcripts_dir, '*.md')
     files = glob.glob(pattern)

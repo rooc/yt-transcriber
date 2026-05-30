@@ -2,6 +2,8 @@
  * Application entry point.
  *
  * Bootstraps the HTTP server on PORT (default 9090).
+ * User data is stored in ~/Sync/Data/yotuscript by default.
+ * Override with: YOTUSCRIPT_DATA=/path/to/data node server.js
  *
  * Usage:
  *   node server.js          → start the web server
