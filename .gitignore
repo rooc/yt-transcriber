@@ -3,17 +3,24 @@ VOCAB_AI_PROMPT.md
 ai-response.json
 ai-translations.json
 
-# User data lives in ~/Sync/Data/yotuscript (Syncthing)
-# These local copies are ignored - do not commit
-data/
-transcripts/
-vocab/
-grammar/
-summary/
-
 # Dependencies
 node_modules/
 
 # OS files
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
