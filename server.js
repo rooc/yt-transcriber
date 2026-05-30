@@ -8,16 +8,15 @@
  */
 const http = require('http');
 const fs = require('fs');
-const { PORT, TRANSCRIPTS_DIR, VOCAB_DIR } = require('./src/config');
+const { PORT, TRANSCRIPTS_DIR, VOCAB_DIR, GRAMMAR_DIR, SUMMARY_DIR, DATA_DIR } = require('./src/config');
 const { setupRoutes } = require('./src/routes');
 
-// Ensure required directories exist at startup
-if (!fs.existsSync(TRANSCRIPTS_DIR)) {
-    fs.mkdirSync(TRANSCRIPTS_DIR, { recursive: true });
-}
-if (!fs.existsSync(VOCAB_DIR)) {
-    fs.mkdirSync(VOCAB_DIR, { recursive: true });
-}
+// Ensure required directories exist at startup (in ~/Sync/Data)
+[TRANSCRIPTS_DIR, VOCAB_DIR, GRAMMAR_DIR, SUMMARY_DIR, DATA_DIR].forEach(dir => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+});
 
 // === HTTP SERVER ===
 const server = http.createServer(setupRoutes);

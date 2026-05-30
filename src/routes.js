@@ -8,14 +8,14 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const { PORT, ROOT_DIR, TRANSCRIPTS_DIR, VOCAB_DIR, STATS_PATH } = require('./config');
+const { PORT, ROOT_DIR, TRANSCRIPTS_DIR, VOCAB_DIR, DATA_DIR, STATS_PATH } = require('./config');
 const { parseTranscriptFile, getVideoIdFromFile, convertToXML } = require('./store');
 const { getTranscriptForVideo, readVocab, readGrammar, readSummary } = require('./store');
 
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
-const LEARNED_PATH = path.join(ROOT_DIR, 'data', 'learned.json');
-const PROGRESS_PATH = path.join(ROOT_DIR, 'data', 'progress.json');
-const VOCABULAR_PATH = path.join(ROOT_DIR, 'data', 'vocabular.json');
+const LEARNED_PATH = path.join(DATA_DIR, 'learned.json');
+const PROGRESS_PATH = path.join(DATA_DIR, 'progress.json');
+const VOCABULAR_PATH = path.join(DATA_DIR, 'vocabular.json');
 
 /**
  * GET /api/translation?v=VIDEO_ID

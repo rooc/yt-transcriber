@@ -5,8 +5,12 @@
  * reads from a single source of truth.
  */
 const path = require("path");
+const os = require("os");
 
 const ROOT_DIR = path.join(__dirname, "..");
+
+// User data lives in ~/Sync/Data/yotuscript so it syncs across devices
+const DATA_ROOT = path.join(os.homedir(), "Sync", "Data", "yotuscript");
 
 /**
  * @typedef {Object} AppConfig
@@ -22,10 +26,10 @@ const ROOT_DIR = path.join(__dirname, "..");
 module.exports = {
 	PORT: 9090,
 	ROOT_DIR,
-	TRANSCRIPTS_DIR: path.join(ROOT_DIR, "transcripts"),
-	VOCAB_DIR: path.join(ROOT_DIR, "vocab"),
-	GRAMMAR_DIR: path.join(ROOT_DIR, "grammar"),
-	SUMMARY_DIR: path.join(ROOT_DIR, "summary"),
-	DATA_DIR: path.join(ROOT_DIR, "data"),
-	STATS_PATH: path.join(ROOT_DIR, "data", "stats.json"),
+	TRANSCRIPTS_DIR: path.join(DATA_ROOT, "transcripts"),
+	VOCAB_DIR: path.join(DATA_ROOT, "vocab"),
+	GRAMMAR_DIR: path.join(DATA_ROOT, "grammar"),
+	SUMMARY_DIR: path.join(DATA_ROOT, "summary"),
+	DATA_DIR: path.join(DATA_ROOT, "data"),
+	STATS_PATH: path.join(DATA_ROOT, "data", "stats.json"),
 };
