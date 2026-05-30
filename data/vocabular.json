@@ -152,6 +152,20 @@
       "pos": "expression",
       "context": "Muchas gracias por escuchar este deslumbrado podcast",
       "reviewCount": 0
+    },
+    {
+      "word": "alta gama",
+      "translation": "high-end",
+      "pos": "noun phrase",
+      "context": "Si estás pensando en comprar un nuevo móvil de alta gama",
+      "reviewCount": 0
+    },
+    {
+      "word": "barbaridad",
+      "translation": "beast / incredible thing",
+      "pos": "noun",
+      "context": "una barbaridad en esta alta gama",
+      "reviewCount": 0
     }
   ],
   "vocabularPanelCollapsed": true
