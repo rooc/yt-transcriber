@@ -23,17 +23,17 @@
 	--tooltip-shadow: oklch(0% 0 0 / 0.3);
 	/* Spacing - Tailwind scale (base 0.25rem) */
 	--space-0: 0rem;
-	--space-1: 0.25rem;
-	--space-2: 0.5rem;
-	--space-2-5: 0.625rem;
-	--space-3: 0.75rem;
-	--space-4: 1rem;
-	--space-5: 1.25rem;
-	--space-6: 1.5rem;
-	--space-8: 2rem;
-	--space-10: 2.5rem;
-	--space-12: 3rem;
-	--space-16: 4rem;
+	--space: 0.25rem;
+	--space-2: calc(var(--space) * 2);
+	--space-2-5: calc(var(--space) * 2.5);
+	--space-3: calc(var(--space) * 3);
+	--space-4: calc(var(--space) * 4);
+	--space-5: calc(var(--space) * 5);
+	--space-6: calc(var(--space) * 6);
+	--space-8: calc(var(--space) * 8);
+	--space-10: calc(var(--space) * 10);
+	--space-12: calc(var(--space) * 12);
+	--space-16: calc(var(--space) * 16);
 
 	/* Font sizes */
 	--text-xs: 0.75rem;
@@ -98,8 +98,8 @@ body {
 .sidebar-wrapper.collapsed {
 	--sidebar-width: 3rem !important;
 	overflow-y: hidden;
-	min-width: 3rem;
-	max-width: 3rem;
+	min-width: var(--space-12);
+	max-width: var(--space-12);
 }
 
 .sidebar-wrapper.collapsed .sidebar-header .sidebar-title {
@@ -179,7 +179,7 @@ body {
 	padding: var(--space-5);
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: var(--space-6);
 }
 
 /* Fullscreen mode */
@@ -227,7 +227,7 @@ body.fullscreen .transcript-container {
 	border-radius: var(--radius-md);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 	z-index: 1000;
-	gap: 0.5rem;
+	gap: var(--space-2);
 }
 
 body.fullscreen .fullscreen-controls {
@@ -425,7 +425,7 @@ button.danger:hover {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.25rem;
-	padding: var(--space-1) var(--space-2-5);
+	padding: var(--space) var(--space-2-5);
 	background: var(--bg-elevated);
 	border: 1px solid var(--border-light);
 	border-radius: var(--radius-xs);
@@ -1226,7 +1226,7 @@ button.active {
 	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
-	gap: var(--space-1);
+	gap: var(--space);
 	margin-top: 0;
 }
 
