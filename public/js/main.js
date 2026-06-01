@@ -51,8 +51,10 @@ export async function loadByVideoId(videoId, options = {}) {
 		setIsSegmentRepeatMode(false);
 		const segmentRepeatBtn = document.getElementById("segmentRepeatBtn");
 		const fsSegmentRepeatBtn = document.getElementById("fsSegmentRepeatBtn");
+		const vfSegmentRepeatBtn = document.getElementById("vfSegmentRepeatBtn");
 		if (segmentRepeatBtn) segmentRepeatBtn.classList.remove("active");
 		if (fsSegmentRepeatBtn) fsSegmentRepeatBtn.classList.remove("active");
+		if (vfSegmentRepeatBtn) vfSegmentRepeatBtn.classList.remove("active");
 	}
 
 	setCurrentVideoId(videoId);

@@ -23,6 +23,9 @@ import {
 	transcriptData,
 	pauseBtn,
 	fsPauseBtn,
+	vfPauseBtn,
+	vfDualBtn,
+	vfSegmentRepeatBtn,
 } from './state.js';
 import { pauseBtn as pauseBtnState, fsPauseBtn as fsPauseBtnState, setIsFullscreen, isFullscreen } from './state.js';
 import { setStatus, formatTime } from './utils.js';
@@ -114,8 +117,11 @@ export function loadVideo(videoId, options = {}) {
 			// Update UI to show paused state
 			setIsPaused(true);
 			const icon = pauseBtn.querySelector(".material-icons");
+			const vfIcon = vfPauseBtn?.querySelector(".material-icons");
 			if (icon) icon.textContent = "play_arrow";
+			if (vfIcon) vfIcon.textContent = "play_arrow";
 			pauseBtn.classList.add("active");
+			if (vfPauseBtn) vfPauseBtn.classList.add("active");
 			setTimeout(() => {
 				if (loadingOverlay) loadingOverlay.classList.add("hidden");
 			}, 300);
@@ -159,14 +165,20 @@ export function onPlayerStateChange(event) {
 	if (event.data === YT.PlayerState.PLAYING) {
 		setIsPaused(false);
 		const icon = pauseBtn.querySelector(".material-icons");
+		const vfIcon = vfPauseBtn?.querySelector(".material-icons");
 		if (icon) icon.textContent = "pause";
+		if (vfIcon) vfIcon.textContent = "pause";
 		pauseBtn.classList.remove("active");
+		if (vfPauseBtn) vfPauseBtn.classList.remove("active");
 		startWatchSession();
 	} else if (event.data === YT.PlayerState.PAUSED) {
 		setIsPaused(true);
 		const icon = pauseBtn.querySelector(".material-icons");
+		const vfIcon = vfPauseBtn?.querySelector(".material-icons");
 		if (icon) icon.textContent = "play_arrow";
+		if (vfIcon) vfIcon.textContent = "play_arrow";
 		pauseBtn.classList.add("active");
+		if (vfPauseBtn) vfPauseBtn.classList.add("active");
 		endWatchSession();
 		// Restart session for potential resume
 		startWatchSession();
@@ -193,18 +205,23 @@ export function setPaused(paused) {
 
 	const icon = pauseBtn.querySelector(".material-icons");
 	const fsIcon = fsPauseBtn.querySelector(".material-icons");
+	const vfIcon = vfPauseBtn?.querySelector(".material-icons");
 
 	if (isPaused) {
 		if (icon) icon.textContent = "play_arrow";
 		if (fsIcon) fsIcon.textContent = "play_arrow";
+		if (vfIcon) vfIcon.textContent = "play_arrow";
 		pauseBtn.classList.add("active");
 		fsPauseBtn.classList.add("active");
+		if (vfPauseBtn) vfPauseBtn.classList.add("active");
 		if (player) player.pauseVideo();
 	} else {
 		if (icon) icon.textContent = "pause";
 		if (fsIcon) fsIcon.textContent = "pause";
+		if (vfIcon) vfIcon.textContent = "pause";
 		pauseBtn.classList.remove("active");
 		fsPauseBtn.classList.remove("active");
+		if (vfPauseBtn) vfPauseBtn.classList.remove("active");
 		if (player) player.playVideo();
 	}
 
@@ -225,8 +242,11 @@ export function restartVideo() {
 	}
 
 	const icon = pauseBtn.querySelector(".material-icons");
+	const vfIcon = vfPauseBtn?.querySelector(".material-icons");
 	if (icon) icon.textContent = "pause";
+	if (vfIcon) vfIcon.textContent = "pause";
 	pauseBtn.classList.remove("active");
+	if (vfPauseBtn) vfPauseBtn.classList.remove("active");
 
 	setStatus("Restarted");
 	updateDisplay();
@@ -330,6 +350,7 @@ export function toggleSegmentRepeat(renderCallback) {
 		
 		segmentRepeatBtn.classList.toggle("active", newMode);
 		if (fsSegmentRepeatBtn) fsSegmentRepeatBtn.classList.toggle("active", newMode);
+		if (vfSegmentRepeatBtn) vfSegmentRepeatBtn.classList.toggle("active", newMode);
 
 		console.log(`SegmentRepeat: Mode ${newMode ? 'ON' : 'OFF'}`);
 
@@ -393,10 +414,13 @@ export function replayCurrentSegment() {
 		// Update button icons
 		const icon = pauseBtn.querySelector(".material-icons");
 		const fsIcon = fsPauseBtn.querySelector(".material-icons");
+		const vfIcon = vfPauseBtn?.querySelector(".material-icons");
 		if (icon) icon.textContent = "pause";
 		if (fsIcon) fsIcon.textContent = "pause";
+		if (vfIcon) vfIcon.textContent = "pause";
 		pauseBtn.classList.remove("active");
 		fsPauseBtn.classList.remove("active");
+		if (vfPauseBtn) vfPauseBtn.classList.remove("active");
 	});
 }
 

@@ -59,6 +59,9 @@ export const fsDualBtn = document.getElementById("fsDualBtn");
 export const transcriptContainer = document.getElementById("transcript");
 export const segmentRepeatBtn = document.getElementById("segmentRepeatBtn");
 export const fsSegmentRepeatBtn = document.getElementById("fsSegmentRepeatBtn");
+export const vfPauseBtn = document.getElementById("vfPauseBtn");
+export const vfDualBtn = document.getElementById("vfDualBtn");
+export const vfSegmentRepeatBtn = document.getElementById("vfSegmentRepeatBtn");
 
 // --- Setters for state mutations ---
 export function setPlayer(value) { player = value; }

@@ -134,9 +134,11 @@ export function toggleDual(renderCallback) {
 		
 		const dualBtn = document.getElementById("dualBtn");
 		const fsDualBtn = document.getElementById("fsDualBtn");
+		const vfDualBtn = document.getElementById("vfDualBtn");
 		
 		dualBtn.classList.toggle("active", newMode);
 		fsDualBtn.classList.toggle("active", newMode);
+		if (vfDualBtn) vfDualBtn.classList.toggle("active", newMode);
 		
 		if (state.activeIndex >= 0 && renderCallback) renderCallback();
 	});
